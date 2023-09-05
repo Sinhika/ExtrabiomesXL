@@ -1,0 +1,64 @@
+TODO
+=====
+
+Original ExtrabiomesXL biomes:
+
+    default     (big_oak_tree, oak_tree)
+    alpine              (fir_tree, )
+    autumnwoods         
+        (autumn_tree_{brown,orange,purple,yellow}, big_autumn_tree_{brown,orange,purple,yellow},
+         oak_tree, big_oak_tree, japanese_maple)
+    birchforest     
+        (oak_tree, big_oak_tree, birch_tree, sakura_blossom)
+    extremejungle   
+        (big_oak_tree, shrub, rainbow_eucalyptus, mega_jungle(?), ?)
+    forestedisland  
+        (oak_tree, big_oak_tree, sakura_blossom)   
+    forestedhills   
+        (oak_tree, big_oak_tree, cypress, japanese_maple, sakura_blossom)   
+    glacier         
+        (big_oak_tree, oak_tree)
+    greenhills   
+        (oak_tree, big_oak_tree, sakura_blossom)   
+    icewasteland    
+        (big_oak_tree, oak_tree)
+    greenswamp      
+        (swamp_tree, custom_swamp_tree, bald_cypress)
+    marsh           
+        (big_oak_tree, oak_tree)
+    meadow          
+        (big_oak_tree, oak_tree)
+    minijungle      
+        (swamp_tree, oak_tree, big_oak_tree, rainbow_eucalyptus)
+    mountaindesert  
+        (big_oak_tree, oak_tree)
+    mountainridge   
+        (big_oak_tree, oak_tree)
+    mountaintaiga   
+        ( taiga, alt_taiga)
+    pineforest      
+        ( taiga, alt_taiga)
+    rainforest      
+        (swamp_tree, big_oak_tree, oak_tree, rainbow_eucalyptus)
+    redwoodforest   
+        (redwood_tree, )
+    redwoodlush     
+        (redwood_tree, fir_tree)
+    savanna         
+        (acacia_tree, )
+    shrubland       
+        (shrub, japanese_maple_shrub)
+    snowforest      
+        (big_oak_tree, oak_tree)
+    snowyrainforest 
+        (big_fir_tree, fir_tree)
+    temperaterainforest
+        (big_fir_tree, fir_tree)
+    tundra          
+        (big_oak_tree, oak_tree)
+    wasteland       
+        (big_oak_tree, oak_tree)
+    woodlands       
+        (oak_tree, big_oak_tree, cypress, japanese_maple_shrub, japanese_maple, sakura_blossom)
+
+
