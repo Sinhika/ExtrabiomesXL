@@ -5,7 +5,7 @@ config.cautia.comment=Setze "cautia" auf "true", um Gefahren einzuschalten.
 config.fabrica.comment=Setze "fabrica" auf "true", um die herstellbaren Items einzuschalten.
 config.summa.comment=Setze "summa" auf "false", um die Mod auszuschalten.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.logturner.name=Stammdreher
 item.extrabiomes.paste.name=Kaktuspaste

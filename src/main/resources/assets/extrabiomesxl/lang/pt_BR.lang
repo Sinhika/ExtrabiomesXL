@@ -5,7 +5,7 @@ config.cautia.comment=Use CAUTIA para adicionar perigo.
 config.fabrica.comment=Use FABRICA para ligar receitas de elaboração.
 config.summa.comment=Use SUMMA como 'false' para desativar o mod.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.dye.black.name=Corante Preto 
 item.extrabiomes.dye.blue.name=Corante Azul 

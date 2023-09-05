@@ -7,7 +7,7 @@ config.cautia.comment=Mettez cautia à "true" pour ajouter du danger.
 config.fabrica.comment=Mettez fabrica à "true" pour activer les objets fabricables.
 config.summa.comment=Mettez summa à "false" pour désactiver le mod.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.dye.black.name=Teinture noire
 item.extrabiomes.dye.blue.name=Teinture bleue

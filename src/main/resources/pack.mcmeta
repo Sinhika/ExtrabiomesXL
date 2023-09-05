@@ -1,6 +1,8 @@
 {
-    "pack": {
-        "pack_format": 1,
-        "description": "ExtrabiomesXL"
-    }
+  "pack": {
+    "description": {
+      "text": "${mod_name} resources"
+    },
+    "pack_format": ${pack_format_number}
+  }
 }

@@ -4,7 +4,7 @@ config.cautia.comment=设置布尔量cautia为true来增加危险.
 config.fabrica.comment=设置布尔量fabrica为true, 以允许合成相关物品.
 config.summa.comment=设置布尔量summa为false来禁用该模组.
 
-itemGroup.extrabiomesTab=更多生态群落
+item_group.extrabiomesxl.tab=更多生态群落
 
 item.extrabiomes.dye.black.name=黑色染料
 item.extrabiomes.dye.blue.name=蓝色染料

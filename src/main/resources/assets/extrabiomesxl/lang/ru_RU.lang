@@ -5,7 +5,7 @@ config.cautia.comment=Установите "cautia" на "true", чтобы до
 config.fabrica.comment=Установите "fabrica" на "true", чтобы включить создание предметов.
 config.summa.comment=Установите "summa" на "false", чтобы отключить мод.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.dye.black.name=Чёрный краситель
 item.extrabiomes.dye.blue.name=Синий краситель

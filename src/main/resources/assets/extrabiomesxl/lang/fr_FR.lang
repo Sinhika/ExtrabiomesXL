@@ -5,7 +5,7 @@ config.cautia.comment=Mettez cautia sur "true" pour augmenter la difficulté.
 config.fabrica.comment=Mettez fabrica sur "true" pour activer les recettes d'objets.
 config.summa.comment=Mettez summa sur "false" pour désactiver le mod.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.dye.black.name=Teinture noire
 item.extrabiomes.dye.blue.name=Teinture bleue

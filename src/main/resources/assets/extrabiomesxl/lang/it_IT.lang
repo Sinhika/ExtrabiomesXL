@@ -5,7 +5,7 @@ config.cautia.comment=Impostare cautia su "true" per aumentare la difficoltà.
 config.fabrica.comment=Impostare fabrica su "true" per attivare gli oggetti craftabili.
 config.summa.comment=Impostare summa su "false" per disattivare la mod.
 
-itemGroup.extrabiomesTab=ExtrabiomesXL
+item_group.extrabiomesxl.tab=ExtrabiomesXL
 
 item.extrabiomes.dye.black.name=Tintura nera
 item.extrabiomes.dye.blue.name=Tintura blu
