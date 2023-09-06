@@ -148,8 +148,8 @@ tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
         minecraft_version: minecraft_version, 
         minecraft_version_range: minecraft_version_range,
-        neo_version: forge_version, 
-        neo_version_range: forge_version_range,
+        neo_version: neo_version, 
+        neo_version_range: neo_version_range,
         loader_version_range: loader_version_range,
         mod_id: mod_id, 
         mod_name: mod_name, 
@@ -162,7 +162,7 @@ tasks.named('processResources', ProcessResources).configure {
         simplecore_range : simplecore_range,
         version_mcjei : version_mcjei,
         jei_version : jei_version,
-        jei_range : jei_range,
+        jei_version_range : jei_version_range,
     ]
     inputs.properties replaceProperties
 

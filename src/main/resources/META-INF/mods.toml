@@ -61,6 +61,6 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId="jei"
     mandatory=false
-    versionRange="${jei_range}"
+    versionRange="${jei_version_range}"
     ordering="BEFORE"
     side="BOTH"
