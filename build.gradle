@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.gradle' version '[6.0.13, 6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 version = mod_version
@@ -28,7 +29,6 @@ minecraft {
    // mappings channel: mapping_channel, version: mapping_version
     mappings channel: 'parchment', version: "${version_parchment}"
  
-    // When true, this property will have all Eclipse/IntelliJ IDEA run configurations run the "prepareX" task for the given run configuration before launching the game.
     // In most cases, it is not necessary to enable.
     // enableEclipsePrepareRuns = true
     // enableIdeaPrepareRuns = true
@@ -38,8 +38,6 @@ minecraft {
     // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
     copyIdeResources = true
 
-    // When true, this property will add the folder name of all declared run configurations to generated IDE run configurations.
-    // The folder name can be set on a run configuration using the "folderName" property.
     // By default, the folder name of a run configuration is the name of the Gradle project containing it.
     // generateRunFolders = true
 
@@ -96,7 +94,8 @@ minecraft {
         data {
     
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'),
+                '--existing-mod', 'simplecorelib' 
         }
     }
 }
@@ -131,6 +130,7 @@ repositories {
 dependencies {
     // Specify the version of Minecraft to use.
     minecraft "net.neoforged:forge:${minecraft_version}-${neo_version}"
+    implementation fg.deobf("simplecore-api:SimpleCoreLib:${simplecorelib_version}") 
     // UNCOMMENT JEI stuff if JEI support ready.
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${version_mcjei}-common-api:${jei_version}")
@@ -157,7 +157,12 @@ tasks.named('processResources', ProcessResources).configure {
         mod_version: mod_version,
         mod_authors: mod_authors, 
         mod_description: mod_description,
-        pack_format_number: pack_format_number
+        pack_format_number: pack_format_number,
+        simplecorelib_version: simplecorelib_version,
+        simplecore_range : simplecore_range,
+        version_mcjei : version_mcjei,
+        jei_version : jei_version,
+        jei_range : jei_range,
     ]
     inputs.properties replaceProperties
 
@@ -193,10 +198,10 @@ tasks.named('jar', Jar).configure {
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
-            groupId = 'extrabiomesxl'
+            groupId = 'extrabiomes'
             artifact jar
         }
-    
+    } 
     repositories {
         maven {
             name = "mcmodsrepo"
