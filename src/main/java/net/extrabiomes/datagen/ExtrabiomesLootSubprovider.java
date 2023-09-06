@@ -14,6 +14,7 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropSelf(ModBlocks.leaves_umber.get());
 		this.dropSelf(ModBlocks.leaves_vermillion.get());
 		
+		this.dropSelf(ModBlocks.log_autumn.get());
 		
 	} // end generate()
 

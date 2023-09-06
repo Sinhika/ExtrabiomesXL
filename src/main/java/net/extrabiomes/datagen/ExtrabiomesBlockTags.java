@@ -3,6 +3,7 @@ package net.extrabiomes.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
+import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.HolderLookup.Provider;
@@ -45,6 +46,12 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
    
 	protected void registerLogTags()
 	{
+		// TODO add stripped wood, bark when available.
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
+           	.add(ModBlocks.log_autumn.get());
+		
+		this.tag(BlockTags.LOGS)
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));	
 	}
    
 	protected void registerLeafSaplingTags()

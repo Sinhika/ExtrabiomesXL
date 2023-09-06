@@ -10,6 +10,7 @@ import net.extrabiomes.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
@@ -53,6 +54,17 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.leaves_goldenrod.get().asItem())
 			.add(ModBlocks.leaves_umber.get().asItem())
 			.add(ModBlocks.leaves_vermillion.get().asItem());
-    }
+        
+		// TODO add stripped wood, bark when available.
+		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))
+           	.add(ModBlocks.log_autumn.get().asItem());
+		
+		this.tag(ItemTags.LOGS)
+			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));
+		
+        this.tag(ItemTags.LOGS_THAT_BURN)
+        	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));	
+        	
+    } // end registerLogTags()
     
 } // end class

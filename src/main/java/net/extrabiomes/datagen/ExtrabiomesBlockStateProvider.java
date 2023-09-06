@@ -55,7 +55,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
 
-     	
+     	// logs - use axisBlock because texture names are not standard.
+        this.axisBlock(ModBlocks.log_autumn.get(), modLoc("block/logautumnside"), modLoc("block/logautumntop"));
+        this.itemModels().withExistingParent("log_autumn", modLoc("block/log_autumn"));
+
     } // end registerTreeBlocks
     
     private void registerMisc()
