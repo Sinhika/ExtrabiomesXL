@@ -17,22 +17,22 @@ public final class ModBlocks
 	            DeferredRegister.create(ForgeRegistries.BLOCKS, ExtrabiomesXS.MODID);
 
 	   // autumn tree leaf blocks
-	   public static final RegistryObject<LeavesBlock> leaves_umber = BLOCKS.register("leaves.umber", 
+	   public static final RegistryObject<LeavesBlock> leaves_umber = BLOCKS.register("leaves_umber", 
 	            () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(0.2F).randomTicks()
 	                    .noOcclusion().sound(SoundType.GRASS).isSuffocating((a,b,c)->{return false;})
 	                    .isViewBlocking((a,b,c)->{return false;}).pushReaction(PushReaction.DESTROY)));
 	   
-	   public static final RegistryObject<LeavesBlock> leaves_goldenrod = BLOCKS.register("leaves.goldenrod", 
+	   public static final RegistryObject<LeavesBlock> leaves_goldenrod = BLOCKS.register("leaves_goldenrod", 
 	            () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks()
 	                    .noOcclusion().sound(SoundType.GRASS).isSuffocating((a,b,c)->{return false;})
 	                    .isViewBlocking((a,b,c)->{return false;}).pushReaction(PushReaction.DESTROY)));
 
-	   public static final RegistryObject<LeavesBlock> leaves_vermillion = BLOCKS.register("leaves.vermillion", 
+	   public static final RegistryObject<LeavesBlock> leaves_vermillion = BLOCKS.register("leaves_vermillion", 
 	            () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.2F).randomTicks()
 	                    .noOcclusion().sound(SoundType.GRASS).isSuffocating((a,b,c)->{return false;})
 	                    .isViewBlocking((a,b,c)->{return false;}).pushReaction(PushReaction.DESTROY)));
 
-	   public static final RegistryObject<LeavesBlock> leaves_citrine = BLOCKS.register("leaves.citrine", 
+	   public static final RegistryObject<LeavesBlock> leaves_citrine = BLOCKS.register("leaves_citrine", 
 	            () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(0.2F).randomTicks()
 	                    .noOcclusion().sound(SoundType.GRASS).isSuffocating((a,b,c)->{return false;})
 	                    .isViewBlocking((a,b,c)->{return false;}).pushReaction(PushReaction.DESTROY)));

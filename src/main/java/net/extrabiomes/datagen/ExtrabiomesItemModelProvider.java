@@ -15,7 +15,7 @@ public class ExtrabiomesItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() 
 	{
-		this.singleTexture("crop.strawberry", mcLoc("generated"), "layer0", modLoc("item/strawberry"));
+		this.singleTexture("crop_strawberry", mcLoc("generated"), "layer0", modLoc("item/strawberry"));
 
 	}
 

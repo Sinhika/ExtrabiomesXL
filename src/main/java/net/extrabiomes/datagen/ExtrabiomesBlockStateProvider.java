@@ -52,9 +52,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		
             ModelFile leaves = this.models().cubeAll(name, entry.getValue()).renderType("cutout_mipped");
             this.simpleBlock(entry.getKey().get(), leaves);
-            this.itemModels().withExistingParent(name, entry.getValue());
+            this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
 
+     	
     } // end registerTreeBlocks
     
     private void registerMisc()

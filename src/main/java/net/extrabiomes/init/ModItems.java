@@ -16,6 +16,6 @@ public final class ModItems
 	   public static final FoodProperties STRAWBERRY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.6F).build();
 	   
 	   // food items
-	   public static final RegistryObject<Item> crop_strawberry = ITEMS.register("crop.strawberry",
+	   public static final RegistryObject<Item> crop_strawberry = ITEMS.register("crop_strawberry",
 			   () -> new Item(new Item.Properties().food(STRAWBERRY)));
 } // end class
