@@ -33,7 +33,8 @@ public class ExtrabiomesDataGenerator
         		existingFileHelper));
         gen.addProvider(event.includeServer(), new SimpleLootTableProvider(packOutput, List.of(
         		new LootTableProvider.SubProviderEntry(ExtrabiomesLootSubprovider::new, LootContextParamSets.BLOCK))));
-        // TODO: recipe provider.
+        
+        gen.addProvider(event.includeServer(), new ExtrabiomesRecipes(packOutput));
         
          // client datagen
         gen.addProvider(event.includeClient(), new ExtrabiomesBlockStateProvider(packOutput, event.getExistingFileHelper()));

@@ -27,8 +27,9 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	}
 
 	@Override
-	public ICondition flag(String arg0) {
-		return impl_flag(ExtrabiomesXS.MODID, ExtrabiomesConfig.INSTANCE, arg0);
+	public ICondition flag(String name) 
+	{
+		return impl_flag(ExtrabiomesXS.MODID, ExtrabiomesConfig.INSTANCE, name);
 	}
 
 	@Override
@@ -46,9 +47,11 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	private void registerWoodRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		TagKey<Item> autumn_logs = TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs");
+		ICondition fabrica = flag("fabrica_enabled");
 		
+		// TESTING: null should be fabrica.
 		setbuilder.buildWood2PlankRecipes(consumer, Ingredient.of(autumn_logs), ModBlocks.planks_autumn_wood.get(), 4, 
-				has(autumn_logs), flag("fabrica_enabled"));
+				has(autumn_logs), null);
 	} // end registerWoodRecipes()
 	
 	

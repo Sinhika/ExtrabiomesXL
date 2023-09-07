@@ -14,9 +14,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 
-public class XBrecipeSetBuilder extends RecipeSetBuilder {
+public class XBrecipeSetBuilder extends RecipeSetBuilder 
+{
 
-	public XBrecipeSetBuilder(String modid) {
+	public XBrecipeSetBuilder(String modid) 
+	{
 		super(modid);
 	}
 

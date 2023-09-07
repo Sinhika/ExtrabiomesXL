@@ -7,8 +7,8 @@ public class ExtrabiomesConfig extends SimpleConfig
 	public static ExtrabiomesConfig INSTANCE = new ExtrabiomesConfig();
 	
 	// server
-	public static boolean amica_enabled;
-	public static boolean cautia_enabled;
+	public static boolean amica_enabled = false;
+	public static boolean cautia_enabled = true;
 	// fabrica_enabled is an INSTANCE flag.
 	
 	// client
