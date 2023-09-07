@@ -7,7 +7,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -39,26 +38,36 @@ public final class ModBlocks
 	   // autumn tree logs & wood.
 	   public static final RegistryObject<CustomLogBlock> log_autumn = BLOCKS.register("log_autumn", 
 			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL));
-	
+	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS.register("planks_autumn_wood",
+			   () -> planks(MapColor.WOOD));
+
 	   
-   public static LeavesBlock leaves(SoundType pType) 
-   {
-	      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks()
-	    		  .sound(pType).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot).isSuffocating((a,b,c)->{return false;})
-	    		  .isViewBlocking((a,b,c)->{return false;}).ignitedByLava().pushReaction(PushReaction.DESTROY)
-	    		  .isRedstoneConductor((a,b,c)->{return false;}));
-   }
-
-   private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) 
-   {
-	      return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
-   }
-
-   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor) 
-   {
-	   return new CustomLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-	         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
-	      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
-   }
-
+	   // Block initialization helper functions
+	   
+	   public static LeavesBlock leaves(SoundType pType) 
+	   {
+		      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks()
+		    		  .sound(pType).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot).isSuffocating((a,b,c)->{return false;})
+		    		  .isViewBlocking((a,b,c)->{return false;}).ignitedByLava().pushReaction(PushReaction.DESTROY)
+		    		  .isRedstoneConductor((a,b,c)->{return false;}));
+	   }
+	
+	   private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) 
+	   {
+		      return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
+	   }
+	
+	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor) 
+	   {
+		   return new CustomLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+	   }
+	
+	   private static Block planks(MapColor mColor)
+	   {
+		   return new Block(BlockBehaviour.Properties.of().mapColor(mColor).instrument(NoteBlockInstrument.BASS)
+				   .strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava());
+	   }
+   
 } // end class

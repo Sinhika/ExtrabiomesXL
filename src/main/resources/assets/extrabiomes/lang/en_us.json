@@ -136,7 +136,7 @@
     "block.extrabiomes.planks_3": "Cypress Wood Planks",
     "block.extrabiomes.planks_4": "Japanese Maple Wood Planks",
     "block.extrabiomes.planks_5": "Rainbow Eucalyptus Wood Planks",
-    "block.extrabiomes.planks_6": "Autumn Wood Planks",
+    "block.extrabiomes.planks_autumn_wood": "Autumn Wood Planks (planks_6)",
     "block.extrabiomes.planks_7": "Bald Cypress Wood Planks",
     "block.extrabiomes.planks_8": "Sakura Wood Planks",
     "block.extrabiomes.quicksand": "Quicksand",

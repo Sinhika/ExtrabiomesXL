@@ -6,9 +6,12 @@ public class ExtrabiomesConfig extends SimpleConfig
 {
 	public static ExtrabiomesConfig INSTANCE = new ExtrabiomesConfig();
 	
-	public ExtrabiomesConfig() 
-	{
-		// TODO Auto-generated constructor stub
-	}
-
+	// server
+	public static boolean amica_enabled;
+	public static boolean cautia_enabled;
+	// fabrica_enabled is an INSTANCE flag.
+	
+	// client
+	
+	
 } // end-class
