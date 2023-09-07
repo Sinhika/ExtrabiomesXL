@@ -2,6 +2,7 @@ package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.world.AutumnTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,6 +43,11 @@ public final class ModBlocks
 	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS.register("planks_autumn_wood",
 			   () -> planks(MapColor.WOOD));
 
+	   
+	   // saplings
+	   public static final RegistryObject<SaplingBlock> brown_autumn_sapling = BLOCKS.register("brown_autumn_sapling", 
+			   () -> new SaplingBlock(new AutumnTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+					   .noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 	   
 	   // Block initialization helper functions
 	   
