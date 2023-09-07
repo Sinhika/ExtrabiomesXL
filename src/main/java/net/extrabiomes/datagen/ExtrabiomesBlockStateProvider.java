@@ -59,6 +59,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         this.axisBlock(ModBlocks.log_autumn.get(), modLoc("block/logautumnside"), modLoc("block/logautumntop"));
         this.itemModels().withExistingParent("log_autumn", modLoc("block/log_autumn"));
 
+        // autumn planks
+        ModelFile planks = this.models().cubeAll("planks_autumn_wood", modLoc("block/planksautumn"));
+        this.simpleBlock(ModBlocks.planks_autumn_wood.get(), planks);
+        this.itemModels().withExistingParent("planks_autumn_wood", modLoc("block/planks_autumn_wood"));
+        
     } // end registerTreeBlocks
     
     private void registerMisc()
