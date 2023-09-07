@@ -64,6 +64,9 @@ public class ExtrabiomesItemTags extends MiningItemTags
         this.tag(ItemTags.LOGS_THAT_BURN)
         	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));	
         	
+        this.tag(ItemTags.PLANKS)
+        	.add(ModBlocks.planks_autumn_wood.get().asItem());
+
     } // end registerLogTags()
     
 } // end class

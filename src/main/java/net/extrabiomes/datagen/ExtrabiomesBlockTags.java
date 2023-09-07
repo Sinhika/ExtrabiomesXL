@@ -51,7 +51,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
            	.add(ModBlocks.log_autumn.get());
 		
 		this.tag(BlockTags.LOGS)
-			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));	
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));
+		
+        this.tag(BlockTags.PLANKS)
+        	.add(ModBlocks.planks_autumn_wood.get());
 	}
    
 	protected void registerLeafSaplingTags()
