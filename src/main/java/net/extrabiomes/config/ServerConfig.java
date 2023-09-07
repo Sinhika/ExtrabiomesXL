@@ -13,10 +13,11 @@ public final class ServerConfig
 		builder.push("General");
 		builder.pop();
 		
-		builder.push("Module Control");
-		amica_enabled = builder.comment("Not currently active").translation("config.amica.comment").define("amica.enabled", false);
-		cautia_enabled = builder.translation("config.cautia.comment").define("cautia.enabled", true);
-		fabrica_enabled = builder.translation("config.fabrica.comment").define("fabrica.enabled", true);
+		builder.push("Module_Control");
+		amica_enabled = builder.comment("Not currently active").translation("config.amica_comment")
+				.define("amica_enabled", false);
+		cautia_enabled = builder.translation("config.cautia_enabled").define("cautia_enabled", true);
+		fabrica_enabled = builder.translation("config.fabrica_enabled").define("fabrica_enabled", true);
 		builder.pop();
 
 

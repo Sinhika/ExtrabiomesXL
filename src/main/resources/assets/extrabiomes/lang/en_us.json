@@ -1,10 +1,10 @@
 {
     "_comment": "English (US) Localization File",
-    "config.amica.comment": "Set amica to true to enable support for other mods.",
+    "config.amica_comment": "Set amica to true to enable support for other mods.",
     "config.block.terraingen.comment": "%s is used in terrain generation. Its id must be less than 256.",
-    "config.cautia.comment": "Set cautia to true to add danger.",
-    "config.fabrica.comment": "Set fabrica to true to enable craftable items.",
-    "config.summa.comment": "Set summa to false to disable the mod.",
+    "config.cautia_comment": "Set cautia to true to add danger.",
+    "config.fabrica_comment": "Set fabrica to true to enable craftable items.",
+    "config.summa_comment": "Set summa to false to disable the mod.",
 
     "item_group.extrabiomes.tab": "ExtrabiomesXS",
 
