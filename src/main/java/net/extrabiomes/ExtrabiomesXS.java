@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import net.extrabiomes.config.ConfigHolder;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModCreativeTabs;
+import net.extrabiomes.init.ModFeatures;
 import net.extrabiomes.init.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -30,6 +31,7 @@ public class ExtrabiomesXS
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        ModFeatures.MOD_FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
