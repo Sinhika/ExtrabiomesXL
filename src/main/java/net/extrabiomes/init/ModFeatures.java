@@ -23,6 +23,14 @@ public class ModFeatures
     		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "goldenrod_autumn_tree"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_GOLDENROD_AUTUMN_TREE = 
     		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_goldenrod_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VERMILLION_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "vermillion_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_VERMILLION_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_vermillion_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "citrine_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_CITRINE_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_citrine_autumn_tree"));
   
     	
 } // end class
