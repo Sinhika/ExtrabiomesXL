@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "extrabiomes:umber_autumn_checked",
+    "features": [
+      {
+        "chance": 0.33333334,
+        "feature": "extrabiomes:fancy_umber_autumn_checked"
+      }
+    ]
+  }
+}
