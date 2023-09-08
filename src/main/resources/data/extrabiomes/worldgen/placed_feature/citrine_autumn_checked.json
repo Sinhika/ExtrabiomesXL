@@ -1,0 +1,17 @@
+{
+  "feature": "extrabiomes:citrine_autumn_tree",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "extrabiomes:sapling_citrine",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    }
+  ]
+}

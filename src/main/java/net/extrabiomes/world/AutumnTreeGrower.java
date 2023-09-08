@@ -1,6 +1,5 @@
 package net.extrabiomes.world;
 
-import net.extrabiomes.init.ModFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -8,37 +7,26 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public class AutumnTreeGrower extends AbstractTreeGrower 
 {
-	protected final String leaf_color;
+	protected final ResourceKey<ConfiguredFeature<?, ?>> fancy_tree;
+	protected final ResourceKey<ConfiguredFeature<?, ?>> normal_tree;
 	
-	public AutumnTreeGrower(String leaf_color) 
+	
+	public AutumnTreeGrower(ResourceKey<ConfiguredFeature<?, ?>> normal_treeIn, ResourceKey<ConfiguredFeature<?, ?>> fancy_treeIn ) 
 	{
 		super();
-		this.leaf_color = leaf_color;
+		this.fancy_tree = fancy_treeIn;
+		this.normal_tree = normal_treeIn;
 	}
 
 	@Override
 	protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers)
 	{
-		ResourceKey<ConfiguredFeature<?, ?>> fancy_tree;
-		ResourceKey<ConfiguredFeature<?, ?>> normal_tree;
-		
-		switch (this.leaf_color)
-		{
-			case "umber":
-				fancy_tree = ModFeatures.FANCY_UMBER_AUTUMN_TREE;
-				normal_tree = ModFeatures.UMBER_AUTUMN_TREE;
-				break;
-			default:
-				fancy_tree = null;
-				normal_tree = null;
-		}
-		
 		if (pRandom.nextInt(3) != 0 )
 		{
-			return fancy_tree;
+			return this.fancy_tree;
 		}
 		else {
-			return normal_tree;
+			return this.normal_tree;
 		}
 	} // end getConfiguredFeature()
 

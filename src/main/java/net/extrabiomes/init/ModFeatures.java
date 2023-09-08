@@ -16,9 +16,13 @@ public class ModFeatures
 
     // configured features
     public static final ResourceKey<ConfiguredFeature<?, ?>> UMBER_AUTUMN_TREE = 
-    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "unber_autumn_tree"));
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "umber_autumn_tree"));
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_UMBER_AUTUMN_TREE = 
-    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_unber_autumn_tree"));
-   
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_umber_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDENROD_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "goldenrod_autumn_tree"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_GOLDENROD_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_goldenrod_autumn_tree"));
+  
     	
 } // end class
