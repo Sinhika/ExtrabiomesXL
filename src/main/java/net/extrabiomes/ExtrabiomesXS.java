@@ -28,10 +28,10 @@ public class ExtrabiomesXS
 	    final ModLoadingContext modLoadingContext = ModLoadingContext.get();
 	    final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 	    
+        ModFeatures.MOD_FEATURES.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-        ModFeatures.MOD_FEATURES.register(modEventBus);
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
