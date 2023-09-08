@@ -47,13 +47,13 @@ public final class ModBlocks
 	   
 	   // saplings
 	   public static final RegistryObject<SaplingBlock> sapling_umber = BLOCKS.register("sapling_umber", 
-			   () -> sapling(new AutumnTreeGrower()));
+			   () -> sapling(new AutumnTreeGrower("umber")));
 	   public static final RegistryObject<SaplingBlock> sapling_goldenrod = BLOCKS.register("sapling_goldenrod", 
-			   () -> sapling(new AutumnTreeGrower()));
+			   () -> sapling(new AutumnTreeGrower("goldenrod")));
 	   public static final RegistryObject<SaplingBlock> sapling_vermillion = BLOCKS.register("sapling_vermillion", 
-			   () -> sapling(new AutumnTreeGrower()));
+			   () -> sapling(new AutumnTreeGrower("vermillion")));
 	   public static final RegistryObject<SaplingBlock> sapling_citrine = BLOCKS.register("sapling_citrine", 
-			   () -> sapling(new AutumnTreeGrower()));
+			   () -> sapling(new AutumnTreeGrower("citrine")));
 	   
 	   // Block initialization helper functions
 	   public static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)

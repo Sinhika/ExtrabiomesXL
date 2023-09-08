@@ -17,6 +17,8 @@ public class ModFeatures
     // configured features
     public static final ResourceKey<ConfiguredFeature<?, ?>> UMBER_AUTUMN_TREE = 
     		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "unber_autumn_tree"));
-    
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_UMBER_AUTUMN_TREE = 
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_unber_autumn_tree"));
+   
     	
 } // end class

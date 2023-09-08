@@ -1,6 +1,18 @@
 TODO
 =====
+Trees
 
+    autumn trees - growth resembles oak trees, lots of super oaks
+    fir trees - stacked triangles, very tall, 2x2 trunks - 
+    redwood trees - 2x2 trunks, very tall, like jungle giant, foliage bunched at top -
+    EB acacia - 1 triangle, height of 1x1 jungle tree, straight trunk, no zig - sorta like a 1x1 jungle tree.
+    cypress - tallish, straight trunk, narrow sheath of leaves around trunk -  
+    bald cypress - 2x2 trunk, has knees, huge spreading canopy like super oak on steroids -- like super oak?
+    japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak.
+    japanese maple shrub - ground level, like scrub oak.
+    sakura - short with a spreading canopy like japanese maple. 
+    rainbow eucalyptus - much like bald cypress.
+    
 Original ExtrabiomesXL biomes:
 
     default     (big_oak_tree, oak_tree)
