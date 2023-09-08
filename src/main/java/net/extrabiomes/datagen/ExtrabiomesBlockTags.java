@@ -55,7 +55,8 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		
         this.tag(BlockTags.PLANKS)
         	.add(ModBlocks.planks_autumn_wood.get());
-	}
+        
+	} // end registerLogTags()
    
 	protected void registerLeafSaplingTags()
 	{
@@ -65,7 +66,14 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.leaves_umber.get())
 			.add(ModBlocks.leaves_vermillion.get());
 	      
-	}
+        this.tag(BlockTags.SAPLINGS)
+	    	.add(ModBlocks.sapling_citrine.get())
+	    	.add(ModBlocks.sapling_goldenrod.get())
+	    	.add(ModBlocks.sapling_umber.get())
+	    	.add(ModBlocks.sapling_vermillion.get());
+
+	} // end registerLeafSaplingTags()
+	
 	
 	protected void registerMiscTags()
 	{

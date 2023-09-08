@@ -54,6 +54,12 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.leaves_umber.get().asItem())
 			.add(ModBlocks.leaves_vermillion.get().asItem());
         
+        this.tag(ItemTags.SAPLINGS)
+	    	.add(ModBlocks.sapling_citrine.get().asItem())
+	    	.add(ModBlocks.sapling_goldenrod.get().asItem())
+	    	.add(ModBlocks.sapling_umber.get().asItem())
+	    	.add(ModBlocks.sapling_vermillion.get().asItem());
+
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get().asItem());

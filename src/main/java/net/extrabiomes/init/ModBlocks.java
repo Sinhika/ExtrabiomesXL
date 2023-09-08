@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -45,11 +46,21 @@ public final class ModBlocks
 
 	   
 	   // saplings
-	   public static final RegistryObject<SaplingBlock> brown_autumn_sapling = BLOCKS.register("brown_autumn_sapling", 
-			   () -> new SaplingBlock(new AutumnTreeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
-					   .noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+	   public static final RegistryObject<SaplingBlock> sapling_umber = BLOCKS.register("sapling_umber", 
+			   () -> sapling(new AutumnTreeGrower()));
+	   public static final RegistryObject<SaplingBlock> sapling_goldenrod = BLOCKS.register("sapling_goldenrod", 
+			   () -> sapling(new AutumnTreeGrower()));
+	   public static final RegistryObject<SaplingBlock> sapling_vermillion = BLOCKS.register("sapling_vermillion", 
+			   () -> sapling(new AutumnTreeGrower()));
+	   public static final RegistryObject<SaplingBlock> sapling_citrine = BLOCKS.register("sapling_citrine", 
+			   () -> sapling(new AutumnTreeGrower()));
 	   
 	   // Block initialization helper functions
+	   public static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)
+	   {
+		   return new SaplingBlock(pTreeGrower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+				   .noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
+	   }
 	   
 	   public static LeavesBlock leaves(SoundType pType) 
 	   {
@@ -57,11 +68,6 @@ public final class ModBlocks
 		    		  .sound(pType).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot).isSuffocating((a,b,c)->{return false;})
 		    		  .isViewBlocking((a,b,c)->{return false;}).ignitedByLava().pushReaction(PushReaction.DESTROY)
 		    		  .isRedstoneConductor((a,b,c)->{return false;}));
-	   }
-	
-	   private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) 
-	   {
-		      return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
 	   }
 	
 	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor) 
@@ -76,5 +82,10 @@ public final class ModBlocks
 		   return new Block(BlockBehaviour.Properties.of().mapColor(mColor).instrument(NoteBlockInstrument.BASS)
 				   .strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava());
 	   }
-   
+  
+	   private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) 
+	   {
+		      return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
+	   }
+
 } // end class
