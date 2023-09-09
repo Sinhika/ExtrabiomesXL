@@ -10,6 +10,7 @@ import net.extrabiomes.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
@@ -58,7 +59,9 @@ public class ExtrabiomesItemTags extends MiningItemTags
 		
 		this.tag(ItemTags.DOORS)
 			.add(ModBlocks.door_autumn.get().asItem());
-		
+	    this.tag(ItemTags.WOODEN_DOORS)
+       		.add(ModBlocks.door_autumn.get().asItem());
+
         this.tag(Tags.Items.FENCES_WOODEN).add(ModBlocks.fence_autumn.get().asItem());
         this.tag(Tags.Items.FENCES).add(ModBlocks.fence_autumn.get().asItem());
 

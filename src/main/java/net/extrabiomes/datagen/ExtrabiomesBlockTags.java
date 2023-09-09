@@ -64,7 +64,8 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         this.tag(BlockTags.DOORS)
     		.add(ModBlocks.door_autumn.get());
     
-
+        this.tag(BlockTags.WOODEN_DOORS)
+        	.add(ModBlocks.door_autumn.get());
 	} // end registerPlankBlockTags
    
 	// also too many gate tags.

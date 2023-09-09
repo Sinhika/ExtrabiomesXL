@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_logs": {
+    "has_item": {
       "conditions": {
         "items": [
           {
-            "tag": "extrabiomes:autumn_logs"
+            "items": [
+              "extrabiomes:planks_autumn_wood"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extrabiomes:planks_autumn_wood"
+        "recipe": "extrabiomes:gate_autumn"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_logs",
+      "has_item",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extrabiomes:planks_autumn_wood"
+      "extrabiomes:gate_autumn"
     ]
   },
   "sends_telemetry_event": false

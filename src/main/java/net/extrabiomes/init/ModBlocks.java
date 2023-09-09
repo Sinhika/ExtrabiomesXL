@@ -100,7 +100,7 @@ public final class ModBlocks
 	    */
 	   private static DoorBlock doors(MapColor color, BlockSetType blockSetType)
 	   {
-		   return new DoorBlock(BlockBehaviour.Properties.of().mapColor(color)
+		   return new DoorBlock(BlockBehaviour.Properties.of().mapColor(color).instrument(NoteBlockInstrument.BASS)
 					.strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY),
 					blockSetType);
 	   }
