@@ -9,10 +9,14 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 	protected void generate() 
 	{
 		// leaves
-		this.createLeavesDrops(ModBlocks.leaves_citrine.get(), ModBlocks.sapling_citrine.get(), NORMAL_LEAVES_SAPLING_CHANCES);
-		this.createLeavesDrops(ModBlocks.leaves_goldenrod.get(), ModBlocks.sapling_goldenrod.get(), NORMAL_LEAVES_SAPLING_CHANCES);
-		this.createLeavesDrops(ModBlocks.leaves_umber.get(), ModBlocks.sapling_umber.get(), NORMAL_LEAVES_SAPLING_CHANCES);
-		this.createLeavesDrops(ModBlocks.leaves_vermillion.get(), ModBlocks.sapling_vermillion.get(), NORMAL_LEAVES_SAPLING_CHANCES);
+		this.add(ModBlocks.leaves_citrine.get(), createLeavesDrops(ModBlocks.leaves_citrine.get(), 
+				ModBlocks.sapling_citrine.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_goldenrod.get(), createLeavesDrops(ModBlocks.leaves_goldenrod.get(), 
+				ModBlocks.sapling_goldenrod.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_umber.get(), createLeavesDrops(ModBlocks.leaves_umber.get(), ModBlocks.sapling_umber.get(), 
+				NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_vermillion.get(), createLeavesDrops(ModBlocks.leaves_vermillion.get(), 
+				ModBlocks.sapling_vermillion.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		
 		// saplings
 		this.dropSelf(ModBlocks.sapling_citrine.get());
