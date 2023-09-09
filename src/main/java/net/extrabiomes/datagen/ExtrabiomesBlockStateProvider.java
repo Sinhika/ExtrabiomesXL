@@ -1,6 +1,8 @@
 package net.extrabiomes.datagen;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -12,6 +14,7 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -33,6 +36,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	{
         registerTreeBlocks();
         registerCropBlocks();
+        registerDoorStatesAndModels();
         registerMisc();
 	}
 
@@ -135,6 +139,23 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	}
     } // end registerCropBlocks
 
+    
+    private void registerDoorStatesAndModels()
+    {
+    	List<RegistryObject<DoorBlock>> doorlist = new ArrayList<RegistryObject<DoorBlock>>();
+    	doorlist.add(ModBlocks.door_autumn);
+    	
+    	for(RegistryObject<DoorBlock> val: doorlist)
+    	{
+    		String name = getRegistryNameFromHolder(val);
+    		doorBlockWithRenderType(val.get(), modLoc("block/" + name + "_lower"), 
+                modLoc("block/" + name + "_upper"), "cutout");
+   	       	this.itemModels().basicItem(val.get().asItem());
+
+    	} // end-for doorlist
+    	
+    } // end registerDoorStatesAndModels()
+    
     
     // =================== UTILITY FUNCTIONS ================= //
     

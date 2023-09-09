@@ -67,6 +67,10 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         	.unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
         	.save(consumer);
         
+        // doors
+        setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModBlocks.planks_autumn_wood.get()), "autumn", 
+    			has(ModBlocks.planks_autumn_wood.get()), fabrica);
+        
 	} // end registerWoodRecipes()
 	
 	

@@ -56,6 +56,10 @@ public class ExtrabiomesItemTags extends MiningItemTags
 	
 		this.tag(ItemTags.SLABS)
 			.add(ModBlocks.slab_autumn.get().asItem());
+		
+		this.tag(ItemTags.DOORS)
+			.add(ModBlocks.door_autumn.get().asItem());
+		
     } // end registerWoodPlankItems()
     
     protected void registerLogTags()

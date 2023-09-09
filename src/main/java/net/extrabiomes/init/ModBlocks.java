@@ -8,6 +8,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -17,7 +20,9 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
@@ -66,8 +71,48 @@ public final class ModBlocks
 	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
 	                     
+	   // fences
+	   public static final RegistryObject<FenceBlock> fence_autumn = BLOCKS.register("fence_autumn", 
+	            () -> fences(ModBlocks.planks_autumn_wood));
 	   
+	   // doors
+	   public static RegistryObject<DoorBlock> door_autumn = BLOCKS.register("door_autumn",
+			   () -> doors(ModBlocks.planks_autumn_wood.get().defaultMapColor(), BlockSetType.OAK));
+	   
+	   // fence gates
+	   public static final RegistryObject<FenceGateBlock> gate_autumn = BLOCKS.register("gate_autumn",
+			   () -> gates(ModBlocks.planks_autumn_wood.get().defaultMapColor(), WoodType.OAK));
+	   
+	   	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
+	   
+	   /**
+	    * make new fence gates
+	    */
+	   public static FenceGateBlock gates(MapColor color, WoodType woodType)
+	   {
+		   return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(color).strength(2.0F, 3.0F)
+				   .sound(SoundType.WOOD),woodType);
+	   }
+	   
+	   /**
+	    * make new doors
+	    */
+	   public static DoorBlock doors(MapColor color, BlockSetType blockSetType)
+	   {
+		   return new DoorBlock(BlockBehaviour.Properties.of().mapColor(color)
+					.strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY),
+					blockSetType);
+	   }
+	   
+	   /**
+	    * make new fences
+	    */
+	   public static FenceBlock fences(RegistryObject<Block> wood_planks)
+	   {
+		   return new FenceBlock(BlockBehaviour.Properties.of().mapColor(wood_planks.get().defaultMapColor())
+                   .strength(2.0F, 3.0F).sound(SoundType.WOOD));
+	   }
 	   
 	   /**
 	    * make new stairs

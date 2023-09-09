@@ -34,6 +34,10 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		
 		// slabs
 		this.dropSlab(ModBlocks.slab_autumn.get());
+		
+		// doors
+		this.doorDropTable(ModBlocks.door_autumn.get());
+		
 	} // end generate()
 
 } // end class
