@@ -14,10 +14,12 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -37,10 +39,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	protected void registerStatesAndModels() 
 	{
         registerTreeBlocks();
+        registerSaplings();
         registerCropBlocks();
         registerDoorStatesAndModels();
         registerFenceLikeStatesAndModels();
-        registerMisc();
+        registerPressurePlatesAndButtons();
 	}
 
     // tree blocks
@@ -118,12 +121,37 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	
     } // end registerTreeBlocks
     
-    private void registerMisc()
+    private void registerPressurePlatesAndButtons()
     {
-    }
+    	HashMap<RegistryObject<PressurePlateBlock>, ResourceLocation> plate2model = 
+    			new HashMap<RegistryObject<PressurePlateBlock>, ResourceLocation> ();
+    	plate2model.put(ModBlocks.pressureplate_autumn, modLoc("block/planksautumn"));
+    	
+    	HashMap<RegistryObject<ButtonBlock>, ResourceLocation> button2model = 
+    			new HashMap<RegistryObject<ButtonBlock>, ResourceLocation> ();
+    	button2model.put(ModBlocks.button_autumn, modLoc("block/planksautumn"));
 
-    // crop blocks
-    private void registerCropBlocks()
+    	
+        // pressure_plate
+     	for (Map.Entry<RegistryObject<PressurePlateBlock>, ResourceLocation> entry: plate2model.entrySet())
+       	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+     		this.pressurePlateBlock(entry.getKey().get(), entry.getValue());
+     		this.itemModels().withExistingParent(name, modLoc("block/" + name));
+       	}
+     	
+        // buttons
+    	for (Map.Entry<RegistryObject<ButtonBlock>, ResourceLocation> entry: button2model.entrySet())
+       	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+	        this.buttonBlock(entry.getKey().get(), entry.getValue());
+	        this.models().buttonInventory(name + "_inventory", entry.getValue());
+	        this.itemModels().withExistingParent(name, modLoc("block/" + name +"_inventory"));
+       	}
+    } // end registerMisc()
+
+    // saplings
+    private void registerSaplings()
     {
     	HashMap<RegistryObject<SaplingBlock>, ResourceLocation> sapling2model = 
     			new HashMap<RegistryObject<SaplingBlock>, ResourceLocation>();
@@ -140,6 +168,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         	this.simpleBlock(entry.getKey().get(), sapling);
         	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
+    } // end registerSaplings()
+    
+    // crop blocks
+    private void registerCropBlocks()
+    {
     } // end registerCropBlocks
 
     

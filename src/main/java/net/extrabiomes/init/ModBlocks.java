@@ -8,10 +8,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -83,8 +85,35 @@ public final class ModBlocks
 	   public static final RegistryObject<FenceGateBlock> gate_autumn = BLOCKS.register("gate_autumn",
 			   () -> gates(ModBlocks.planks_autumn_wood.get().defaultMapColor(), WoodType.OAK));
 	   
+	   // buttons
+	   public static final RegistryObject<ButtonBlock> button_autumn =  BLOCKS.register("button_autumn",
+			   () -> buttons(BlockSetType.OAK, 30, true));
 	   	   
+	   // pressure plates
+	   public static final RegistryObject<PressurePlateBlock> pressureplate_autumn = BLOCKS.register("pressureplate_autumn",
+			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_autumn_wood.get().defaultMapColor(),
+					   		BlockSetType.OAK));
+	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
+	   
+	   /**
+	    * make pressure plates, wooden or otherwise
+	    */
+	   private static PressurePlateBlock pplates(PressurePlateBlock.Sensitivity pSensitivity, MapColor pColor, BlockSetType pBS)
+	   {
+		   return new PressurePlateBlock(pSensitivity, BlockBehaviour.Properties.of().mapColor(pColor).forceSolidOn()
+				   .instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).ignitedByLava()
+				   .pushReaction(PushReaction.DESTROY), pBS);
+	   }
+	   
+	   /**
+	    * make buttons, wooden or otherwise
+	    */
+	   private static ButtonBlock buttons(BlockSetType bSet, int pTicks, boolean pArrowCanPress)
+	   {
+		   return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F)
+           		.pushReaction(PushReaction.DESTROY), bSet, pTicks, pArrowCanPress);
+	   }
 	   
 	   /**
 	    * make new fence gates
@@ -92,7 +121,7 @@ public final class ModBlocks
 	   private static FenceGateBlock gates(MapColor color, WoodType woodType)
 	   {
 		   return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(color).strength(2.0F, 3.0F)
-				   .sound(SoundType.WOOD),woodType);
+				   .sound(SoundType.WOOD), woodType);
 	   }
 	   
 	   /**

@@ -220,6 +220,10 @@
     "block.extrabiomes.gate_redwood": "Redwood Fence Gate",
     "block.extrabiomes.gate_sakura": "Sakura Fence Gate",
 
+	"block.extrabiomes.button_autumn": "Autumn Wood Button",
+	
+	"block.extrabiomes.pressureplate_autumn": "Autumn Wood Pressure Plate",
+	
     "extrabiomes.elbow.crafting": "Can be crafted to/from normal logs and back via a 2x2 \"L\" in a crafting table.",
     "extrabiomes.cornerlog.crafting": "Can be crafted to/from normal logs and back via a 2x2 square in a crafting table."
 }

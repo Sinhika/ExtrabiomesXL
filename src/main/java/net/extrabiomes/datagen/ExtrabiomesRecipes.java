@@ -77,6 +77,14 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	        .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
 	        .save(consumer);
         
+        // buttons
+        buttonBuilder(ModBlocks.button_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+	        .save(consumer);
+        	
+        // pressure plates
+        pressurePlate(consumer, ModBlocks.pressureplate_autumn.get(),ModBlocks.planks_autumn_wood.get());
+        
 	} // end registerWoodRecipes()
 	
 	

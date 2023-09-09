@@ -43,6 +43,13 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		
 		// fence gates
 		this.dropSelf(ModBlocks.gate_autumn.get());
+		
+		// buttons
+		this.dropSelf(ModBlocks.button_autumn.get());
+		
+		// pressure plates
+		this.dropSelf(ModBlocks.pressureplate_autumn.get());
+		
 	} // end generate()
 
 } // end class

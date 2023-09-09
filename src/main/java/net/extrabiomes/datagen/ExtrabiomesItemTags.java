@@ -62,11 +62,24 @@ public class ExtrabiomesItemTags extends MiningItemTags
 	    this.tag(ItemTags.WOODEN_DOORS)
        		.add(ModBlocks.door_autumn.get().asItem());
 
-        this.tag(Tags.Items.FENCES_WOODEN).add(ModBlocks.fence_autumn.get().asItem());
-        this.tag(Tags.Items.FENCES).add(ModBlocks.fence_autumn.get().asItem());
+        this.tag(Tags.Items.FENCES_WOODEN)
+        	.add(ModBlocks.fence_autumn.get().asItem());
+        this.tag(Tags.Items.FENCES)
+        	.add(ModBlocks.fence_autumn.get().asItem());
 
-        this.tag(Tags.Items.FENCE_GATES_WOODEN).add(ModBlocks.gate_autumn.get().asItem());
-        this.tag(Tags.Items.FENCE_GATES).add(ModBlocks.gate_autumn.get().asItem());
+        this.tag(Tags.Items.FENCE_GATES_WOODEN)
+        	.add(ModBlocks.gate_autumn.get().asItem());
+        this.tag(Tags.Items.FENCE_GATES)
+        	.add(ModBlocks.gate_autumn.get().asItem());
+
+        this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
+    		.add(ModBlocks.pressureplate_autumn.get().asItem());
+    
+        this.tag(ItemTags.WOODEN_BUTTONS)
+    		.add(ModBlocks.button_autumn.get().asItem());
+    
+        this.tag(ItemTags.BUTTONS)
+    		.add(ModBlocks.button_autumn.get().asItem());
 
     } // end registerWoodPlankItems()
     
