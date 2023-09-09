@@ -9,6 +9,7 @@ import net.extrabiomes.config.ExtrabiomesConfig;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -47,11 +48,25 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	private void registerWoodRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		TagKey<Item> autumn_logs = TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs");
-		ICondition fabrica = flag("fabrica_enabled");
+//		ICondition fabrica = flag("fabrica_enabled");
+		ICondition fabrica = null;
 		
 		// TESTING: null should be fabrica.
+	    // log -> planks
 		setbuilder.buildWood2PlankRecipes(consumer, Ingredient.of(autumn_logs), ModBlocks.planks_autumn_wood.get(), 4, 
-				has(autumn_logs), null);
+				has(autumn_logs), fabrica);
+		
+        // stairs
+        stairBuilder(ModBlocks.stairs_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+            .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+            .save(consumer);
+
+        // slabs
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_autumn.get(),  
+        		Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+        	.unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+        	.save(consumer);
+        
 	} // end registerWoodRecipes()
 	
 	

@@ -2,6 +2,8 @@ package net.extrabiomes.datagen;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
 import net.extrabiomes.ExtrabiomesXS;
@@ -12,6 +14,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -32,11 +36,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         registerMisc();
 	}
 
-	private String getRegistryNameFromHolder(RegistryObject<? extends Block> blockRef)
-	{
-		return blockRef.getId().getPath();
-	}
-	
     // tree blocks
     private void registerTreeBlocks()
     {
@@ -54,6 +53,14 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
     	planks2model.put(ModBlocks.planks_autumn_wood, modLoc("block/planksautumn"));
+
+    	HashMap<RegistryObject<StairBlock>, ResourceLocation> stairs2model
+			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
+    	stairs2model.put(ModBlocks.stairs_autumn,  modLoc("block/planksautumn"));
+
+    	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
+    		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
+    	slab2model.put(ModBlocks.slab_autumn, modLoc("block/planksautumn"));
     	
     	// leaves
     	for (Map.Entry<RegistryObject<LeavesBlock>, ResourceLocation> entry: leaves2model.entrySet())
@@ -76,22 +83,38 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
 
-        // autumn planks
+        // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
 	        ModelFile planks = this.models().cubeAll(name, entry.getValue());
 	        this.simpleBlock(entry.getKey().get(), planks);
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
-    	}
+    	} // end-for planks
        	
+       	// stairs
+       	for (Map.Entry<RegistryObject<StairBlock>, ResourceLocation> entry: stairs2model.entrySet())
+       	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+       		this.stairsBlock(entry.getKey().get(), entry.getValue());
+       		this.itemModels().withExistingParent(name, modLoc("block/" + name));
+       	} // end-for stairs
+       	
+       	// slabs
+       	for (Map.Entry<RegistryObject<SlabBlock>, ResourceLocation> entry: slab2model.entrySet())
+       	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		String plankname = GetNameKeyByValue(planks2model, entry.getValue());
+    		this.slabBlock(entry.getKey().get(), modLoc("block/" + plankname), entry.getValue());  
+       		this.itemModels().withExistingParent(name, modLoc("block/" + name));
+       	} // end-for slabs
        	
     } // end registerTreeBlocks
     
     private void registerMisc()
     {
     }
-    
+
     // crop blocks
     private void registerCropBlocks()
     {
@@ -111,5 +134,32 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
     } // end registerCropBlocks
+
     
+    // =================== UTILITY FUNCTIONS ================= //
+    
+	private static String getRegistryNameFromHolder(RegistryObject<? extends Block> blockRef)
+	{
+		return blockRef.getId().getPath();
+	}
+	
+
+    /**
+     * reverse lookup on one of the many, many maps of <RegistryObject, ResourceLocation> that we use.
+     * @param map A RegistryObject<Block> map.
+     * @param val The ResourceLocation of the texture that we want to find the attached block name for.
+     * @return string of block name.
+     */
+    public static String GetNameKeyByValue(HashMap<RegistryObject<Block>, ResourceLocation> map, ResourceLocation val)
+    {
+    	Set<RegistryObject<Block>> resultSet = map.entrySet().stream()
+    			.filter(entry -> entry.getValue().equals(val))
+    			.map(Map.Entry::getKey)
+    			.collect(Collectors.toSet());
+    	@SuppressWarnings("unchecked")
+		RegistryObject<Block> ro = (RegistryObject<Block>) resultSet.toArray()[0];
+    	return getRegistryNameFromHolder(ro);
+    }
+    
+
 } // end class

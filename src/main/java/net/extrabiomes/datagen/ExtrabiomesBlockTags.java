@@ -42,7 +42,19 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 
 	protected void registerPlankBlockTags()
 	{
-	}
+		this.tag(BlockTags.WOODEN_STAIRS)
+			.add(ModBlocks.stairs_autumn.get());
+		
+		this.tag(BlockTags.STAIRS)
+			.add(ModBlocks.stairs_autumn.get());
+		  
+		this.tag(BlockTags.WOODEN_SLABS)
+			.add(ModBlocks.slab_autumn.get());
+		
+		this.tag(BlockTags.SLABS)
+			.add(ModBlocks.slab_autumn.get());
+
+	} // end registerPlankBlockTags
    
 	protected void registerLogTags()
 	{

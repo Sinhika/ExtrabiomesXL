@@ -11,6 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -44,7 +45,18 @@ public class ExtrabiomesItemTags extends MiningItemTags
    	
     private void registerWoodPlankItems()
     {
-    } 
+		this.tag(ItemTags.WOODEN_STAIRS)
+			.add(ModBlocks.stairs_autumn.get().asItem());
+		
+		this.tag(ItemTags.STAIRS)
+			.add(ModBlocks.stairs_autumn.get().asItem());
+	  
+		this.tag(ItemTags.WOODEN_SLABS)
+			.add(ModBlocks.slab_autumn.get().asItem());
+	
+		this.tag(ItemTags.SLABS)
+			.add(ModBlocks.slab_autumn.get().asItem());
+    } // end registerWoodPlankItems()
     
     protected void registerLogTags()
     {

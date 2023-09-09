@@ -11,7 +11,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,13 +57,42 @@ public final class ModBlocks
 	   public static final RegistryObject<SaplingBlock> sapling_citrine = BLOCKS.register("sapling_citrine", 
 			   () -> sapling(new AutumnTreeGrower(ModFeatures.CITRINE_AUTUMN_TREE, ModFeatures.FANCY_CITRINE_AUTUMN_TREE)));
 	   
-	   // Block initialization helper functions
+	   // aesthetic blocks
+	   // stairs
+	   public static final RegistryObject<StairBlock> stairs_autumn = BLOCKS.register("stairs_autumn", 
+			   () -> stairs(planks_autumn_wood));
+	   
+	   // slabs
+	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
+	                     
+	   
+	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
+	   
+	   /**
+	    * make new stairs
+	    */
+	   public static StairBlock stairs(RegistryObject<Block> wood_planks) 
+	   {
+		   return new StairBlock( () -> wood_planks.get().defaultBlockState(),  Block.Properties.copy(wood_planks.get()));
+	   }
+	   
+	   /**
+	    * make a new sapling.
+	    * @param pTreeGrower our TreeGrower function
+	    * @returns a new SaplingBlock object.
+	    */
 	   public static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)
 	   {
 		   return new SaplingBlock(pTreeGrower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
 				   .noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
 	   }
 	   
+	   /**
+	    * make a new leaf block.
+	    * @param pType - SoundType for walking on leaves. Usually GRASS.
+	    * @returns a new LeavesBlock object.
+	    */
 	   public static LeavesBlock leaves(SoundType pType) 
 	   {
 		      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks()
@@ -70,6 +101,12 @@ public final class ModBlocks
 		    		  .isRedstoneConductor((a,b,c)->{return false;}));
 	   }
 	
+	   /**
+	    * Make a new log block.
+	    * @param pTopMapColor - MapColor for top.
+	    * @param pSideMapColor - MapColor for side.
+	    * @returns a new CustomLogBlock object.
+	    */
 	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor) 
 	   {
 		   return new CustomLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
@@ -77,12 +114,25 @@ public final class ModBlocks
 		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
 	   }
 	
+	   /**
+	    * make new planks.
+	    * @param mColor - MapColor for planks block.
+	    * @returns new Block object configured as a wooden plank.
+	    */
 	   private static Block planks(MapColor mColor)
 	   {
 		   return new Block(BlockBehaviour.Properties.of().mapColor(mColor).instrument(NoteBlockInstrument.BASS)
 				   .strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava());
 	   }
   
+	   /**
+	    * A predicate function used by ModBlocks::leaves() that allows ocelots and parrots to spawn here.
+	    * @param p_50822_
+	    * @param p_50823_
+	    * @param p_50824_
+	    * @param p_50825_
+	    * @return true or false
+	    */
 	   private static Boolean ocelotOrParrot(BlockState p_50822_, BlockGetter p_50823_, BlockPos p_50824_, EntityType<?> p_50825_) 
 	   {
 		      return (boolean)(p_50825_ == EntityType.OCELOT || p_50825_ == EntityType.PARROT);
