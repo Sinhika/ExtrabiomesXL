@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 @EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = EventBusSubscriber.Bus.FORGE)
 public final class ForgeEventSubscriber 
 {
-    private static final Logger LOGGER = LogManager.getLogger(ExtrabiomesXS.MODID + " Forge Event Subscriber");
+    @SuppressWarnings("unused")
+	private static final Logger LOGGER = LogManager.getLogger(ExtrabiomesXS.MODID + " Forge Event Subscriber");
 
 } // end class ForgeEventSubscriber 

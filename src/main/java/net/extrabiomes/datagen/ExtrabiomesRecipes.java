@@ -3,6 +3,7 @@ package net.extrabiomes.datagen;
 import java.util.function.Consumer;
 
 import mod.alexndr.simplecorelib.api.datagen.ISimpleConditionBuilder;
+import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.config.ExtrabiomesConfig;
@@ -19,12 +20,13 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuilder, ISimpleConditionBuilder 
 {
-	private XBrecipeSetBuilder setbuilder;
+    @SuppressWarnings("unused")
+	private RecipeSetBuilder setbuilder;
 
-	public ExtrabiomesRecipes(PackOutput pOutput) 
+    public ExtrabiomesRecipes(PackOutput pOutput) 
 	{
 		super(pOutput);
-		setbuilder = new XBrecipeSetBuilder(ExtrabiomesXS.MODID);
+        setbuilder = new RecipeSetBuilder(ExtrabiomesXS.MODID);
 	}
 
 	@Override
@@ -48,13 +50,9 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	private void registerWoodRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		TagKey<Item> autumn_logs = TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs");
-//		ICondition fabrica = flag("fabrica_enabled");
-		ICondition fabrica = null;
 		
-		// TESTING: null should be fabrica.
 	    // log -> planks
-		setbuilder.buildWood2PlankRecipes(consumer, Ingredient.of(autumn_logs), ModBlocks.planks_autumn_wood.get(), 4, 
-				has(autumn_logs), fabrica);
+		planksFromLogs(consumer, ModBlocks.planks_autumn_wood.get(), autumn_logs, 4);
 		
         // stairs
         stairBuilder(ModBlocks.stairs_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
@@ -62,14 +60,22 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
             .save(consumer);
 
         // slabs
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_autumn.get(),  
-        		Ingredient.of(ModBlocks.planks_autumn_wood.get()))
-        	.unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
-        	.save(consumer);
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_autumn.get(), ModBlocks.planks_autumn_wood.get());
         
         // doors
-        setbuilder.buildSimpleAestheticBlocks(consumer, Ingredient.of(ModBlocks.planks_autumn_wood.get()), "autumn", 
-    			has(ModBlocks.planks_autumn_wood.get()), fabrica);
+        doorBuilder(ModBlocks.door_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+            .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+            .save(consumer);
+
+        // fences
+        fenceBuilder(ModBlocks.fence_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+	        .save(consumer);
+
+        // fence gates
+        fenceGateBuilder(ModBlocks.gate_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))
+	        .save(consumer);
         
 	} // end registerWoodRecipes()
 	

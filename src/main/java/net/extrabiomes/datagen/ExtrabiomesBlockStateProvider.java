@@ -15,6 +15,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -37,6 +39,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         registerTreeBlocks();
         registerCropBlocks();
         registerDoorStatesAndModels();
+        registerFenceLikeStatesAndModels();
         registerMisc();
 	}
 
@@ -156,6 +159,35 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	
     } // end registerDoorStatesAndModels()
     
+    
+    private void registerFenceLikeStatesAndModels()
+    {
+    	HashMap<RegistryObject<FenceBlock>, ResourceLocation> fence2model = 
+    			new HashMap<RegistryObject<FenceBlock>, ResourceLocation>();
+    	fence2model.put(ModBlocks.fence_autumn, modLoc("block/planksautumn"));
+    	
+    	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
+    			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
+    	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
+
+    	// fences
+       	for (Map.Entry<RegistryObject<FenceBlock>, ResourceLocation> entry: fence2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.fenceBlock(entry.getKey().get(), entry.getValue());
+    		this.models().fenceInventory(name + "_inventory", entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
+    	} // end-foreach fence
+        
+       	// gates
+       	for (Map.Entry<RegistryObject<FenceGateBlock>, ResourceLocation> entry: gate2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.fenceGateBlock(entry.getKey().get(), entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name));
+    	} // end-foreach gate
+
+    } // end registerFenceLikeStatesAndModels()
     
     // =================== UTILITY FUNCTIONS ================= //
     

@@ -71,13 +71,13 @@ public final class ModBlocks
 	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
 	                     
-	   // fences
-	   public static final RegistryObject<FenceBlock> fence_autumn = BLOCKS.register("fence_autumn", 
-	            () -> fences(ModBlocks.planks_autumn_wood));
-	   
 	   // doors
 	   public static RegistryObject<DoorBlock> door_autumn = BLOCKS.register("door_autumn",
 			   () -> doors(ModBlocks.planks_autumn_wood.get().defaultMapColor(), BlockSetType.OAK));
+	   
+	   // fences
+	   public static final RegistryObject<FenceBlock> fence_autumn = BLOCKS.register("fence_autumn", 
+	            () -> fences(ModBlocks.planks_autumn_wood));
 	   
 	   // fence gates
 	   public static final RegistryObject<FenceGateBlock> gate_autumn = BLOCKS.register("gate_autumn",
@@ -89,7 +89,7 @@ public final class ModBlocks
 	   /**
 	    * make new fence gates
 	    */
-	   public static FenceGateBlock gates(MapColor color, WoodType woodType)
+	   private static FenceGateBlock gates(MapColor color, WoodType woodType)
 	   {
 		   return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(color).strength(2.0F, 3.0F)
 				   .sound(SoundType.WOOD),woodType);
@@ -98,7 +98,7 @@ public final class ModBlocks
 	   /**
 	    * make new doors
 	    */
-	   public static DoorBlock doors(MapColor color, BlockSetType blockSetType)
+	   private static DoorBlock doors(MapColor color, BlockSetType blockSetType)
 	   {
 		   return new DoorBlock(BlockBehaviour.Properties.of().mapColor(color)
 					.strength(3.0F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY),
@@ -108,7 +108,7 @@ public final class ModBlocks
 	   /**
 	    * make new fences
 	    */
-	   public static FenceBlock fences(RegistryObject<Block> wood_planks)
+	   private static FenceBlock fences(RegistryObject<Block> wood_planks)
 	   {
 		   return new FenceBlock(BlockBehaviour.Properties.of().mapColor(wood_planks.get().defaultMapColor())
                    .strength(2.0F, 3.0F).sound(SoundType.WOOD));
@@ -117,7 +117,7 @@ public final class ModBlocks
 	   /**
 	    * make new stairs
 	    */
-	   public static StairBlock stairs(RegistryObject<Block> wood_planks) 
+	   private static StairBlock stairs(RegistryObject<Block> wood_planks) 
 	   {
 		   return new StairBlock( () -> wood_planks.get().defaultBlockState(),  Block.Properties.copy(wood_planks.get()));
 	   }
@@ -127,7 +127,7 @@ public final class ModBlocks
 	    * @param pTreeGrower our TreeGrower function
 	    * @returns a new SaplingBlock object.
 	    */
-	   public static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)
+	   private static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)
 	   {
 		   return new SaplingBlock(pTreeGrower, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
 				   .noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY));
@@ -138,7 +138,7 @@ public final class ModBlocks
 	    * @param pType - SoundType for walking on leaves. Usually GRASS.
 	    * @returns a new LeavesBlock object.
 	    */
-	   public static LeavesBlock leaves(SoundType pType) 
+	   private static LeavesBlock leaves(SoundType pType) 
 	   {
 		      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks()
 		    		  .sound(pType).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot).isSuffocating((a,b,c)->{return false;})

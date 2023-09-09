@@ -9,6 +9,9 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ExtrabiomesBlockTags extends MiningBlockTags 
@@ -21,7 +24,8 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 
 	
 	@Override
-	protected void addTags(Provider pProvider) {
+	protected void addTags(Provider pProvider) 
+	{
 		super.addTags(pProvider);
 		registerPlankBlockTags();
 		registerLogTags();
@@ -54,8 +58,32 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.tag(BlockTags.SLABS)
 			.add(ModBlocks.slab_autumn.get());
 
+		this.addFencetoAllFenceTags(ModBlocks.fence_autumn.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
+		
+        this.tag(BlockTags.DOORS)
+    		.add(ModBlocks.door_autumn.get());
+    
+
 	} // end registerPlankBlockTags
    
+	// also too many gate tags.
+	protected void addGatetoAllGateTags(FenceGateBlock fg)
+	{
+		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(fg);
+		this.tag(Tags.Blocks.FENCE_GATES).add(fg);
+		this.tag(BlockTags.FENCE_GATES).add(fg);
+	}
+	
+	// because there are too many fence tags!!
+	protected void addFencetoAllFenceTags(FenceBlock ff)
+	{
+	      this.tag(Tags.Blocks.FENCES_WOODEN).add(ff);
+	      this.tag(BlockTags.WOODEN_FENCES).add(ff);
+	      this.tag(Tags.Blocks.FENCES).add(ff);
+	      this.tag(BlockTags.FENCES).add(ff);
+	}
+	
 	protected void registerLogTags()
 	{
 		// TODO add stripped wood, bark when available.
@@ -67,9 +95,6 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		
         this.tag(BlockTags.PLANKS)
         	.add(ModBlocks.planks_autumn_wood.get());
-        
-        this.tag(BlockTags.DOORS)
-        	.add(ModBlocks.door_autumn.get());
         
 	} // end registerLogTags()
    
