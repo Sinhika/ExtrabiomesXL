@@ -32,5 +32,7 @@ public class ModFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_CITRINE_AUTUMN_TREE = 
     		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "fancy_citrine_autumn_tree"));
   
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JAPANESE_MAPLE_TREE =
+    		ResourceKey.create(Registries.CONFIGURED_FEATURE,new ResourceLocation(ExtrabiomesXS.MODID, "japanese_maple"));
     	
 } // end class

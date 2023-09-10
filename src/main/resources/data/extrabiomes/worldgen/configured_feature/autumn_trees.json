@@ -4,32 +4,44 @@
     "default": "extrabiomes:umber_autumn_checked",
     "features": [
       {
-        "chance": 0.18,
+        "chance": 0.90,
         "feature": "extrabiomes:fancy_umber_autumn_checked"
       },
       {
-        "chance": 0.07,
+        "chance": 0.10,
         "feature": "extrabiomes:goldenrod_autumn_checked"
       },
       {
-        "chance": 0.18,
+        "chance": 0.90,
         "feature": "extrabiomes:fancy_goldenrod_autumn_checked"
       },
       {
-        "chance": 0.07,
+        "chance": 0.10,
         "feature": "extrabiomes:vermillion_autumn_checked"
       },
       {
-        "chance": 0.18,
+        "chance": 0.90,
         "feature": "extrabiomes:fancy_vermillion_autumn_checked"
       },
       {
-        "chance": 0.07,
+        "chance": 0.10,
         "feature": "extrabiomes:citrine_autumn_checked"
       },
       {
-        "chance": 0.18,
+        "chance": 0.90,
         "feature": "extrabiomes:fancy_citrine_autumn_checked"
+      },
+      {
+      	"chance" : 0.90,
+      	"feature" : "minecraft:oak_checked" 
+      },
+      {
+      	"chance" : 0.10,
+      	"feature" : "minecraft:fancy_oak_checked"
+      },
+      {
+      	"chance" :  0.30,
+      	"feature" : "extrabiomes:japanese_maple_checked"
       }
     ]
   }
