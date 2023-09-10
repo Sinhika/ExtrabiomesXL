@@ -44,48 +44,45 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		// TODO Auto-generated method stub
 	}
 
+	/**
+	 * note that we only need to add blocks to the most specific tag, such as BlockTags.WOODEN_STAIRS,
+	 * because BlockTags.STAIRS automatically includes all WOODEN_STAIRS. Same for everthing WOODEN_*.
+	 */
 	protected void registerPlankBlockTags()
 	{
-		this.tag(BlockTags.WOODEN_STAIRS)
-			.add(ModBlocks.stairs_autumn.get());
-		
-		this.tag(BlockTags.STAIRS)
-			.add(ModBlocks.stairs_autumn.get());
-		  
-		this.tag(BlockTags.WOODEN_SLABS)
-			.add(ModBlocks.slab_autumn.get());
-		
-		this.tag(BlockTags.SLABS)
-			.add(ModBlocks.slab_autumn.get());
 
+		this.tag(BlockTags.WOODEN_STAIRS)
+			.add(ModBlocks.stairs_japanesemaple.get())
+			.add(ModBlocks.stairs_autumn.get());
+		
+		this.tag(BlockTags.WOODEN_SLABS)
+			.add(ModBlocks.slab_japanese_maple.get())
+			.add(ModBlocks.slab_autumn.get());
+		
 		this.addFencetoAllFenceTags(ModBlocks.fence_autumn.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_japanesemaple.get());
+		
+		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
 		
-        this.tag(BlockTags.DOORS)
-    		.add(ModBlocks.door_autumn.get());
-    
         this.tag(BlockTags.WOODEN_DOORS)
+        	.add(ModBlocks.door_japanesemaple.get())
         	.add(ModBlocks.door_autumn.get());
         
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
+        	.add(ModBlocks.pressureplate_japanesemaple.get())
         	.add(ModBlocks.pressureplate_autumn.get());
         
-        this.tag(BlockTags.PRESSURE_PLATES)
-        	.add(ModBlocks.pressureplate_autumn.get());
-
         this.tag(BlockTags.WOODEN_BUTTONS)
+        	.add(ModBlocks.button_japanesemaple.get())
         	.add(ModBlocks.button_autumn.get());
         
-        this.tag(BlockTags.BUTTONS)
-        	.add(ModBlocks.button_autumn.get());
-
 	} // end registerPlankBlockTags
    
 	// also too many gate tags.
 	protected void addGatetoAllGateTags(FenceGateBlock fg)
 	{
 		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(fg);
-		this.tag(Tags.Blocks.FENCE_GATES).add(fg);
 		this.tag(BlockTags.FENCE_GATES).add(fg);
 	}
 	
@@ -93,8 +90,6 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	protected void addFencetoAllFenceTags(FenceBlock ff)
 	{
 	      this.tag(Tags.Blocks.FENCES_WOODEN).add(ff);
-	      this.tag(BlockTags.WOODEN_FENCES).add(ff);
-	      this.tag(Tags.Blocks.FENCES).add(ff);
 	      this.tag(BlockTags.FENCES).add(ff);
 	}
 	
@@ -103,11 +98,15 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get());
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
+			.add(ModBlocks.log_japanese_maple.get());
 		
 		this.tag(BlockTags.LOGS)
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));
 		
         this.tag(BlockTags.PLANKS)
+        	.add(ModBlocks.planks_japanese_maple.get())
         	.add(ModBlocks.planks_autumn_wood.get());
         
 	} // end registerLogTags()
@@ -115,12 +114,14 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	protected void registerLeafSaplingTags()
 	{
 		this.tag(BlockTags.LEAVES)
+			.add(ModBlocks.leaves_japanese_maple.get())
 			.add(ModBlocks.leaves_citrine.get())
 			.add(ModBlocks.leaves_goldenrod.get())
 			.add(ModBlocks.leaves_umber.get())
 			.add(ModBlocks.leaves_vermillion.get());
 	      
         this.tag(BlockTags.SAPLINGS)
+        	.add(ModBlocks.sapling_japanese_maple.get())
 	    	.add(ModBlocks.sapling_citrine.get())
 	    	.add(ModBlocks.sapling_goldenrod.get())
 	    	.add(ModBlocks.sapling_umber.get())

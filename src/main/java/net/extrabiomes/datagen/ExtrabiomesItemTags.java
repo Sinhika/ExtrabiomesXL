@@ -10,7 +10,6 @@ import net.extrabiomes.init.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
@@ -46,52 +45,46 @@ public class ExtrabiomesItemTags extends MiningItemTags
     private void registerWoodPlankItems()
     {
 		this.tag(ItemTags.WOODEN_STAIRS)
+			.add(ModBlocks.stairs_japanesemaple.get().asItem())
 			.add(ModBlocks.stairs_autumn.get().asItem());
 		
-		this.tag(ItemTags.STAIRS)
-			.add(ModBlocks.stairs_autumn.get().asItem());
-	  
 		this.tag(ItemTags.WOODEN_SLABS)
+			.add(ModBlocks.slab_japanese_maple.get().asItem())
 			.add(ModBlocks.slab_autumn.get().asItem());
 	
-		this.tag(ItemTags.SLABS)
-			.add(ModBlocks.slab_autumn.get().asItem());
-		
-		this.tag(ItemTags.DOORS)
-			.add(ModBlocks.door_autumn.get().asItem());
 	    this.tag(ItemTags.WOODEN_DOORS)
+	    	.add(ModBlocks.door_japanesemaple.get().asItem())
        		.add(ModBlocks.door_autumn.get().asItem());
 
         this.tag(Tags.Items.FENCES_WOODEN)
-        	.add(ModBlocks.fence_autumn.get().asItem());
-        this.tag(Tags.Items.FENCES)
+        	.add(ModBlocks.fence_japanesemaple.get().asItem())
         	.add(ModBlocks.fence_autumn.get().asItem());
 
         this.tag(Tags.Items.FENCE_GATES_WOODEN)
-        	.add(ModBlocks.gate_autumn.get().asItem());
-        this.tag(Tags.Items.FENCE_GATES)
+        	.add(ModBlocks.gate_japanesemaple.get().asItem())
         	.add(ModBlocks.gate_autumn.get().asItem());
 
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
+        	.add(ModBlocks.pressureplate_japanesemaple.get().asItem())
     		.add(ModBlocks.pressureplate_autumn.get().asItem());
     
         this.tag(ItemTags.WOODEN_BUTTONS)
+        	.add(ModBlocks.button_japanesemaple.get().asItem())
     		.add(ModBlocks.button_autumn.get().asItem());
     
-        this.tag(ItemTags.BUTTONS)
-    		.add(ModBlocks.button_autumn.get().asItem());
-
     } // end registerWoodPlankItems()
     
     protected void registerLogTags()
     {
         this.tag(ItemTags.LEAVES)
+        	.add(ModBlocks.leaves_japanese_maple.get().asItem())
 			.add(ModBlocks.leaves_citrine.get().asItem())
 			.add(ModBlocks.leaves_goldenrod.get().asItem())
 			.add(ModBlocks.leaves_umber.get().asItem())
 			.add(ModBlocks.leaves_vermillion.get().asItem());
         
         this.tag(ItemTags.SAPLINGS)
+        	.add(ModBlocks.sapling_japanese_maple.get().asItem())
 	    	.add(ModBlocks.sapling_citrine.get().asItem())
 	    	.add(ModBlocks.sapling_goldenrod.get().asItem())
 	    	.add(ModBlocks.sapling_umber.get().asItem())
@@ -100,14 +93,19 @@ public class ExtrabiomesItemTags extends MiningItemTags
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get().asItem());
+		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
+			.add(ModBlocks.log_japanese_maple.get().asItem());
 		
 		this.tag(ItemTags.LOGS)
+			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));
 		
         this.tag(ItemTags.LOGS_THAT_BURN)
+			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
         	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));	
         	
         this.tag(ItemTags.PLANKS)
+        	.add(ModBlocks.planks_japanese_maple.get().asItem())
         	.add(ModBlocks.planks_autumn_wood.get().asItem());
 
     } // end registerLogTags()

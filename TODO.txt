@@ -13,13 +13,20 @@ Trees
     sakura - short with a spreading canopy like japanese maple. 
     rainbow eucalyptus - much like bald cypress.
     
+Flowers
+	Allium - looks different from vanilla Allium
+	Daisy - looks different from vanilla Oxeye Daisy
+	Dandelion - in puffball stage, looks different from vanilla Dandelion.
+	Poppy - looks different from vanilla poppy.
+	Tulips - looks like 2 vanilla orange tulips. (don't bother using)
+	
 Original ExtrabiomesXL biomes:
 
     default     (big_oak_tree, oak_tree)
     alpine              (fir_tree, )
     autumnwoods         
         (autumn_tree_{brown,orange,purple,yellow}, big_autumn_tree_{brown,orange,purple,yellow},
-         oak_tree, big_oak_tree, japanese_maple)
+         oak_tree, big_oak_tree, japanese_maple; allium, red_rover)
     birchforest     
         (oak_tree, big_oak_tree, birch_tree, sakura_blossom)
     extremejungle   

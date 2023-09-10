@@ -55,22 +55,27 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	leaves2model.put(ModBlocks.leaves_goldenrod, modLoc("block/leavesorangeautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_vermillion, modLoc("block/leavesredautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_citrine, modLoc("block/leavesyellowautumnfancy"));
-
+    	leaves2model.put(ModBlocks.leaves_japanese_maple, modLoc("block/leavesjapanesemaplefancy"));
+    	
     	HashMap<RegistryObject<CustomLogBlock>, String> log2model
     		= new HashMap<RegistryObject<CustomLogBlock>, String>();
     	log2model.put(ModBlocks.log_autumn, "block/logautumn");
+    	log2model.put(ModBlocks.log_japanese_maple, "block/logjapanesemaple");
     	
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
     	planks2model.put(ModBlocks.planks_autumn_wood, modLoc("block/planksautumn"));
-
+    	planks2model.put(ModBlocks.planks_japanese_maple, modLoc("block/planksjapanesemaple"));
+    	
     	HashMap<RegistryObject<StairBlock>, ResourceLocation> stairs2model
 			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
     	stairs2model.put(ModBlocks.stairs_autumn,  modLoc("block/planksautumn"));
-
+    	stairs2model.put(ModBlocks.stairs_japanesemaple, modLoc("block/planksjapanesemaple"));
+    	
     	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
     		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
     	slab2model.put(ModBlocks.slab_autumn, modLoc("block/planksautumn"));
+    	slab2model.put(ModBlocks.slab_japanese_maple, modLoc("block/planksjapanesemaple"));
     	
     	// leaves
     	for (Map.Entry<RegistryObject<LeavesBlock>, ResourceLocation> entry: leaves2model.entrySet())
@@ -126,11 +131,12 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	HashMap<RegistryObject<PressurePlateBlock>, ResourceLocation> plate2model = 
     			new HashMap<RegistryObject<PressurePlateBlock>, ResourceLocation> ();
     	plate2model.put(ModBlocks.pressureplate_autumn, modLoc("block/planksautumn"));
+    	plate2model.put(ModBlocks.pressureplate_japanesemaple, modLoc("block/planksjapanesemaple"));
     	
     	HashMap<RegistryObject<ButtonBlock>, ResourceLocation> button2model = 
     			new HashMap<RegistryObject<ButtonBlock>, ResourceLocation> ();
     	button2model.put(ModBlocks.button_autumn, modLoc("block/planksautumn"));
-
+    	button2model.put(ModBlocks.button_japanesemaple, modLoc("block/planksjapanesemaple"));
     	
         // pressure_plate
      	for (Map.Entry<RegistryObject<PressurePlateBlock>, ResourceLocation> entry: plate2model.entrySet())
@@ -159,7 +165,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	sapling2model.put(ModBlocks.sapling_goldenrod, modLoc("block/saplingorangeautumn"));
     	sapling2model.put(ModBlocks.sapling_umber, modLoc("block/saplingbrownautumn"));
        	sapling2model.put(ModBlocks.sapling_vermillion, modLoc("block/saplingredautumn"));
-   	
+       	sapling2model.put(ModBlocks.sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
+       	
        	// saplings
     	for (Map.Entry<RegistryObject<SaplingBlock>, ResourceLocation> entry: sapling2model.entrySet())
     	{
@@ -180,6 +187,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     {
     	List<RegistryObject<DoorBlock>> doorlist = new ArrayList<RegistryObject<DoorBlock>>();
     	doorlist.add(ModBlocks.door_autumn);
+    	doorlist.add(ModBlocks.door_japanesemaple);
     	
     	for(RegistryObject<DoorBlock> val: doorlist)
     	{
@@ -198,11 +206,13 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	HashMap<RegistryObject<FenceBlock>, ResourceLocation> fence2model = 
     			new HashMap<RegistryObject<FenceBlock>, ResourceLocation>();
     	fence2model.put(ModBlocks.fence_autumn, modLoc("block/planksautumn"));
+    	fence2model.put(ModBlocks.fence_japanesemaple, modLoc("block/planksjapanesemaple"));
     	
     	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
     			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
     	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
-
+    	gate2model.put(ModBlocks.gate_japanesemaple, modLoc("block/planksjapanesemaple"));
+    	
     	// fences
        	for (Map.Entry<RegistryObject<FenceBlock>, ResourceLocation> entry: fence2model.entrySet())
     	{

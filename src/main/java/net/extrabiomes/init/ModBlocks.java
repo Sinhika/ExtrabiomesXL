@@ -3,6 +3,7 @@ package net.extrabiomes.init;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
+import net.extrabiomes.world.JapaneseMapleGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
@@ -37,24 +38,35 @@ public final class ModBlocks
 	            DeferredRegister.create(ForgeRegistries.BLOCKS, ExtrabiomesXS.MODID);
 
 
+	   // LEAVES
 	   // autumn tree leaf blocks
 	   public static final RegistryObject<LeavesBlock> leaves_umber = BLOCKS.register("leaves_umber", 
-	            () -> leaves(SoundType.GRASS));
+	            () -> leaves(MapColor.COLOR_BROWN, SoundType.GRASS));
 	   public static final RegistryObject<LeavesBlock> leaves_goldenrod = BLOCKS.register("leaves_goldenrod", 
-	            () -> leaves(SoundType.GRASS));
+	            () -> leaves(MapColor.COLOR_ORANGE, SoundType.GRASS));
 	   public static final RegistryObject<LeavesBlock> leaves_vermillion = BLOCKS.register("leaves_vermillion", 
-	            () -> leaves(SoundType.GRASS));
+	            () -> leaves(MapColor.COLOR_RED, SoundType.GRASS));
 	   public static final RegistryObject<LeavesBlock> leaves_citrine = BLOCKS.register("leaves_citrine", 
-	            () -> leaves(SoundType.GRASS));
+	            () -> leaves(MapColor.COLOR_YELLOW, SoundType.GRASS));
 	   
+	   // japanese maple
+	   public static final RegistryObject<LeavesBlock> leaves_japanese_maple = BLOCKS.register("leaves_japanese_maple", 
+			   () -> leaves(MapColor.CRIMSON_NYLIUM, SoundType.GRASS));
+
+	   // LOGS, WOOD & PLANKS
 	   // autumn tree logs & wood.
 	   public static final RegistryObject<CustomLogBlock> log_autumn = BLOCKS.register("log_autumn", 
 			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL));
 	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS.register("planks_autumn_wood",
 			   () -> planks(MapColor.WOOD));
-
+	   // japanese maple
+	   public static final RegistryObject<CustomLogBlock> log_japanese_maple = BLOCKS.register("log_japanese_maple", 
+			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM));
+	   public static final RegistryObject<Block> planks_japanese_maple = BLOCKS.register("planks_japanese_maple",
+			   () -> planks(MapColor.COLOR_PINK));
 	   
-	   // saplings
+	   // SAPLINGS
+	   // autumn saplings
 	   public static final RegistryObject<SaplingBlock> sapling_umber = BLOCKS.register("sapling_umber", 
 			   () -> sapling(new AutumnTreeGrower(ModFeatures.UMBER_AUTUMN_TREE, ModFeatures.FANCY_UMBER_AUTUMN_TREE)));
 	   public static final RegistryObject<SaplingBlock> sapling_goldenrod = BLOCKS.register("sapling_goldenrod", 
@@ -63,36 +75,55 @@ public final class ModBlocks
 			   () -> sapling(new AutumnTreeGrower(ModFeatures.VERMILLION_AUTUMN_TREE, ModFeatures.FANCY_VERMILLION_AUTUMN_TREE)));
 	   public static final RegistryObject<SaplingBlock> sapling_citrine = BLOCKS.register("sapling_citrine", 
 			   () -> sapling(new AutumnTreeGrower(ModFeatures.CITRINE_AUTUMN_TREE, ModFeatures.FANCY_CITRINE_AUTUMN_TREE)));
-	   
-	   // aesthetic blocks
+	   // japanese maple saplings
+	   public static final RegistryObject<SaplingBlock> sapling_japanese_maple = BLOCKS.register("sapling_japanese_maple",
+			   () -> sapling(new JapaneseMapleGrower()));
+			   
+	   // AESTHETIC BLOCKS
 	   // stairs
 	   public static final RegistryObject<StairBlock> stairs_autumn = BLOCKS.register("stairs_autumn", 
 			   () -> stairs(planks_autumn_wood));
+	   public static final RegistryObject<StairBlock> stairs_japanesemaple = BLOCKS.register("stairs_japanesemaple", 
+			   () -> stairs(planks_japanese_maple));
 	   
 	   // slabs
 	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
-	                     
+	   public static final RegistryObject<SlabBlock> slab_japanese_maple =  BLOCKS.register("slab_japanese_maple", 
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_japanese_maple.get())));
+
 	   // doors
 	   public static RegistryObject<DoorBlock> door_autumn = BLOCKS.register("door_autumn",
 			   () -> doors(ModBlocks.planks_autumn_wood.get().defaultMapColor(), BlockSetType.OAK));
+	   public static RegistryObject<DoorBlock> door_japanesemaple = BLOCKS.register("door_japanesemaple",
+			   () -> doors(ModBlocks.planks_japanese_maple.get().defaultMapColor(), BlockSetType.OAK));
 	   
 	   // fences
 	   public static final RegistryObject<FenceBlock> fence_autumn = BLOCKS.register("fence_autumn", 
 	            () -> fences(ModBlocks.planks_autumn_wood));
-	   
+	   public static final RegistryObject<FenceBlock> fence_japanesemaple = BLOCKS.register("fence_japanesemaple",
+	            () -> fences(ModBlocks.planks_japanese_maple));
+		   
 	   // fence gates
 	   public static final RegistryObject<FenceGateBlock> gate_autumn = BLOCKS.register("gate_autumn",
 			   () -> gates(ModBlocks.planks_autumn_wood.get().defaultMapColor(), WoodType.OAK));
+	   public static final RegistryObject<FenceGateBlock> gate_japanesemaple = BLOCKS.register("gate_japanesemaple",
+			   () -> gates(ModBlocks.planks_japanese_maple.get().defaultMapColor(), WoodType.OAK));
 	   
 	   // buttons
 	   public static final RegistryObject<ButtonBlock> button_autumn =  BLOCKS.register("button_autumn",
+			   () -> buttons(BlockSetType.OAK, 30, true));
+	   public static final RegistryObject<ButtonBlock> button_japanesemaple =  BLOCKS.register("button_japanesemaple",
 			   () -> buttons(BlockSetType.OAK, 30, true));
 	   	   
 	   // pressure plates
 	   public static final RegistryObject<PressurePlateBlock> pressureplate_autumn = BLOCKS.register("pressureplate_autumn",
 			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_autumn_wood.get().defaultMapColor(),
 					   		BlockSetType.OAK));
+	   public static final RegistryObject<PressurePlateBlock> pressureplate_japanesemaple = BLOCKS.register("pressureplate_japanesemaple",
+			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_japanese_maple.get().defaultMapColor(),
+					   		BlockSetType.OAK));
+	   
 	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
 	   
@@ -167,9 +198,9 @@ public final class ModBlocks
 	    * @param pType - SoundType for walking on leaves. Usually GRASS.
 	    * @returns a new LeavesBlock object.
 	    */
-	   private static LeavesBlock leaves(SoundType pType) 
+	   private static LeavesBlock leaves(MapColor color, SoundType pType) 
 	   {
-		      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks()
+		      return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(color).strength(0.2F).randomTicks()
 		    		  .sound(pType).noOcclusion().isValidSpawn(ModBlocks::ocelotOrParrot).isSuffocating((a,b,c)->{return false;})
 		    		  .isViewBlocking((a,b,c)->{return false;}).ignitedByLava().pushReaction(PushReaction.DESTROY)
 		    		  .isRedstoneConductor((a,b,c)->{return false;}));
