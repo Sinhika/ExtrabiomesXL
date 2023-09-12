@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
 import net.extrabiomes.ExtrabiomesXS;
+import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -41,6 +42,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         registerTreeBlocks();
         registerSaplings();
         registerCropBlocks();
+        registerFlowers();
         registerDoorStatesAndModels();
         registerFenceLikeStatesAndModels();
         registerPressurePlatesAndButtons();
@@ -182,6 +184,23 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     {
     } // end registerCropBlocks
 
+    
+    // flowers
+    private void registerFlowers()
+    {
+    	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model = 
+    			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
+    	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
+    	
+    	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout_mipped");
+    		this.simpleBlock(entry.getKey().get(), flower);
+        	this.itemModels().withExistingParent(name, modLoc("block/" + name));
+    	} // end-foreach flower
+    } // end registerFlowers
+    
     
     private void registerDoorStatesAndModels()
     {

@@ -1,11 +1,14 @@
 package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
+import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
 import net.extrabiomes.world.JapaneseMapleGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -124,8 +127,22 @@ public final class ModBlocks
 			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_japanese_maple.get().defaultMapColor(),
 					   		BlockSetType.OAK));
 	   
+	   // FLOWERS
+	   public static final RegistryObject<CustomFlowerBlock> flower_redrover = BLOCKS.register("flower_redrover", 
+			   () -> flowers(MobEffects.SATURATION, 30, "block.extrabiomes.flower_redrover.description"));
 	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
+	   
+	   /**
+	    * make flowers
+	    */
+	   private static CustomFlowerBlock flowers(MobEffect effect, int pEffectDuration, String tooltipKey)
+	   {
+		   return new CustomFlowerBlock(net.minecraftforge.registries.ForgeRegistries.MOB_EFFECTS.getDelegateOrThrow(effect), 
+				   	pEffectDuration, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak()
+	   				 .sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY),
+	   				 tooltipKey);
+	   }
 	   
 	   /**
 	    * make pressure plates, wooden or otherwise

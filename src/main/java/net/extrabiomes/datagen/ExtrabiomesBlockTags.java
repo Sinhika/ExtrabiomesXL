@@ -132,5 +132,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	
 	protected void registerMiscTags()
 	{
-	}
+		// flowers
+		this.tag(BlockTags.SMALL_FLOWERS)
+			.add(ModBlocks.flower_redrover.get());
+		
+	} // end registerMiscTags()
+	
 } // end class

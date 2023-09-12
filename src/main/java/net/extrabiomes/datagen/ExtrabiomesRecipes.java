@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -44,7 +45,8 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 
 	private void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
 	{
-		
+		// flower dyes
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
 	}
 	
 	private void registerWoodRecipes(Consumer<FinishedRecipe> consumer)

@@ -40,6 +40,10 @@ public class ExtrabiomesItemTags extends MiningItemTags
    			.addTag(TagUtils.forgeTag("crops/strawberry"));
    		this.tag(TagUtils.forgeTag("crops/strawberry"))
    			.add(ModItems.crop_strawberry.get());
+   		
+   		// flowers
+   		this.tag(ItemTags.SMALL_FLOWERS)
+   			.add(ModBlocks.flower_redrover.get().asItem());
     }
    	
     private void registerWoodPlankItems()
