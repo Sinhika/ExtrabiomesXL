@@ -77,9 +77,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
+      "extrabiomes:flower_autumn_woods",
       "extrabiomes:autumn_trees",
-      "minecraft:flower_default",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
