@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net/"
         }
         maven {
             name = "sonatype"
@@ -13,13 +13,24 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
+            changing = true
+        }
     }
 }
 
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+
 apply plugin: 'forge'
-apply plugin: 'maven'
-apply plugin: 'signing'
+// apply plugin: 'maven'
+// apply plugin: 'signing'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 group = "net.extrabiomes"
 archivesBaseName = "extrabiomesxl_"+ project.mcversion
@@ -133,7 +144,7 @@ artifacts {
     archives devJar
 }
 
-signing {
-    required { gradle.taskGraph.hasTask(":uploadArchives") }
-    sign configurations.archives
-}
+//signing {
+//    required { gradle.taskGraph.hasTask(":uploadArchives") }
+//    sign configurations.archives
+//}
