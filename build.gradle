@@ -1,4 +1,4 @@
-evaluationDependsOn(':version')
+//evaluationDependsOn(':version')
 
 buildscript {
     repositories {
