@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "strawberry_seeds",
+  "ingredients": [
+    {
+      "item": "extrabiomes:food_strawberry"
+    }
+  ],
+  "result": {
+    "item": "extrabiomes:seed_strawberry"
+  }
+}

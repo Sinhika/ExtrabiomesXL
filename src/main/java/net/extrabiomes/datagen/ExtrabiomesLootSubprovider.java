@@ -4,7 +4,6 @@ import mod.alexndr.simplecorelib.api.datagen.SimpleBlockLootSubProvider;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;

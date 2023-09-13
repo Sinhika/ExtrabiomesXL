@@ -201,7 +201,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	        .partialState().with(CropBlock.AGE, 4).addModels(new ConfiguredModel(strawberry_models.get(4)))
 	        .partialState().with(CropBlock.AGE, 5).addModels(new ConfiguredModel(strawberry_models.get(5)))
 	        .partialState().with(CropBlock.AGE, 6).addModels(new ConfiguredModel(strawberry_models.get(5)))
-	        .partialState().with(CropBlock.AGE, 7).addModels(new ConfiguredModel(strawberry_models.get(7)));
+	        .partialState().with(CropBlock.AGE, 7).addModels(new ConfiguredModel(strawberry_models.get(6)));
 
     } // end registerCropBlocks
 

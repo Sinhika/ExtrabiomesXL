@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/crop",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "crop": "extrabiomes:block/plant_strawberry3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "extrabiomes:block/crop_strawberry0"
+    },
+    "age=1": {
+      "model": "extrabiomes:block/crop_strawberry1"
+    },
+    "age=2": {
+      "model": "extrabiomes:block/crop_strawberry2"
+    },
+    "age=3": {
+      "model": "extrabiomes:block/crop_strawberry3"
+    },
+    "age=4": {
+      "model": "extrabiomes:block/crop_strawberry4"
+    },
+    "age=5": {
+      "model": "extrabiomes:block/crop_strawberry5"
+    },
+    "age=6": {
+      "model": "extrabiomes:block/crop_strawberry5"
+    },
+    "age=7": {
+      "model": "extrabiomes:block/crop_strawberry6"
+    }
+  }
+}
