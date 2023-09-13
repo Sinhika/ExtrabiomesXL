@@ -12,6 +12,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class StrawberryBlock extends CropBlock 
 {
+	// potato shape
 	private static final VoxelShape[] SHAPE_BY_AGE = 
 			new VoxelShape[]{Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), 
 							 Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D), 
