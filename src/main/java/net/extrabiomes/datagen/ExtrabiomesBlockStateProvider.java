@@ -16,6 +16,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -182,6 +184,25 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     // crop blocks
     private void registerCropBlocks()
     {
+    	List<ModelFile> strawberry_models = new ArrayList<ModelFile>(7);
+        for (int ii=0; ii<6; ii++)
+        {
+        	strawberry_models.add(this.models().crop("crop_strawberry" + ii, 
+                                                    modLoc("block/plant_strawberry" + ii)).renderType("cutout_mipped"));
+        } // end-for 
+        // the last texture skips a number for some reason.
+    	strawberry_models.add(this.models().crop("crop_strawberry6", modLoc("block/plant_strawberry7")).renderType("cutout_mipped"));
+        
+        this.getVariantBuilder(ModBlocks.crop_strawberry.get())
+	        .partialState().with(CropBlock.AGE, 0).addModels(new ConfiguredModel(strawberry_models.get(0)))
+	        .partialState().with(CropBlock.AGE, 1).addModels(new ConfiguredModel(strawberry_models.get(1)))
+	        .partialState().with(CropBlock.AGE, 2).addModels(new ConfiguredModel(strawberry_models.get(2)))
+	        .partialState().with(CropBlock.AGE, 3).addModels(new ConfiguredModel(strawberry_models.get(3)))
+	        .partialState().with(CropBlock.AGE, 4).addModels(new ConfiguredModel(strawberry_models.get(4)))
+	        .partialState().with(CropBlock.AGE, 5).addModels(new ConfiguredModel(strawberry_models.get(5)))
+	        .partialState().with(CropBlock.AGE, 6).addModels(new ConfiguredModel(strawberry_models.get(5)))
+	        .partialState().with(CropBlock.AGE, 7).addModels(new ConfiguredModel(strawberry_models.get(7)));
+
     } // end registerCropBlocks
 
     

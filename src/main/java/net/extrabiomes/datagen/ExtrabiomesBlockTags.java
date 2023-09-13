@@ -136,6 +136,11 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(ModBlocks.flower_redrover.get());
 		
+		// cropse
+		this.tag(BlockTags.MAINTAINS_FARMLAND)
+			.add(ModBlocks.crop_strawberry.get());
+		this.tag(BlockTags.CROPS)
+			.add(ModBlocks.crop_strawberry.get());
 	} // end registerMiscTags()
 	
 } // end class

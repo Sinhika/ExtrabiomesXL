@@ -8,6 +8,7 @@ import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.config.ExtrabiomesConfig;
 import net.extrabiomes.init.ModBlocks;
+import net.extrabiomes.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -45,6 +46,10 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 
 	private void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
 	{
+		// strawberries to seeds.
+		oneToOneConversionRecipe(consumer, ModItems.seed_strawberry.get(), ModItems.food_strawberry.get(), 
+				"strawberry_seeds");
+		
 		// flower dyes
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
 	}

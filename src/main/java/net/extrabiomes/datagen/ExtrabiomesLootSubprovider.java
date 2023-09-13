@@ -2,6 +2,12 @@ package net.extrabiomes.datagen;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockLootSubProvider;
 import net.extrabiomes.init.ModBlocks;
+import net.extrabiomes.init.ModItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 
 public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 
@@ -65,6 +71,14 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		// pressure plates
 		this.dropSelf(ModBlocks.pressureplate_autumn.get());
 		this.dropSelf(ModBlocks.pressureplate_japanesemaple.get());
+		
+		// crops
+		LootItemCondition.Builder strawberry_condition = 
+				LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.crop_strawberry.get())
+					.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
+		this.add(ModBlocks.crop_strawberry.get(), createCropDrops(ModBlocks.crop_strawberry.get(), 
+				ModItems.food_strawberry.get(), ModItems.seed_strawberry.get(), strawberry_condition));
 	} // end generate()
+
 
 } // end class

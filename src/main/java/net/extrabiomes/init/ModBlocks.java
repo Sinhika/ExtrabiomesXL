@@ -3,6 +3,7 @@ package net.extrabiomes.init;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.StrawberryBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
 import net.extrabiomes.world.JapaneseMapleGrower;
 import net.minecraft.core.BlockPos;
@@ -130,6 +131,11 @@ public final class ModBlocks
 	   // FLOWERS
 	   public static final RegistryObject<CustomFlowerBlock> flower_redrover = BLOCKS.register("flower_redrover", 
 			   () -> flowers(MobEffects.SATURATION, 30, "block.extrabiomes.flower_redrover.description"));
+	   
+	   // CROPS
+	   public static final RegistryObject<StrawberryBlock> crop_strawberry = BLOCKS.register("crop_strawberry", 
+			   () -> new StrawberryBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission()
+					   	.randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
 	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
 	   
