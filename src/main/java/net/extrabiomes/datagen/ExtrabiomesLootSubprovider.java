@@ -77,6 +77,9 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 					.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
 		this.add(ModBlocks.crop_strawberry.get(), createCropDrops(ModBlocks.crop_strawberry.get(), 
 				ModItems.food_strawberry.get(), ModItems.seed_strawberry.get(), strawberry_condition));
+		
+		// plants
+		this.dropSelf(ModBlocks.cattail.get());
 	} // end generate()
 
 

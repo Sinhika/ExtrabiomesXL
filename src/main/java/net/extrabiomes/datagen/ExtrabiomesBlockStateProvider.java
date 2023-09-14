@@ -220,6 +220,12 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		this.simpleBlock(entry.getKey().get(), flower);
         	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	} // end-foreach flower
+    	
+    	// cattail
+    	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout_mipped");
+    	this.simpleBlock(ModBlocks.cattail.get(), bush);
+    	this.itemModels().withExistingParent("cattail", modLoc("block/cattail"));
+    	
     } // end registerFlowers
     
     

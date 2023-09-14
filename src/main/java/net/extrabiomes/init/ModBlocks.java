@@ -1,6 +1,7 @@
 package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
+import net.extrabiomes.content.CattailBlock;
 import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.content.StrawberryBlock;
@@ -131,6 +132,12 @@ public final class ModBlocks
 	   // FLOWERS
 	   public static final RegistryObject<CustomFlowerBlock> flower_redrover = BLOCKS.register("flower_redrover", 
 			   () -> flowers(MobEffects.SATURATION, 30, "block.extrabiomes.flower_redrover.description"));
+	   
+	   // OTHER PLANTS
+	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",
+			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
+					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)
+					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   
 	   // CROPS
 	   public static final RegistryObject<StrawberryBlock> crop_strawberry = BLOCKS.register("crop_strawberry", 
