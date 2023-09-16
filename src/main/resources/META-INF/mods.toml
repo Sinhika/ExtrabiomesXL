@@ -59,6 +59,13 @@ description='''${mod_description}'''
     side="BOTH"
 
 [[dependencies.${mod_id}]]
+    modId="terrablender"
+    mandatory=true
+    versionRange="${terrablender_range}"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.${mod_id}]]
     modId="jei"
     mandatory=false
     versionRange="${jei_version_range}"

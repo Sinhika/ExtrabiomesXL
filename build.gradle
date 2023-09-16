@@ -68,6 +68,9 @@ minecraft {
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile',"${buildDir}/createSrgToMcp/output.srg"
+
             mods {
                 "${mod_id}" {
                     source sourceSets.main
@@ -131,6 +134,8 @@ dependencies {
     // Specify the version of Minecraft to use.
     minecraft "net.neoforged:forge:${minecraft_version}-${neo_version}"
     implementation fg.deobf("simplecore-api:SimpleCoreLib:${simplecorelib_version}") 
+    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${terrablender_version}")
+
     // UNCOMMENT JEI stuff if JEI support ready.
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${version_mcjei}-common-api:${jei_version}")
@@ -160,6 +165,8 @@ tasks.named('processResources', ProcessResources).configure {
         pack_format_number: pack_format_number,
         simplecorelib_version: simplecorelib_version,
         simplecore_range : simplecore_range,
+        terrablender_version: terrablender_version,
+        terrablender_range : terrablender_range,
         version_mcjei : version_mcjei,
         jei_version : jei_version,
         jei_version_range : jei_version_range,
