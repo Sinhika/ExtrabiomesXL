@@ -43,12 +43,17 @@ public class ExtrabiomesItemTags extends MiningItemTags
    		
    		this.tag(TagUtils.forgeTag("food"))
    			.addTag(TagUtils.forgeTag("food/chocolate"));
-   		this.tag(TagUtils.forgeTag("food/chocolate"))
+   		
+   		this.tag(TagUtils.forgeTag("chocolatebar")) // HarvestCraft chocolate
+			.add(ModItems.food_chocolate.get());
+   		this.tag(TagUtils.forgeTag("chocolates"))  // Croptopia chocolate
+   			.add(ModItems.food_chocolate.get());
+
+   		this.tag(TagUtils.forgeTag("food/chocolate"))  // my chocolate
    			.addTag(TagUtils.forgeTag("chocolatebar"))
    			.addTag(TagUtils.forgeTag("chocolates"))
    			.add(ModItems.food_chocolate.get());
-   			
-   		
+
    	   	this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
 			.add(ModItems.food_strawberry.get());
    	 
