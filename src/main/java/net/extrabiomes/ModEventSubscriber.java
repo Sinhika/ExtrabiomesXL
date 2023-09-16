@@ -32,6 +32,11 @@ public final class ModEventSubscriber
     public static void onCommonSetup(final FMLCommonSetupEvent event)
     {
         LOGGER.debug("Common setup done");
+        event.enqueueWork(() ->
+        {
+        	
+        });
+        
     } // end onCommonSetup
 
 	/**
