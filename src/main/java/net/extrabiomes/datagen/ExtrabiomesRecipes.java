@@ -13,6 +13,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -49,6 +50,17 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		// strawberries to seeds.
 		oneToOneConversionRecipe(consumer, ModItems.seed_strawberry.get(), ModItems.food_strawberry.get(), 
 				"strawberry_seeds");
+		
+		// foods
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.food_chocolate.get())
+			.requires(Items.BROWN_DYE).requires(Items.SUGAR).requires(Items.MILK_BUCKET)
+			.unlockedBy("has_item", has(Items.COCOA_BEANS))
+			.save(consumer);
+		
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.food_chocolate_strawberry.get())
+			.requires(TagUtils.forgeTag("food/chocolate")).requires(TagUtils.forgeTag("crops/strawberry"))
+			.unlockedBy("has_item", has(TagUtils.forgeTag("crops/strawberry")))
+			.save(consumer);
 		
 		// flower dyes
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");

@@ -15,10 +15,16 @@ public final class ModItems
 	   
 	   // food values
 	   public static final FoodProperties STRAWBERRY = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.6F).build();
-	   
+	   public static final FoodProperties CHOCOLATE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).build();
+	   public static final FoodProperties CHOCOLATE_STRAWBERRY = (new FoodProperties.Builder()).nutrition(7).saturationMod(1.0F).build();
+ 
 	   // food items
 	   public static final RegistryObject<Item> food_strawberry = ITEMS.register("food_strawberry",
 			   () -> new Item(new Item.Properties().food(STRAWBERRY)));
+	   public static final RegistryObject<Item> food_chocolate = ITEMS.register("food_chocolate",
+			   () -> new Item(new Item.Properties().food(CHOCOLATE)));
+	   public static final RegistryObject<Item> food_chocolate_strawberry = ITEMS.register("food_chocolate_strawberry",
+			   () -> new Item(new Item.Properties().food(CHOCOLATE_STRAWBERRY)));
 	   
 	   // seeds
 	   public static final RegistryObject<ItemNameBlockItem> seed_strawberry = ITEMS.register("seed_strawberry",
