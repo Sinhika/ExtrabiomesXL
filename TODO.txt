@@ -14,70 +14,148 @@ Trees
     rainbow eucalyptus - much like bald cypress.
     
 Flowers
-	Allium - looks different from vanilla Allium
-	Daisy - looks different from vanilla Oxeye Daisy
-	Dandelion - in puffball stage, looks different from vanilla Dandelion.
-	Poppy - looks different from vanilla poppy.
-	Tulips - looks like 2 vanilla orange tulips. (don't bother using)
-	
+        Allium - looks different from vanilla Allium
+        Daisy - looks different from vanilla Oxeye Daisy
+        Dandelion - in puffball stage, looks different from vanilla Dandelion.
+        Poppy - looks different from vanilla poppy.
+        Tulips - looks like 2 vanilla orange tulips. (don't bother using)
+        
 Original ExtrabiomesXL biomes:
-
+    all biomes include underground_structures: stronghold.
+    
     default     (big_oak_tree, oak_tree)
-    alpine              (fir_tree, )
-    autumnwoods         
+    alpine              
+        (fir_tree,grass, newflowers: blue_poppy, hydrangea, iris_blue,
+       iris_purple, pansy, violet )
+    autumnwoods       
+        surface_structures: (villages)  
         (autumn_tree_{brown,orange,purple,yellow}, big_autumn_tree_{brown,orange,purple,yellow},
-         oak_tree, big_oak_tree, japanese_maple; allium, red_rover)
+         oak_tree, big_oak_tree, japanese_maple; grass, mushrooms,
+         newflowers: allium, red_rover, puff_dandelion; toadstool)
     birchforest     
-        (oak_tree, big_oak_tree, birch_tree, sakura_blossom)
+        surface_structures: (villages)  
+        (oak_tree, big_oak_tree, birch_tree, sakura_blossom, grass, 
+         newflowers: allium, bluebell, buttercup, daisy, dandelion,
+         puff_dandelion, hydrangea, pansy, redrover, tulip, violet; 
+         strawberry )
     extremejungle   
-        (big_oak_tree, shrub, rainbow_eucalyptus, mega_jungle(?), ?)
-    forestedisland  
-        (oak_tree, big_oak_tree, sakura_blossom)   
+        (big_oak_tree, shrub, rainbow_eucalyptus, mega_jungle(?), vines, 
+         melon, grass, ferns, newflowers: belladonna, gardenia, gerbera_orange,
+         gerbera_pink, gerbera_red, gerbera_yellow, oriental_pink_lily)
     forestedhills   
-        (oak_tree, big_oak_tree, cypress, japanese_maple, sakura_blossom)   
+        surface_structures: (villages)  
+        (oak_tree, big_oak_tree, cypress, japanese_maple, sakura_blossom,
+         legendary_oak, grass, newflowers: allium, bluebell, daisy, dandelion,
+         pull_dandelion, hydrangea, iris_blue, iris_purple, lavender, lily,
+         oriental_pink_lily, tulip, violet; strawberry)   
+    forestedisland  
+        surface_structures: (villages)  
+        (oak_tree, big_oak_tree, sakura_blossom, legendary_oak, grass, flowers,
+         newflowers: allium, blue_poppy, daisy, dandelion, puff_dandelion, 
+         iris_blue, iris_purple, lavender, lily, oriental_pink_lily; 
+         strawberry)   
     glacier         
-        (big_oak_tree, oak_tree)
+        ()
     greenhills   
-        (oak_tree, big_oak_tree, sakura_blossom)   
-    icewasteland    
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        (oak_tree, big_oak_tree, sakura_blossom, newflowers: allium,
+         bachelors_button, bluebell, blue_poppy, daisy, dandelion, 
+         puff_dandelion, iris_blue, iris_purple, lily, oriental_pink_lily,
+         tulip, violet; strawberry)
     greenswamp      
-        (swamp_tree, custom_swamp_tree, bald_cypress)
+        underground_ores/surface_block: clay, sand, sand2
+        surface_structures: (villages)  
+        (swamp_tree, custom_swamp_tree, bald_cypress, waterlily, deadbush,
+         mushrooms, reeds, cattail, newflowers: allium, belladonna, 
+         blue_poppy, buttercup, daisy, dandelion, puff_dandelion, lily,
+         march_marigold, oriental_pink_lily; leaf_pile; vines)
+    icewasteland    
+        surface_structures: (villages)  
+        (big_oak_tree, oak_tree )
     marsh           
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        (big_oak_tree, oak_tree, grass, reeds)
     meadow          
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        (big_oak_tree, oak_tree, grass, flowers, newflowers: allium,
+         bachelors_button, buttercup, daisy, dandelion, puff_dandelion,
+         gerbera_orange, gerbera_pink, gerbera_red, gerbera_yellow,
+         hydrangea, poppy, yarrow; strawberry)
     minijungle      
-        (swamp_tree, oak_tree, big_oak_tree, rainbow_eucalyptus)
+        underground_ores/surface_block: clay
+        surface_structures: (villages)  
+        (swamp_tree, oak_tree, big_oak_tree, rainbow_eucalyptus, melon,
+         grass, ferns, waterlily, mushrooms, reeds, newflowers: belladonna,
+         blue_poppy, gardenia, gerbera_orange, gerbera_pink, gerbera_red, 
+         gerbera_yellow, oriental_pink_lily; vines)
     mountaindesert  
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages,desert_wells)
+        (big_oak_tree, oak_tree, deadbush, reeds, cactus, tiny_cactus)
     mountainridge   
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        Lakes: (oasis)
+        underground_ores: (emerald_ore)
+        underground_decoration: (infested_stone)
+        (big_oak_tree, oak_tree, grass, tiny_cactus, leaf_pile)
     mountaintaiga   
-        ( taiga, alt_taiga)
+        surface_structures: (villages)  
+        ( taiga, alt_taiga, grass, newflowers: pansy)
     pineforest      
-        ( taiga, alt_taiga)
+        surface_structures: (villages)  
+        ( taiga, alt_taiga, grass, newflowers: bluebell, buttercup,
+         pansy, redrover, tulip, violet; toadstool; strawberry)
     rainforest      
-        (swamp_tree, big_oak_tree, oak_tree, rainbow_eucalyptus)
+        (swamp_tree, big_oak_tree, oak_tree, rainbow_eucalyptus,
+         legendary_oak, grass, ferns, newflowers: belladonna, gardenia,
+         gerbera_orange, gerbera_pink, gerbera_red, gerbera_yellow,
+         oriental_pink_lily)
     redwoodforest   
-        (redwood_tree, )
+        (redwood_tree, grass, ferns)
     redwoodlush     
-        (redwood_tree, fir_tree)
+        (redwood_tree, fir_tree, grass, ferns, flowers, newflowers: bluebell,
+         tulip, violet; leaf_pile)
     savanna         
-        (acacia_tree, )
+        surface_structures: (villages)  
+        (ebxs_acacia_tree, grass, newflowers: allium, amaryllis_pink, 
+        amaryllis_red, amaryllis_white, bells_of_ireland, calla_black,
+        calla_white, daisy, dandelion, puff_dandelion, gerbera_orange, 
+        gerbera_pink, gerbera_red, gerbera_yellow, hydrangea, lavender,
+        poppy, snapdragon, yarrow)
     shrubland       
-        (shrub, japanese_maple_shrub)
-    snowforest      
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        (shrub, japanese_maple_shrub, grass, flowers, newflowers: allium,
+         bachelors_button, bluebell, daisy, dandelion, puff_dandelion,
+         gerbera_orange, gerbera_pink, gerbera_red, gerbera_yellow,
+         hydrangea, snapdragon, tulip, yarrow)
+    snowyforest      
+        surface_structures: (villages)  
+        (big_oak_tree, oak_tree, grass)
     snowyrainforest 
-        (big_fir_tree, fir_tree)
+        (big_fir_tree, fir_tree, grass, mushrooms)
     temperaterainforest
-        (big_fir_tree, fir_tree)
+        (big_fir_tree, fir_tree, melon, grass, ferns, mushrooms, toadstool)
     tundra          
-        (big_oak_tree, oak_tree)
+        underground ores/surface blocks: sand, sand2
+        surface_structures: (villages)  
+        (grass)
     wasteland       
-        (big_oak_tree, oak_tree)
+        surface_structures: (villages)  
+        (grass, deadbush)
     woodlands       
-        (oak_tree, big_oak_tree, cypress, japanese_maple_shrub, japanese_maple, sakura_blossom)
+        surface_structures: (villages)  
+        (oak_tree, big_oak_tree, cypress, japanese_maple_shrub, japanese_maple,
+         sakura_blossom, grass, newflowers: allium, bachelors_button, bluebell,
+         blue_poppy, daisy, dandelion, puff_dandelion, iris_blue, iris_purple,
+         lavender, lily, oriental_pink_lily, tulip; strawberry, leaf_pile)
 
-
+Vanilla Biomes with EBXL features:
+    forest
+        (legendary_oak)
+    forested_hills
+        (legendary_oak)
+    jungle
+        (melon)
+    jungle_hills
+        (melon)
+    plains
+        (legendary_oak)
