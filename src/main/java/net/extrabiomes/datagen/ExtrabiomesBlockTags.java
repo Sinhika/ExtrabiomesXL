@@ -145,6 +145,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		// flowers
 		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(ModBlocks.flower_redrover.get())
+			.add(ModBlocks.flower_buttercup.get())
 			.add(ModBlocks.flower_hydrangea.get());
 			
 		// cropse

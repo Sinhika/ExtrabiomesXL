@@ -139,6 +139,9 @@ public final class ModBlocks
 			   () -> flowers(MobEffects.SATURATION, 30, "block.extrabiomes.flower_redrover.description"));
 	   public static final RegistryObject<CustomFlowerBlock> flower_hydrangea = BLOCKS.register("flower_hydrangea",
 			   () -> flowers(MobEffects.HARM, 2, "block.extrabiomes.flower_hydrangea.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_buttercup = BLOCKS.register("flower_buttercup", 
+			   () -> flowers(MobEffects.POISON, 5, "block.extrabiomes.flower_buttercup.description"));
+	   
 	   
 	   // OTHER PLANTS
 	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",

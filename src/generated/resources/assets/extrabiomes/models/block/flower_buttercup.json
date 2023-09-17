@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "extrabiomes:block/cattail"
+    "cross": "extrabiomes:block/buttercup"
   }
 }

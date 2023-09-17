@@ -66,6 +66,7 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		// flower dyes
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_hydrangea.get(), "light_blue_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_buttercup.get(), "yellow_dye");
 		
 		// cracked sand to water
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.SAND)

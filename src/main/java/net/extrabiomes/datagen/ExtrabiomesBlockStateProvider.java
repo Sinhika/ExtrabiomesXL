@@ -214,22 +214,23 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
     	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
     	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
+    	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
     	
     	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
-    		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout_mipped");
+    		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
     		this.simpleBlock(entry.getKey().get(), flower);
         	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	} // end-foreach flower
     	
     	// cattail
-    	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout_mipped");
+    	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout");
     	this.simpleBlock(ModBlocks.cattail.get(), bush);
     	this.itemModels().withExistingParent("cattail", modLoc("block/cattail"));
     	
     	// autumn shrub
-    	bush = this.models().cross("flower_autumn_shrub", modLoc("block/autumnshrub")).renderType("cutout_mipped");
+    	bush = this.models().cross("flower_autumn_shrub", modLoc("block/autumnshrub")).renderType("cutout");
     	this.simpleBlock(ModBlocks.flower_autumn_shrub.get(), bush);
     	this.itemModels().withExistingParent("flower_autumn_shrub", modLoc("block/flower_autumn_shrub"));
     } // end registerFlowers
