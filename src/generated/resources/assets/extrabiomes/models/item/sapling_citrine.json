@@ -1,3 +1,6 @@
 {
-  "parent": "extrabiomes:block/sapling_citrine"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extrabiomes:block/saplingyellowautumn"
+  }
 }

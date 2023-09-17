@@ -176,9 +176,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	for (Map.Entry<RegistryObject<SaplingBlock>, ResourceLocation> entry: sapling2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
-    		ModelFile sapling = this.models().cross(name, entry.getValue()).renderType("cutout_mipped");
+    		ModelFile sapling = this.models().cross(name, entry.getValue()).renderType("cutout");
         	this.simpleBlock(entry.getKey().get(), sapling);
-        	this.itemModels().withExistingParent(name, modLoc("block/" + name));
+        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
     	}
     } // end registerSaplings()
     
@@ -221,18 +221,18 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		String name = getRegistryNameFromHolder(entry.getKey());
     		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
     		this.simpleBlock(entry.getKey().get(), flower);
-        	this.itemModels().withExistingParent(name, modLoc("block/" + name));
+        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
     	} // end-foreach flower
     	
     	// cattail
     	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout");
     	this.simpleBlock(ModBlocks.cattail.get(), bush);
-    	this.itemModels().withExistingParent("cattail", modLoc("block/cattail"));
+    	this.itemModels().singleTexture("cattail", mcLoc("generated"), "layer0", modLoc("block/cattail"));
     	
     	// autumn shrub
     	bush = this.models().cross("flower_autumn_shrub", modLoc("block/autumnshrub")).renderType("cutout");
     	this.simpleBlock(ModBlocks.flower_autumn_shrub.get(), bush);
-    	this.itemModels().withExistingParent("flower_autumn_shrub", modLoc("block/flower_autumn_shrub"));
+    	this.itemModels().singleTexture("flower_autumn_shrub", mcLoc("generated"), "layer0", modLoc("block/autumnshrub"));
     } // end registerFlowers
     
     
