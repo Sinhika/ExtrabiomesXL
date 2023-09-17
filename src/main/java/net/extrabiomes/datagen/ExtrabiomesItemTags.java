@@ -50,6 +50,7 @@ public class ExtrabiomesItemTags extends MiningItemTags
    	   	   		
    		// flowers
    		this.tag(ItemTags.SMALL_FLOWERS)
+   			.add(ModBlocks.flower_hydrangea.get().asItem())
    			.add(ModBlocks.flower_redrover.get().asItem());
    		
 	} // end registerOtherPlantTags()

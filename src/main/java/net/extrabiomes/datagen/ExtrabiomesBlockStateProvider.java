@@ -210,9 +210,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     // flowers
     private void registerFlowers()
     {
-    	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model = 
+    	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model =
     			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
     	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
+    	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
     	
     	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
