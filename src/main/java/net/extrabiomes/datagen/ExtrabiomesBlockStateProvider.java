@@ -227,6 +227,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	this.simpleBlock(ModBlocks.cattail.get(), bush);
     	this.itemModels().withExistingParent("cattail", modLoc("block/cattail"));
     	
+    	// autumn shrub
+    	bush = this.models().cross("flower_autumn_shrub", modLoc("block/autumnshrub")).renderType("cutout_mipped");
+    	this.simpleBlock(ModBlocks.flower_autumn_shrub.get(), bush);
+    	this.itemModels().withExistingParent("flower_autumn_shrub", modLoc("block/flower_autumn_shrub"));
     } // end registerFlowers
     
     

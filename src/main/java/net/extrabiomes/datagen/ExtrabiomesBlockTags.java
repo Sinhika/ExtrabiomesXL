@@ -31,6 +31,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		registerPlankBlockTags();
 		registerLogTags();
 		registerLeafSaplingTags();
+		registerOtherPlantTags();
 		registerMiscTags();
 	} // end addTags()
 
@@ -51,7 +52,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	 * note that we only need to add blocks to the most specific tag, such as BlockTags.WOODEN_STAIRS,
 	 * because BlockTags.STAIRS automatically includes all WOODEN_STAIRS. Same for everthing WOODEN_*.
 	 */
-	protected void registerPlankBlockTags()
+	private void registerPlankBlockTags()
 	{
 
 		this.tag(BlockTags.WOODEN_STAIRS)
@@ -83,28 +84,34 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	} // end registerPlankBlockTags
    
 	// also too many gate tags.
-	protected void addGatetoAllGateTags(FenceGateBlock fg)
+	private void addGatetoAllGateTags(FenceGateBlock fg)
 	{
 		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(fg);
 		this.tag(BlockTags.FENCE_GATES).add(fg);
 	}
 	
 	// because there are too many fence tags!!
-	protected void addFencetoAllFenceTags(FenceBlock ff)
+	private void addFencetoAllFenceTags(FenceBlock ff)
 	{
 	      this.tag(Tags.Blocks.FENCES_WOODEN).add(ff);
 	      this.tag(BlockTags.FENCES).add(ff);
 	}
 	
-	protected void registerLogTags()
+	private void registerLogTags()
 	{
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.log_japanese_maple.get());
+
+		// only add actual logs to this tag.
+		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
+			.add(ModBlocks.log_autumn.get())
+			.add(ModBlocks.log_japanese_maple.get());
 		
-		this.tag(BlockTags.LOGS)
+		// LOGS_THAT_BURN are automatically included in LOGS.
+		this.tag(BlockTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));
 		
@@ -114,7 +121,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         
 	} // end registerLogTags()
    
-	protected void registerLeafSaplingTags()
+	private void registerLeafSaplingTags()
 	{
 		this.tag(BlockTags.LEAVES)
 			.add(ModBlocks.leaves_japanese_maple.get())
@@ -133,7 +140,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	} // end registerLeafSaplingTags()
 	
 	
-	protected void registerMiscTags()
+	private void registerOtherPlantTags()
 	{
 		// flowers
 		this.tag(BlockTags.SMALL_FLOWERS)
@@ -144,6 +151,15 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.crop_strawberry.get());
 		this.tag(BlockTags.CROPS)
 			.add(ModBlocks.crop_strawberry.get());
+		
+		this.tag(BlockTags.REPLACEABLE_BY_TREES)
+			.add(ModBlocks.flower_autumn_shrub.get());
+		
+	} // end registerOtherPlantTags()
+	
+	
+	private void registerMiscTags()
+	{
 		
 		this.tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
 			.add(ModBlocks.crackedsand.get());
@@ -159,8 +175,6 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		
 		this.tag(BlockTags.SMELTS_TO_GLASS)
 			.add(ModBlocks.crackedsand.get());
-		
-		
 	} // end registerMiscTags()
 	
 } // end class

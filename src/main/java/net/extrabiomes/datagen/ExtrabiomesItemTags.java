@@ -30,17 +30,33 @@ public class ExtrabiomesItemTags extends MiningItemTags
         super.addTags(lookupProvider);
         registerLogTags();
         registerWoodPlankItems();
+        registerOtherPlantTags();
         registerMisc();
     }
 
-   	private void registerMisc()
-    {
+	private void registerOtherPlantTags()
+	{
    		// crops/food
    		this.tag(Tags.Items.CROPS)
    			.addTag(TagUtils.forgeTag("crops/strawberry"));
    		this.tag(TagUtils.forgeTag("crops/strawberry"))
    			.add(ModItems.food_strawberry.get());
+		
+   	   	this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+			.add(ModItems.food_strawberry.get());
+   	 
+   	   	this.tag(ItemTags.FOX_FOOD)
+   	   		.add(ModItems.food_strawberry.get());
+   	   	   		
+   		// flowers
+   		this.tag(ItemTags.SMALL_FLOWERS)
+   			.add(ModBlocks.flower_redrover.get().asItem());
    		
+	} // end registerOtherPlantTags()
+	
+   	private void registerMisc()
+    {
+   		// food
    		this.tag(TagUtils.forgeTag("food"))
    			.addTag(TagUtils.forgeTag("food/chocolate"));
    		
@@ -54,18 +70,10 @@ public class ExtrabiomesItemTags extends MiningItemTags
    			.addTag(TagUtils.forgeTag("chocolates"))
    			.add(ModItems.food_chocolate.get());
 
-   	   	this.tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
-			.add(ModItems.food_strawberry.get());
-   	 
-   		// flowers
-   		this.tag(ItemTags.SMALL_FLOWERS)
-   			.add(ModBlocks.flower_redrover.get().asItem());
-   		
 		this.tag(ItemTags.SMELTS_TO_GLASS)
 			.add(ModBlocks.crackedsand.get().asItem());
-	
 
-    }
+    } // end registerMisc()
    	
     private void registerWoodPlankItems()
     {
@@ -120,10 +128,6 @@ public class ExtrabiomesItemTags extends MiningItemTags
            	.add(ModBlocks.log_autumn.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.log_japanese_maple.get().asItem());
-		
-		this.tag(ItemTags.LOGS)
-			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
-			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));
 		
         this.tag(ItemTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))

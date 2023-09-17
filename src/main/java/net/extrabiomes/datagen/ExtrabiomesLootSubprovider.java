@@ -80,6 +80,7 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		
 		// plants
 		this.dropSelf(ModBlocks.cattail.get());
+		this.dropSelf(ModBlocks.flower_autumn_shrub.get());
 		
 		// terrain blocks
 		this.dropSelf(ModBlocks.crackedsand.get());

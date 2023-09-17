@@ -14,6 +14,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
@@ -142,6 +143,9 @@ public final class ModBlocks
 			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
 					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
+	   public static final RegistryObject<BushBlock> flower_autumn_shrub = BLOCKS.register("flower_autumn_shrub",
+			   () -> new BushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission()
+					   .instabreak().sound(SoundType.GRASS).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   
 	   // CROPS
 	   public static final RegistryObject<StrawberryBlock> crop_strawberry = BLOCKS.register("crop_strawberry", 
