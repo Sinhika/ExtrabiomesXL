@@ -70,7 +70,7 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.SAND)
 			.requires(ModBlocks.crackedsand.get()).requires(Items.WATER_BUCKET)
 			.unlockedBy("has_item", has(ModBlocks.crackedsand.get()))
-			.save(consumer);
+			.save(consumer, "sand_from_crackedsand");
 		
 	} // end registerMiscRecipes()
 	
