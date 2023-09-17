@@ -1,5 +1,6 @@
 package net.extrabiomes.datagen;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import mod.alexndr.simplecorelib.api.datagen.MiningBlockTags;
@@ -35,8 +36,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 
 
 	@Override
-	protected void registerMiningTags() {
-		// TODO Auto-generated method stub
+	protected void registerMiningTags() 
+	{
+		registerMineableTags(List.of(ModBlocks.crackedsand.get()), 
+				List.of(), List.of(), List.of(), List.of());
 	}
 
 	@Override
@@ -141,6 +144,23 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.crop_strawberry.get());
 		this.tag(BlockTags.CROPS)
 			.add(ModBlocks.crop_strawberry.get());
+		
+		this.tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
+			.add(ModBlocks.crackedsand.get());
+		
+		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
+			.add(ModBlocks.crackedsand.get());
+		
+		this.tag(BlockTags.CONVERTABLE_TO_MUD)
+			.add(ModBlocks.crackedsand.get());
+		
+		this.tag(BlockTags.SCULK_REPLACEABLE)
+			.add(ModBlocks.crackedsand.get());
+		
+		this.tag(BlockTags.SMELTS_TO_GLASS)
+			.add(ModBlocks.crackedsand.get());
+		
+		
 	} // end registerMiscTags()
 	
 } // end class

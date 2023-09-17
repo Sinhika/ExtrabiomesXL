@@ -48,6 +48,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         registerDoorStatesAndModels();
         registerFenceLikeStatesAndModels();
         registerPressurePlatesAndButtons();
+        registerTerrainBlocks();
 	}
 
     // tree blocks
@@ -277,6 +278,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	} // end-foreach gate
 
     } // end registerFenceLikeStatesAndModels()
+    
+    private void registerTerrainBlocks()
+    {
+    	this.simpleBlockWithItem(ModBlocks.crackedsand.get(), this.cubeAll(ModBlocks.crackedsand.get()));
+    } // end registerTerrainBlocks()
     
     // =================== UTILITY FUNCTIONS ================= //
     

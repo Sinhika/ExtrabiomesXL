@@ -18,6 +18,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -64,7 +65,14 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		
 		// flower dyes
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
-	}
+		
+		// cracked sand to water
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.SAND)
+			.requires(ModBlocks.crackedsand.get()).requires(Items.WATER_BUCKET)
+			.unlockedBy("has_item", has(ModBlocks.crackedsand.get()))
+			.save(consumer);
+		
+	} // end registerMiscRecipes()
 	
 	private void registerWoodRecipes(Consumer<FinishedRecipe> consumer)
 	{

@@ -42,6 +42,10 @@ public final class ModBlocks
 	   public static final DeferredRegister<Block> BLOCKS = 
 	            DeferredRegister.create(ForgeRegistries.BLOCKS, ExtrabiomesXS.MODID);
 
+	   // TERRAIN BLOCKS
+	   public static final RegistryObject<Block> crackedsand = BLOCKS.register("crackedsand", 
+			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY)
+					   .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.2F)));
 
 	   // LEAVES
 	   // autumn tree leaf blocks

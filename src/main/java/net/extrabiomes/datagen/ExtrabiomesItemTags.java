@@ -60,6 +60,11 @@ public class ExtrabiomesItemTags extends MiningItemTags
    		// flowers
    		this.tag(ItemTags.SMALL_FLOWERS)
    			.add(ModBlocks.flower_redrover.get().asItem());
+   		
+		this.tag(ItemTags.SMELTS_TO_GLASS)
+			.add(ModBlocks.crackedsand.get().asItem());
+	
+
     }
    	
     private void registerWoodPlankItems()
