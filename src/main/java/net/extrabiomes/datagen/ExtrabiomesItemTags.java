@@ -86,6 +86,9 @@ public class ExtrabiomesItemTags extends MiningItemTags
 		this.tag(ItemTags.SMELTS_TO_GLASS)
 			.add(ModBlocks.crackedsand.get().asItem());
 
+		this.tag(TagUtils.forgeTag("tools"))
+			.add(ModItems.log_turner.get());
+		
     } // end registerMisc()
    	
     private void registerWoodPlankItems()

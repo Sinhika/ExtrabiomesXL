@@ -2,6 +2,7 @@ package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomItem;
+import net.extrabiomes.content.LogTurnerItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -30,6 +31,8 @@ public final class ModItems
 	   // misc
 	   public static final RegistryObject<CustomItem> cactus_paste = ITEMS.register("paste", 
 			   () -> new CustomItem(new Item.Properties(), "item.extrabiomes.paste.description"));
+	   public static final RegistryObject<LogTurnerItem> log_turner = ITEMS.register("log_turner",
+			   () -> new LogTurnerItem(new Item.Properties(), "item.extrabiomes.logturner.description"));
 	   
 	   // seeds
 	   public static final RegistryObject<ItemNameBlockItem> seed_strawberry = ITEMS.register("seed_strawberry",

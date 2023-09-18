@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blue_dye_from_flower_bluebell"
+        "recipe": "minecraft:light_blue_dye_from_flower_bluebell"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blue_dye_from_flower_bluebell"
+      "minecraft:light_blue_dye_from_flower_bluebell"
     ]
   },
   "sends_telemetry_event": false

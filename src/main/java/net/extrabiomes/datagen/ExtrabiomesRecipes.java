@@ -13,6 +13,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.tags.TagKey;
@@ -20,6 +21,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -71,8 +73,8 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_lavender.get(), "purple_dye");
 		oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.flower_allium.get(), "magenta_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, ModBlocks.flower_calla_white.get(), "light_gray_dye");
-		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_bachelors_button.get(), "light_blue_dye");
-		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_bluebell.get(), "blue_dye");
+		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_bachelors_button.get(), "light_blue_dye");
+		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_bluebell.get(), "blue_dye");
 		
 		// cactus to paste
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.cactus_paste.get())
@@ -91,6 +93,15 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			.requires(ModBlocks.crackedsand.get()).requires(Items.WATER_BUCKET)
 			.unlockedBy("has_item", has(ModBlocks.crackedsand.get()))
 			.save(consumer, "sand_from_crackedsand");
+		
+		// log turner
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.log_turner.get())
+			.define('s', Ingredient.of(Tags.Items.RODS_WOODEN))
+			.pattern(" ss")
+			.pattern("  s")
+			.pattern(" ss")
+			.unlockedBy("has_item", has(Tags.Items.RODS_WOODEN))
+			.save(consumer);
 		
 	} // end registerMiscRecipes()
 	
