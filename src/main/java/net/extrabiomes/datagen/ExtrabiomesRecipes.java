@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -67,6 +68,19 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_hydrangea.get(), "light_blue_dye");
 		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_buttercup.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_lavender.get(), "purple_dye");
+		
+		// cactus to paste
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.cactus_paste.get())
+			.requires(ModBlocks.flower_tiny_cactus.get(), 4)
+			.unlockedBy("has_item", has(ModBlocks.flower_tiny_cactus.get()))
+			.save(consumer);
+		// paste to dye
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.cactus_paste.get()), RecipeCategory.MISC, 
+				Items.GREEN_DYE, 1.0F,200)
+			.unlockedBy("has_item", has(ModItems.cactus_paste.get()))
+			.save(consumer);
+			
 		
 		// cracked sand to water
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.SAND)

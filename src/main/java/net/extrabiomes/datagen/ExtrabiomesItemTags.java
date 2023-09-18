@@ -52,6 +52,8 @@ public class ExtrabiomesItemTags extends MiningItemTags
    		this.tag(ItemTags.SMALL_FLOWERS)
    			.add(ModBlocks.flower_hydrangea.get().asItem())
    			.add(ModBlocks.flower_buttercup.get().asItem())
+   			.add(ModBlocks.flower_lavender.get().asItem())
+   			.add(ModBlocks.flower_tiny_cactus.get().asItem())
    			.add(ModBlocks.flower_redrover.get().asItem());
    		
 	} // end registerOtherPlantTags()

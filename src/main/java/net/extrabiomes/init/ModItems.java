@@ -1,6 +1,7 @@
 package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
+import net.extrabiomes.content.CustomItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -25,6 +26,10 @@ public final class ModItems
 			   () -> new Item(new Item.Properties().food(CHOCOLATE)));
 	   public static final RegistryObject<Item> food_chocolate_strawberry = ITEMS.register("food_chocolate_strawberry",
 			   () -> new Item(new Item.Properties().food(CHOCOLATE_STRAWBERRY)));
+	   
+	   // misc
+	   public static final RegistryObject<CustomItem> cactus_paste = ITEMS.register("paste", 
+			   () -> new CustomItem(new Item.Properties(), "item.extrabiomes.paste.description"));
 	   
 	   // seeds
 	   public static final RegistryObject<ItemNameBlockItem> seed_strawberry = ITEMS.register("seed_strawberry",

@@ -19,7 +19,7 @@ public class ExtrabiomesItemModelProvider extends ItemModelProvider {
 		this.singleTexture("seed_strawberry", mcLoc("generated"), "layer0", modLoc("item/seed_strawberry"));
 		this.singleTexture("food_chocolate", mcLoc("generated"), "layer0", modLoc("item/chocolate"));
 		this.singleTexture("food_chocolate_strawberry", mcLoc("generated"), "layer0", modLoc("item/ch_strawberry"));
-
+		this.singleTexture("paste", mcLoc("generated"), "layer0", modLoc("item/cactuspaste"));
 	}
 
 } // end class

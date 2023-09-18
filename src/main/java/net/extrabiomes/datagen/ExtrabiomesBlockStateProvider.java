@@ -215,6 +215,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
     	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
     	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
+    	flower2model.put(ModBlocks.flower_lavender, modLoc("block/lavender"));
+    	flower2model.put(ModBlocks.flower_tiny_cactus, modLoc("block/tinycactus"));
+    	
     	
     	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
