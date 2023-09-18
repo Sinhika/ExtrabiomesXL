@@ -213,6 +213,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model =
     			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
     	flower2model.put(ModBlocks.flower_allium, modLoc("block/allium"));
+    	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
+    	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
+    	flower2model.put(ModBlocks.flower_amaryllis_white, modLoc("block/amaryllis_white"));
     	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
     	flower2model.put(ModBlocks.flower_calla_white, modLoc("block/calla_white"));
     	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
@@ -220,9 +223,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
     	flower2model.put(ModBlocks.flower_tiny_cactus, modLoc("block/tinycactus"));
     	flower2model.put(ModBlocks.flower_toadstool, modLoc("block/toadstools"));
-    	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
-    	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
-    	flower2model.put(ModBlocks.flower_amaryllis_white, modLoc("block/amaryllis_white"));
+    	flower2model.put(ModBlocks.flower_bachelors_button, modLoc("block/bachelorsbutton_blue"));
+    	flower2model.put(ModBlocks.flower_bells_of_ireland, modLoc("block/bellsofireland"));
+    	flower2model.put(ModBlocks.flower_bluebell, modLoc("block/bluebell"));
+    	flower2model.put(ModBlocks.flower_calla_black, modLoc("block/calla_black"));
     	
     	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{

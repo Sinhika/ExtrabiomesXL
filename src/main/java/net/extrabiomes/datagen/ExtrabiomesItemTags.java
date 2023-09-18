@@ -59,6 +59,10 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.flower_amaryllis_pink.get().asItem())
 			.add(ModBlocks.flower_amaryllis_red.get().asItem())
 			.add(ModBlocks.flower_amaryllis_white.get().asItem())
+			.add(ModBlocks.flower_bachelors_button.get().asItem())
+			.add(ModBlocks.flower_bells_of_ireland.get().asItem())
+			.add(ModBlocks.flower_bluebell.get().asItem())
+			.add(ModBlocks.flower_calla_black.get().asItem())
    			.add(ModBlocks.flower_redrover.get().asItem());
    		
 	} // end registerOtherPlantTags()

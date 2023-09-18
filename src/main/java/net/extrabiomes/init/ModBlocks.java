@@ -157,6 +157,15 @@ public final class ModBlocks
 			   () -> flowers(MobEffects.REGENERATION, 4, ""));
 	   public static final RegistryObject<CustomFlowerBlock> flower_amaryllis_white = BLOCKS.register("flower_amaryllis_white",
 			   () -> flowers(MobEffects.HEALTH_BOOST, 10, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_bachelors_button= BLOCKS.register("flower_bachelors_button",
+			   () -> flowers(MobEffects.SATURATION, 5, "block.extrabiomes.flower_bachelors_button.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_bells_of_ireland =  BLOCKS.register("flower_bells_of_ireland",
+			   () -> flowers(MobEffects.LUCK, 10, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_bluebell = BLOCKS.register("flower_bluebell",
+			   () -> flowers(MobEffects.POISON, 4, "block.extrabiomes.flower_bluebell.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_calla_black  = BLOCKS.register("flower_calla_black",
+			   () -> flowers(MobEffects.POISON, 12, ""));
+			   
 	   
 	   // OTHER PLANTS
 	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",
