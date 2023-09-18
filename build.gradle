@@ -132,6 +132,11 @@ repositories {
         name = "CurseForge"
         url = "https://minecraft.curseforge.com/api/maven/"
     }
+    maven {
+        // location of maven that hosts TOP (The One Probe)
+        url = "https://www.cursemaven.com" 
+    }
+
 }
 
 dependencies {
@@ -147,6 +152,8 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly fg.deobf("mezz.jei:jei-${version_mcjei}-forge:${jei_version}")
 
+    // TOP
+    runtimeOnly fg.deobf("curse.maven:theoneprobe-${top_projectid}:${top_fileid}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -174,6 +181,8 @@ tasks.named('processResources', ProcessResources).configure {
         version_mcjei : version_mcjei,
         jei_version : jei_version,
         jei_version_range : jei_version_range,
+        top_version : top_version, 
+        top_projectid : top_projectid, top_fileid : top_fileid,
     ]
     inputs.properties replaceProperties
 
