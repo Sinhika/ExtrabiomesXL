@@ -144,7 +144,19 @@ public final class ModBlocks
 	   public static final RegistryObject<CustomFlowerBlock> flower_lavender = BLOCKS.register("flower_lavender",
 			   () -> flowers(MobEffects.SATURATION, 5, "block.extrabiomes.flower_lavender.description"));
 	   public static final RegistryObject<CustomFlowerBlock> flower_tiny_cactus = BLOCKS.register("flower_tiny_cactus",
-			   () -> flowers(null, 0, "block.extrabiomes.flower_tiny_cactus.description"));
+			   () -> flowers(MobEffects.ABSORPTION, 0, "block.extrabiomes.flower_tiny_cactus.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_toadstool = BLOCKS.register("flower_toadstool",
+			   () -> flowers(MobEffects.POISON, 10, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_calla_white = BLOCKS.register("flower_calla_white",
+			   () -> flowers(MobEffects.POISON, 12, "block.extrabiomes.flower_calla_white.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_allium = BLOCKS.register("flower_allium",
+			   () -> flowers(MobEffects.FIRE_RESISTANCE, 4, "block.extrabiomes.flower_allium.description"));
+	   public static final RegistryObject<CustomFlowerBlock> flower_amaryllis_pink = BLOCKS.register("flower_amaryllis_pink",
+			   () -> flowers(MobEffects.REGENERATION, 4, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_amaryllis_red = BLOCKS.register("flower_amaryllis_red",
+			   () -> flowers(MobEffects.REGENERATION, 4, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_amaryllis_white = BLOCKS.register("flower_amaryllis_white",
+			   () -> flowers(MobEffects.HEALTH_BOOST, 10, ""));
 	   
 	   // OTHER PLANTS
 	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",

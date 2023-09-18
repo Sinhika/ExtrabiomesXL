@@ -148,6 +148,11 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.flower_buttercup.get())
 			.add(ModBlocks.flower_lavender.get())
 			.add(ModBlocks.flower_tiny_cactus.get())
+			.add(ModBlocks.flower_allium.get())
+			.add(ModBlocks.flower_calla_white.get())
+			.add(ModBlocks.flower_amaryllis_pink.get())
+			.add(ModBlocks.flower_amaryllis_red.get())
+			.add(ModBlocks.flower_amaryllis_white.get())
 			.add(ModBlocks.flower_hydrangea.get());
 			
 		// crops
@@ -159,6 +164,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.tag(BlockTags.REPLACEABLE_BY_TREES)
 			.add(ModBlocks.flower_autumn_shrub.get());
 		
+		// this.tag(BlockTags.CLIMBABLE);
 	} // end registerOtherPlantTags()
 	
 	

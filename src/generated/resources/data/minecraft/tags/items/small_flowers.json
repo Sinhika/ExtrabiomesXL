@@ -2,6 +2,13 @@
   "values": [
     "extrabiomes:flower_hydrangea",
     "extrabiomes:flower_buttercup",
+    "extrabiomes:flower_lavender",
+    "extrabiomes:flower_tiny_cactus",
+    "extrabiomes:flower_allium",
+    "extrabiomes:flower_calla_white",
+    "extrabiomes:flower_amaryllis_pink",
+    "extrabiomes:flower_amaryllis_red",
+    "extrabiomes:flower_amaryllis_white",
     "extrabiomes:flower_redrover"
   ]
 }

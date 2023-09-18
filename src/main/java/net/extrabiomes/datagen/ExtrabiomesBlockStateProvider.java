@@ -212,12 +212,17 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     {
     	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model =
     			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
-    	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
-    	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
+    	flower2model.put(ModBlocks.flower_allium, modLoc("block/allium"));
     	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
+    	flower2model.put(ModBlocks.flower_calla_white, modLoc("block/calla_white"));
+    	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
     	flower2model.put(ModBlocks.flower_lavender, modLoc("block/lavender"));
+    	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
     	flower2model.put(ModBlocks.flower_tiny_cactus, modLoc("block/tinycactus"));
-    	
+    	flower2model.put(ModBlocks.flower_toadstool, modLoc("block/toadstools"));
+    	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
+    	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
+    	flower2model.put(ModBlocks.flower_amaryllis_white, modLoc("block/amaryllis_white"));
     	
     	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{

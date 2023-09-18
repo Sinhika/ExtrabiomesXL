@@ -41,7 +41,8 @@ Original ExtrabiomesXL biomes:
     extremejungle   
         (big_oak_tree, shrub, rainbow_eucalyptus, mega_jungle(?), vines, 
          melon, grass, ferns, newflowers: belladonna, gardenia, gerbera_orange,
-         gerbera_pink, gerbera_red, gerbera_yellow, oriental_pink_lily)
+         gerbera_pink, gerbera_red, gerbera_yellow, oriental_pink_lily;
+         gloriosa_vine)
     forestedhills   
         surface_structures: (villages)  
         (oak_tree, big_oak_tree, cypress, japanese_maple, sakura_blossom,
@@ -87,7 +88,7 @@ Original ExtrabiomesXL biomes:
         (swamp_tree, oak_tree, big_oak_tree, rainbow_eucalyptus, melon,
          grass, ferns, waterlily, mushrooms, reeds, newflowers: belladonna,
          blue_poppy, gardenia, gerbera_orange, gerbera_pink, gerbera_red, 
-         gerbera_yellow, oriental_pink_lily; vines)
+         gerbera_yellow, oriental_pink_lily; vines, gloriosa_vine)
     mountaindesert  
         surface_structures: (villages,desert_wells)
         (big_oak_tree, oak_tree, deadbush, reeds, cactus, tiny_cactus)
@@ -108,7 +109,7 @@ Original ExtrabiomesXL biomes:
         (swamp_tree, big_oak_tree, oak_tree, rainbow_eucalyptus,
          legendary_oak, grass, ferns, newflowers: belladonna, gardenia,
          gerbera_orange, gerbera_pink, gerbera_red, gerbera_yellow,
-         oriental_pink_lily)
+         oriental_pink_lily; gloriosa_vine)
     redwoodforest   
         (redwood_tree, grass, ferns)
     redwoodlush     
