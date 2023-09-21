@@ -11,6 +11,8 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
@@ -52,7 +54,7 @@ public final class ModEventSubscriber
 	        ModBlocks.BLOCKS.getEntries().stream()
 	                .map(RegistryObject::get)
 	                // You can do extra filtering here if you don't want some blocks to have an BlockItem automatically registered for them
-	                //.filter(block -> needsItemBlock(block))
+	                .filter(block -> needsItemBlock(block))
 	                // Register the BlockItem for the block
 	                .forEach(block -> {
 	                    // Create the new BlockItem with the block and it's properties
@@ -65,6 +67,14 @@ public final class ModEventSubscriber
 	        LOGGER.debug("Registered BlockItems");
         }
     } // end onRegisterItems
+    
+    private static boolean needsItemBlock(Block block)
+    {
+        if (block instanceof FlowerPotBlock) {
+            return false;
+        }
+        return true;
+    }
     
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfigEvent event)

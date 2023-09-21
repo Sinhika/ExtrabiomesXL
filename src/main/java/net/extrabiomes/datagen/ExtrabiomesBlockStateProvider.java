@@ -265,7 +265,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
 	    	ModelFile flower_pot = this.models().withExistingParent(name, mcLoc("block/flower_pot_cross"))
-	    			.texture("plant", entry.getValue());
+	    			.texture("plant", entry.getValue()).renderType("cutout");
 	    	this.simpleBlock(entry.getKey().get(), flower_pot);
     	} // end-foreach pot
     	
