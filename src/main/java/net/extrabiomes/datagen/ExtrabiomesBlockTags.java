@@ -157,6 +157,13 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.flower_bells_of_ireland.get())
 			.add(ModBlocks.flower_bluebell.get())
 			.add(ModBlocks.flower_calla_black.get())
+			.add(ModBlocks.flower_daisy.get())
+			.add(ModBlocks.flower_dandelion.get())
+			.add(ModBlocks.flower_gardenia.get())
+			.add(ModBlocks.flower_gerbera_orange.get())
+			.add(ModBlocks.flower_gerbera_pink.get())
+			.add(ModBlocks.flower_gerbera_red.get())
+			.add(ModBlocks.flower_gerbera_yellow.get())
 			.add(ModBlocks.flower_hydrangea.get());
 			
 		// crops

@@ -165,6 +165,21 @@ public final class ModBlocks
 			   () -> flowers(MobEffects.POISON, 4, "block.extrabiomes.flower_bluebell.description"));
 	   public static final RegistryObject<CustomFlowerBlock> flower_calla_black  = BLOCKS.register("flower_calla_black",
 			   () -> flowers(MobEffects.POISON, 12, ""));
+	   
+	   public static final RegistryObject<CustomFlowerBlock> flower_daisy = BLOCKS.register("flower_daisy",
+			   () -> flowers(MobEffects.HEALTH_BOOST, 12, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_dandelion = BLOCKS.register("flower_dandelion",
+			   () -> flowers(MobEffects.SATURATION, 5, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_gardenia  = BLOCKS.register("flower_gardenia",
+			   () -> flowers(MobEffects.MOVEMENT_SLOWDOWN, 5, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_gerbera_orange = BLOCKS.register("flower_gerbera_orange",
+			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_gerbera_pink = BLOCKS.register("flower_gerbera_pink",
+			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_gerbera_red = BLOCKS.register("flower_gerbera_red",
+			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
+	   public static final RegistryObject<CustomFlowerBlock> flower_gerbera_yellow = BLOCKS.register("flower_gerbera_yellow",
+			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
 			   
 	   
 	   // OTHER PLANTS

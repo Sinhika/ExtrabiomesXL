@@ -48,6 +48,13 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropSelf(ModBlocks.flower_bells_of_ireland.get());
 		this.dropSelf(ModBlocks.flower_bluebell.get());
 		this.dropSelf(ModBlocks.flower_calla_black.get());
+		this.dropSelf(ModBlocks.flower_daisy.get());
+		this.dropSelf(ModBlocks.flower_dandelion.get());
+		this.dropSelf(ModBlocks.flower_gardenia.get());
+		this.dropSelf(ModBlocks.flower_gerbera_orange.get());
+		this.dropSelf(ModBlocks.flower_gerbera_pink.get());
+		this.dropSelf(ModBlocks.flower_gerbera_red.get());
+		this.dropSelf(ModBlocks.flower_gerbera_yellow.get());
 		
 		// logs
 		this.dropSelf(ModBlocks.log_autumn.get());

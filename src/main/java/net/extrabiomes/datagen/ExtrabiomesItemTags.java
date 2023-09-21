@@ -63,6 +63,13 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.flower_bells_of_ireland.get().asItem())
 			.add(ModBlocks.flower_bluebell.get().asItem())
 			.add(ModBlocks.flower_calla_black.get().asItem())
+			.add(ModBlocks.flower_daisy.get().asItem())
+			.add(ModBlocks.flower_dandelion.get().asItem())
+			.add(ModBlocks.flower_gardenia.get().asItem())
+			.add(ModBlocks.flower_gerbera_orange.get().asItem())
+			.add(ModBlocks.flower_gerbera_pink.get().asItem())
+			.add(ModBlocks.flower_gerbera_red.get().asItem())
+			.add(ModBlocks.flower_gerbera_yellow.get().asItem())			
    			.add(ModBlocks.flower_redrover.get().asItem());
    		
 	} // end registerOtherPlantTags()
