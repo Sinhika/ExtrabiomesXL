@@ -55,18 +55,20 @@ public class LogTurnerItem extends TieredItem
 	             
 	             level.playSound(player, blockpos, SoundEvents.WOOD_STEP, SoundSource.BLOCKS, 0.5F, 1.55F);
 	             Direction face = pContext.getClickedFace();
-	             BlockState blockstate2 = blockstate;
+	             BlockState blockstate2;
 	              if (face == Direction.DOWN || face == Direction.UP)
 	              {
-	            	  Direction.Axis start_axis = (Direction.Axis) blockstate2.getValue(RotatedPillarBlock.AXIS);
+	            	  Direction.Axis start_axis = (Direction.Axis) blockstate.getValue(RotatedPillarBlock.AXIS);
 	            	  switch (start_axis)
 	            	  {
 	            	  	case X:
 	            	  	case Z:
-	            	  	  blockstate2.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y);
-	            		  break;
-	            	  	default: // case Y
-	  	            	  blockstate2.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
+	            	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y);
+	            	  		break;
+	            	  	case Y: // case Y
+	            	  	default:
+	            	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
+	            	  		break;
 	            	  }
 	              }
 	              else {
