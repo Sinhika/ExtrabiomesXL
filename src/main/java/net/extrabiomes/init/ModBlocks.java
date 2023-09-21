@@ -1,5 +1,7 @@
 package net.extrabiomes.init;
 
+import java.util.function.Supplier;
+
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CattailBlock;
 import net.extrabiomes.content.CustomFlowerBlock;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -181,6 +184,33 @@ public final class ModBlocks
 	   public static final RegistryObject<CustomFlowerBlock> flower_gerbera_yellow = BLOCKS.register("flower_gerbera_yellow",
 			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
 			   
+	   // POTTED FLOWERS
+	   public static final RegistryObject<FlowerPotBlock> potted_redrover = BLOCKS.register("potted_redrover",
+			   () -> flowerpot(()->ModBlocks.flower_redrover.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_hydrangea = BLOCKS.register("potted_hydrangea",
+			   () -> flowerpot(()->ModBlocks.flower_hydrangea.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_buttercup = BLOCKS.register("potted_buttercup",
+			   () -> flowerpot(()->ModBlocks.flower_buttercup.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_lavender = BLOCKS.register("potted_lavender",
+			   () -> flowerpot(()->ModBlocks.flower_lavender.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_tiny_cactus = BLOCKS.register("potted_tiny_cactus",
+			   () -> flowerpot(()->ModBlocks.flower_tiny_cactus.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_toadstool = BLOCKS.register("potted_toadstool",
+			   () -> flowerpot(()->ModBlocks.flower_toadstool.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_calla_white = BLOCKS.register("potted_calla_white",
+			   () -> flowerpot(()->ModBlocks.flower_calla_white.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_allium = BLOCKS.register("potted_allium",
+			   () -> flowerpot(()->ModBlocks.flower_allium.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_amaryllis_pink = BLOCKS.register("potted_amaryllis_pink",
+			   () -> flowerpot(()->ModBlocks.flower_amaryllis_pink.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_amaryllis_red = BLOCKS.register("potted_amaryllis_red",
+			   () -> flowerpot(()->ModBlocks.flower_amaryllis_red.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_amaryllis_white = BLOCKS.register("potted_amaryllis_white",
+			   () -> flowerpot(()->ModBlocks.flower_amaryllis_white.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_bachelors_button = BLOCKS.register("potted_bachelors_button",
+			   () -> flowerpot(()->ModBlocks.flower_bachelors_button.get()));
+	   public static final RegistryObject<FlowerPotBlock> potted_bells_of_ireland = BLOCKS.register("potted_bells_of_ireland",
+			   () -> flowerpot(()->ModBlocks.flower_bells_of_ireland.get()));
 	   
 	   // OTHER PLANTS
 	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",
@@ -198,6 +228,15 @@ public final class ModBlocks
 	   
 	   // ======== BLOCK INITIALIZATION HELPER FUNCTIONS ========== //
 	   
+	   /**
+	    * make flowerpots
+	    */
+	   private static FlowerPotBlock flowerpot(Supplier<? extends Block> pContent) 
+	   {
+		   BlockBehaviour.Properties blockbehaviour$properties = 
+				   BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+		   return new FlowerPotBlock(null, ()->ModBlocks.flower_redrover.get(), blockbehaviour$properties);
+	   }
 	   /**
 	    * make flowers
 	    */

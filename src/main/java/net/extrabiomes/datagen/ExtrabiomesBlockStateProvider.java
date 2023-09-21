@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -242,6 +243,31 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		this.simpleBlock(entry.getKey().get(), flower);
         	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
     	} // end-foreach flower
+
+		// flower pots
+    	HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation> pot2model =
+    			new HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation>();
+    	pot2model.put(ModBlocks.potted_allium, modLoc("block/allium"));
+    	pot2model.put(ModBlocks.potted_amaryllis_pink, modLoc("block/amaryllis_pink"));
+    	pot2model.put(ModBlocks.potted_amaryllis_red, modLoc("block/amaryllis_red"));
+    	pot2model.put(ModBlocks.potted_amaryllis_white, modLoc("block/amaryllis_white"));
+    	pot2model.put(ModBlocks.potted_buttercup, modLoc("block/buttercup"));
+    	pot2model.put(ModBlocks.potted_calla_white, modLoc("block/calla_white"));
+    	pot2model.put(ModBlocks.potted_hydrangea, modLoc("block/hydrangea"));
+    	pot2model.put(ModBlocks.potted_lavender, modLoc("block/lavender"));
+    	pot2model.put(ModBlocks.potted_redrover, modLoc("block/redrover"));
+    	pot2model.put(ModBlocks.potted_tiny_cactus, modLoc("block/tinycactus"));
+    	pot2model.put(ModBlocks.potted_toadstool, modLoc("block/toadstools"));
+    	pot2model.put(ModBlocks.potted_bachelors_button, modLoc("block/bachelorsbutton_blue"));
+    	pot2model.put(ModBlocks.potted_bells_of_ireland, modLoc("block/bellsofireland"));
+    	
+    	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+	    	ModelFile flower_pot = this.models().withExistingParent(name, mcLoc("block/flower_pot_cross"))
+	    			.texture("plant", entry.getValue());
+	    	this.simpleBlock(entry.getKey().get(), flower_pot);
+    	} // end-foreach pot
     	
     	// cattail
     	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout");
@@ -255,6 +281,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     } // end registerFlowers
     
     
+
     private void registerDoorStatesAndModels()
     {
     	List<RegistryObject<DoorBlock>> doorlist = new ArrayList<RegistryObject<DoorBlock>>();

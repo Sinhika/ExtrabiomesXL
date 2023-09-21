@@ -166,6 +166,20 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.flower_gerbera_yellow.get())
 			.add(ModBlocks.flower_hydrangea.get());
 			
+		// flower pots
+		this.tag(BlockTags.FLOWER_POTS)
+			.add(ModBlocks.potted_redrover.get())
+			.add(ModBlocks.potted_buttercup.get())
+			.add(ModBlocks.potted_lavender.get())
+			.add(ModBlocks.potted_tiny_cactus.get())
+			.add(ModBlocks.potted_allium.get())
+			.add(ModBlocks.potted_calla_white.get())
+			.add(ModBlocks.potted_amaryllis_pink.get())
+			.add(ModBlocks.potted_amaryllis_red.get())
+			.add(ModBlocks.potted_amaryllis_white.get())
+			.add(ModBlocks.potted_bachelors_button.get())
+			.add(ModBlocks.potted_bells_of_ireland.get());
+		
 		// crops
 		this.tag(BlockTags.MAINTAINS_FARMLAND)
 			.add(ModBlocks.crop_strawberry.get());
