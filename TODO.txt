@@ -19,6 +19,25 @@ Flowers
         Dandelion - in puffball stage, looks different from vanilla Dandelion.
         Poppy - looks different from vanilla poppy.
         Tulips - looks like 2 vanilla orange tulips. (don't bother using)
+
+Old Dye color codes:
+
+	0 : "black", 
+	1: "red", 
+	2: "green", 
+	3: "brown", 
+	4: "blue", 
+	5: "purple", 
+	6: "cyan", 
+	7: "silver", 
+	8: "gray", 
+	9: "pink", 
+	10: "lime", 
+	11: "yellow", 
+	12: "lightBlue", 
+	13: "magenta", 
+	14: "orange", 
+	15: "white";
         
 Original ExtrabiomesXL biomes:
     all biomes include underground_structures: stronghold.

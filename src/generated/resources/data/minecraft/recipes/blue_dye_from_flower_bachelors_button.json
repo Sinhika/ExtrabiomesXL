@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "light_blue_dye",
+  "group": "blue_dye",
   "ingredients": [
     {
       "item": "extrabiomes:flower_bachelors_button"

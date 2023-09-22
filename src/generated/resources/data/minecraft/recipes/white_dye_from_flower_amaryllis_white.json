@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "light_blue_dye",
+  "group": "white_dye",
   "ingredients": [
     {
-      "item": "extrabiomes:flower_bluebell"
+      "item": "extrabiomes:flower_amaryllis_white"
     }
   ],
   "result": {
-    "item": "minecraft:light_blue_dye"
+    "item": "minecraft:white_dye"
   }
 }

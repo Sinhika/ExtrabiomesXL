@@ -67,15 +67,37 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			.save(consumer);
 		
 		// flower dyes
-		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_hydrangea.get(), "light_blue_dye");
 		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_buttercup.get(), "yellow_dye");
 		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_lavender.get(), "purple_dye");
-		oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.flower_allium.get(), "magenta_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, ModBlocks.flower_calla_white.get(), "light_gray_dye");
-		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_bachelors_button.get(), "light_blue_dye");
-		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_bluebell.get(), "blue_dye");
+		oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.flower_allium.get(), "magenta_dye");
+		oneToOneConversionRecipe(consumer, Items.PINK_DYE, ModBlocks.flower_amaryllis_pink.get(), "pink_dye");
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_amaryllis_red.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.WHITE_DYE, ModBlocks.flower_amaryllis_white.get(), "white_dye");
+		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_bachelors_button.get(), "blue_dye");
+		oneToOneConversionRecipe(consumer, Items.LIME_DYE, ModBlocks.flower_bells_of_ireland.get(), "lime_dye");
+		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_bluebell.get(), "light_blue_dye");
+		oneToOneConversionRecipe(consumer, Items.BLACK_DYE, ModBlocks.flower_calla_black.get(), "black_dye");
+		oneToOneConversionRecipe(consumer, Items.WHITE_DYE, ModBlocks.flower_daisy.get(), "white_dye");
+		oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, ModBlocks.flower_gardenia.get(), "light_gray_dye");
+		oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, ModBlocks.flower_gerbera_orange.get(), "orange_dye");
+		oneToOneConversionRecipe(consumer, Items.PINK_DYE, ModBlocks.flower_gerbera_pink.get(), "pink_dye");
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_gerbera_red.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_gerbera_yellow.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.PINK_DYE, ModBlocks.flower_oriental_pink_lily.get(), "pink_dye");
+		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_iris_blue.get(), "blue_dye");
 		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_iris_purple.get(), "purple_dye");
+		oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, ModBlocks.flower_lily.get(), "magenta_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_marsh_marigold.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_pansy.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_poppy.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.RED_DYE, ModBlocks.flower_redrover.get(), "red_dye");
+		oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, ModBlocks.flower_snapdragon.get(), "orange_dye");
+		oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, ModBlocks.flower_tulip.get(), "orange_dye");
+		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_violet.get(), "purple_dye");
+		oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, ModBlocks.flower_yarrow.get(), "yellow_dye");
+		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_belladonna.get(), "blue_dye");
 		oneToOneConversionRecipe(consumer, Items.CYAN_DYE, ModBlocks.flower_blue_poppy.get(), "cyan_dye");
 		
 		// cactus to paste
