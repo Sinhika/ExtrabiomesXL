@@ -178,6 +178,11 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.potted_amaryllis_red.get())
 			.add(ModBlocks.potted_amaryllis_white.get())
 			.add(ModBlocks.potted_bachelors_button.get())
+			.add(ModBlocks.potted_sapling_citrine.get())
+			.add(ModBlocks.potted_sapling_umber.get())
+			.add(ModBlocks.potted_sapling_goldenrod.get())
+			.add(ModBlocks.potted_sapling_japanese_maple.get())
+			.add(ModBlocks.potted_sapling_vermillion.get())
 			.add(ModBlocks.potted_bells_of_ireland.get());
 		
 		// crops

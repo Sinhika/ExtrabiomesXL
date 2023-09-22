@@ -9,12 +9,12 @@ import java.util.stream.Collectors;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
 import net.extrabiomes.ExtrabiomesXS;
-import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -23,7 +23,6 @@ import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -165,8 +164,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     // saplings
     private void registerSaplings()
     {
-    	HashMap<RegistryObject<SaplingBlock>, ResourceLocation> sapling2model = 
-    			new HashMap<RegistryObject<SaplingBlock>, ResourceLocation>();
+    	HashMap<RegistryObject<BushBlock>, ResourceLocation> sapling2model = 
+    			new HashMap<RegistryObject<BushBlock>, ResourceLocation>();
     	sapling2model.put(ModBlocks.sapling_citrine, modLoc("block/saplingyellowautumn"));
     	sapling2model.put(ModBlocks.sapling_goldenrod, modLoc("block/saplingorangeautumn"));
     	sapling2model.put(ModBlocks.sapling_umber, modLoc("block/saplingbrownautumn"));
@@ -174,7 +173,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	sapling2model.put(ModBlocks.sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
        	
        	// saplings
-    	for (Map.Entry<RegistryObject<SaplingBlock>, ResourceLocation> entry: sapling2model.entrySet())
+    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: sapling2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
     		ModelFile sapling = this.models().cross(name, entry.getValue()).renderType("cutout");
@@ -211,8 +210,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     // flowers
     private void registerFlowers()
     {
-    	HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation> flower2model =
-    			new HashMap<RegistryObject<CustomFlowerBlock>,ResourceLocation>();
+    	HashMap<RegistryObject<BushBlock>,ResourceLocation> flower2model =
+    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
     	flower2model.put(ModBlocks.flower_allium, modLoc("block/allium"));
     	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
     	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
@@ -236,7 +235,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_gerbera_red, modLoc("block/gerbera_red"));
     	flower2model.put(ModBlocks.flower_gerbera_yellow, modLoc("block/gerbera_yellow"));
     	
-    	for (Map.Entry<RegistryObject<CustomFlowerBlock>, ResourceLocation> entry: flower2model.entrySet())
+    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
     		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
@@ -260,6 +259,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	pot2model.put(ModBlocks.potted_toadstool, modLoc("block/toadstools"));
     	pot2model.put(ModBlocks.potted_bachelors_button, modLoc("block/bachelorsbutton_blue"));
     	pot2model.put(ModBlocks.potted_bells_of_ireland, modLoc("block/bellsofireland"));
+    	pot2model.put(ModBlocks.potted_sapling_citrine, modLoc("block/saplingyellowautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_goldenrod, modLoc("block/saplingorangeautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
     	
     	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
     	{

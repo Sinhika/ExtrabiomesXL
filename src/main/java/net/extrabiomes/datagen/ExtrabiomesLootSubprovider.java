@@ -71,7 +71,12 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropPottedContents(ModBlocks.potted_amaryllis_white.get());
 		this.dropPottedContents(ModBlocks.potted_bachelors_button.get());
 		this.dropPottedContents(ModBlocks.potted_bells_of_ireland.get());
-		
+		this.dropPottedContents(ModBlocks.potted_sapling_citrine.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_umber.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_goldenrod.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_japanese_maple.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_vermillion.get());
+
 		// logs
 		this.dropSelf(ModBlocks.log_autumn.get());
 		this.dropSelf(ModBlocks.log_japanese_maple.get());
