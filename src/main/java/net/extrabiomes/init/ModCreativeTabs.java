@@ -5,6 +5,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -22,7 +24,9 @@ public final class ModCreativeTabs
 				.displayItems((parameters, output) -> {
 					output.acceptAll(ModBlocks.BLOCKS.getEntries().stream()
 										.map(RegistryObject::get)
-										.map(b -> (new ItemStack(b.asItem())))
+						                // You can do extra filtering here if you don't want some blocks to appear.
+						                .filter(b -> needsCreativeTab(b))
+						                .map(b -> (new ItemStack(b.asItem())))
 										.toList()
 										);
 					output.acceptAll(ModItems.ITEMS.getEntries().stream()
@@ -31,5 +35,13 @@ public final class ModCreativeTabs
 							.toList()
 							);
 				}).build());
+
+	private static boolean needsCreativeTab(Block block)
+	{
+		if (block instanceof FlowerPotBlock) {
+		    return false;
+		}
+		return true;
+	}
 
 } // end class

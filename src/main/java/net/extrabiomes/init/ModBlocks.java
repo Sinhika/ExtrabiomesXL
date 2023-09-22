@@ -16,6 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -235,8 +236,10 @@ public final class ModBlocks
 	   {
 		   BlockBehaviour.Properties blockbehaviour$properties = 
 				   BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
-		   return new FlowerPotBlock(null, ()->ModBlocks.flower_redrover.get(), blockbehaviour$properties);
+		   return new FlowerPotBlock(() -> {return ((FlowerPotBlock) Blocks.FLOWER_POT);}, 
+				   					  pContent, blockbehaviour$properties);
 	   }
+	   
 	   /**
 	    * make flowers
 	    */
