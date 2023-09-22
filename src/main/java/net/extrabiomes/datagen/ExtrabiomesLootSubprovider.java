@@ -55,10 +55,22 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropSelf(ModBlocks.flower_gerbera_pink.get());
 		this.dropSelf(ModBlocks.flower_gerbera_red.get());
 		this.dropSelf(ModBlocks.flower_gerbera_yellow.get());
+	   	this.dropSelf(ModBlocks.flower_oriental_pink_lily.get());
+    	this.dropSelf(ModBlocks.flower_lily.get());
+    	this.dropSelf(ModBlocks.flower_iris_blue.get());
+    	this.dropSelf(ModBlocks.flower_iris_purple.get());
+    	this.dropSelf(ModBlocks.flower_marsh_marigold.get());
+    	this.dropSelf(ModBlocks.flower_pansy.get());
+    	this.dropSelf(ModBlocks.flower_poppy.get());
+    	this.dropSelf(ModBlocks.flower_blue_poppy.get());
+    	this.dropSelf(ModBlocks.flower_snapdragon.get());
+    	this.dropSelf(ModBlocks.flower_tulip.get());
+    	this.dropSelf(ModBlocks.flower_violet.get());
+    	this.dropSelf(ModBlocks.flower_yarrow.get());
+    	this.dropSelf(ModBlocks.flower_belladonna.get());
 		
 		// flowerpots
 		this.dropPottedContents(ModBlocks.potted_allium.get());
-		
 		this.dropPottedContents(ModBlocks.potted_redrover.get());
 		this.dropPottedContents(ModBlocks.potted_hydrangea.get());
 		this.dropPottedContents(ModBlocks.potted_buttercup.get());
@@ -76,6 +88,29 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropPottedContents(ModBlocks.potted_sapling_goldenrod.get());
 		this.dropPottedContents(ModBlocks.potted_sapling_japanese_maple.get());
 		this.dropPottedContents(ModBlocks.potted_sapling_vermillion.get());
+		this.dropPottedContents(ModBlocks.potted_bluebell.get());
+		this.dropPottedContents(ModBlocks.potted_calla_black.get());
+		this.dropPottedContents(ModBlocks.potted_daisy.get());
+		this.dropPottedContents(ModBlocks.potted_dandelion.get());
+		this.dropPottedContents(ModBlocks.potted_gardenia.get());
+		this.dropPottedContents(ModBlocks.potted_gerbera_orange.get());
+		this.dropPottedContents(ModBlocks.potted_gerbera_pink.get());
+		this.dropPottedContents(ModBlocks.potted_gerbera_red.get());
+		this.dropPottedContents(ModBlocks.potted_gerbera_yellow.get());
+		this.dropPottedContents(ModBlocks.potted_hydrangea.get());
+	   	this.dropPottedContents(ModBlocks.potted_oriental_pink_lily.get());
+    	this.dropPottedContents(ModBlocks.potted_lily.get());
+    	this.dropPottedContents(ModBlocks.potted_iris_blue.get());
+    	this.dropPottedContents(ModBlocks.potted_iris_purple.get());
+    	this.dropPottedContents(ModBlocks.potted_marsh_marigold.get());
+    	this.dropPottedContents(ModBlocks.potted_pansy.get());
+    	this.dropPottedContents(ModBlocks.potted_poppy.get());
+    	this.dropPottedContents(ModBlocks.potted_blue_poppy.get());
+    	this.dropPottedContents(ModBlocks.potted_snapdragon.get());
+    	this.dropPottedContents(ModBlocks.potted_tulip.get());
+    	this.dropPottedContents(ModBlocks.potted_violet.get());
+    	this.dropPottedContents(ModBlocks.potted_yarrow.get());
+    	this.dropPottedContents(ModBlocks.potted_belladonna.get());
 
 		// logs
 		this.dropSelf(ModBlocks.log_autumn.get());

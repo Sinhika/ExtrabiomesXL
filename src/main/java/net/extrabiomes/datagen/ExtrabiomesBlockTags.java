@@ -164,7 +164,20 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.flower_gerbera_pink.get())
 			.add(ModBlocks.flower_gerbera_red.get())
 			.add(ModBlocks.flower_gerbera_yellow.get())
-			.add(ModBlocks.flower_hydrangea.get());
+			.add(ModBlocks.flower_hydrangea.get())
+		   	.add(ModBlocks.flower_oriental_pink_lily.get())
+	    	.add(ModBlocks.flower_lily.get())
+	    	.add(ModBlocks.flower_iris_blue.get())
+	    	.add(ModBlocks.flower_iris_purple.get())
+	    	.add(ModBlocks.flower_marsh_marigold.get())
+	    	.add(ModBlocks.flower_pansy.get())
+	    	.add(ModBlocks.flower_poppy.get())
+	    	.add(ModBlocks.flower_blue_poppy.get())
+	    	.add(ModBlocks.flower_snapdragon.get())
+	    	.add(ModBlocks.flower_tulip.get())
+	    	.add(ModBlocks.flower_violet.get())
+	    	.add(ModBlocks.flower_yarrow.get())
+	    	.add(ModBlocks.flower_belladonna.get());
 			
 		// flower pots
 		this.tag(BlockTags.FLOWER_POTS)
@@ -183,7 +196,30 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.potted_sapling_goldenrod.get())
 			.add(ModBlocks.potted_sapling_japanese_maple.get())
 			.add(ModBlocks.potted_sapling_vermillion.get())
-			.add(ModBlocks.potted_bells_of_ireland.get());
+			.add(ModBlocks.potted_bells_of_ireland.get())
+			.add(ModBlocks.potted_bluebell.get())
+			.add(ModBlocks.potted_calla_black.get())
+			.add(ModBlocks.potted_daisy.get())
+			.add(ModBlocks.potted_dandelion.get())
+			.add(ModBlocks.potted_gardenia.get())
+			.add(ModBlocks.potted_gerbera_orange.get())
+			.add(ModBlocks.potted_gerbera_pink.get())
+			.add(ModBlocks.potted_gerbera_red.get())
+			.add(ModBlocks.potted_gerbera_yellow.get())
+			.add(ModBlocks.potted_hydrangea.get())
+		   	.add(ModBlocks.potted_oriental_pink_lily.get())
+	    	.add(ModBlocks.potted_lily.get())
+	    	.add(ModBlocks.potted_iris_blue.get())
+	    	.add(ModBlocks.potted_iris_purple.get())
+	    	.add(ModBlocks.potted_marsh_marigold.get())
+	    	.add(ModBlocks.potted_pansy.get())
+	    	.add(ModBlocks.potted_poppy.get())
+	    	.add(ModBlocks.potted_blue_poppy.get())
+	    	.add(ModBlocks.potted_snapdragon.get())
+	    	.add(ModBlocks.potted_tulip.get())
+	    	.add(ModBlocks.potted_violet.get())
+	    	.add(ModBlocks.potted_yarrow.get())
+	    	.add(ModBlocks.potted_belladonna.get());
 		
 		// crops
 		this.tag(BlockTags.MAINTAINS_FARMLAND)

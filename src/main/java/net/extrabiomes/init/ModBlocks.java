@@ -174,11 +174,11 @@ public final class ModBlocks
 			   () -> flowers(MobEffects.SATURATION, 5, "block.extrabiomes.flower_bachelors_button.description"));
 	   public static final RegistryObject<BushBlock> flower_bells_of_ireland =  BLOCKS.register("flower_bells_of_ireland",
 			   () -> flowers(MobEffects.LUCK, 10, ""));
+	   
 	   public static final RegistryObject<BushBlock> flower_bluebell = BLOCKS.register("flower_bluebell",
-			   () -> flowers(MobEffects.POISON, 4, "block.extrabiomes.flower_bluebell.description"));
+			   () -> flowers(MobEffects.WEAKNESS, 4, "block.extrabiomes.flower_bluebell.description"));
 	   public static final RegistryObject<BushBlock> flower_calla_black  = BLOCKS.register("flower_calla_black",
 			   () -> flowers(MobEffects.POISON, 12, ""));
-	   
 	   public static final RegistryObject<BushBlock> flower_daisy = BLOCKS.register("flower_daisy",
 			   () -> flowers(MobEffects.HEALTH_BOOST, 12, ""));
 	   public static final RegistryObject<BushBlock> flower_dandelion = BLOCKS.register("flower_dandelion",
@@ -194,6 +194,34 @@ public final class ModBlocks
 	   public static final RegistryObject<BushBlock> flower_gerbera_yellow = BLOCKS.register("flower_gerbera_yellow",
 			   () -> flowers(MobEffects.WEAKNESS, 5, ""));
 			   
+	   public static final RegistryObject<BushBlock> flower_oriental_pink_lily  = BLOCKS.register("flower_oriental_pink_lily",
+			   () -> flowers(MobEffects.SATURATION, 5, ""));
+	   public static final RegistryObject<BushBlock> flower_lily  = BLOCKS.register("flower_lily",
+			   () -> flowers(MobEffects.SATURATION, 5, ""));
+	   public static final RegistryObject<BushBlock> flower_iris_blue = BLOCKS.register("flower_iris_blue",
+			   () -> flowers(MobEffects.WEAKNESS, 4, ""));
+	   public static final RegistryObject<BushBlock> flower_iris_purple = BLOCKS.register("flower_iris_purple",
+			   () -> flowers(MobEffects.WEAKNESS, 4, "block.extrabiomes.flower_iris_purple.description"));
+	   public static final RegistryObject<BushBlock> flower_marsh_marigold  = BLOCKS.register("flower_marsh_marigold",
+			   () -> flowers(MobEffects.SATURATION, 4, ""));
+	   public static final RegistryObject<BushBlock> flower_pansy  = BLOCKS.register("flower_pansy",
+			   () -> flowers(MobEffects.SATURATION, 1, ""));
+	   public static final RegistryObject<BushBlock> flower_poppy  = BLOCKS.register("flower_poppy",
+			   () -> flowers(MobEffects.CONFUSION, 10, ""));
+	   public static final RegistryObject<BushBlock> flower_blue_poppy  = BLOCKS.register("flower_blue_poppy",
+			   () -> flowers(MobEffects.CONFUSION, 10, "block.extrabiomes.flower_blue_poppy.description"));
+	   public static final RegistryObject<BushBlock> flower_snapdragon = BLOCKS.register("flower_snapdragon",
+			   () -> flowers(MobEffects.SATURATION, 1, ""));
+	   public static final RegistryObject<BushBlock> flower_tulip = BLOCKS.register("flower_tulip",
+			   () -> flowers(MobEffects.WEAKNESS, 4, ""));
+	   public static final RegistryObject<BushBlock> flower_violet = BLOCKS.register("flower_violet",
+			   () -> flowers(MobEffects.SATURATION, 1, ""));
+	   public static final RegistryObject<BushBlock> flower_yarrow = BLOCKS.register("flower_yarrow",
+			   () -> flowers(MobEffects.REGENERATION, 4, ""));
+	   public static final RegistryObject<BushBlock> flower_belladonna = BLOCKS.register("flower_belladonna",
+			   () -> flowers(MobEffects.BLINDNESS, 4, ""));
+		   
+	   
 	   // POTTED FLOWERS
 	   public static final RegistryObject<FlowerPotBlock> potted_redrover = BLOCKS.register("potted_redrover",
 			   () -> flowerpot(ModBlocks.flower_redrover));
@@ -221,6 +249,53 @@ public final class ModBlocks
 			   () -> flowerpot(ModBlocks.flower_bachelors_button));
 	   public static final RegistryObject<FlowerPotBlock> potted_bells_of_ireland = BLOCKS.register("potted_bells_of_ireland",
 			   () -> flowerpot(ModBlocks.flower_bells_of_ireland));
+
+	   public static final RegistryObject<FlowerPotBlock> potted_bluebell = BLOCKS.register("potted_bluebell",
+			   () -> flowerpot(ModBlocks.flower_bluebell));
+	   public static final RegistryObject<FlowerPotBlock> potted_calla_black = BLOCKS.register("potted_calla_black",
+			   () -> flowerpot(ModBlocks.flower_calla_black));
+	   public static final RegistryObject<FlowerPotBlock> potted_daisy = BLOCKS.register("potted_daisy",
+			   () -> flowerpot(ModBlocks.flower_daisy));
+	   public static final RegistryObject<FlowerPotBlock> potted_dandelion = BLOCKS.register("potted_dandelion",
+			   () -> flowerpot(ModBlocks.flower_dandelion));
+	   public static final RegistryObject<FlowerPotBlock> potted_gardenia = BLOCKS.register("potted_gardenia",
+			   () -> flowerpot(ModBlocks.flower_gardenia));
+	   public static final RegistryObject<FlowerPotBlock> potted_gerbera_orange  = BLOCKS.register("potted_gerbera_orange",
+			   () -> flowerpot(ModBlocks.flower_gerbera_orange));
+	   public static final RegistryObject<FlowerPotBlock> potted_gerbera_pink = BLOCKS.register("potted_gerbera_pink",
+			   () -> flowerpot(ModBlocks.flower_gerbera_pink));
+	   public static final RegistryObject<FlowerPotBlock> potted_gerbera_red = BLOCKS.register("potted_gerbera_red",
+			   () -> flowerpot(ModBlocks.flower_gerbera_red));
+	   public static final RegistryObject<FlowerPotBlock> potted_gerbera_yellow = BLOCKS.register("potted_gerbera_yellow",
+			   () -> flowerpot(ModBlocks.flower_gerbera_yellow));
+
+	   public static final RegistryObject<FlowerPotBlock> potted_oriental_pink_lily  = BLOCKS.register("potted_oriental_pink_lily",
+			   () -> flowerpot(ModBlocks.flower_oriental_pink_lily));
+	   public static final RegistryObject<FlowerPotBlock> potted_lily  = BLOCKS.register("potted_lily",
+			   () -> flowerpot(ModBlocks.flower_lily));
+	   public static final RegistryObject<FlowerPotBlock> potted_iris_blue = BLOCKS.register("potted_iris_blue",
+			   () -> flowerpot(ModBlocks.flower_iris_blue));
+	   public static final RegistryObject<FlowerPotBlock> potted_iris_purple = BLOCKS.register("potted_iris_purple",
+			   () -> flowerpot(ModBlocks.flower_iris_purple));
+	   public static final RegistryObject<FlowerPotBlock> potted_marsh_marigold  = BLOCKS.register("potted_marsh_marigold",
+			   () -> flowerpot(ModBlocks.flower_marsh_marigold));
+	   public static final RegistryObject<FlowerPotBlock> potted_pansy  = BLOCKS.register("potted_pansy",
+			   () -> flowerpot(ModBlocks.flower_pansy));
+	   public static final RegistryObject<FlowerPotBlock> potted_poppy  = BLOCKS.register("potted_poppy",
+			   () -> flowerpot(ModBlocks.flower_poppy));
+	   public static final RegistryObject<FlowerPotBlock> potted_blue_poppy  = BLOCKS.register("potted_blue_poppy",
+			   () -> flowerpot(ModBlocks.flower_blue_poppy));
+	   public static final RegistryObject<FlowerPotBlock> potted_snapdragon = BLOCKS.register("potted_snapdragon",
+			   () -> flowerpot(ModBlocks.flower_snapdragon));
+	   public static final RegistryObject<FlowerPotBlock> potted_tulip = BLOCKS.register("potted_tulip",
+			   () -> flowerpot(ModBlocks.flower_tulip));
+	   public static final RegistryObject<FlowerPotBlock> potted_violet = BLOCKS.register("potted_violet",
+			   () -> flowerpot(ModBlocks.flower_violet));
+	   public static final RegistryObject<FlowerPotBlock> potted_yarrow = BLOCKS.register("potted_yarrow",
+			   () -> flowerpot(ModBlocks.flower_yarrow));
+	   public static final RegistryObject<FlowerPotBlock> potted_belladonna = BLOCKS.register("potted_belladonna",
+			   () -> flowerpot(ModBlocks.flower_belladonna));
+	   
 	   
 	   // OTHER PLANTS
 	   public static final RegistryObject<CattailBlock> cattail = BLOCKS.register("cattail",

@@ -75,6 +75,8 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, ModBlocks.flower_calla_white.get(), "light_gray_dye");
 		oneToOneConversionRecipe(consumer, Items.BLUE_DYE, ModBlocks.flower_bachelors_button.get(), "light_blue_dye");
 		oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, ModBlocks.flower_bluebell.get(), "blue_dye");
+		oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, ModBlocks.flower_iris_purple.get(), "purple_dye");
+		oneToOneConversionRecipe(consumer, Items.CYAN_DYE, ModBlocks.flower_blue_poppy.get(), "cyan_dye");
 		
 		// cactus to paste
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.cactus_paste.get())

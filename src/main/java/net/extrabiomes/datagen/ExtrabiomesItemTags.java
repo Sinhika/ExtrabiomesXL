@@ -70,7 +70,20 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.flower_gerbera_pink.get().asItem())
 			.add(ModBlocks.flower_gerbera_red.get().asItem())
 			.add(ModBlocks.flower_gerbera_yellow.get().asItem())			
-   			.add(ModBlocks.flower_redrover.get().asItem());
+   			.add(ModBlocks.flower_redrover.get().asItem())
+		   	.add(ModBlocks.flower_oriental_pink_lily.get().asItem())
+	    	.add(ModBlocks.flower_lily.get().asItem())
+	    	.add(ModBlocks.flower_iris_blue.get().asItem())
+	    	.add(ModBlocks.flower_iris_purple.get().asItem())
+	    	.add(ModBlocks.flower_marsh_marigold.get().asItem())
+	    	.add(ModBlocks.flower_pansy.get().asItem())
+	    	.add(ModBlocks.flower_poppy.get().asItem())
+	    	.add(ModBlocks.flower_blue_poppy.get().asItem())
+	    	.add(ModBlocks.flower_snapdragon.get().asItem())
+	    	.add(ModBlocks.flower_tulip.get().asItem())
+	    	.add(ModBlocks.flower_violet.get().asItem())
+	    	.add(ModBlocks.flower_yarrow.get().asItem())
+	    	.add(ModBlocks.flower_belladonna.get().asItem());
    		
 	} // end registerOtherPlantTags()
 	

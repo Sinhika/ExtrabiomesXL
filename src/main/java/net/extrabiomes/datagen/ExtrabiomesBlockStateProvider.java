@@ -234,7 +234,21 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_gerbera_pink, modLoc("block/gerbera_pink"));
     	flower2model.put(ModBlocks.flower_gerbera_red, modLoc("block/gerbera_red"));
     	flower2model.put(ModBlocks.flower_gerbera_yellow, modLoc("block/gerbera_yellow"));
-    	
+
+    	flower2model.put(ModBlocks.flower_oriental_pink_lily, modLoc("block/orientalpinklily"));
+    	flower2model.put(ModBlocks.flower_lily, modLoc("block/lily"));
+    	flower2model.put(ModBlocks.flower_iris_blue, modLoc("block/iris_blue"));
+    	flower2model.put(ModBlocks.flower_iris_purple, modLoc("block/iris_purple"));
+    	flower2model.put(ModBlocks.flower_marsh_marigold, modLoc("block/marshmarigold"));
+    	flower2model.put(ModBlocks.flower_pansy, modLoc("block/pansy"));
+    	flower2model.put(ModBlocks.flower_poppy, modLoc("block/poppy"));
+    	flower2model.put(ModBlocks.flower_blue_poppy, modLoc("block/himalayanbluepoppy"));
+    	flower2model.put(ModBlocks.flower_snapdragon, modLoc("block/snapdragon"));
+    	flower2model.put(ModBlocks.flower_tulip, modLoc("block/tulips"));
+    	flower2model.put(ModBlocks.flower_violet, modLoc("block/violet"));
+    	flower2model.put(ModBlocks.flower_yarrow, modLoc("block/yarrow"));
+    	flower2model.put(ModBlocks.flower_belladonna, modLoc("block/belladonna"));
+
     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
@@ -264,6 +278,29 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
     	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
     	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
+    	pot2model.put(ModBlocks.potted_bluebell, modLoc("block/bluebell"));
+    	pot2model.put(ModBlocks.potted_calla_black, modLoc("block/calla_black"));
+    	pot2model.put(ModBlocks.potted_daisy, modLoc("block/daisy"));
+    	pot2model.put(ModBlocks.potted_dandelion, modLoc("block/dandelion"));
+    	pot2model.put(ModBlocks.potted_gardenia, modLoc("block/gardenia"));
+    	pot2model.put(ModBlocks.potted_gerbera_orange, modLoc("block/gerbera_orange"));
+    	pot2model.put(ModBlocks.potted_gerbera_pink, modLoc("block/gerbera_pink"));
+    	pot2model.put(ModBlocks.potted_gerbera_red, modLoc("block/gerbera_red"));
+    	pot2model.put(ModBlocks.potted_gerbera_yellow, modLoc("block/gerbera_yellow"));
+    	
+       	pot2model.put(ModBlocks.potted_oriental_pink_lily, modLoc("block/orientalpinklily"));
+    	pot2model.put(ModBlocks.potted_lily, modLoc("block/lily"));
+    	pot2model.put(ModBlocks.potted_iris_blue, modLoc("block/iris_blue"));
+    	pot2model.put(ModBlocks.potted_iris_purple, modLoc("block/iris_purple"));
+    	pot2model.put(ModBlocks.potted_marsh_marigold, modLoc("block/marshmarigold"));
+    	pot2model.put(ModBlocks.potted_pansy, modLoc("block/pansy"));
+    	pot2model.put(ModBlocks.potted_poppy, modLoc("block/poppy"));
+    	pot2model.put(ModBlocks.potted_blue_poppy, modLoc("block/himalayanbluepoppy"));
+    	pot2model.put(ModBlocks.potted_snapdragon, modLoc("block/snapdragon"));
+    	pot2model.put(ModBlocks.potted_tulip, modLoc("block/tulips"));
+    	pot2model.put(ModBlocks.potted_violet, modLoc("block/violet"));
+    	pot2model.put(ModBlocks.potted_yarrow, modLoc("block/yarrow"));
+    	pot2model.put(ModBlocks.potted_belladonna, modLoc("block/belladonna"));
     	
     	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
     	{
