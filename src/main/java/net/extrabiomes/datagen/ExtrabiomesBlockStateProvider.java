@@ -423,7 +423,14 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_violet, modLoc("block/violet"));
     	flower2model.put(ModBlocks.flower_yarrow, modLoc("block/yarrow"));
     	flower2model.put(ModBlocks.flower_belladonna, modLoc("block/belladonna"));
-
+    	flower2model.put(ModBlocks.cattail, modLoc("block/cattail"));
+    	flower2model.put(ModBlocks.flower_autumn_shrub, modLoc("block/autumnshrub"));
+    	flower2model.put(ModBlocks.brown_grass_short, modLoc("block/browngrassshort"));
+    	flower2model.put(ModBlocks.brown_grass_tall, modLoc("block/browngrasstall"));
+    	flower2model.put(ModBlocks.dead_grass_short, modLoc("block/deadgrassshort"));
+    	flower2model.put(ModBlocks.dead_grass_tall, modLoc("block/deadgrasstall"));
+    	flower2model.put(ModBlocks.dead_grass_yellow, modLoc("block/deadgrassyellow"));
+    	
     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
@@ -485,15 +492,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	    	this.simpleBlock(entry.getKey().get(), flower_pot);
     	} // end-foreach pot
     	
-    	// cattail
-    	ModelFile bush = this.models().cross("cattail", modLoc("block/cattail")).renderType("cutout");
-    	this.simpleBlock(ModBlocks.cattail.get(), bush);
-    	this.itemModels().singleTexture("cattail", mcLoc("generated"), "layer0", modLoc("block/cattail"));
-    	
-    	// autumn shrub
-    	bush = this.models().cross("flower_autumn_shrub", modLoc("block/autumnshrub")).renderType("cutout");
-    	this.simpleBlock(ModBlocks.flower_autumn_shrub.get(), bush);
-    	this.itemModels().singleTexture("flower_autumn_shrub", mcLoc("generated"), "layer0", modLoc("block/autumnshrub"));
     } // end registerFlowers
     
     

@@ -236,7 +236,12 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.tag(BlockTags.REPLACEABLE_BY_TREES)
 			.add(ModBlocks.flower_autumn_shrub.get())
 			.add(ModBlocks.vine_gloriosa.get())
-			.add(ModBlocks.vine_spanish_moss.get());
+			.add(ModBlocks.vine_spanish_moss.get())
+			.add(ModBlocks.brown_grass_short.get())
+			.add(ModBlocks.brown_grass_tall.get())
+			.add(ModBlocks.dead_grass_short.get())
+			.add(ModBlocks.dead_grass_tall.get())
+			.add(ModBlocks.dead_grass_yellow.get());
 		
 		this.tag(BlockTags.CLIMBABLE)
 			.add(ModBlocks.vine_gloriosa.get());

@@ -159,6 +159,17 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropSelf(ModBlocks.cattail.get());
 		this.dropSelf(ModBlocks.flower_autumn_shrub.get());
 		
+		// grasses
+		this.add(ModBlocks.brown_grass_short.get(), createGrassDrops(ModBlocks.brown_grass_short.get()));
+		this.add(ModBlocks.brown_grass_tall.get(), createGrassDrops(ModBlocks.brown_grass_tall.get()));
+		this.add(ModBlocks.dead_grass_short.get(), createGrassDrops(ModBlocks.dead_grass_short.get()));
+		this.add(ModBlocks.dead_grass_tall.get(), createGrassDrops(ModBlocks.dead_grass_tall.get()));
+		this.add(ModBlocks.dead_grass_yellow.get(), createGrassDrops(ModBlocks.dead_grass_yellow.get()));
+		
+		// vines
+		this.add(ModBlocks.vine_gloriosa.get(), createShearsOnlyDrop(ModBlocks.vine_gloriosa.get()));
+		this.add(ModBlocks.vine_spanish_moss.get(), createShearsOnlyDrop(ModBlocks.vine_spanish_moss.get()));
+		
 		// terrain blocks
 		this.dropSelf(ModBlocks.crackedsand.get());
 		
