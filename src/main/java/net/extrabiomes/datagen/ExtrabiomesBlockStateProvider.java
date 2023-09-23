@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
@@ -28,7 +28,6 @@ import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.VineBlock;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -233,7 +232,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
                 .texture("vine", texture);
         
         // all parts have conditions, so no default..
-        MultiPartBlockStateBuilder builder = this.getMultipartBuilder(ModBlocks.vine_gloriosa.get());
+        MultiPartBlockStateBuilder builder = this.getMultipartBuilder(roBlock.get());
         
         // unmodified model when north = true.
         PartBuilder p = builder.part().modelFile(vine_model).addModel();
