@@ -312,11 +312,11 @@ public final class ModBlocks
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   public static final RegistryObject<BushBlock> brown_grass_short = BLOCKS.register("brown_grass_short",
 			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
-					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)
+					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   public static final RegistryObject<BushBlock> dead_grass_short = BLOCKS.register("dead_grass_short",
 			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
-					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)
+					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   public static final RegistryObject<BushBlock> dead_grass_tall = BLOCKS.register("dead_grass_tall",
 			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
@@ -324,7 +324,7 @@ public final class ModBlocks
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	   public static final RegistryObject<BushBlock> dead_grass_yellow = BLOCKS.register("dead_grass_yellow",
 			   () -> new CattailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable()
-					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ)
+					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 			   
 	   public static final RegistryObject<VineBlock> vine_gloriosa = BLOCKS.register("vine_gloriosa",
