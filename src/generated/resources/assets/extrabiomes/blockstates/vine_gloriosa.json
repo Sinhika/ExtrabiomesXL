@@ -97,6 +97,9 @@
         "model": "extrabiomes:block/vine_gloriosa",
         "uvlock": true,
         "y": 270
+      },
+      "when": {
+        "up": "true"
       }
     },
     {

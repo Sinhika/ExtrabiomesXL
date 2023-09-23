@@ -229,7 +229,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		String name = getRegistryNameFromHolder(roBlock);
         ModelFile vine_model = this.models().withExistingParent(name, modLoc("block/template_vine"))
                 .texture("particle",texture)
-                .texture("vine", texture);
+                .texture("vine", texture)
+                .renderType("cutout");
         
         // all parts have conditions, so no default..
         MultiPartBlockStateBuilder builder = this.getMultipartBuilder(roBlock.get());
@@ -358,11 +359,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
         {
             Direction dir = e.getKey();
-            if (dir.getAxis().isHorizontal())
-            {
-                if (dir == Direction.UP) {
-                    p.condition(e.getValue(), true);
-                }
+            if (dir == Direction.UP) {
+                p.condition(e.getValue(), true);
             }
         }
         p.end();

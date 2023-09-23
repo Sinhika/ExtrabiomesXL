@@ -1,5 +1,6 @@
 {
   "parent": "extrabiomes:block/template_vine",
+  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "extrabiomes:block/vine_spanish_moss",
     "vine": "extrabiomes:block/vine_spanish_moss"
