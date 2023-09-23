@@ -548,6 +548,13 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     private void registerTerrainBlocks()
     {
     	this.simpleBlockWithItem(ModBlocks.crackedsand.get(), this.cubeAll(ModBlocks.crackedsand.get()));
+    	this.simpleBlockWithItem(ModBlocks.quicksand.get(), this.cubeAll(ModBlocks.quicksand.get()));
+    	this.simpleBlockWithItem(ModBlocks.redrock.get(), this.cubeAll(ModBlocks.redrock.get()));
+    	this.simpleBlockWithItem(ModBlocks.redcobble.get(), 
+    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redcobble), modLoc("block/redrockcobble")));
+    	this.simpleBlockWithItem(ModBlocks.redrock_brick.get(), 
+    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redrock_brick), modLoc("block/redrockbrick")));
+    	
     } // end registerTerrainBlocks()
     
     // =================== UTILITY FUNCTIONS ================= //

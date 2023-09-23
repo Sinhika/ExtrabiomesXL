@@ -1,5 +1,8 @@
 {
   "values": [
-    "extrabiomes:crackedsand"
+    "extrabiomes:crackedsand",
+    "extrabiomes:redcobble",
+    "extrabiomes:redrock",
+    "extrabiomes:redrock_brick"
   ]
 }

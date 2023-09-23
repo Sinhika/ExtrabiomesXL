@@ -4,6 +4,7 @@ import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CattailBlock;
 import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.QuickSandBlock;
 import net.extrabiomes.content.StrawberryBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
 import net.extrabiomes.world.JapaneseMapleGrower;
@@ -49,7 +50,23 @@ public final class ModBlocks
 	   public static final RegistryObject<Block> crackedsand = BLOCKS.register("crackedsand", 
 			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY)
 					   .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.2F)));
+	   
+	   public static final RegistryObject<Block> quicksand = BLOCKS.register("quicksand",
+			   () -> new QuickSandBlock());
+	   
+	   public static final RegistryObject<Block> redrock = BLOCKS.register("redrock",
+			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+					   .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+	   
+	   public static final RegistryObject<Block> redcobble = BLOCKS.register("redcobble",		
+			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+					   .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	   
+	   public static final RegistryObject<Block> redrock_brick = BLOCKS.register("redrock_brick",		
+			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+					   .instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
 
+	   
 	   // LEAVES
 	   // autumn tree leaf blocks
 	   public static final RegistryObject<LeavesBlock> leaves_umber = BLOCKS.register("leaves_umber", 

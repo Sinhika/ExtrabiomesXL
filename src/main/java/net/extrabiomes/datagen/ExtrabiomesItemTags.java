@@ -104,7 +104,8 @@ public class ExtrabiomesItemTags extends MiningItemTags
    			.add(ModItems.food_chocolate.get());
 
 		this.tag(ItemTags.SMELTS_TO_GLASS)
-			.add(ModBlocks.crackedsand.get().asItem());
+			.add(ModBlocks.crackedsand.get().asItem())
+			.add(ModBlocks.quicksand.get().asItem());
 
 		this.tag(TagUtils.forgeTag("tools"))
 			.add(ModItems.log_turner.get());

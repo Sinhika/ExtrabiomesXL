@@ -39,9 +39,11 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	@Override
 	protected void registerMiningTags() 
 	{
-		registerMineableTags(List.of(ModBlocks.crackedsand.get()), 
+		registerMineableTags(List.of(ModBlocks.crackedsand.get(), ModBlocks.redcobble.get(), ModBlocks.redrock.get(),
+				ModBlocks.redrock_brick.get()), 
 				List.of(), List.of(), List.of(), List.of());
 		registerAxeableTags(List.of(ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get()));
+		registerShovelableTags(List.of(ModBlocks.quicksand.get()));
 		
 		this.tag(BlockTags.SWORD_EFFICIENT)
 			.add(ModBlocks.vine_gloriosa.get())
@@ -259,12 +261,13 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	
 	private void registerMiscTags()
 	{
-		
 		this.tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
-			.add(ModBlocks.crackedsand.get());
+			.add(ModBlocks.crackedsand.get())
+			.add(ModBlocks.redrock.get());
 		
 		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
-			.add(ModBlocks.crackedsand.get());
+			.add(ModBlocks.crackedsand.get())
+			.add(ModBlocks.redrock.get());
 		
 		this.tag(BlockTags.CONVERTABLE_TO_MUD)
 			.add(ModBlocks.crackedsand.get());
@@ -273,7 +276,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.crackedsand.get());
 		
 		this.tag(BlockTags.SMELTS_TO_GLASS)
-			.add(ModBlocks.crackedsand.get());
+			.add(ModBlocks.crackedsand.get())
+			.add(ModBlocks.quicksand.get());
+		
 	} // end registerMiscTags()
 	
 } // end class

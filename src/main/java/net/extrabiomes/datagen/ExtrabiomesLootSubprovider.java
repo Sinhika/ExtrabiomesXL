@@ -172,6 +172,10 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		
 		// terrain blocks
 		this.dropSelf(ModBlocks.crackedsand.get());
+		this.dropSelf(ModBlocks.quicksand.get());
+		this.dropSelf(ModBlocks.redcobble.get());
+		this.dropSelf(ModBlocks.redrock_brick.get());
+		this.dropOther(ModBlocks.redrock.get(), ModBlocks.redcobble.get());
 		
 	} // end generate()
 
