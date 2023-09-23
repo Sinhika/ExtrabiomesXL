@@ -5,12 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.init.ModBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -22,11 +24,16 @@ import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.VineBlock;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder.PartBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -189,10 +196,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         for (int ii=0; ii<6; ii++)
         {
         	strawberry_models.add(this.models().crop("crop_strawberry" + ii, 
-                                                    modLoc("block/plant_strawberry" + ii)).renderType("cutout_mipped"));
+                                                    modLoc("block/plant_strawberry" + ii)).renderType("cutout"));
         } // end-for 
         // the last texture skips a number for some reason.
-    	strawberry_models.add(this.models().crop("crop_strawberry6", modLoc("block/plant_strawberry7")).renderType("cutout_mipped"));
+    	strawberry_models.add(this.models().crop("crop_strawberry6", modLoc("block/plant_strawberry7")).renderType("cutout"));
         
         this.getVariantBuilder(ModBlocks.crop_strawberry.get())
 	        .partialState().with(CropBlock.AGE, 0).addModels(new ConfiguredModel(strawberry_models.get(0)))
@@ -204,8 +211,179 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	        .partialState().with(CropBlock.AGE, 6).addModels(new ConfiguredModel(strawberry_models.get(5)))
 	        .partialState().with(CropBlock.AGE, 7).addModels(new ConfiguredModel(strawberry_models.get(6)));
 
+        // vines
+        // TODO - block models, blockstates
+        vineBlock(ModBlocks.vine_gloriosa, modLoc("block/vine_gloriosa"));
+        vineBlock(ModBlocks.vine_spanish_moss, modLoc("block/vine_spanish_moss"));
+        
+        // done - item models.
+        this.itemModels().singleTexture("vine_gloriosa", mcLoc("generated"), "layer0", modLoc("block/vine_gloriosa"));
+        this.itemModels().singleTexture("vine_spanish_moss", mcLoc("generated"), "layer0", modLoc("block/vine_spanish_moss"));
     } // end registerCropBlocks
 
+    
+    /**
+     * Builder for vines
+     */
+    public void vineBlock(RegistryObject<? extends Block> roBlock, ResourceLocation texture)
+    {
+		String name = getRegistryNameFromHolder(roBlock);
+        ModelFile vine_model = this.models().withExistingParent(name, modLoc("block/template_vine"))
+                .texture("particle",texture)
+                .texture("vine", texture);
+        
+        // all parts have conditions, so no default..
+        MultiPartBlockStateBuilder builder = this.getMultipartBuilder(ModBlocks.vine_gloriosa.get());
+        
+        // unmodified model when north = true.
+        PartBuilder p = builder.part().modelFile(vine_model).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+                if (dir == Direction.NORTH) {
+                    p.condition(e.getValue(), true);
+                }
+            }
+        }
+        p.end();
+        
+        // unmodified model when horizontal & up are false
+        p = builder.part().modelFile(vine_model).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+            	p.condition(e.getValue(), false);
+            }
+            else if (dir == Direction.UP)
+            {
+            	p.condition(e.getValue(), false);
+            }
+        }
+        p.end();
+        
+        // uvlock y=90 model when east = true.
+        p = builder.part().modelFile(vine_model).rotationY(90).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+                if (dir == Direction.EAST) {
+                    p.condition(e.getValue(), true);
+                }
+            }
+        }
+        p.end();
+        
+        //  uvlock y=90 model when horizontal & up are false
+        p = builder.part().modelFile(vine_model).rotationY(90).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+            	p.condition(e.getValue(), false);
+            }
+            else if (dir == Direction.UP)
+            {
+            	p.condition(e.getValue(), false);
+            }
+        }
+        p.end();
+       
+        // uvlock,y=180 model when south = true.
+        p = builder.part().modelFile(vine_model).rotationY(180).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+                if (dir == Direction.SOUTH) {
+                    p.condition(e.getValue(), true);
+                }
+            }
+        }
+        p.end();
+        // same when most is false.
+        p = builder.part().modelFile(vine_model).rotationY(180).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+            	p.condition(e.getValue(), false);
+            }
+            else if (dir == Direction.UP)
+            {
+            	p.condition(e.getValue(), false);
+            }
+        }
+        p.end();
+       
+       
+        // uvlock,y=270 model when west = true.
+        p = builder.part().modelFile(vine_model).rotationY(270).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+                if (dir == Direction.WEST) {
+                    p.condition(e.getValue(), true);
+                }
+            }
+        }
+        p.end();
+        // same when most is false.
+        p = builder.part().modelFile(vine_model).rotationY(270).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+            	p.condition(e.getValue(), false);
+            }
+            else if (dir == Direction.UP)
+            {
+            	p.condition(e.getValue(), false);
+            }
+        }
+        p.end();
+
+        // uvlock, y=270 model when up is true.
+        p = builder.part().modelFile(vine_model).rotationY(270).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+                if (dir == Direction.UP) {
+                    p.condition(e.getValue(), true);
+                }
+            }
+        }
+        p.end();
+        // same when most is false.
+        p = builder.part().modelFile(vine_model).rotationY(270).uvLock(true).addModel();
+        for (Entry<Direction, BooleanProperty> e : PipeBlock.PROPERTY_BY_DIRECTION.entrySet())
+        {
+            Direction dir = e.getKey();
+            if (dir.getAxis().isHorizontal())
+            {
+            	p.condition(e.getValue(), false);
+            }
+            else if (dir == Direction.UP)
+            {
+            	p.condition(e.getValue(), false);
+            }
+        }
+        p.end();
+        
+    } // end vineBlock()
     
     // flowers
     private void registerFlowers()

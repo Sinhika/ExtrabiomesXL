@@ -41,7 +41,13 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	{
 		registerMineableTags(List.of(ModBlocks.crackedsand.get()), 
 				List.of(), List.of(), List.of(), List.of());
-	}
+		registerAxeableTags(List.of(ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get()));
+		
+		this.tag(BlockTags.SWORD_EFFICIENT)
+			.add(ModBlocks.vine_gloriosa.get())
+			.add(ModBlocks.vine_spanish_moss.get());
+	} // end registerMiningTags()
+	
 
 	@Override
 	protected void registerOreTags() {
@@ -228,9 +234,21 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.crop_strawberry.get());
 		
 		this.tag(BlockTags.REPLACEABLE_BY_TREES)
-			.add(ModBlocks.flower_autumn_shrub.get());
+			.add(ModBlocks.flower_autumn_shrub.get())
+			.add(ModBlocks.vine_gloriosa.get())
+			.add(ModBlocks.vine_spanish_moss.get());
 		
-		// this.tag(BlockTags.CLIMBABLE);
+		this.tag(BlockTags.CLIMBABLE)
+			.add(ModBlocks.vine_gloriosa.get());
+		// note: vine_spanish_moss is too weak to climb.
+		
+		this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH)
+			.add(ModBlocks.vine_gloriosa.get())
+			.add(ModBlocks.vine_spanish_moss.get());
+		
+		this.tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH)
+			.add(ModBlocks.vine_gloriosa.get())
+			.add(ModBlocks.vine_spanish_moss.get());
 	} // end registerOtherPlantTags()
 	
 	
