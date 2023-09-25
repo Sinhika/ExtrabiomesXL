@@ -12,8 +12,8 @@ import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public final class ClientModEventSubscriber 
+@EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+public final class ClientForgeEventSubscriber 
 {
 	/**
 	 * register block color handlers for leaves and suchlike.
