@@ -137,6 +137,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.leaves_goldenrod.get())
 			.add(ModBlocks.leaves_umber.get())
 			.add(ModBlocks.leaves_vermillion.get())
+			.add(ModBlocks.leaves_japanese_maple_shrub.get())
 			.add(ModBlocks.leaves_fir.get())
 			.add(ModBlocks.leaves_redwood.get())
 			.add(ModBlocks.leaves_acacia.get())
@@ -150,7 +151,15 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	    	.add(ModBlocks.sapling_citrine.get())
 	    	.add(ModBlocks.sapling_goldenrod.get())
 	    	.add(ModBlocks.sapling_umber.get())
-	    	.add(ModBlocks.sapling_vermillion.get());
+	    	.add(ModBlocks.sapling_vermillion.get())
+	    	.add(ModBlocks.sapling_japanese_maple_shrub.get())
+	    	.add(ModBlocks.sapling_fir.get())
+	    	.add(ModBlocks.sapling_redwood.get())
+	    	.add(ModBlocks.sapling_acacia.get())
+	    	.add(ModBlocks.sapling_cypress.get())
+	    	.add(ModBlocks.sapling_bald_cypress.get())
+	    	.add(ModBlocks.sapling_rainbow_eucalyptus.get())
+	    	.add(ModBlocks.sapling_sakura_blossom.get());
 
 	} // end registerLeafSaplingTags()
 	
@@ -234,7 +243,16 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	    	.add(ModBlocks.potted_tulip.get())
 	    	.add(ModBlocks.potted_violet.get())
 	    	.add(ModBlocks.potted_yarrow.get())
-	    	.add(ModBlocks.potted_belladonna.get());
+	    	.add(ModBlocks.potted_belladonna.get())
+	    	.add(ModBlocks.potted_sapling_japanese_maple_shrub.get())
+	    	.add(ModBlocks.potted_sapling_fir.get())
+	    	.add(ModBlocks.potted_sapling_redwood.get())
+	    	.add(ModBlocks.potted_sapling_acacia.get())
+	    	.add(ModBlocks.potted_sapling_cypress.get())
+	    	.add(ModBlocks.potted_sapling_bald_cypress.get())
+	    	.add(ModBlocks.potted_sapling_rainbow_eucalyptus.get())
+	    	.add(ModBlocks.potted_sapling_sakura_blossom.get());
+
 		
 		// crops
 		this.tag(BlockTags.MAINTAINS_FARMLAND)

@@ -67,6 +67,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	leaves2model.put(ModBlocks.leaves_vermillion, modLoc("block/leavesredautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_citrine, modLoc("block/leavesyellowautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_japanese_maple, modLoc("block/leavesjapanesemaplefancy"));
+    	leaves2model.put(ModBlocks.leaves_japanese_maple_shrub, modLoc("block/leavesjapanesemapleshrubfancy"));
+    	
     	leaves2model.put(ModBlocks.leaves_fir, modLoc("block/leavesfirfancy"));
     	leaves2model.put(ModBlocks.leaves_redwood, modLoc("block/leavesredwoodfancy"));
     	leaves2model.put(ModBlocks.leaves_acacia, modLoc("block/leavesacaciafancy"));
@@ -184,6 +186,14 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	sapling2model.put(ModBlocks.sapling_umber, modLoc("block/saplingbrownautumn"));
        	sapling2model.put(ModBlocks.sapling_vermillion, modLoc("block/saplingredautumn"));
        	sapling2model.put(ModBlocks.sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
+       	sapling2model.put(ModBlocks.sapling_japanese_maple_shrub, modLoc("block/saplingjapanesemapleshrub"));
+       	sapling2model.put(ModBlocks.sapling_fir, modLoc("block/saplingfir"));
+       	sapling2model.put(ModBlocks.sapling_redwood, modLoc("block/saplingredwood"));
+       	sapling2model.put(ModBlocks.sapling_acacia, modLoc("block/saplingacacia"));
+       	sapling2model.put(ModBlocks.sapling_cypress, modLoc("block/saplingcypress"));
+       	sapling2model.put(ModBlocks.sapling_bald_cypress, modLoc("block/saplingbaldcypress"));
+       	sapling2model.put(ModBlocks.sapling_rainbow_eucalyptus, modLoc("block/saplingrainboweucalyptus"));
+       	sapling2model.put(ModBlocks.sapling_sakura_blossom, modLoc("block/saplingsakura"));
        	
        	// saplings
     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: sapling2model.entrySet())
@@ -464,11 +474,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	pot2model.put(ModBlocks.potted_toadstool, modLoc("block/toadstools"));
     	pot2model.put(ModBlocks.potted_bachelors_button, modLoc("block/bachelorsbutton_blue"));
     	pot2model.put(ModBlocks.potted_bells_of_ireland, modLoc("block/bellsofireland"));
-    	pot2model.put(ModBlocks.potted_sapling_citrine, modLoc("block/saplingyellowautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_goldenrod, modLoc("block/saplingorangeautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
     	pot2model.put(ModBlocks.potted_bluebell, modLoc("block/bluebell"));
     	pot2model.put(ModBlocks.potted_calla_black, modLoc("block/calla_black"));
     	pot2model.put(ModBlocks.potted_daisy, modLoc("block/daisy"));
@@ -492,6 +497,20 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	pot2model.put(ModBlocks.potted_violet, modLoc("block/violet"));
     	pot2model.put(ModBlocks.potted_yarrow, modLoc("block/yarrow"));
     	pot2model.put(ModBlocks.potted_belladonna, modLoc("block/belladonna"));
+
+    	pot2model.put(ModBlocks.potted_sapling_citrine, modLoc("block/saplingyellowautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_goldenrod, modLoc("block/saplingorangeautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
+    	pot2model.put(ModBlocks.potted_sapling_japanese_maple_shrub, modLoc("block/saplingjapanesemapleshrub"));
+    	pot2model.put(ModBlocks.potted_sapling_fir, modLoc("block/saplingfir"));
+    	pot2model.put(ModBlocks.potted_sapling_redwood, modLoc("block/saplingredwood"));
+    	pot2model.put(ModBlocks.potted_sapling_acacia, modLoc("block/saplingacacia"));
+    	pot2model.put(ModBlocks.potted_sapling_cypress, modLoc("block/saplingcypress"));
+    	pot2model.put(ModBlocks.potted_sapling_bald_cypress, modLoc("block/saplingbaldcypress"));
+    	pot2model.put(ModBlocks.potted_sapling_rainbow_eucalyptus, modLoc("block/saplingrainboweucalyptus"));
+    	pot2model.put(ModBlocks.potted_sapling_sakura_blossom, modLoc("block/saplingsakura"));
     	
     	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
     	{

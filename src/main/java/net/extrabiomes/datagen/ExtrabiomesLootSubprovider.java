@@ -24,29 +24,36 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 				ModBlocks.sapling_vermillion.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_japanese_maple.get(), createLeavesDrops(ModBlocks.leaves_japanese_maple.get(),
 				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-		
-		// TODO - ADD REAL SAPLINGS!
+		this.add(ModBlocks.leaves_japanese_maple_shrub.get(), createLeavesDrops(ModBlocks.leaves_japanese_maple_shrub.get(),
+				ModBlocks.sapling_japanese_maple_shrub.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_fir.get(), createLeavesDrops(ModBlocks.leaves_fir.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_fir.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_redwood.get(), createLeavesDrops(ModBlocks.leaves_redwood.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_redwood.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_acacia.get(), createLeavesDrops(ModBlocks.leaves_acacia.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_acacia.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_cypress.get(), createLeavesDrops(ModBlocks.leaves_cypress.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_cypress.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_bald_cypress.get(), createLeavesDrops(ModBlocks.leaves_bald_cypress.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_bald_cypress.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_rainbow_eucalyptus.get(), createLeavesDrops(ModBlocks.leaves_rainbow_eucalyptus.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_rainbow_eucalyptus.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		this.add(ModBlocks.leaves_sakura_blossom.get(), createLeavesDrops(ModBlocks.leaves_sakura_blossom.get(),
-				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+				ModBlocks.sapling_sakura_blossom.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		
 		// saplings
 		this.dropSelf(ModBlocks.sapling_citrine.get());
 		this.dropSelf(ModBlocks.sapling_goldenrod.get());
 		this.dropSelf(ModBlocks.sapling_umber.get());
 		this.dropSelf(ModBlocks.sapling_vermillion.get());
-		this.dropSelf(ModBlocks.sapling_japanese_maple.get());
+		this.dropSelf(ModBlocks.sapling_japanese_maple_shrub.get());
+		this.dropSelf(ModBlocks.sapling_fir.get());
+		this.dropSelf(ModBlocks.sapling_redwood.get());
+		this.dropSelf(ModBlocks.sapling_acacia.get());
+		this.dropSelf(ModBlocks.sapling_cypress.get());
+		this.dropSelf(ModBlocks.sapling_bald_cypress.get());
+		this.dropSelf(ModBlocks.sapling_rainbow_eucalyptus.get());
+		this.dropSelf(ModBlocks.sapling_sakura_blossom.get());
 		
 		// flowers
 		this.dropSelf(ModBlocks.flower_redrover.get());
@@ -99,11 +106,6 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropPottedContents(ModBlocks.potted_amaryllis_white.get());
 		this.dropPottedContents(ModBlocks.potted_bachelors_button.get());
 		this.dropPottedContents(ModBlocks.potted_bells_of_ireland.get());
-		this.dropPottedContents(ModBlocks.potted_sapling_citrine.get());
-		this.dropPottedContents(ModBlocks.potted_sapling_umber.get());
-		this.dropPottedContents(ModBlocks.potted_sapling_goldenrod.get());
-		this.dropPottedContents(ModBlocks.potted_sapling_japanese_maple.get());
-		this.dropPottedContents(ModBlocks.potted_sapling_vermillion.get());
 		this.dropPottedContents(ModBlocks.potted_bluebell.get());
 		this.dropPottedContents(ModBlocks.potted_calla_black.get());
 		this.dropPottedContents(ModBlocks.potted_daisy.get());
@@ -127,6 +129,19 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
     	this.dropPottedContents(ModBlocks.potted_violet.get());
     	this.dropPottedContents(ModBlocks.potted_yarrow.get());
     	this.dropPottedContents(ModBlocks.potted_belladonna.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_citrine.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_umber.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_goldenrod.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_vermillion.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_japanese_maple.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_japanese_maple_shrub.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_fir.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_redwood.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_acacia.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_cypress.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_bald_cypress.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_rainbow_eucalyptus.get());
+		this.dropPottedContents(ModBlocks.potted_sapling_sakura_blossom.get());
 
 		// logs
 		this.dropSelf(ModBlocks.log_autumn.get());

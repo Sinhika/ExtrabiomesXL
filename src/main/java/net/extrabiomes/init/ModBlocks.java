@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.VineBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -133,14 +134,32 @@ public final class ModBlocks
 	   // japanese maple saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple = BLOCKS.register("sapling_japanese_maple",
 			   () -> sapling(new JapaneseMapleGrower()));
+	   
+	   // TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // japanese maple shrub saplings
+	   public static final RegistryObject<BushBlock> sapling_japanese_maple_shrub 
+	   		= BLOCKS.register("sapling_japanese_maple_shrub", () -> sapling(new OakTreeGrower()));
 	   // fir saplings
+	   public static final RegistryObject<BushBlock> sapling_fir = BLOCKS.register("sapling_fir",
+			   () -> sapling(new OakTreeGrower()));
 	   // redwood saplings
+	   public static final RegistryObject<BushBlock> sapling_redwood = BLOCKS.register("sapling_redwood",
+			   () -> sapling(new OakTreeGrower()));
 	   // acacia/black wattle saplings
+	   public static final RegistryObject<BushBlock> sapling_acacia = BLOCKS.register("sapling_acacia",
+			   () -> sapling(new OakTreeGrower()));
 	   // cypress saplings
+	   public static final RegistryObject<BushBlock> sapling_cypress = BLOCKS.register("sapling_cypress",
+			   () -> sapling(new OakTreeGrower()));
 	   // bald cypress saplings
+	   public static final RegistryObject<BushBlock> sapling_bald_cypress = BLOCKS.register("sapling_bald_cypress",
+			   () -> sapling(new OakTreeGrower()));
 	   // rainbow eucalypus sapling
+	   public static final RegistryObject<BushBlock> sapling_rainbow_eucalyptus = BLOCKS.register("sapling_rainbow_eucalyptus",
+			   () -> sapling(new OakTreeGrower()));
 	   // sakura sapling
+	   public static final RegistryObject<BushBlock> sapling_sakura_blossom = BLOCKS.register("sapling_sakura_blossom",
+			   () -> sapling(new OakTreeGrower()));
 	   
 	   // POTTED SAPLINGS
 	   public static final RegistryObject<FlowerPotBlock> potted_sapling_umber = BLOCKS.register("potted_sapling_umber",
@@ -153,6 +172,22 @@ public final class ModBlocks
 			   () -> flowerpot(ModBlocks.sapling_citrine));
 	   public static final RegistryObject<FlowerPotBlock> potted_sapling_japanese_maple = BLOCKS.register("potted_sapling_japanese_maple",
 			   () -> flowerpot(ModBlocks.sapling_japanese_maple));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_japanese_maple_shrub = BLOCKS.register("potted_sapling_japanese_maple_shrub",
+			   () -> flowerpot(ModBlocks.sapling_japanese_maple_shrub));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_fir = BLOCKS.register("potted_sapling_fir",
+			   () -> flowerpot(ModBlocks.sapling_fir));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_redwood = BLOCKS.register("potted_sapling_redwood",
+			   () -> flowerpot(ModBlocks.sapling_redwood));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_acacia = BLOCKS.register("potted_sapling_acacia",
+			   () -> flowerpot(ModBlocks.sapling_acacia));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_cypress = BLOCKS.register("potted_sapling_cypress",
+			   () -> flowerpot(ModBlocks.sapling_cypress));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_bald_cypress = BLOCKS.register("potted_sapling_bald_cypress",
+			   () -> flowerpot(ModBlocks.sapling_bald_cypress));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_rainbow_eucalyptus = BLOCKS.register("potted_sapling_rainbow_eucalyptus",
+			   () -> flowerpot(ModBlocks.sapling_rainbow_eucalyptus));
+	   public static final RegistryObject<FlowerPotBlock> potted_sapling_sakura_blossom = BLOCKS.register("potted_sapling_sakura_blossom",
+			   () -> flowerpot(ModBlocks.sapling_sakura_blossom));
 	   
 	   // AESTHETIC BLOCKS
 	   // stairs
