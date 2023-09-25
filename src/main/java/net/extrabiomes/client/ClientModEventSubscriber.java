@@ -1,5 +1,8 @@
 package net.extrabiomes.client;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.client.color.block.BlockColors;
@@ -12,9 +15,11 @@ import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public final class ClientForgeEventSubscriber 
+@EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public final class ClientModEventSubscriber 
 {
+	private static final Logger LOGGER = LogManager.getLogger(ExtrabiomesXS.MODID + " Mod Client Event Subscriber");
+
 	/**
 	 * register block color handlers for leaves and suchlike.
 	 * @param event
@@ -22,6 +27,7 @@ public final class ClientForgeEventSubscriber
 	@SubscribeEvent
 	public static void onRegisterColorHandlers( RegisterColorHandlersEvent.Block event)
 	{
+		LOGGER.debug("hello from onRegisterColorHandlers()");
 		event.register(new LeafBlockColors(), ModBlocks.leaves_acacia.get(), ModBlocks.leaves_fir.get(),
 				ModBlocks.leaves_redwood.get(), ModBlocks.leaves_cypress.get(), ModBlocks.leafpile.get(),
 				ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get(), ModBlocks.leaves_sakura_blossom.get(),
@@ -39,6 +45,7 @@ public final class ClientForgeEventSubscriber
 	@SubscribeEvent
 	public static void onRegisterItemColorHandlers( RegisterColorHandlersEvent.Item event)
 	{
+		LOGGER.debug("hello from onRegisterItemColorHandlers()");
 		BlockColors bc = event.getBlockColors();
 		event.register(
 				(itemstack, tintIndex) -> {
