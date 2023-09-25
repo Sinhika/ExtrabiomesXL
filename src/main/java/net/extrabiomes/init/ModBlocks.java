@@ -80,6 +80,10 @@ public final class ModBlocks
 	   // japanese maple
 	   public static final RegistryObject<LeavesBlock> leaves_japanese_maple = BLOCKS.register("leaves_japanese_maple", 
 			   () -> leaves(MapColor.CRIMSON_NYLIUM, SoundType.GRASS));
+	   // japanese maple shrub
+	   public static final RegistryObject<LeavesBlock> leaves_japanese_maple_shrub = 
+			   BLOCKS.register("leaves_japanese_maple_shrub", () -> leaves(MapColor.COLOR_LIGHT_GREEN, SoundType.GRASS));
+	   
 	   // fir
 	   public static final RegistryObject<LeavesBlock> leaves_fir = BLOCKS.register("leaves_fir",
 			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
@@ -374,6 +378,7 @@ public final class ModBlocks
 					   .noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
 					   .ignitedByLava().pushReaction(PushReaction.DESTROY)));
 			   
+	   // vines
 	   public static final RegistryObject<VineBlock> vine_gloriosa = BLOCKS.register("vine_gloriosa",
 			   () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().randomTicks()
 					   .strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
