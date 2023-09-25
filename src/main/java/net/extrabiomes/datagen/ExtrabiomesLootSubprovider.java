@@ -25,6 +25,22 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.add(ModBlocks.leaves_japanese_maple.get(), createLeavesDrops(ModBlocks.leaves_japanese_maple.get(),
 				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 		
+		// TODO - ADD REAL SAPLINGS!
+		this.add(ModBlocks.leaves_fir.get(), createLeavesDrops(ModBlocks.leaves_fir.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_redwood.get(), createLeavesDrops(ModBlocks.leaves_redwood.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_acacia.get(), createLeavesDrops(ModBlocks.leaves_acacia.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_cypress.get(), createLeavesDrops(ModBlocks.leaves_cypress.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_bald_cypress.get(), createLeavesDrops(ModBlocks.leaves_bald_cypress.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_rainbow_eucalyptus.get(), createLeavesDrops(ModBlocks.leaves_rainbow_eucalyptus.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		this.add(ModBlocks.leaves_sakura_blossom.get(), createLeavesDrops(ModBlocks.leaves_sakura_blossom.get(),
+				ModBlocks.sapling_japanese_maple.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+		
 		// saplings
 		this.dropSelf(ModBlocks.sapling_citrine.get());
 		this.dropSelf(ModBlocks.sapling_goldenrod.get());

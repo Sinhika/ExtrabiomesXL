@@ -151,8 +151,15 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.leaves_citrine.get().asItem())
 			.add(ModBlocks.leaves_goldenrod.get().asItem())
 			.add(ModBlocks.leaves_umber.get().asItem())
-			.add(ModBlocks.leaves_vermillion.get().asItem());
-        
+			.add(ModBlocks.leaves_vermillion.get().asItem())
+			.add(ModBlocks.leaves_fir.get().asItem())
+			.add(ModBlocks.leaves_redwood.get().asItem())
+			.add(ModBlocks.leaves_acacia.get().asItem())
+			.add(ModBlocks.leaves_cypress.get().asItem())
+			.add(ModBlocks.leaves_bald_cypress.get().asItem())
+			.add(ModBlocks.leaves_rainbow_eucalyptus.get().asItem())
+			.add(ModBlocks.leaves_sakura_blossom.get().asItem());
+
         this.tag(ItemTags.SAPLINGS)
         	.add(ModBlocks.sapling_japanese_maple.get().asItem())
 	    	.add(ModBlocks.sapling_citrine.get().asItem())

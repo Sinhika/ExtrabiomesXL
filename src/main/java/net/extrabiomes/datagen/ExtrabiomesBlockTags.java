@@ -136,7 +136,14 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.leaves_citrine.get())
 			.add(ModBlocks.leaves_goldenrod.get())
 			.add(ModBlocks.leaves_umber.get())
-			.add(ModBlocks.leaves_vermillion.get());
+			.add(ModBlocks.leaves_vermillion.get())
+			.add(ModBlocks.leaves_fir.get())
+			.add(ModBlocks.leaves_redwood.get())
+			.add(ModBlocks.leaves_acacia.get())
+			.add(ModBlocks.leaves_cypress.get())
+			.add(ModBlocks.leaves_bald_cypress.get())
+			.add(ModBlocks.leaves_rainbow_eucalyptus.get())
+			.add(ModBlocks.leaves_sakura_blossom.get());
 	      
         this.tag(BlockTags.SAPLINGS)
         	.add(ModBlocks.sapling_japanese_maple.get())
@@ -251,11 +258,13 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		
 		this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH)
 			.add(ModBlocks.vine_gloriosa.get())
-			.add(ModBlocks.vine_spanish_moss.get());
+			.add(ModBlocks.vine_spanish_moss.get())
+			.add(ModBlocks.leafpile.get());
 		
 		this.tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH)
 			.add(ModBlocks.vine_gloriosa.get())
-			.add(ModBlocks.vine_spanish_moss.get());
+			.add(ModBlocks.vine_spanish_moss.get())
+			.add(ModBlocks.leafpile.get());
 	} // end registerOtherPlantTags()
 	
 	

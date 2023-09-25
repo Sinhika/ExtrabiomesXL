@@ -16,16 +16,13 @@
     "item.extrabiomes.scarecrow": "Scarecrow",
     "item.extrabiomes.scarecrow.description": "Keeps your garden free of most creatures.",
 
+    "block.extrabiomes.crop_strawberry": "Strawberries",
     "item.extrabiomes.food_strawberry": "Strawberry",
-
     "item.extrabiomes.seed_strawberry": "Strawberry Seeds",
-
     "item.extrabiomes.food_chocolate": "Chocolate",
     "item.extrabiomes.food_chocolate_strawberry": "Chocolate Covered Strawberry",
 
-
     "extrabiomes.planting_guide": "§oPlanting Guide:§r",
-
     "entity.extrabiomes.scarecrow": "Scarecrow",
 
     "log.message.initializing": "Intializing.",
@@ -36,7 +33,6 @@
     "module.status.enabled": "Module %s is enabled.",
     "module.status.disabled": "Module %s is disabled, skipping.",
 
-    "block.extrabiomes.crop_strawberry": "Strawberries",
 
     "block.extrabiomes.cattail": "Cattail",
     "block.extrabiomes.brown_grass_tall": "Brown Grass (tallgrass_0)",
@@ -138,15 +134,22 @@
 	"block.extrabiomes.pressureplate_japanesemaple": "Japanese Maple Pressure Plate",
     "block.extrabiomes.gate_japanesemaple": "Japanese Maple Fence Gate",
 
-
     "block.extrabiomes.leaves_fir": "Fir Leaves",
+    
     "block.extrabiomes.leaves_redwood": "Redwood Leaves",
+    
     "block.extrabiomes.leaves_acacia": "Black Wattle Leaves",
+    
     "block.extrabiomes.leaves_cypress": "Cypress Leaves",
+    
     "block.extrabiomes.leaves_bald_cypress": "Bald Cypress Leaves",
+    
     "block.extrabiomes.leaves_rainbow_eucalyptus": "Rainbow Eucalyptus Leaves",
+    
     "block.extrabiomes.leaves_sakura_blossom": "Sakura Leaves",
+    
     "block.extrabiomes.leafpile": "Leaf Pile",
+    
     "block.extrabiomes.log_0": "Fir Log",
     "block.extrabiomes.log_acacia": "Black Wattle Log (log.1)",
     "block.extrabiomes.log_2": "Cypress Log",

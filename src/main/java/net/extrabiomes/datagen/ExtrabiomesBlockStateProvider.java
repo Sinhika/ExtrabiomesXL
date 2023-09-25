@@ -67,6 +67,13 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	leaves2model.put(ModBlocks.leaves_vermillion, modLoc("block/leavesredautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_citrine, modLoc("block/leavesyellowautumnfancy"));
     	leaves2model.put(ModBlocks.leaves_japanese_maple, modLoc("block/leavesjapanesemaplefancy"));
+    	leaves2model.put(ModBlocks.leaves_fir, modLoc("block/leavesfirfancy"));
+    	leaves2model.put(ModBlocks.leaves_redwood, modLoc("block/leavesredwoodfancy"));
+    	leaves2model.put(ModBlocks.leaves_acacia, modLoc("block/leavesacaciafancy"));
+    	leaves2model.put(ModBlocks.leaves_cypress, modLoc("block/leavescypressfancy"));
+    	leaves2model.put(ModBlocks.leaves_bald_cypress, modLoc("block/leavesbaldcypressfancy"));
+    	leaves2model.put(ModBlocks.leaves_rainbow_eucalyptus, modLoc("block/leavesrainboweucalyptusfancy"));
+    	leaves2model.put(ModBlocks.leaves_sakura_blossom, modLoc("block/leavessakurafancy"));
     	
     	HashMap<RegistryObject<CustomLogBlock>, String> log2model
     		= new HashMap<RegistryObject<CustomLogBlock>, String>();
@@ -188,7 +195,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	}
     } // end registerSaplings()
     
-    // crop blocks
+    // crop blocks & other stuff
     private void registerCropBlocks()
     {
     	List<ModelFile> strawberry_models = new ArrayList<ModelFile>(7);
@@ -211,13 +218,15 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	        .partialState().with(CropBlock.AGE, 7).addModels(new ConfiguredModel(strawberry_models.get(6)));
 
         // vines
-        // TODO - block models, blockstates
         vineBlock(ModBlocks.vine_gloriosa, modLoc("block/vine_gloriosa"));
         vineBlock(ModBlocks.vine_spanish_moss, modLoc("block/vine_spanish_moss"));
-        
-        // done - item models.
         this.itemModels().singleTexture("vine_gloriosa", mcLoc("generated"), "layer0", modLoc("block/vine_gloriosa"));
         this.itemModels().singleTexture("vine_spanish_moss", mcLoc("generated"), "layer0", modLoc("block/vine_spanish_moss"));
+        
+        // leafpile
+        this.simpleBlockWithItem(ModBlocks.leafpile.get(), this.models().carpet("leafpile", modLoc("block/leafpile"))
+        		.renderType("cutout"));
+        
     } // end registerCropBlocks
 
     

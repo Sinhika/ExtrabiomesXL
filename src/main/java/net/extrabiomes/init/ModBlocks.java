@@ -77,11 +77,33 @@ public final class ModBlocks
 	            () -> leaves(MapColor.COLOR_RED, SoundType.GRASS));
 	   public static final RegistryObject<LeavesBlock> leaves_citrine = BLOCKS.register("leaves_citrine", 
 	            () -> leaves(MapColor.COLOR_YELLOW, SoundType.GRASS));
-	   
 	   // japanese maple
 	   public static final RegistryObject<LeavesBlock> leaves_japanese_maple = BLOCKS.register("leaves_japanese_maple", 
 			   () -> leaves(MapColor.CRIMSON_NYLIUM, SoundType.GRASS));
+	   // fir
+	   public static final RegistryObject<LeavesBlock> leaves_fir = BLOCKS.register("leaves_fir",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // redwood
+	   public static final RegistryObject<LeavesBlock> leaves_redwood = BLOCKS.register("leaves_redwood",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // black wattle/Austrailian acacia
+	   public static final RegistryObject<LeavesBlock> leaves_acacia = BLOCKS.register("leaves_acacia",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // cypress (Cupressos sp.)
+	   public static final RegistryObject<LeavesBlock> leaves_cypress = BLOCKS.register("leaves_cypress",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // bald cypress (Taxodium sp)
+	   public static final RegistryObject<LeavesBlock> leaves_bald_cypress = BLOCKS.register("leaves_bald_cypress",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // rainbow eucalyptus
+	   public static final RegistryObject<LeavesBlock> leaves_rainbow_eucalyptus = BLOCKS.register("leaves_rainbow_eucalyptus",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
+	   // sakura (cherry)
+	   public static final RegistryObject<LeavesBlock> leaves_sakura_blossom = BLOCKS.register("leaves_sakura_blossom",
+			   () -> leaves(MapColor.PLANT, SoundType.GRASS));
 
+	   
+	   
 	   // LOGS, WOOD & PLANKS
 	   // autumn tree logs & wood.
 	   public static final RegistryObject<CustomLogBlock> log_autumn = BLOCKS.register("log_autumn", 
@@ -107,7 +129,15 @@ public final class ModBlocks
 	   // japanese maple saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple = BLOCKS.register("sapling_japanese_maple",
 			   () -> sapling(new JapaneseMapleGrower()));
-			   
+	   // japanese maple shrub saplings
+	   // fir saplings
+	   // redwood saplings
+	   // acacia/black wattle saplings
+	   // cypress saplings
+	   // bald cypress saplings
+	   // rainbow eucalypus sapling
+	   // sakura sapling
+	   
 	   // POTTED SAPLINGS
 	   public static final RegistryObject<FlowerPotBlock> potted_sapling_umber = BLOCKS.register("potted_sapling_umber",
 			   () -> flowerpot(ModBlocks.sapling_umber));
@@ -351,6 +381,11 @@ public final class ModBlocks
 			   () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().randomTicks()
 					   .strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
+	   // OBJECTS?
+	   public static final RegistryObject<Block> leafpile = BLOCKS.register("leafpile", 
+			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NONE).replaceable()
+					   .noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava()
+					   .pushReaction(PushReaction.DESTROY)));
 	   
 	   // CROPS
 	   public static final RegistryObject<StrawberryBlock> crop_strawberry = BLOCKS.register("crop_strawberry", 
