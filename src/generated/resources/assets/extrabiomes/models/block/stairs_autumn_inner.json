@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "extrabiomes:block/planksautumn",
+    "side": "extrabiomes:block/planksautumn",
+    "top": "extrabiomes:block/planksautumn"
+  }
+}

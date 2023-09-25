@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extrabiomes:block/slab_japanese_maple"
+    },
+    "type=double": {
+      "model": "extrabiomes:block/planks_japanese_maple"
+    },
+    "type=top": {
+      "model": "extrabiomes:block/slab_japanese_maple_top"
+    }
+  }
+}

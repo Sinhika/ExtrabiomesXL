@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extrabiomes:flower_tiny_cactus"
+    },
+    {
+      "item": "extrabiomes:flower_tiny_cactus"
+    },
+    {
+      "item": "extrabiomes:flower_tiny_cactus"
+    },
+    {
+      "item": "extrabiomes:flower_tiny_cactus"
+    }
+  ],
+  "result": {
+    "item": "extrabiomes:paste"
+  }
+}
