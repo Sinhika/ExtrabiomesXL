@@ -4,6 +4,7 @@ import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CattailBlock;
 import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.LeafPileBlock;
 import net.extrabiomes.content.QuickSandBlock;
 import net.extrabiomes.content.StrawberryBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
@@ -422,8 +423,8 @@ public final class ModBlocks
 					   .strength(0.2F).sound(SoundType.VINE).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
 	   // OBJECTS?
-	   public static final RegistryObject<Block> leafpile = BLOCKS.register("leafpile", 
-			   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NONE).replaceable()
+	   public static final RegistryObject<LeafPileBlock> leafpile = BLOCKS.register("leafpile", 
+			   () -> new LeafPileBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NONE).replaceable()
 					   .noCollission().instabreak().sound(SoundType.GRASS).ignitedByLava()
 					   .pushReaction(PushReaction.DESTROY)));
 	   

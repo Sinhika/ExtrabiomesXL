@@ -30,7 +30,11 @@ public class LeafBlockColors implements BlockColor
 		{
 			return FoliageColor.getDefaultColor();
 		}
-		else if (pState.is(ModBlocks.vine_gloriosa.get()) || pState.is(ModBlocks.vine_spanish_moss.get()))
+		else if (pState.is(ModBlocks.vine_gloriosa.get()))
+		{
+			return 0xffffff;
+		}
+		else if (pState.is(ModBlocks.vine_spanish_moss.get()))
 		{
 			return ((pLevel != null && pPos != null) 
 					 ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor());

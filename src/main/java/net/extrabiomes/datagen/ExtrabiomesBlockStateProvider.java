@@ -235,8 +235,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         this.itemModels().singleTexture("vine_spanish_moss", mcLoc("generated"), "layer0", modLoc("block/vine_spanish_moss"));
         
         // leafpile
-        this.simpleBlockWithItem(ModBlocks.leafpile.get(), this.models().carpet("leafpile", modLoc("block/leafpile"))
-        		.renderType("cutout"));
+        this.simpleBlockWithItem(ModBlocks.leafpile.get(), this.models().singleTexture("leafpile", 
+        						modLoc("block/tinted_carpet"), "wool", modLoc("block/leafpile")).renderType("cutout"));
         
     } // end registerCropBlocks
 

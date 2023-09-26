@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/carpet",
+  "parent": "extrabiomes:block/tinted_carpet",
   "render_type": "minecraft:cutout",
   "textures": {
     "wool": "extrabiomes:block/leafpile"
