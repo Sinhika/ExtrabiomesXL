@@ -102,7 +102,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
     		
-            ModelFile leaves = this.models().cubeAll(name, entry.getValue()).renderType("cutout_mipped");
+            ModelFile leaves =this.models().singleTexture(name, mcLoc("block/leaves"), "all", entry.getValue())
+            		.renderType("cutout_mipped");
             this.simpleBlock(entry.getKey().get(), leaves);
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
@@ -444,19 +445,32 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	flower2model.put(ModBlocks.flower_belladonna, modLoc("block/belladonna"));
     	flower2model.put(ModBlocks.cattail, modLoc("block/cattail"));
     	flower2model.put(ModBlocks.flower_autumn_shrub, modLoc("block/autumnshrub"));
-    	flower2model.put(ModBlocks.brown_grass_short, modLoc("block/browngrassshort"));
-    	flower2model.put(ModBlocks.brown_grass_tall, modLoc("block/browngrasstall"));
-    	flower2model.put(ModBlocks.dead_grass_short, modLoc("block/deadgrassshort"));
-    	flower2model.put(ModBlocks.dead_grass_tall, modLoc("block/deadgrasstall"));
-    	flower2model.put(ModBlocks.dead_grass_yellow, modLoc("block/deadgrassyellow"));
     	
-    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
+     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
     	{
     		String name = getRegistryNameFromHolder(entry.getKey());
     		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
     		this.simpleBlock(entry.getKey().get(), flower);
         	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
     	} // end-foreach flower
+
+     	// grasses
+       	HashMap<RegistryObject<BushBlock>,ResourceLocation> grass2model =
+    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
+    	grass2model.put(ModBlocks.brown_grass_short, modLoc("block/browngrassshort"));
+    	grass2model.put(ModBlocks.brown_grass_tall, modLoc("block/browngrasstall"));
+    	grass2model.put(ModBlocks.dead_grass_short, modLoc("block/deadgrassshort"));
+    	grass2model.put(ModBlocks.dead_grass_tall, modLoc("block/deadgrasstall"));
+    	grass2model.put(ModBlocks.dead_grass_yellow, modLoc("block/deadgrassyellow"));
+    	
+    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: grass2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		ModelFile grass = this.models().singleTexture(name, mcLoc("block/tinted_cross"), "cross", entry.getValue())
+    				.renderType("cutout");
+    		this.simpleBlock(entry.getKey().get(), grass);
+        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
+    	} // end-foreach grass
 
 		// flower pots
     	HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation> pot2model =
