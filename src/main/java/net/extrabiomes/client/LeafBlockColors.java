@@ -45,7 +45,8 @@ public class LeafBlockColors implements BlockColor
 		}
 		else if (pState.is(ModBlocks.leafpile.get()))
 		{
-			return FoliageColor.getDefaultColor();
+			return ((pLevel != null && pPos != null) 
+					 ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor());
 		}
 		else {
 			return FoliageColor.get(0.5D, 1.0D);
