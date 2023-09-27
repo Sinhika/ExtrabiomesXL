@@ -286,6 +286,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		String name = getRegistryNameFromHolder(quarterBlock);
     	ModelFile log_model = this.models().cube(name, down, up, north, south, east, west);
     	this.directionalBlock(quarterBlock.get(), log_model);
+    	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     }
     
     
