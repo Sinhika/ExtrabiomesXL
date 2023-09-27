@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extrabiomes:block/firtop1",
+    "east": "extrabiomes:block/firlog2",
+    "north": "extrabiomes:block/firside2",
+    "south": "extrabiomes:block/firlog1",
+    "up": "extrabiomes:block/firtop1",
+    "west": "extrabiomes:block/firside1"
+  }
+}

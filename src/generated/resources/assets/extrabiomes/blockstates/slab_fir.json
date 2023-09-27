@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extrabiomes:block/slab_fir"
+    },
+    "type=double": {
+      "model": "extrabiomes:block/planks_fir"
+    },
+    "type=top": {
+      "model": "extrabiomes:block/slab_fir_top"
+    }
+  }
+}

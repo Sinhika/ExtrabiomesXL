@@ -4,6 +4,7 @@ import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CattailBlock;
 import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.CustomQuarterBlock;
 import net.extrabiomes.content.LeafPileBlock;
 import net.extrabiomes.content.QuickSandBlock;
 import net.extrabiomes.content.StrawberryBlock;
@@ -125,8 +126,8 @@ public final class ModBlocks
 	   // fir
 	   public static final RegistryObject<CustomLogBlock> log_fir = BLOCKS.register("log_fir",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN));
-	   public static final RegistryObject<CustomLogBlock> firquarter = BLOCKS.register("firquarter",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN));
+	   public static final RegistryObject<CustomQuarterBlock> firquarter = BLOCKS.register("firquarter",
+			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_fir = BLOCKS.register("planks_fir",
 			   () -> planks(MapColor.WOOD));
 			   
@@ -600,6 +601,16 @@ public final class ModBlocks
 		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
 	   }
 	
+	   /**
+	    * make a new quarter-log block
+	    */
+	   private static CustomQuarterBlock bigLog(MapColor pTopMapColor, MapColor pSideMapColor)
+	   {
+		   return new CustomQuarterBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+	   }
+	   
 	   /**
 	    * make new planks.
 	    * @param mColor - MapColor for planks block.

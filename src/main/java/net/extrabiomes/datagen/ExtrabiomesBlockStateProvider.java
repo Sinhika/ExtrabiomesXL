@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import mod.alexndr.simplecorelib.api.datagen.SimpleBlockStateProvider;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.CustomQuarterBlock;
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
@@ -129,7 +130,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	
     	// big logs  - udnsew
     	quarterLogBlock(ModBlocks.firquarter, modLoc("block/firtop1"), modLoc("block/firtop1"), modLoc("block/firside2"),
-    			modLoc("block/firlog1"), modLoc("block/firlog2"), modLoc("block/side1"));
+    			modLoc("block/firlog1"), modLoc("block/firlog2"), modLoc("block/firside1"));
 
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
@@ -277,7 +278,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     /**
      * Builder for quarter-logs
      */
-    public void quarterLogBlock(RegistryObject<? extends CustomLogBlock> quarterBlock, ResourceLocation up,
+    public void quarterLogBlock(RegistryObject<? extends CustomQuarterBlock> quarterBlock, ResourceLocation up,
     		ResourceLocation down, ResourceLocation north, ResourceLocation south, ResourceLocation east, 
     		ResourceLocation west)
     {
