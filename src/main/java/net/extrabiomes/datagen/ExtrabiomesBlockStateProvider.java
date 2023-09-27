@@ -150,7 +150,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	} // end-for slabs
        	
        	this.slabBlock(ModBlocks.slab_redcobble.get(), modLoc("block/redcobble"), modLoc("block/redrockcobble"));
-       	this.slabBlock(ModBlocks.slab_redrockbrick.get(), modLoc("block/redrock_brick"), modLoc("block/redrockbrick"));
+   		this.itemModels().withExistingParent("slab_redcobble", modLoc("block/slab_redcobble"));
+
+   		this.slabBlock(ModBlocks.slab_redrockbrick.get(), modLoc("block/redrock_brick"), modLoc("block/redrockbrick"));
+   		this.itemModels().withExistingParent("slab_redrockbrick", modLoc("block/slab_redrockbrick"));
 
        	// special case for redrock slab
        	ResourceLocation redrock_slabtop = modLoc("block/redrockslabtop");
@@ -161,6 +164,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	ModelFile bottom_slab = this.models().slab("slab_redrock_bottom", redrock_slabside, redrock_slabside,
        								redrock_slabtop);
        	this.slabBlock(ModBlocks.slab_redrock.get(), bottom_slab, top_slab, double_slab);
+   		this.itemModels().withExistingParent("slab_redrock", modLoc("block/slab_redrock_bottom"));
        	
     } // end registerTreeBlocks
     
