@@ -32,6 +32,7 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		registerLogTags();
 		registerLeafSaplingTags();
 		registerOtherPlantTags();
+		registerNonWoodBlockTags();
 		registerMiscTags();
 	} // end addTags()
 
@@ -40,7 +41,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	protected void registerMiningTags() 
 	{
 		registerMineableTags(List.of(ModBlocks.crackedsand.get(), ModBlocks.redcobble.get(), ModBlocks.redrock.get(),
-				ModBlocks.redrock_brick.get()), 
+				ModBlocks.redrock_brick.get(), ModBlocks.slab_redcobble.get(), ModBlocks.slab_redrock.get(),
+				ModBlocks.slab_redrockbrick.get(), ModBlocks.stairs_redcobble.get(), ModBlocks.stairs_redrock.get(),
+				ModBlocks.stairs_redrockbrick.get()), 
 				List.of(), List.of(), List.of(), List.of());
 		registerAxeableTags(List.of(ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get()));
 		registerShovelableTags(List.of(ModBlocks.quicksand.get()));
@@ -56,6 +59,27 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		// TODO Auto-generated method stub
 	}
 
+	/**
+	 * non-wood parallel to registerPlankBlockTags().
+	 */
+	private void registerNonWoodBlockTags()
+	{
+		this.tag(BlockTags.STAIRS)
+			.add(ModBlocks.stairs_redcobble.get())
+			.add(ModBlocks.stairs_redrock.get())
+			.add(ModBlocks.stairs_redrockbrick.get());
+		
+		this.tag(BlockTags.SLABS)
+			.add(ModBlocks.slab_redcobble.get())
+			.add(ModBlocks.slab_redrock.get())
+			.add(ModBlocks.slab_redrockbrick.get());
+		
+		this.tag(BlockTags.WALLS)
+			.add(ModBlocks.wall_redcobble.get())
+			.add(ModBlocks.wall_redrockbrick.get());
+		
+	} // end registerNonWoodBlockTags()
+	
 	/**
 	 * note that we only need to add blocks to the most specific tag, such as BlockTags.WOODEN_STAIRS,
 	 * because BlockTags.STAIRS automatically includes all WOODEN_STAIRS. Same for everthing WOODEN_*.

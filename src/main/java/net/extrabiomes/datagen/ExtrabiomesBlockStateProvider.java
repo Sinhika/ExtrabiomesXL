@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -47,6 +48,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 	@Override
 	protected void registerStatesAndModels() 
 	{
+        registerTerrainBlocks();
         registerTreeBlocks();
         registerSaplings();
         registerCropBlocks();
@@ -54,7 +56,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         registerDoorStatesAndModels();
         registerFenceLikeStatesAndModels();
         registerPressurePlatesAndButtons();
-        registerTerrainBlocks();
 	}
 
     // tree blocks
@@ -91,6 +92,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
     	stairs2model.put(ModBlocks.stairs_autumn,  modLoc("block/planksautumn"));
     	stairs2model.put(ModBlocks.stairs_japanesemaple, modLoc("block/planksjapanesemaple"));
+    	stairs2model.put(ModBlocks.stairs_redcobble, modLoc("block/redrockcobble"));
+    	stairs2model.put(ModBlocks.stairs_redrock, modLoc("block/redrock"));
+    	stairs2model.put(ModBlocks.stairs_redrockbrick, modLoc("block/redrockbrick"));
     	
     	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
     		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
@@ -144,6 +148,19 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		this.slabBlock(entry.getKey().get(), modLoc("block/" + plankname), entry.getValue());  
        		this.itemModels().withExistingParent(name, modLoc("block/" + name));
        	} // end-for slabs
+       	
+       	this.slabBlock(ModBlocks.slab_redcobble.get(), modLoc("block/redcobble"), modLoc("block/redrockcobble"));
+       	this.slabBlock(ModBlocks.slab_redrockbrick.get(), modLoc("block/redrock_brick"), modLoc("block/redrockbrick"));
+
+       	// special case for redrock slab
+       	ResourceLocation redrock_slabtop = modLoc("block/redrockslabtop");
+       	ResourceLocation redrock_slabside = modLoc("block/redrockslabside");
+       	
+       	ModelFile double_slab = this.models().cubeColumn("slab_redrock_double", redrock_slabside, redrock_slabtop);
+       	ModelFile top_slab = this.models().slabTop("slab_redrock_top", redrock_slabside, redrock_slabtop, redrock_slabtop);
+       	ModelFile bottom_slab = this.models().slab("slab_redrock_bottom", redrock_slabside, redrock_slabside,
+       								redrock_slabtop);
+       	this.slabBlock(ModBlocks.slab_redrock.get(), bottom_slab, top_slab, double_slab);
        	
     } // end registerTreeBlocks
     
@@ -567,6 +584,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
     	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
     	gate2model.put(ModBlocks.gate_japanesemaple, modLoc("block/planksjapanesemaple"));
+
+    	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
+    			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
+    	wall2model.put(ModBlocks.wall_redcobble, modLoc("block/redrockcobble"));
+    	wall2model.put(ModBlocks.wall_redrockbrick, modLoc("block/redrockbrick"));
     	
     	// fences
        	for (Map.Entry<RegistryObject<FenceBlock>, ResourceLocation> entry: fence2model.entrySet())
@@ -585,6 +607,15 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	} // end-foreach gate
 
+       	// walls
+       	for (Map.Entry<RegistryObject<WallBlock>, ResourceLocation> entry: wall2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.wallBlock(entry.getKey().get(), entry.getValue());
+    		this.models().wallInventory(name + "_inventory", entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
+    	}
+       	
     } // end registerFenceLikeStatesAndModels()
     
     private void registerTerrainBlocks()

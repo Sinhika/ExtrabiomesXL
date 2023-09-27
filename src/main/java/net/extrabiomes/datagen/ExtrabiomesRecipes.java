@@ -16,6 +16,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -47,8 +48,63 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	{
 		registerMiscRecipes(consumer);
 		registerWoodRecipes(consumer);
+		registerStoneCutterRecipes(consumer);
 	}
 
+	private void registerStoneCutterRecipes(Consumer<FinishedRecipe> consumer)
+	{
+		// slabs
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redcobble.get()), RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redcobble.get(), 2)
+	        .unlockedBy("has_item", has(ModBlocks.redcobble.get()))
+	        .save(consumer, "slab_redcobble_from_stonecutting");
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock.get()), RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrock.get(), 2)
+	        .unlockedBy("has_item", has(ModBlocks.redrock.get()))
+	        .save(consumer, "slab_redrock_from_stonecutting");
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock_brick.get()), RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrockbrick.get(), 2)
+	        .unlockedBy("has_item", has(ModBlocks.redrock_brick.get()))
+	        .save(consumer, "slab_redrockbrick_from_stonecutting");
+		
+		// stairs
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redcobble.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.stairs_redcobble.get())
+	        .unlockedBy("has_item", has(ModBlocks.redcobble.get()))
+	        .save(consumer, "stairs_redcobble_from_stonecutting");
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.stairs_redrock.get())
+	        .unlockedBy("has_item", has(ModBlocks.redrock.get()))
+	        .save(consumer, "stairs_redrock_from_stonecutting");
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock_brick.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.stairs_redrockbrick.get())
+	        .unlockedBy("has_item", has(ModBlocks.redrock_brick.get()))
+	        .save(consumer, "stairs_redrockbrick_from_stonecutting");
+		
+		// walls
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock_brick.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.wall_redrockbrick.get())
+	        .unlockedBy("has_item", has(ModBlocks.redrock_brick.get()))
+	        .save(consumer, "wall_redrockbrick_from_stonecutting");
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redcobble.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.wall_redcobble.get())
+	        .unlockedBy("has_item", has(ModBlocks.redcobble.get()))
+	        .save(consumer, "wall_redcobble_from_stonecutting");
+		
+		// bricks
+		SingleItemRecipeBuilder.stonecutting(
+				Ingredient.of(ModBlocks.redrock.get().asItem()), RecipeCategory.BUILDING_BLOCKS, 
+					ModBlocks.redrock_brick.get())
+	        .unlockedBy("has_item", has(ModBlocks.redrock.get()))
+	        .save(consumer, "redrock_brick_from_stonecutting");
+		
+	} // end registerStoneCutterRecipes()
+	
 	private void registerMiscRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		// strawberries to seeds.
@@ -146,9 +202,23 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	        .unlockedBy("has_item", has(ModBlocks.planks_japanese_maple.get()))
 	        .save(consumer);
 
+        stairBuilder(ModBlocks.stairs_redcobble.get(), Ingredient.of(ModBlocks.redcobble.get()))
+	        .unlockedBy("has_item", has(ModBlocks.redcobble.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_redrockbrick.get(), Ingredient.of(ModBlocks.redrock_brick.get()))
+	        .unlockedBy("has_item", has(ModBlocks.redrock_brick.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_redrock.get(), Ingredient.of(ModBlocks.redrock.get()))
+	        .unlockedBy("has_item", has(ModBlocks.redrock.get()))
+	        .save(consumer);
+
         // slabs
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_autumn.get(), ModBlocks.planks_autumn_wood.get());
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_japanese_maple.get(), ModBlocks.planks_japanese_maple.get());
+        
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrock.get(), ModBlocks.redrock.get());
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrockbrick.get(), ModBlocks.redrock_brick.get());
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redcobble.get(), ModBlocks.redcobble.get());
         
         // doors
         doorBuilder(ModBlocks.door_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
@@ -173,6 +243,11 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         fenceGateBuilder(ModBlocks.gate_japanesemaple.get(), Ingredient.of(ModBlocks.planks_japanese_maple.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_japanese_maple.get()))
 	        .save(consumer);
+        
+        // walls
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.wall_redcobble.get(), Ingredient.of(ModBlocks.redcobble.get()));
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.wall_redrockbrick.get(), 
+        			Ingredient.of(ModBlocks.redrock_brick.get()));
         
         // buttons
         buttonBuilder(ModBlocks.button_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))

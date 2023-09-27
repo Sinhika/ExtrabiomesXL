@@ -154,10 +154,16 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		// stairs
 		this.dropSelf(ModBlocks.stairs_autumn.get());
 		this.dropSelf(ModBlocks.stairs_japanesemaple.get());
-		
+		this.dropSelf(ModBlocks.stairs_redcobble.get());
+		this.dropSelf(ModBlocks.stairs_redrock.get());
+		this.dropSelf(ModBlocks.stairs_redrockbrick.get());
+
 		// slabs
 		this.dropSlab(ModBlocks.slab_autumn.get());
 		this.dropSlab(ModBlocks.slab_japanese_maple.get());
+		this.dropSlab(ModBlocks.slab_redcobble.get());
+		this.dropSlab(ModBlocks.slab_redrock.get());
+		this.dropSlab(ModBlocks.slab_redrockbrick.get());
 		
 		// doors
 		this.doorDropTable(ModBlocks.door_autumn.get());
@@ -171,6 +177,10 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		this.dropSelf(ModBlocks.gate_autumn.get());
 		this.dropSelf(ModBlocks.gate_japanesemaple.get());
 		
+		// walls
+		this.dropSelf(ModBlocks.wall_redcobble.get());
+		this.dropSelf(ModBlocks.wall_redrockbrick.get());
+
 		// buttons
 		this.dropSelf(ModBlocks.button_autumn.get());
 		this.dropSelf(ModBlocks.button_japanesemaple.get());

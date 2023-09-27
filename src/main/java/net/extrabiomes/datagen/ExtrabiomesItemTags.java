@@ -30,6 +30,7 @@ public class ExtrabiomesItemTags extends MiningItemTags
         super.addTags(lookupProvider);
         registerLogTags();
         registerWoodPlankItems();
+        registerNonWoodItems();
         registerOtherPlantTags();
         registerMisc();
     }
@@ -112,6 +113,9 @@ public class ExtrabiomesItemTags extends MiningItemTags
 		
     } // end registerMisc()
    	
+   	/**
+   	 * wooden building blocks
+   	 */
     private void registerWoodPlankItems()
     {
 		this.tag(ItemTags.WOODEN_STAIRS)
@@ -143,6 +147,27 @@ public class ExtrabiomesItemTags extends MiningItemTags
     		.add(ModBlocks.button_autumn.get().asItem());
     
     } // end registerWoodPlankItems()
+    
+    /**
+     * non-wooden building blocks.
+     */
+    private void registerNonWoodItems()
+    {
+		this.tag(ItemTags.STAIRS)
+			.add(ModBlocks.stairs_redcobble.get().asItem())
+			.add(ModBlocks.stairs_redrock.get().asItem())
+			.add(ModBlocks.stairs_redrockbrick.get().asItem());
+		
+		this.tag(ItemTags.SLABS)
+			.add(ModBlocks.slab_redcobble.get().asItem())
+			.add(ModBlocks.slab_redrock.get().asItem())
+			.add(ModBlocks.slab_redrockbrick.get().asItem());
+		
+		this.tag(ItemTags.WALLS)
+			.add(ModBlocks.wall_redcobble.get().asItem())
+			.add(ModBlocks.wall_redrockbrick.get().asItem());
+    } // end registerNonWoodItems
+    
     
     protected void registerLogTags()
     {

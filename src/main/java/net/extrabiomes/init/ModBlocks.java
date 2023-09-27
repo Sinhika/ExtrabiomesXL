@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.VineBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -196,13 +197,27 @@ public final class ModBlocks
 			   () -> stairs(planks_autumn_wood));
 	   public static final RegistryObject<StairBlock> stairs_japanesemaple = BLOCKS.register("stairs_japanesemaple", 
 			   () -> stairs(planks_japanese_maple));
+	   public static final RegistryObject<StairBlock> stairs_redcobble = BLOCKS.register("stairs_redcobble",
+			   () -> stairs(redcobble));
+	   public static final RegistryObject<StairBlock> stairs_redrockbrick = BLOCKS.register("stairs_redrockbrick",
+			   () -> stairs(redrock_brick));
+	   public static final RegistryObject<StairBlock> stairs_redrock = BLOCKS.register("stairs_redrock",
+			   () -> stairs(redrock));
 	   
 	   // slabs
 	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
 	   public static final RegistryObject<SlabBlock> slab_japanese_maple =  BLOCKS.register("slab_japanese_maple", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_japanese_maple.get())));
-
+	   
+	   public static final RegistryObject<SlabBlock> slab_redcobble =  BLOCKS.register("slab_redcobble",
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(redcobble.get())));
+	   public static final RegistryObject<SlabBlock> slab_redrock =  BLOCKS.register("slab_redrock",
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(redrock.get())));
+	   public static final RegistryObject<SlabBlock> slab_redrockbrick =  BLOCKS.register("slab_redrockbrick",
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(redrock_brick.get())));
+			   
+	   
 	   // doors
 	   public static RegistryObject<DoorBlock> door_autumn = BLOCKS.register("door_autumn",
 			   () -> doors(ModBlocks.planks_autumn_wood.get().defaultMapColor(), BlockSetType.OAK));
@@ -215,6 +230,13 @@ public final class ModBlocks
 	   public static final RegistryObject<FenceBlock> fence_japanesemaple = BLOCKS.register("fence_japanesemaple",
 	            () -> fences(ModBlocks.planks_japanese_maple));
 		   
+	   // walls
+	   public static final RegistryObject<WallBlock> wall_redcobble = BLOCKS.register("wall_redcobble",
+			   () -> walls(redcobble));
+	   public static final RegistryObject<WallBlock> wall_redrockbrick = BLOCKS.register("wall_redrockbrick",
+			   () -> walls(redrock_brick));
+	   
+			   
 	   // fence gates
 	   public static final RegistryObject<FenceGateBlock> gate_autumn = BLOCKS.register("gate_autumn",
 			   () -> gates(ModBlocks.planks_autumn_wood.get().defaultMapColor(), WoodType.OAK));
@@ -484,6 +506,14 @@ public final class ModBlocks
 	   {
 		   return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(color).strength(2.0F, 3.0F)
 				   .sound(SoundType.WOOD), woodType);
+	   }
+	   
+	   /**
+	    * make new walls
+	    */
+	   private static WallBlock walls(RegistryObject<Block> solid_block)
+	   {
+		   return new WallBlock(BlockBehaviour.Properties.copy(solid_block.get()).forceSolidOn());
 	   }
 	   
 	   /**

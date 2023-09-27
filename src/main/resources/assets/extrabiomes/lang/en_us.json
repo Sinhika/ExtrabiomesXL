@@ -33,7 +33,6 @@
     "module.status.enabled": "Module %s is enabled.",
     "module.status.disabled": "Module %s is disabled, skipping.",
 
-
     "block.extrabiomes.cattail": "Cattail",
     "block.extrabiomes.brown_grass_tall": "Brown Grass (tallgrass_0)",
     "block.extrabiomes.brown_grass_short": "Short Brown Grass (tallgrass_1)",
@@ -46,12 +45,16 @@
     "block.extrabiomes.redrock": "Red Rock (0)",
     "block.extrabiomes.redcobble": "Red Cobblestone (1)",
     "block.extrabiomes.redrock_brick": "Red Rock Brick (2)",
+    
     "block.extrabiomes.slab_redcobble": "Red Cobblestone Slab",
     "block.extrabiomes.slab_redrock": "Red Rock Slab",
     "block.extrabiomes.slab_redrockbrick": "Red Rock Brick Slab",
-    "block.extrabiomes.wall_0": "Red Cobblestone Wall",
+    "block.extrabiomes.wall_redcobble": "Red Cobblestone Wall (wall_0)",
+    "block.extrabiomes.wall_redrockbrick": "Red Rock Brick Wall",
+    
     "block.extrabiomes.stairs_redcobble": "Red Cobblestone Stairs",
     "block.extrabiomes.stairs_redrockbrick": "Red Rock Brick Stairs",
+    "block.extrabiomes.stairs_redrock" : "Red Rock Stairs",
 
     "block.extrabiomes.flower_autumn_shrub": "Autumn Shrub",
     "block.extrabiomes.flower_hydrangea": "Hydrangea",
