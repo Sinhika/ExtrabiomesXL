@@ -120,31 +120,39 @@ public class ExtrabiomesItemTags extends MiningItemTags
     {
 		this.tag(ItemTags.WOODEN_STAIRS)
 			.add(ModBlocks.stairs_japanesemaple.get().asItem())
-			.add(ModBlocks.stairs_autumn.get().asItem());
+			.add(ModBlocks.stairs_autumn.get().asItem())
+			.add(ModBlocks.stairs_fir.get().asItem());
+
 		
 		this.tag(ItemTags.WOODEN_SLABS)
 			.add(ModBlocks.slab_japanese_maple.get().asItem())
-			.add(ModBlocks.slab_autumn.get().asItem());
+			.add(ModBlocks.slab_autumn.get().asItem())
+			.add(ModBlocks.slab_fir.get().asItem());
 	
 	    this.tag(ItemTags.WOODEN_DOORS)
 	    	.add(ModBlocks.door_japanesemaple.get().asItem())
-       		.add(ModBlocks.door_autumn.get().asItem());
+       		.add(ModBlocks.door_autumn.get().asItem())
+       		.add(ModBlocks.door_fir.get().asItem());
 
         this.tag(Tags.Items.FENCES_WOODEN)
         	.add(ModBlocks.fence_japanesemaple.get().asItem())
-        	.add(ModBlocks.fence_autumn.get().asItem());
+        	.add(ModBlocks.fence_autumn.get().asItem())
+        	.add(ModBlocks.fence_fir.get().asItem());
 
         this.tag(Tags.Items.FENCE_GATES_WOODEN)
         	.add(ModBlocks.gate_japanesemaple.get().asItem())
-        	.add(ModBlocks.gate_autumn.get().asItem());
+        	.add(ModBlocks.gate_autumn.get().asItem())
+        	.add(ModBlocks.gate_fir.get().asItem());
 
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
         	.add(ModBlocks.pressureplate_japanesemaple.get().asItem())
-    		.add(ModBlocks.pressureplate_autumn.get().asItem());
+    		.add(ModBlocks.pressureplate_autumn.get().asItem())
+    		.add(ModBlocks.pressureplate_fir.get().asItem());
     
         this.tag(ItemTags.WOODEN_BUTTONS)
         	.add(ModBlocks.button_japanesemaple.get().asItem())
-    		.add(ModBlocks.button_autumn.get().asItem());
+    		.add(ModBlocks.button_autumn.get().asItem())
+    		.add(ModBlocks.button_fir.get().asItem());
     
     } // end registerWoodPlankItems()
     
@@ -197,14 +205,19 @@ public class ExtrabiomesItemTags extends MiningItemTags
            	.add(ModBlocks.log_autumn.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.log_japanese_maple.get().asItem());
-		
+		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "fir_logs"))
+			.add(ModBlocks.log_fir.get().asItem())
+			.add(ModBlocks.firquarter.get().asItem());
+
         this.tag(ItemTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
-        	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"));	
+        	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))	
+        	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "fir_logs"));
         	
         this.tag(ItemTags.PLANKS)
         	.add(ModBlocks.planks_japanese_maple.get().asItem())
-        	.add(ModBlocks.planks_autumn_wood.get().asItem());
+        	.add(ModBlocks.planks_autumn_wood.get().asItem())
+        	.add(ModBlocks.planks_fir.get().asItem());
 
     } // end registerLogTags()
     

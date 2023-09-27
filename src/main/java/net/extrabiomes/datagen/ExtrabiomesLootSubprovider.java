@@ -146,36 +146,44 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		// logs
 		this.dropSelf(ModBlocks.log_autumn.get());
 		this.dropSelf(ModBlocks.log_japanese_maple.get());
+		this.dropSelf(ModBlocks.firquarter.get());
+		this.dropSelf(ModBlocks.log_fir.get());
 		
 		// planks
 		this.dropSelf(ModBlocks.planks_autumn_wood.get());
 		this.dropSelf(ModBlocks.planks_japanese_maple.get());
+		this.dropSelf(ModBlocks.planks_fir.get());
 		
 		// stairs
-		this.dropSelf(ModBlocks.stairs_autumn.get());
-		this.dropSelf(ModBlocks.stairs_japanesemaple.get());
 		this.dropSelf(ModBlocks.stairs_redcobble.get());
 		this.dropSelf(ModBlocks.stairs_redrock.get());
 		this.dropSelf(ModBlocks.stairs_redrockbrick.get());
-
+		this.dropSelf(ModBlocks.stairs_autumn.get());
+		this.dropSelf(ModBlocks.stairs_japanesemaple.get());
+		this.dropSelf(ModBlocks.stairs_fir.get());
+		
 		// slabs
-		this.dropSlab(ModBlocks.slab_autumn.get());
-		this.dropSlab(ModBlocks.slab_japanese_maple.get());
 		this.dropSlab(ModBlocks.slab_redcobble.get());
 		this.dropSlab(ModBlocks.slab_redrock.get());
 		this.dropSlab(ModBlocks.slab_redrockbrick.get());
+		this.dropSlab(ModBlocks.slab_autumn.get());
+		this.dropSlab(ModBlocks.slab_japanese_maple.get());
+		this.dropSlab(ModBlocks.slab_fir.get());
 		
 		// doors
 		this.doorDropTable(ModBlocks.door_autumn.get());
 		this.doorDropTable(ModBlocks.door_japanesemaple.get());
+		this.doorDropTable(ModBlocks.door_fir.get());
 		
 		// fences
 		this.dropSelf(ModBlocks.fence_autumn.get());
 		this.dropSelf(ModBlocks.fence_japanesemaple.get());
+		this.dropSelf(ModBlocks.fence_fir.get());
 		
 		// fence gates
 		this.dropSelf(ModBlocks.gate_autumn.get());
 		this.dropSelf(ModBlocks.gate_japanesemaple.get());
+		this.dropSelf(ModBlocks.gate_fir.get());
 		
 		// walls
 		this.dropSelf(ModBlocks.wall_redcobble.get());
@@ -184,10 +192,12 @@ public class ExtrabiomesLootSubprovider extends SimpleBlockLootSubProvider {
 		// buttons
 		this.dropSelf(ModBlocks.button_autumn.get());
 		this.dropSelf(ModBlocks.button_japanesemaple.get());
+		this.dropSelf(ModBlocks.button_fir.get());
 		
 		// pressure plates
 		this.dropSelf(ModBlocks.pressureplate_autumn.get());
 		this.dropSelf(ModBlocks.pressureplate_japanesemaple.get());
+		this.dropSelf(ModBlocks.pressureplate_fir.get());
 		
 		// crops
 		LootItemCondition.Builder strawberry_condition = 

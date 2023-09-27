@@ -89,29 +89,36 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 
 		this.tag(BlockTags.WOODEN_STAIRS)
 			.add(ModBlocks.stairs_japanesemaple.get())
-			.add(ModBlocks.stairs_autumn.get());
+			.add(ModBlocks.stairs_autumn.get())
+			.add(ModBlocks.stairs_fir.get());
 		
 		this.tag(BlockTags.WOODEN_SLABS)
 			.add(ModBlocks.slab_japanese_maple.get())
-			.add(ModBlocks.slab_autumn.get());
+			.add(ModBlocks.slab_autumn.get())
+			.add(ModBlocks.slab_fir.get());
 		
 		this.addFencetoAllFenceTags(ModBlocks.fence_autumn.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_japanesemaple.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_fir.get());
 		
 		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
-		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_japanesemaple.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_fir.get());
 		
         this.tag(BlockTags.WOODEN_DOORS)
         	.add(ModBlocks.door_japanesemaple.get())
-        	.add(ModBlocks.door_autumn.get());
+        	.add(ModBlocks.door_autumn.get())
+        	.add(ModBlocks.door_fir.get());
         
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
         	.add(ModBlocks.pressureplate_japanesemaple.get())
-        	.add(ModBlocks.pressureplate_autumn.get());
+        	.add(ModBlocks.pressureplate_autumn.get())
+        	.add(ModBlocks.pressureplate_fir.get());
         
         this.tag(BlockTags.WOODEN_BUTTONS)
         	.add(ModBlocks.button_japanesemaple.get())
-        	.add(ModBlocks.button_autumn.get());
+        	.add(ModBlocks.button_autumn.get())
+        	.add(ModBlocks.button_fir.get());
         
 	} // end registerPlankBlockTags
    
@@ -136,20 +143,27 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
            	.add(ModBlocks.log_autumn.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.log_japanese_maple.get());
-
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"))
+			.add(ModBlocks.log_fir.get())
+			.add(ModBlocks.firquarter.get());
+		
 		// only add actual logs to this tag.
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
 			.add(ModBlocks.log_autumn.get())
-			.add(ModBlocks.log_japanese_maple.get());
+			.add(ModBlocks.log_japanese_maple.get())
+			.add(ModBlocks.log_fir.get())
+			.add(ModBlocks.firquarter.get());
 		
 		// LOGS_THAT_BURN are automatically included in LOGS.
 		this.tag(BlockTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
-			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"));
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"));
 		
         this.tag(BlockTags.PLANKS)
         	.add(ModBlocks.planks_japanese_maple.get())
-        	.add(ModBlocks.planks_autumn_wood.get());
+        	.add(ModBlocks.planks_autumn_wood.get())
+        	.add(ModBlocks.planks_fir.get());
         
 	} // end registerLogTags()
    
