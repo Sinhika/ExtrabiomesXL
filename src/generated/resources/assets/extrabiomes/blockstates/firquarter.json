@@ -1,0 +1,82 @@
+{
+  "variants": {
+    "axis=x,facing=down": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 180
+    },
+    "axis=x,facing=east": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,facing=north": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90
+    },
+    "axis=x,facing=south": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 180
+    },
+    "axis=x,facing=up": {
+      "model": "extrabiomes:block/firquarter_nw"
+    },
+    "axis=x,facing=west": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 270
+    },
+    "axis=y,facing=down": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 180
+    },
+    "axis=y,facing=east": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,facing=north": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90
+    },
+    "axis=y,facing=south": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 180
+    },
+    "axis=y,facing=up": {
+      "model": "extrabiomes:block/firquarter_nw"
+    },
+    "axis=y,facing=west": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 270
+    },
+    "axis=z,facing=down": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 180
+    },
+    "axis=z,facing=east": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 90
+    },
+    "axis=z,facing=north": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90
+    },
+    "axis=z,facing=south": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,facing=up": {
+      "model": "extrabiomes:block/firquarter_nw"
+    },
+    "axis=z,facing=west": {
+      "model": "extrabiomes:block/firquarter_nw",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

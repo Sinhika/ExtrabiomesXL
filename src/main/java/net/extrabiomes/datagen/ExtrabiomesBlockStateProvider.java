@@ -130,8 +130,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	}
     	
     	// big logs  - udnsew
-//    	quarterLogBlock(ModBlocks.firquarter, modLoc("block/firtop1"), modLoc("block/firtop1"), modLoc("block/firside2"),
-//    			modLoc("block/firlog1"), modLoc("block/firlog2"), modLoc("block/firside1"));
+    	quarterLogBlock(ModBlocks.firquarter);
 
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
@@ -305,31 +304,17 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     			// udnsew
     	ModelFile nw_log = quarterLogBlockModel(name + "_nw", 
     			textures[0], textures[0], textures[4], textures[6], textures[7], textures[5]);
-    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
-    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);
-    	ModelFile sw_log = quarterLogBlockModel(name + "_sw",
-				textures[2], textures[2], textures[6], textures[4], textures[7], textures[5]);
-    	ModelFile se_log = quarterLogBlockModel(name + "_se",
-				textures[3], textures[3], textures[7], textures[4], textures[4], textures[7]);
-    	ModelFile horizontal_log = quarterLogBlockModel(name + "_horizontal",
-    			textures[4], textures[6], textures[5], textures[7], textures[0], textures[0]);
+//    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
+//    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);
+//    	ModelFile sw_log = quarterLogBlockModel(name + "_sw",
+//				textures[2], textures[2], textures[6], textures[4], textures[7], textures[5]);
+//    	ModelFile se_log = quarterLogBlockModel(name + "_se",
+//				textures[3], textures[3], textures[7], textures[4], textures[4], textures[7]);
+//    	ModelFile horizontal_log = quarterLogBlockModel(name + "_horizontal",
+//    			textures[4], textures[6], textures[5], textures[7], textures[0], textures[0]);
     			
-    	directionalBlock(logBlock.get(), 
-    			(state)->{ 
-    				switch (state.getValue(BlockStateProperties.FACING)) 
-    				{
-    					case NORTH: 
-    						return nw_log;
-    					case EAST:
-    						return ne_log;
-    					case SOUTH:
-    						return se_log;
-    					case WEST:
-    						return sw_log;
-    					default:
-    						return horizontal_log;
-    				}
-    			}, 90);
+    	directionalBlock(logBlock.get(), nw_log);
+    	this.itemModels().withExistingParent(name, modLoc("block/" + name) + "_nw");
     } // end quarterLogBlock
     
     /**

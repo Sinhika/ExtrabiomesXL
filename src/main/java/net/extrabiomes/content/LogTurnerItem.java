@@ -59,18 +59,14 @@ public class LogTurnerItem extends TieredItem
 	              if (face == Direction.DOWN || face == Direction.UP)
 	              {
 	            	  Direction.Axis start_axis = (Direction.Axis) blockstate.getValue(RotatedPillarBlock.AXIS);
-	            	  switch (start_axis)
+	            	  if (start_axis.isVertical())
 	            	  {
-	            	  	case X:
-	            	  	case Z:
-	            	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y);
-	            	  		break;
-	            	  	case Y: // case Y
-	            	  	default:
 	            	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
-	            	  		break;
 	            	  }
-	              }
+	            	  else {
+            	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y);
+	            	  } // end else not start_axis is vertical
+	              } // end if face is UP or DOWN
 	              else if (block instanceof CustomQuarterBlock)
 	              {
 	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
