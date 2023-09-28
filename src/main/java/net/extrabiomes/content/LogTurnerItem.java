@@ -71,6 +71,10 @@ public class LogTurnerItem extends TieredItem
 	            	  		break;
 	            	  }
 	              }
+	              else if (block instanceof CustomQuarterBlock)
+	              {
+	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
+	              }
 	              else {
 	            	  blockstate2 = RotatedPillarBlock.rotatePillar(blockstate, Rotation.CLOCKWISE_90);
 	              }

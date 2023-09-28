@@ -34,7 +34,7 @@ public class CustomQuarterBlock extends CustomLogBlock
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) 
 	{
 		return this.defaultBlockState().setValue(AXIS, pContext.getClickedFace().getAxis())
-				.setValue(FACING, pContext.getNearestLookingDirection().getOpposite());
+				.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
 	}
 	
 	/**

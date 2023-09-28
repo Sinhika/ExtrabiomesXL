@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -129,8 +130,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	}
     	
     	// big logs  - udnsew
-    	quarterLogBlock(ModBlocks.firquarter, modLoc("block/firtop1"), modLoc("block/firtop1"), modLoc("block/firside2"),
-    			modLoc("block/firlog1"), modLoc("block/firlog2"), modLoc("block/firside1"));
+//    	quarterLogBlock(ModBlocks.firquarter, modLoc("block/firtop1"), modLoc("block/firtop1"), modLoc("block/firside2"),
+//    			modLoc("block/firlog1"), modLoc("block/firlog2"), modLoc("block/firside1"));
 
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
@@ -278,15 +279,75 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     /**
      * Builder for quarter-logs
      */
-    public void quarterLogBlock(RegistryObject<? extends CustomQuarterBlock> quarterBlock, ResourceLocation up,
+    public void quarterLogBlock(RegistryObject<CustomQuarterBlock> logBlock)
+    {
+    	ResourceLocation[] textures = new ResourceLocation[8];
+    	
+		String name = getRegistryNameFromHolder(logBlock);
+		// depends on name format being "<wood>quarter".
+		if (! name.endsWith("quarter"))
+		{
+			throw  new IllegalArgumentException("CustomQuarterBlock " + name + " must end in 'quarter'");
+		}
+		// get name less 'quarter' suffix.
+		int endIndex = name.length() - 7;
+    	String shortname = name.substring(0, endIndex);
+    	
+    	// set up texture names
+    	textures[0] = modLoc("block/" + shortname + "top1"); // nw top
+    	textures[1] = modLoc("block/" + shortname + "top2"); // ne top
+    	textures[2] = modLoc("block/" + shortname + "top3"); // sw top
+    	textures[3] = modLoc("block/" + shortname + "top4"); // se top
+    	textures[4] = modLoc("block/" + shortname + "log1"); // nw north bark
+    	textures[5] = modLoc("block/" + shortname + "log2"); // nw west bark
+    	textures[6] = modLoc("block/" + shortname + "side1"); // nw east face
+    	textures[7] = modLoc("block/" + shortname + "side2"); // nw south face
+    			// udnsew
+    	ModelFile nw_log = quarterLogBlockModel(name + "_nw", 
+    			textures[0], textures[0], textures[4], textures[6], textures[7], textures[5]);
+    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
+    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);
+    	ModelFile sw_log = quarterLogBlockModel(name + "_sw",
+				textures[2], textures[2], textures[6], textures[4], textures[7], textures[5]);
+    	ModelFile se_log = quarterLogBlockModel(name + "_se",
+				textures[3], textures[3], textures[7], textures[4], textures[4], textures[7]);
+    	ModelFile horizontal_log = quarterLogBlockModel(name + "_horizontal",
+    			textures[4], textures[6], textures[5], textures[7], textures[0], textures[0]);
+    			
+    	directionalBlock(logBlock.get(), 
+    			(state)->{ 
+    				switch (state.getValue(BlockStateProperties.FACING)) 
+    				{
+    					case NORTH: 
+    						return nw_log;
+    					case EAST:
+    						return ne_log;
+    					case SOUTH:
+    						return se_log;
+    					case WEST:
+    						return sw_log;
+    					default:
+    						return horizontal_log;
+    				}
+    			}, 90);
+    } // end quarterLogBlock
+    
+    /**
+     * Create ModelFile for a quarterlog block.
+     * @param name
+     * @param up
+     * @param down
+     * @param north
+     * @param south
+     * @param east
+     * @param west
+     * @return
+     */
+    public ModelFile quarterLogBlockModel(String name, ResourceLocation up,
     		ResourceLocation down, ResourceLocation north, ResourceLocation south, ResourceLocation east, 
     		ResourceLocation west)
     {
-
-		String name = getRegistryNameFromHolder(quarterBlock);
-    	ModelFile log_model = this.models().cube(name, down, up, north, south, east, west);
-    	this.directionalBlock(quarterBlock.get(), log_model);
-    	this.itemModels().withExistingParent(name, modLoc("block/" + name));
+    	return this.models().cube(name, down, up, north, south, east, west);
     }
     
     
