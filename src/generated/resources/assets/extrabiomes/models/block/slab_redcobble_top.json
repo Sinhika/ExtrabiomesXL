@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "extrabiomes:block/redrockcobble",
-    "side": "extrabiomes:block/redrockcobble",
-    "top": "extrabiomes:block/redrockcobble"
-  }
-}

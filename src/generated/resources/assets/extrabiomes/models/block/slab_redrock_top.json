@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "extrabiomes:block/redrockslabtop",
-    "side": "extrabiomes:block/redrockslabside",
-    "top": "extrabiomes:block/redrockslabtop"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "extrabiomes:redrock"
-  },
-  "result": "extrabiomes:stairs_redrock"
-}

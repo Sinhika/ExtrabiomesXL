@@ -230,8 +230,8 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			.save(consumer);
 		
 		// scarecrow
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.scarecrow.get())
-			.define('p', Blocks.PUMPKIN)
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.scarecrow_totem.get())
+			.define('p', Blocks.CARVED_PUMPKIN)
 			.define('m', Blocks.MELON)
 			.define('s', Ingredient.of(Tags.Items.RODS_WOODEN))
 			.pattern(" p ")

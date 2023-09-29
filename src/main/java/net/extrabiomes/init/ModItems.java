@@ -35,7 +35,7 @@ public final class ModItems
 			   () -> new CustomItem(new Item.Properties(), "item.extrabiomes.paste.description"));
 	   public static final RegistryObject<LogTurnerItem> log_turner = ITEMS.register("log_turner",
 			   () -> new LogTurnerItem(Tiers.WOOD, new Item.Properties(), "item.extrabiomes.logturner.description"));
-	   public static final RegistryObject<ScarecrowItem> scarecrow = ITEMS.register("scarecrow",
+	   public static final RegistryObject<ScarecrowItem> scarecrow_totem = ITEMS.register("scarecrow_totem",
 			   () -> new ScarecrowItem(new Item.Properties(), "item.extrabiomes.scarecrow.description"));
 	   
 	   public static final RegistryObject<ItemNameBlockItem> seed_strawberry = ITEMS.register("seed_strawberry",
