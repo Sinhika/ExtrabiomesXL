@@ -36,9 +36,9 @@ public class ScarecrowEntity extends AbstractGolem
 	@Override
 	protected void registerGoals() 
 	{
-		this.goalSelector.addGoal(1, new ScareClosestGoal(this, 10.0F));
+		this.goalSelector.addGoal(1, new ScareClosestGoal(this, 20.0F));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, true, 
-				(Predicate<LivingEntity>)(tgt) -> {return ((tgt instanceof LivingEntity) && ! (tgt instanceof AbstractGolem));} ));
+				(Predicate<LivingEntity>)(tgt) -> {return ((tgt instanceof PathfinderMob) && ! (tgt instanceof AbstractGolem));} ));
 	}
 
 	@Override
@@ -130,7 +130,7 @@ public class ScarecrowEntity extends AbstractGolem
 	   public boolean canUse() 
 	   {
 		   LivingEntity livingentity = this.golemMob.getTarget();
-		   if (livingentity != null && livingentity.isAlive())
+		   if (livingentity != null && livingentity.isAlive() && livingentity instanceof PathfinderMob)
 		   {
 			   this.target = livingentity;
 			   return true;
