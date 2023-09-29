@@ -4,13 +4,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.extrabiomes.ExtrabiomesXS;
+import net.extrabiomes.entity.ScarecrowModel;
+import net.extrabiomes.entity.ScarecrowRenderer;
 import net.extrabiomes.init.ModBlocks;
+import net.extrabiomes.init.ModEntities;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -19,6 +23,26 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public final class ClientModEventSubscriber 
 {
 	private static final Logger LOGGER = LogManager.getLogger(ExtrabiomesXS.MODID + " Mod Client Event Subscriber");
+
+	/**
+     * Register model layer(s) for scarecrow.
+     * @param event
+     */
+    @SubscribeEvent
+    public static void onRegisterLayer(EntityRenderersEvent.RegisterLayerDefinitions event)
+    {
+        event.registerLayerDefinition(ScarecrowModel.SCARECROW_LAYER, ScarecrowModel::createBodyLayer);
+    }
+
+    /**
+     * register renders for scarecrow.
+     * @param event
+     */
+    @SubscribeEvent
+    public static void OnRegisterRenderer(EntityRenderersEvent.RegisterRenderers event)
+    {
+        event.registerEntityRenderer(ModEntities.scarecrow.get(), ScarecrowRenderer::new);
+    }
 
 	/**
 	 * register block color handlers for leaves and suchlike.

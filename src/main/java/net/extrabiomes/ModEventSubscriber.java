@@ -7,12 +7,15 @@ import org.apache.logging.log4j.Logger;
 
 import net.extrabiomes.config.ConfigHelper;
 import net.extrabiomes.config.ConfigHolder;
+import net.extrabiomes.entity.ScarecrowEntity;
 import net.extrabiomes.init.ModBlocks;
+import net.extrabiomes.init.ModEntities;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
@@ -41,6 +44,16 @@ public final class ModEventSubscriber
         
     } // end onCommonSetup
 
+    /**
+     *  initialize scarecrow attributes.
+     */
+    @SubscribeEvent
+    public static void onEntityAttributeCreation( final EntityAttributeCreationEvent event)
+    {
+        event.put(ModEntities.scarecrow.get(), ScarecrowEntity.prepareAttributes().build());        
+    } // end onEntityAttributeCreation
+
+    
 	/**
 	 * This method will be called by Forge when it is time for the mod to register its Items.
 	 * This method will always be called after the Block registry method.

@@ -3,6 +3,9 @@ package net.extrabiomes.content;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
 
+/**
+ * craftable scarecrow item acts like a scarecrow egg.
+ */
 public class ScarecrowItem extends CustomItem 
 {
 

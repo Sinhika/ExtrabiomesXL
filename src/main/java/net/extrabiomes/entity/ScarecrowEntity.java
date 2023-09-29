@@ -79,6 +79,7 @@ public class ScarecrowEntity extends AbstractGolem
 	public static AttributeSupplier.Builder prepareAttributes()
     {
     	return Mob.createMobAttributes()
+    			.add(Attributes.MAX_HEALTH, 10.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.0D);
     }
 	
