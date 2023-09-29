@@ -20,6 +20,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -229,6 +230,16 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			.unlockedBy("has_item", has(Tags.Items.RODS_WOODEN))
 			.save(consumer);
 		
+		// scarecrow
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.scarecrow.get())
+			.define('p', Blocks.PUMPKIN)
+			.define('m', Blocks.MELON)
+			.define('s', Ingredient.of(Tags.Items.RODS_WOODEN))
+			.pattern(" p ")
+			.pattern("sms")
+			.pattern(" s ")
+			.unlockedBy("has_item", has(Blocks.MELON))
+			.save(consumer);
 		
 	} // end registerMiscRecipes()
 	
