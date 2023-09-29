@@ -32,7 +32,8 @@ public class ExtrabiomesDataGenerator
         gen.addProvider(event.includeServer(), new ExtrabiomesItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), 
         		existingFileHelper));
         gen.addProvider(event.includeServer(), new SimpleLootTableProvider(packOutput, List.of(
-        		new LootTableProvider.SubProviderEntry(ExtrabiomesLootSubprovider::new, LootContextParamSets.BLOCK))));
+        		new LootTableProvider.SubProviderEntry(ExtrabiomesLootSubprovider::new, LootContextParamSets.BLOCK),
+        		new LootTableProvider.SubProviderEntry(ExtrabiomesEntityLootSubprovider::new , LootContextParamSets.ENTITY))));
         
         gen.addProvider(event.includeServer(), new ExtrabiomesRecipes(packOutput));
         
