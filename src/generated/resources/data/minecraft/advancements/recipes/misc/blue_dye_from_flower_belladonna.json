@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flower_belladonna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extrabiomes:flower_belladonna"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:blue_dye_from_flower_belladonna"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_flower_belladonna",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:blue_dye_from_flower_belladonna"
+    ]
+  },
+  "sends_telemetry_event": false
+}

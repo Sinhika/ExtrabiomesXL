@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "extrabiomes:planks_japanese_maple"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "extrabiomes:pressureplate_japanesemaple"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "extrabiomes:block/pressureplate_japanesemaple"
+    },
+    "powered=true": {
+      "model": "extrabiomes:block/pressureplate_japanesemaple_down"
+    }
+  }
+}

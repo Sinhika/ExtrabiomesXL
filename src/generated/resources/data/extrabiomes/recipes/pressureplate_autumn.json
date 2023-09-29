@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "extrabiomes:planks_autumn_wood"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "extrabiomes:pressureplate_autumn"
+  },
+  "show_notification": true
+}

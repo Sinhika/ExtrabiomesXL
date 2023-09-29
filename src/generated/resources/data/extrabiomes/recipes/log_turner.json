@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " ss",
+    "  s",
+    " ss"
+  ],
+  "result": {
+    "item": "extrabiomes:log_turner"
+  },
+  "show_notification": true
+}

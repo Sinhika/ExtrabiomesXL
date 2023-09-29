@@ -44,5 +44,11 @@ public class ExtrabiomesEntityLootSubprovider extends EntityLootSubProvider
 		return ModEntities.ENTITIES.getEntries().stream().map(a -> a.get());
 	}
 
+
+	@Override
+	protected boolean canHaveLootTable(EntityType<?> pEntityType) {
+		return pEntityType == ModEntities.scarecrow.get();
+	}
+
 	
 } // end class
