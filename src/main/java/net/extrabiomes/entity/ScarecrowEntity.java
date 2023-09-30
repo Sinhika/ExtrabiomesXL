@@ -31,8 +31,23 @@ public class ScarecrowEntity extends AbstractGolem
 	{
 		super(pEntityType, pLevel);
 		this.setCanPickUpLoot(false);
+		this.setPersistenceRequired();
 	}
 
+	@Override
+	protected boolean shouldDespawnInPeaceful() {
+		return false;
+	}
+
+	
+	/**
+	 * Doesn't despawn.
+	 */
+	@Override
+	public void checkDespawn() {
+	}
+
+	
 	@Override
 	protected void registerGoals() 
 	{
