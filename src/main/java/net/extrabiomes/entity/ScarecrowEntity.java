@@ -27,7 +27,7 @@ public class ScarecrowEntity extends AbstractGolem
 	protected static final EntityDataAccessor<Byte> DATA_FLAGS_ID = 
 			SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.BYTE);
 	
-	public ScarecrowEntity(EntityType<? extends AbstractGolem> pEntityType, Level pLevel) 
+	public ScarecrowEntity(EntityType<? extends ScarecrowEntity> pEntityType, Level pLevel) 
 	{
 		super(pEntityType, pLevel);
 		this.setCanPickUpLoot(false);
@@ -38,15 +38,7 @@ public class ScarecrowEntity extends AbstractGolem
 	protected boolean shouldDespawnInPeaceful() {
 		return false;
 	}
-
 	
-	/**
-	 * Doesn't despawn.
-	 */
-	@Override
-	public void checkDespawn() {
-	}
-
 	
 	@Override
 	protected void registerGoals() 
@@ -68,15 +60,6 @@ public class ScarecrowEntity extends AbstractGolem
 	@Override
 	public void setSpeed(float pSpeed) {
 		super.setSpeed(0.0F);
-	}
-
-	/**
-	 * we may be using this later.
-	 */
-	@Override
-	public void aiStep() {
-		// TODO Auto-generated method stub
-		super.aiStep();
 	}
 
 	/**

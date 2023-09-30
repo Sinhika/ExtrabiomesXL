@@ -11,11 +11,16 @@ import net.extrabiomes.entity.ScarecrowEntity;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModEntities;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent.Operation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.config.ModConfig;
@@ -53,6 +58,15 @@ public final class ModEventSubscriber
         event.put(ModEntities.scarecrow.get(), ScarecrowEntity.prepareAttributes().build());        
     } // end onEntityAttributeCreation
 
+    /**
+     * set up scarecrow placement rules
+     */
+    @SubscribeEvent
+    public static void onSpawnPlacementRegistry(final SpawnPlacementRegisterEvent event)
+    {
+    	event.register(ModEntities.scarecrow.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 
+    			Mob::checkMobSpawnRules, Operation.REPLACE);
+    }
     
 	/**
 	 * This method will be called by Forge when it is time for the mod to register its Items.
