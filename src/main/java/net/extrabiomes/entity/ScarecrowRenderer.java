@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class ScarecrowRenderer extends MobRenderer<ScarecrowEntity, ScarecrowModel> 
 {
 	private static final ResourceLocation SCARECROW_TEXTURES = 
-			new ResourceLocation(ExtrabiomesXS.MODID, "textures/entity/scarecrow.png");
+			new ResourceLocation(ExtrabiomesXS.MODID, "textures/entity/scarecrow2.png");
 	
 	public ScarecrowRenderer(Context pContext) 
 	{
