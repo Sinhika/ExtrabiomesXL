@@ -72,7 +72,8 @@ public class LogTurnerItem extends TieredItem
 	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
 	              }
 	              else {
-	            	  blockstate2 = RotatedPillarBlock.rotatePillar(blockstate, Rotation.CLOCKWISE_90);
+	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
+//	            	  blockstate2 = RotatedPillarBlock.rotatePillar(blockstate, Rotation.CLOCKWISE_90);
 	              }
 	              level.setBlockAndUpdate(blockpos, blockstate2);
 	              

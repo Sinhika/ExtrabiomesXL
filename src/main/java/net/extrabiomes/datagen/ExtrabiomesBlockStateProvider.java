@@ -302,7 +302,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	textures[7] = modLoc("block/" + shortname + "side2"); // nw south face
     			// udnsew
     	ModelFile nw_log = quarterLogBlockModel(name + "_nw", 
-    			textures[0], textures[0], textures[4], textures[6], textures[7], textures[5]);
+    			textures[0], textures[3], textures[4], textures[6], textures[7], textures[5],
+    			textures[6]);
 //    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
 //    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);
 //    	ModelFile sw_log = quarterLogBlockModel(name + "_sw",
@@ -329,9 +330,16 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
      */
     public ModelFile quarterLogBlockModel(String name, ResourceLocation up,
     		ResourceLocation down, ResourceLocation north, ResourceLocation south, ResourceLocation east, 
-    		ResourceLocation west)
+    		ResourceLocation west, ResourceLocation particle)
     {
-    	return this.models().cube(name, down, up, north, south, east, west);
+    	return this.models().withExistingParent(name, "cube")
+    			.texture("particle", particle)
+                .texture("down", down)
+                .texture("up", up)
+                .texture("north", north)
+                .texture("south", south)
+                .texture("east", east)
+                .texture("west", west);
     }
     
     

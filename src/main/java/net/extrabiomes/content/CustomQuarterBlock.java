@@ -2,24 +2,24 @@ package net.extrabiomes.content;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 
-public class CustomQuarterBlock extends CustomLogBlock 
+public class CustomQuarterBlock extends DirectionalBlock 
 {
-	public static final DirectionProperty FACING = BlockStateProperties.FACING;
-	
 	public CustomQuarterBlock(Properties pProperties) 
 	{
 		super(pProperties);
-		this.registerDefaultState(this.defaultBlockState()
-				.setValue(AXIS, Direction.Axis.Y)
-				.setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
 	}
 
 	
@@ -33,8 +33,7 @@ public class CustomQuarterBlock extends CustomLogBlock
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) 
 	{
-		return this.defaultBlockState().setValue(AXIS, pContext.getClickedFace().getAxis())
-				.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
 	}
 	
 	/**
@@ -60,5 +59,27 @@ public class CustomQuarterBlock extends CustomLogBlock
 	{
 		return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
 	}
+
+	/**
+	 * Allow axe to change logs to stripped logs.
+	 */
+    @Override
+    public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction,
+            boolean simulate)
+    {
+        BlockState toolModifiedState;
+        
+        if (ToolActions.AXE_STRIP == toolAction) 
+        {
+        	// TODO create stripped versions of logs and make a match table.
+//            toolModifiedState = ModBlocks.stripped_blaze_log.get().defaultBlockState()
+//                    .setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            toolModifiedState = super.getToolModifiedState(state, context, toolAction, simulate);
+        }
+        else {
+            toolModifiedState = super.getToolModifiedState(state, context, toolAction, simulate);
+        }
+        return toolModifiedState;
+    }
 
 } // end class
