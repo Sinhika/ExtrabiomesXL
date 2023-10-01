@@ -5,10 +5,8 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import net.extrabiomes.init.ModEntities;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,11 +19,13 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.NaturalSpawner;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 
 public class ScarecrowEntity extends AbstractGolem 
 {
-	protected static final EntityDataAccessor<Byte> DATA_FLAGS_ID = 
-			SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.BYTE);
 	
 	public ScarecrowEntity(EntityType<? extends ScarecrowEntity> pEntityType, Level pLevel) 
 	{
@@ -39,6 +39,17 @@ public class ScarecrowEntity extends AbstractGolem
 		return false;
 	}
 	
+	/**
+	 * set movement_speed to 0.
+	 * @return
+	 */
+	public static AttributeSupplier.Builder prepareAttributes()
+    {
+    	return Mob.createMobAttributes()
+    			.add(Attributes.MAX_HEALTH, 10.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.0D);
+    }
+	
 	
 	@Override
 	protected void registerGoals() 
@@ -48,11 +59,31 @@ public class ScarecrowEntity extends AbstractGolem
 				(Predicate<LivingEntity>)(tgt) -> {return ((tgt instanceof PathfinderMob) && ! (tgt instanceof AbstractGolem));} ));
 	}
 
-	@Override
-	protected ResourceLocation getDefaultLootTable() {
-		// TODO Auto-generated method stub
-		return super.getDefaultLootTable();
-	}
+	public boolean checkSpawnObstruction(LevelReader pLevel) 
+	{
+	      BlockPos blockpos = this.blockPosition();
+	      BlockPos blockpos1 = blockpos.below();
+	      BlockState blockstate = pLevel.getBlockState(blockpos1);
+	      if (!blockstate.entityCanStandOn(pLevel, blockpos1, this)) 
+	      {
+	         return false;
+	      } 
+	      else 
+	      {
+	         for(int i = 1; i < 3; ++i) 
+	         {
+		            BlockPos blockpos2 = blockpos.above(i);
+		            BlockState blockstate1 = pLevel.getBlockState(blockpos2);
+		            if (!NaturalSpawner.isValidEmptySpawnBlock(pLevel, blockpos2, blockstate1, blockstate1.getFluidState(), 
+		            										   ModEntities.scarecrow.get())) 
+		            {
+		            	return false;
+		            }
+	         } // end-for
+	         return NaturalSpawner.isValidEmptySpawnBlock(pLevel, blockpos, pLevel.getBlockState(blockpos), 
+	        		 Fluids.EMPTY.defaultFluidState(),  ModEntities.scarecrow.get()) && pLevel.isUnobstructed(this);
+	      } // end else
+	} // end checkSpawnObstruction
 
 	/**
 	 * Scarecrows don't move.
@@ -70,45 +101,6 @@ public class ScarecrowEntity extends AbstractGolem
 		return pCurrentAir;
 	}
 
-	/**
-	 * set movement_speed to 0.
-	 * @return
-	 */
-	public static AttributeSupplier.Builder prepareAttributes()
-    {
-    	return Mob.createMobAttributes()
-    			.add(Attributes.MAX_HEALTH, 10.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.0D);
-    }
-	
-	public boolean isPlayerCreated() {
-		return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
-	}
-
-	public void setPlayerCreated(boolean pPlayerCreated) 
-	{
-	      byte b0 = this.entityData.get(DATA_FLAGS_ID);
-	      if (pPlayerCreated) {
-	         this.entityData.set(DATA_FLAGS_ID, (byte)(b0 | 1));
-	      } 
-	      else {
-	         this.entityData.set(DATA_FLAGS_ID, (byte)(b0 & -2));
-	      }
-	}
-
-   public void addAdditionalSaveData(CompoundTag pCompound) 
-   {
-      super.addAdditionalSaveData(pCompound);
-      pCompound.putBoolean("PlayerCreated", this.isPlayerCreated());
-   }
-   /**
-    * (abstract) Protected helper method to read subclass entity data from NBT.
-    */
-   public void readAdditionalSaveData(CompoundTag pCompound) 
-   {
-      super.readAdditionalSaveData(pCompound);
-      this.setPlayerCreated(pCompound.getBoolean("PlayerCreated"));
-   }
 
    private class ScareClosestGoal extends Goal
    {

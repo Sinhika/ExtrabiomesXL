@@ -13,7 +13,9 @@ public final class ModEntities
 	 public static final DeferredRegister<EntityType<?>> ENTITIES =
 	            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, ExtrabiomesXS.MODID);
 	 
-	 public static final RegistryObject<EntityType<ScarecrowEntity>> scarecrow = ENTITIES.register("scarecrow", 
-			 ()-> EntityType.Builder.of(ScarecrowEntity::new, MobCategory.MISC)
-			 		.build("scarecrow"));
+	 
+	 public static final RegistryObject<EntityType<ScarecrowEntity>> scarecrow = 
+			 ENTITIES.register("scarecrow", 
+					 ()-> EntityType.Builder.of(ScarecrowEntity::new, MobCategory.MISC)
+					 .sized(1.0F,1.0F).build("scarecrow"));
 } // end class
