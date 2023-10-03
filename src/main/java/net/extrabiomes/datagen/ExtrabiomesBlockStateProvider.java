@@ -644,6 +644,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	doorlist.add(ModBlocks.door_autumn);
     	doorlist.add(ModBlocks.door_japanesemaple);
     	doorlist.add(ModBlocks.door_fir);
+    	doorlist.add(ModBlocks.door_redwood);
     	
     	for(RegistryObject<DoorBlock> val: doorlist)
     	{
@@ -664,12 +665,14 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	fence2model.put(ModBlocks.fence_autumn, modLoc("block/planksautumn"));
     	fence2model.put(ModBlocks.fence_japanesemaple, modLoc("block/planksjapanesemaple"));
     	fence2model.put(ModBlocks.fence_fir, modLoc("block/planksfir"));
+    	fence2model.put(ModBlocks.fence_redwood, modLoc("block/planksredwood"));
     	
     	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
     			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
     	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
     	gate2model.put(ModBlocks.gate_japanesemaple, modLoc("block/planksjapanesemaple"));
     	gate2model.put(ModBlocks.gate_fir,  modLoc("block/planksfir"));
+    	gate2model.put(ModBlocks.gate_redwood,  modLoc("block/planksredwood"));
 
     	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
     			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
