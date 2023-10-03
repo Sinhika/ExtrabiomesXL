@@ -116,34 +116,37 @@ public final class ModBlocks
 	   // LOGS, WOOD & PLANKS
 	   // autumn tree logs & wood.
 	   public static final RegistryObject<CustomLogBlock> log_autumn = BLOCKS.register("log_autumn", 
-			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL));
+			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, ""));
 	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS.register("planks_autumn_wood",
 			   () -> planks(MapColor.WOOD));
 	   // japanese maple
 	   public static final RegistryObject<CustomLogBlock> log_japanese_maple = BLOCKS.register("log_japanese_maple", 
-			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM));
+			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM, ""));
 	   public static final RegistryObject<Block> planks_japanese_maple = BLOCKS.register("planks_japanese_maple",
 			   () -> planks(MapColor.COLOR_PINK));
 	   // fir
 	   public static final RegistryObject<CustomLogBlock> log_fir = BLOCKS.register("log_fir",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN));
+			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
 	   public static final RegistryObject<CustomQuarterBlock> firquarter = BLOCKS.register("firquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_fir = BLOCKS.register("planks_fir",
 			   () -> planks(MapColor.WOOD));
 	   // redwood
 	   public static final RegistryObject<CustomLogBlock> log_redwood = BLOCKS.register("log_redwood",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN));
+			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
 	   public static final RegistryObject<CustomQuarterBlock> redwoodquarter = BLOCKS.register("redwoodquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_redwood = BLOCKS.register("planks_redwood",
 			   () -> planks(MapColor.WOOD));
 	   // black wattle
 	   public static final RegistryObject<CustomLogBlock> log_acacia = BLOCKS.register("log_acacia", 
-			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL));
+			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, "block.extrabiomes.log_acacia.description"));
 	   public static final RegistryObject<Block> planks_acacia = BLOCKS.register("planks_acacia",
 			   () -> planks(MapColor.WOOD));
-
+	   // extra oak
+	   public static final RegistryObject<CustomQuarterBlock> oakquarter = BLOCKS.register("oakquarter",
+			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
+	   
 	   // SAPLINGS
 	   // autumn saplings
 	   public static final RegistryObject<BushBlock> sapling_umber = BLOCKS.register("sapling_umber", 
@@ -637,11 +640,12 @@ public final class ModBlocks
 	    * @param pSideMapColor - MapColor for side.
 	    * @returns a new CustomLogBlock object.
 	    */
-	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor) 
+	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip) 
 	   {
 		   return new CustomLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
 		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
-		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+				   tooltip);
 	   }
 	
 	   /**
@@ -649,9 +653,12 @@ public final class ModBlocks
 	    */
 	   private static CustomQuarterBlock bigLog(MapColor pTopMapColor, MapColor pSideMapColor)
 	   {
+		   final String tooltip  = "extrabiomes.cornerlog.crafting";
+		   
 		   return new CustomQuarterBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
 		         return p_152624_.getValue(DirectionalBlock.FACING) == Direction.UP ? pTopMapColor : pSideMapColor;
-		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+				   tooltip);
 	   }
 	   
 	   /**

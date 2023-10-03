@@ -139,6 +139,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	// big logs  - udnsew
     	quarterLogBlock(ModBlocks.firquarter);
     	quarterLogBlock(ModBlocks.redwoodquarter);
+    	quarterLogBlock(ModBlocks.oakquarter);
     	
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
