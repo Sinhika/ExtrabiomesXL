@@ -302,7 +302,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	textures[7] = modLoc("block/" + shortname + "side2"); // nw south face
     			// udnsew
     	ModelFile nw_log = quarterLogBlockModel(name + "_nw", 
-    			textures[0], textures[3], textures[4], textures[6], textures[7], textures[5],
+    			textures[0], textures[3], textures[4], textures[7], textures[6], textures[5],
     			textures[6]);
 //    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
 //    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);

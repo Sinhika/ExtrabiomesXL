@@ -9,8 +9,6 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
@@ -19,7 +17,7 @@ public class CustomQuarterBlock extends DirectionalBlock
 	public CustomQuarterBlock(Properties pProperties) 
 	{
 		super(pProperties);
-		this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP));
 	}
 
 	
@@ -33,7 +31,7 @@ public class CustomQuarterBlock extends DirectionalBlock
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext pContext) 
 	{
-		return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+		return this.defaultBlockState().setValue(FACING, pContext.getClickedFace());
 	}
 	
 	/**

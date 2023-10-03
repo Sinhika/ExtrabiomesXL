@@ -10,6 +10,7 @@ import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.config.ExtrabiomesConfig;
 import net.extrabiomes.content.CustomLogBlock;
+import net.extrabiomes.content.CustomQuarterBlock;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModItems;
 import net.minecraft.data.PackOutput;
@@ -61,11 +62,11 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	 */
 	private void registerQuarterLogConversionRecipes(Consumer<FinishedRecipe> consumer)
 	{
-		HashMap<CustomLogBlock, CustomLogBlock> quarterlog2log
-			= new HashMap<CustomLogBlock, CustomLogBlock>();
+		HashMap<CustomQuarterBlock, CustomLogBlock> quarterlog2log
+			= new HashMap<CustomQuarterBlock, CustomLogBlock>();
 		quarterlog2log.put(ModBlocks.firquarter.get(), ModBlocks.log_fir.get());
 
-		for (Map.Entry<CustomLogBlock, CustomLogBlock> entry: quarterlog2log.entrySet())
+		for (Map.Entry<CustomQuarterBlock, CustomLogBlock> entry: quarterlog2log.entrySet())
 		{
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, entry.getValue())
 				.requires(entry.getKey().asItem())

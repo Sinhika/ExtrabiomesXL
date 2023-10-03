@@ -19,6 +19,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +44,7 @@ public class LogTurnerItem extends TieredItem
 	     BlockState blockstate = level.getBlockState(blockpos);
 	     Block block = blockstate.getBlock();
 	     
-	     if (blockstate.is(BlockTags.LOGS) && block instanceof RotatedPillarBlock)
+	     if (blockstate.is(BlockTags.LOGS))
 	     {
 	    	 Player player = pContext.getPlayer();
 	         ItemStack itemstack = pContext.getItemInHand();
@@ -56,8 +57,20 @@ public class LogTurnerItem extends TieredItem
 	             level.playSound(player, blockpos, SoundEvents.WOOD_STEP, SoundSource.BLOCKS, 0.5F, 1.55F);
 	             Direction face = pContext.getClickedFace();
 	             BlockState blockstate2;
-	              if (face == Direction.DOWN || face == Direction.UP)
-	              {
+	             
+	             if ( (block instanceof CustomQuarterBlock))
+	             {
+	            	 if (face.getAxis() == Direction.Axis.Y) 
+	            	 {
+	            		 Direction newface = face.getClockWise(Direction.Axis.X);
+	            		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, newface);
+	            	 }
+	            	 else {
+		            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
+	            	 }
+	             }
+	             else if ((face == Direction.DOWN || face == Direction.UP)  && block instanceof RotatedPillarBlock)
+	             {
 	            	  Direction.Axis start_axis = (Direction.Axis) blockstate.getValue(RotatedPillarBlock.AXIS);
 	            	  if (start_axis.isVertical())
 	            	  {
@@ -66,20 +79,13 @@ public class LogTurnerItem extends TieredItem
 	            	  else {
             	  		blockstate2 = blockstate.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y);
 	            	  } // end else not start_axis is vertical
-	              } // end if face is UP or DOWN
-	              else if (block instanceof CustomQuarterBlock)
-	              {
+	             } // end if face is UP or DOWN
+	             else {
 	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
-	              }
-	              else {
-	            	  blockstate2 = blockstate.rotate(level, blockpos, Rotation.CLOCKWISE_90);
-//	            	  blockstate2 = RotatedPillarBlock.rotatePillar(blockstate, Rotation.CLOCKWISE_90);
-	              }
-	              level.setBlockAndUpdate(blockpos, blockstate2);
-	              
-	              level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(pContext.getPlayer(), blockstate2));
-	              
-	              return InteractionResult.sidedSuccess(level.isClientSide);
+	             }
+	             level.setBlockAndUpdate(blockpos, blockstate2);
+	             level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(pContext.getPlayer(), blockstate2));
+	             return InteractionResult.sidedSuccess(level.isClientSide);
 	    	 } // end-if player.mayUseItemAt()
 	     } // end-if
     	 return super.useOn(pContext);

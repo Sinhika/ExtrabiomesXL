@@ -19,6 +19,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -607,7 +608,7 @@ public final class ModBlocks
 	   private static CustomQuarterBlock bigLog(MapColor pTopMapColor, MapColor pSideMapColor)
 	   {
 		   return new CustomQuarterBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+		         return p_152624_.getValue(DirectionalBlock.FACING) == Direction.UP ? pTopMapColor : pSideMapColor;
 		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
 	   }
 	   
