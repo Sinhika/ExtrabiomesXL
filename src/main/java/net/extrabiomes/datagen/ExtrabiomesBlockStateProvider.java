@@ -301,20 +301,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	textures[6] = modLoc("block/" + shortname + "side1"); // nw east face
     	textures[7] = modLoc("block/" + shortname + "side2"); // nw south face
     			// udnsew
-    	ModelFile nw_log = quarterLogBlockModel(name + "_nw", 
+    	ModelFile nw_log = quarterLogBlockModel(name, 
     			textures[0], textures[3], textures[4], textures[7], textures[6], textures[5],
     			textures[6]);
-//    	ModelFile ne_log = quarterLogBlockModel(name + "_ne",
-//    			textures[1], textures[1], textures[5], textures[6], textures[5], textures[7]);
-//    	ModelFile sw_log = quarterLogBlockModel(name + "_sw",
-//				textures[2], textures[2], textures[6], textures[4], textures[7], textures[5]);
-//    	ModelFile se_log = quarterLogBlockModel(name + "_se",
-//				textures[3], textures[3], textures[7], textures[4], textures[4], textures[7]);
-//    	ModelFile horizontal_log = quarterLogBlockModel(name + "_horizontal",
-//    			textures[4], textures[6], textures[5], textures[7], textures[0], textures[0]);
-    			
     	directionalBlock(logBlock.get(), nw_log);
-    	this.itemModels().withExistingParent(name, modLoc("block/" + name) + "_nw");
+    	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     } // end quarterLogBlock
     
     /**
