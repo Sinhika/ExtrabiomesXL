@@ -92,48 +92,54 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.stairs_autumn.get())
 			.add(ModBlocks.stairs_fir.get())
 			.add(ModBlocks.stairs_redwood.get())
-			.add(ModBlocks.stairs_acacia.get());
+			.add(ModBlocks.stairs_acacia.get())
+			.add(ModBlocks.stairs_baldcypress.get());
 		
 		this.tag(BlockTags.WOODEN_SLABS)
 			.add(ModBlocks.slab_japanese_maple.get())
 			.add(ModBlocks.slab_autumn.get())
 			.add(ModBlocks.slab_fir.get())
 			.add(ModBlocks.slab_redwood.get())
-			.add(ModBlocks.slab_acacia.get());
+			.add(ModBlocks.slab_acacia.get())
+			.add(ModBlocks.slab_baldcypress.get());
 		
 		this.addFencetoAllFenceTags(ModBlocks.fence_autumn.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_japanesemaple.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_fir.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_redwood.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_acacia.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_baldcypress.get());
 		
 		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_japanesemaple.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_fir.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_redwood.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_acacia.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_baldcypress.get());
 		
         this.tag(BlockTags.WOODEN_DOORS)
         	.add(ModBlocks.door_japanesemaple.get())
         	.add(ModBlocks.door_autumn.get())
         	.add(ModBlocks.door_fir.get())
         	.add(ModBlocks.door_redwood.get())
-        	.add(ModBlocks.door_acacia.get());
+        	.add(ModBlocks.door_acacia.get())
+        	.add(ModBlocks.door_baldcypress.get());
         
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
         	.add(ModBlocks.pressureplate_japanesemaple.get())
         	.add(ModBlocks.pressureplate_autumn.get())
         	.add(ModBlocks.pressureplate_fir.get())
         	.add(ModBlocks.pressureplate_redwood.get())
-        	.add(ModBlocks.pressureplate_acacia.get());
-
+        	.add(ModBlocks.pressureplate_acacia.get())
+        	.add(ModBlocks.pressureplate_baldcypress.get());
+        
         this.tag(BlockTags.WOODEN_BUTTONS)
         	.add(ModBlocks.button_japanesemaple.get())
         	.add(ModBlocks.button_autumn.get())
         	.add(ModBlocks.button_fir.get())
         	.add(ModBlocks.button_redwood.get())
-        	.add(ModBlocks.button_acacia.get());
-        
+        	.add(ModBlocks.button_acacia.get())
+        	.add(ModBlocks.button_baldcypress.get());
 	} // end registerPlankBlockTags
    
 	// also too many gate tags.
@@ -167,8 +173,12 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.log_acacia.get());
 		this.tag(BlockTags.OAK_LOGS)
 			.add(ModBlocks.oakquarter.get());
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"))
+			.add(ModBlocks.log_baldcypress.get())
+			.add(ModBlocks.baldcypressquarter.get())
+			.add(ModBlocks.baldcypresskneelog.get());
 		
-		// only add actual logs to this tag.
+		// only add actual logs--not stripped--to this tag.
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
 			.add(ModBlocks.log_autumn.get())
 			.add(ModBlocks.log_japanese_maple.get())
@@ -177,7 +187,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.log_redwood.get())
 			.add(ModBlocks.redwoodquarter.get())
 			.add(ModBlocks.log_acacia.get())
-			.add(ModBlocks.oakquarter.get());
+			.add(ModBlocks.oakquarter.get())
+			.add(ModBlocks.log_baldcypress.get())
+			.add(ModBlocks.baldcypressquarter.get())
+			.add(ModBlocks.baldcypresskneelog.get());
 
 		
 		// LOGS_THAT_BURN are automatically included in LOGS.
@@ -186,14 +199,16 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "redwood_logs"))
-			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"));
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"));
 		
         this.tag(BlockTags.PLANKS)
         	.add(ModBlocks.planks_japanese_maple.get())
         	.add(ModBlocks.planks_autumn_wood.get())
         	.add(ModBlocks.planks_fir.get())
         	.add(ModBlocks.planks_redwood.get())
-        	.add(ModBlocks.planks_acacia.get());
+        	.add(ModBlocks.planks_acacia.get())
+        	.add(ModBlocks.planks_baldcypress.get());
         
 	} // end registerLogTags()
    

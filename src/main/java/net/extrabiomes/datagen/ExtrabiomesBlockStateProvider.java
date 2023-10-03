@@ -86,6 +86,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	log2model.put(ModBlocks.log_fir, "block/logfir" );
     	log2model.put(ModBlocks.log_redwood, "block/logredwood" );
     	log2model.put(ModBlocks.log_acacia, "block/logacacia" );
+    	log2model.put(ModBlocks.log_baldcypress, "block/logbaldcypress" );
+    	
     	
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
@@ -94,6 +96,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	planks2model.put(ModBlocks.planks_fir, modLoc("block/planksfir"));
     	planks2model.put(ModBlocks.planks_redwood, modLoc("block/planksredwood"));
        	planks2model.put(ModBlocks.planks_acacia, modLoc("block/planksacacia"));
+       	planks2model.put(ModBlocks.planks_baldcypress, modLoc("block/planksbaldcypress"));
    	
     	HashMap<RegistryObject<StairBlock>, ResourceLocation> stairs2model
 			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
@@ -105,6 +108,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	stairs2model.put(ModBlocks.stairs_fir, modLoc("block/planksfir"));
     	stairs2model.put(ModBlocks.stairs_redwood, modLoc("block/planksredwood"));
     	stairs2model.put(ModBlocks.stairs_acacia, modLoc("block/planksacacia"));
+    	stairs2model.put(ModBlocks.stairs_baldcypress, modLoc("block/planksbaldcypress"));
     	
     	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
     		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
@@ -113,6 +117,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	slab2model.put(ModBlocks.slab_fir, modLoc("block/planksfir"));
     	slab2model.put(ModBlocks.slab_redwood, modLoc("block/planksredwood"));
     	slab2model.put(ModBlocks.slab_acacia, modLoc("block/planksacacia"));
+    	slab2model.put(ModBlocks.slab_baldcypress, modLoc("block/planksbaldcypress"));
     	
     	// leaves
     	for (Map.Entry<RegistryObject<LeavesBlock>, ResourceLocation> entry: leaves2model.entrySet())
@@ -140,6 +145,10 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	quarterLogBlock(ModBlocks.firquarter);
     	quarterLogBlock(ModBlocks.redwoodquarter);
     	quarterLogBlock(ModBlocks.oakquarter);
+    	quarterLogBlock(ModBlocks.baldcypressquarter);
+    	
+    	// knee logs
+    	kneelogBlock(ModBlocks.baldcypresskneelog);
     	
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
@@ -197,6 +206,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	plate2model.put(ModBlocks.pressureplate_fir, modLoc("block/planksfir"));
     	plate2model.put(ModBlocks.pressureplate_redwood, modLoc("block/planksredwood"));
     	plate2model.put(ModBlocks.pressureplate_acacia, modLoc("block/planksacacia"));
+    	plate2model.put(ModBlocks.pressureplate_baldcypress, modLoc("block/planksbaldcypress"));
     	
     	HashMap<RegistryObject<ButtonBlock>, ResourceLocation> button2model = 
     			new HashMap<RegistryObject<ButtonBlock>, ResourceLocation> ();
@@ -205,6 +215,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	button2model.put(ModBlocks.button_fir, modLoc("block/planksfir"));
     	button2model.put(ModBlocks.button_redwood, modLoc("block/planksredwood"));
     	button2model.put(ModBlocks.button_acacia, modLoc("block/planksacacia"));
+    	button2model.put(ModBlocks.button_baldcypress, modLoc("block/planksbaldcypress"));
     	
         // pressure_plate
      	for (Map.Entry<RegistryObject<PressurePlateBlock>, ResourceLocation> entry: plate2model.entrySet())
@@ -233,6 +244,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	doorlist.add(ModBlocks.door_fir);
     	doorlist.add(ModBlocks.door_redwood);
     	doorlist.add(ModBlocks.door_acacia);
+    	doorlist.add(ModBlocks.door_baldcypress);
     	
     	for(RegistryObject<DoorBlock> val: doorlist)
     	{
@@ -255,6 +267,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	fence2model.put(ModBlocks.fence_fir, modLoc("block/planksfir"));
     	fence2model.put(ModBlocks.fence_redwood, modLoc("block/planksredwood"));
     	fence2model.put(ModBlocks.fence_acacia, modLoc("block/planksacacia"));
+    	fence2model.put(ModBlocks.fence_baldcypress, modLoc("block/planksbaldcypress"));
     	
     	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
     			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
@@ -263,6 +276,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	gate2model.put(ModBlocks.gate_fir,  modLoc("block/planksfir"));
     	gate2model.put(ModBlocks.gate_redwood,  modLoc("block/planksredwood"));
     	gate2model.put(ModBlocks.gate_acacia,  modLoc("block/planksacacia"));
+    	gate2model.put(ModBlocks.gate_baldcypress,  modLoc("block/planksbaldcypress"));
 
     	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
     			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
@@ -546,6 +560,42 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	directionalBlock(logBlock.get(), nw_log);
     	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     } // end quarterLogBlock
+    
+    
+    /**
+     * builder for knee logs
+     */
+    protected void kneelogBlock(RegistryObject<CustomQuarterBlock> logBlock)
+    {
+    	ResourceLocation[] textures = new ResourceLocation[7];
+    	
+		String name = getRegistryNameFromHolder(logBlock);
+		// depends on name format being "<wood>kneelog".
+		if (! name.endsWith("kneelog"))
+		{
+			throw  new IllegalArgumentException("CustomQuarterBlock " + name + " must end in 'kneelog'");
+		}
+		// get name less 'kneelog' suffix.
+		int endIndex = name.length() - 7;
+    	String shortname = name.substring(0, endIndex);
+    	
+       	// set up texture names
+    	textures[0] = modLoc("block/log" + shortname + "knee1"); // curved bark faces 
+    	textures[1] = modLoc("block/log" + shortname + "knee2"); 
+    	textures[2] = modLoc("block/log" + shortname + "knee3");
+    	textures[3] = modLoc("block/log" + shortname + "knee4");
+    	textures[4] = modLoc("block/log" + shortname + "side1"); // straight bark faces
+    	textures[5] = modLoc("block/log" + shortname + "side2");
+    	textures[6] = modLoc("block/log" + shortname + "top");   // cut end 
+
+    			// udnsew
+    	ModelFile nw_log = quarterLogBlockModel(name, 
+    			textures[4], textures[6], textures[6], textures[5], textures[0], textures[1],
+    			textures[6]);
+    	directionalBlock(logBlock.get(), nw_log);
+    	this.itemModels().withExistingParent(name, modLoc("block/" + name));
+   	
+   } // end kneelogBlock
     
     
     /**

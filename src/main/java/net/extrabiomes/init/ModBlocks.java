@@ -146,6 +146,15 @@ public final class ModBlocks
 	   // extra oak
 	   public static final RegistryObject<CustomQuarterBlock> oakquarter = BLOCKS.register("oakquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
+	   // bald cypress
+	   public static final RegistryObject<CustomLogBlock> log_baldcypress = BLOCKS.register("log_baldcypress",
+			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, ""));
+	   public static final RegistryObject<CustomQuarterBlock> baldcypressquarter = BLOCKS.register("baldcypressquarter",
+			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_GRAY));
+	   public static final RegistryObject<CustomQuarterBlock> baldcypresskneelog = BLOCKS.register("baldcypresskneelog",
+			   () -> bigLog2(MapColor.WOOD, MapColor.COLOR_GRAY));
+	   public static final RegistryObject<Block> planks_baldcypress = BLOCKS.register("planks_baldcypress",
+			   () -> planks(MapColor.WOOD));
 	   
 	   // SAPLINGS
 	   // autumn saplings
@@ -221,19 +230,22 @@ public final class ModBlocks
 			   () -> stairs(planks_autumn_wood));
 	   public static final RegistryObject<StairBlock> stairs_japanesemaple = BLOCKS.register("stairs_japanesemaple", 
 			   () -> stairs(planks_japanese_maple));
-	   public static final RegistryObject<StairBlock> stairs_redcobble = BLOCKS.register("stairs_redcobble",
-			   () -> stairs(redcobble));
-	   public static final RegistryObject<StairBlock> stairs_redrockbrick = BLOCKS.register("stairs_redrockbrick",
-			   () -> stairs(redrock_brick));
-	   public static final RegistryObject<StairBlock> stairs_redrock = BLOCKS.register("stairs_redrock",
-			   () -> stairs(redrock));
 	   public static final RegistryObject<StairBlock> stairs_fir = BLOCKS.register("stairs_fir",
 			   () -> stairs(planks_fir));
 	   public static final RegistryObject<StairBlock> stairs_redwood = BLOCKS.register("stairs_redwood",
 			   () -> stairs(planks_redwood));
 	   public static final RegistryObject<StairBlock> stairs_acacia = BLOCKS.register("stairs_acacia",
 			   () -> stairs(planks_acacia));
-	   
+	   public static final RegistryObject<StairBlock> stairs_baldcypress = BLOCKS.register("stairs_baldcypress",
+			   () -> stairs(planks_baldcypress));
+
+	   public static final RegistryObject<StairBlock> stairs_redcobble = BLOCKS.register("stairs_redcobble",
+			   () -> stairs(redcobble));
+	   public static final RegistryObject<StairBlock> stairs_redrockbrick = BLOCKS.register("stairs_redrockbrick",
+			   () -> stairs(redrock_brick));
+	   public static final RegistryObject<StairBlock> stairs_redrock = BLOCKS.register("stairs_redrock",
+			   () -> stairs(redrock));
+
 	   // slabs
 	   public static final RegistryObject<SlabBlock> slab_autumn = BLOCKS.register("slab_autumn", 
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_autumn_wood.get())));
@@ -245,6 +257,8 @@ public final class ModBlocks
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_redwood.get())));
 	   public static final RegistryObject<SlabBlock> slab_acacia = BLOCKS.register("slab_acacia",
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_acacia.get())));
+	   public static final RegistryObject<SlabBlock> slab_baldcypress = BLOCKS.register("slab_baldcypress",
+			   () -> new SlabBlock(BlockBehaviour.Properties.copy(planks_baldcypress.get())));
 	   
 	   public static final RegistryObject<SlabBlock> slab_redcobble =  BLOCKS.register("slab_redcobble",
 			   () -> new SlabBlock(BlockBehaviour.Properties.copy(redcobble.get())));
@@ -264,6 +278,8 @@ public final class ModBlocks
 			   () -> doors(ModBlocks.planks_redwood.get().defaultMapColor(), BlockSetType.SPRUCE));
 	   public static RegistryObject<DoorBlock> door_acacia = BLOCKS.register("door_acacia",
 			   () -> doors(ModBlocks.planks_acacia.get().defaultMapColor(), BlockSetType.ACACIA));
+	   public static RegistryObject<DoorBlock> door_baldcypress = BLOCKS.register("door_baldcypress",
+			   () -> doors(ModBlocks.planks_baldcypress.get().defaultMapColor(), BlockSetType.JUNGLE));
 	   
 	   // fences
 	   public static final RegistryObject<FenceBlock> fence_autumn = BLOCKS.register("fence_autumn", 
@@ -276,6 +292,8 @@ public final class ModBlocks
 	            () -> fences(ModBlocks.planks_redwood));
 	   public static final RegistryObject<FenceBlock> fence_acacia = BLOCKS.register("fence_acacia", 
 	            () -> fences(ModBlocks.planks_acacia));
+	   public static final RegistryObject<FenceBlock> fence_baldcypress = BLOCKS.register("fence_baldcypress", 
+	            () -> fences(ModBlocks.planks_baldcypress));
 		   
 	   // walls
 	   public static final RegistryObject<WallBlock> wall_redcobble = BLOCKS.register("wall_redcobble",
@@ -294,6 +312,8 @@ public final class ModBlocks
 			   () -> gates(ModBlocks.planks_redwood.get().defaultMapColor(), WoodType.SPRUCE));
 	   public static final RegistryObject<FenceGateBlock> gate_acacia = BLOCKS.register("gate_acacia",
 			   () -> gates(ModBlocks.planks_acacia.get().defaultMapColor(), WoodType.ACACIA));
+	   public static final RegistryObject<FenceGateBlock> gate_baldcypress = BLOCKS.register("gate_baldcypress",
+			   () -> gates(ModBlocks.planks_baldcypress.get().defaultMapColor(), WoodType.JUNGLE));
 	   
 	   // buttons
 	   public static final RegistryObject<ButtonBlock> button_autumn =  BLOCKS.register("button_autumn",
@@ -306,6 +326,8 @@ public final class ModBlocks
 			   () -> buttons(BlockSetType.SPRUCE, 30, true));
 	   public static final RegistryObject<ButtonBlock> button_acacia =  BLOCKS.register("button_acacia",
 			   () -> buttons(BlockSetType.ACACIA, 30, true));
+	   public static final RegistryObject<ButtonBlock> button_baldcypress =  BLOCKS.register("button_baldcypress",
+			   () -> buttons(BlockSetType.JUNGLE, 30, true));
 	   	   
 	   // pressure plates
 	   public static final RegistryObject<PressurePlateBlock> pressureplate_autumn = BLOCKS.register("pressureplate_autumn",
@@ -323,6 +345,9 @@ public final class ModBlocks
 	   public static final RegistryObject<PressurePlateBlock> pressureplate_acacia = BLOCKS.register("pressureplate_acacia",
 			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_acacia.get().defaultMapColor(),
 					   		BlockSetType.ACACIA));
+	   public static final RegistryObject<PressurePlateBlock> pressureplate_baldcypress = BLOCKS.register("pressureplate_baldcypress",
+			   () -> pplates(PressurePlateBlock.Sensitivity.EVERYTHING, ModBlocks.planks_baldcypress.get().defaultMapColor(),
+					   		BlockSetType.JUNGLE));
 	   
 	   // FLOWERS
 	   public static final RegistryObject<BushBlock> flower_redrover = BLOCKS.register("flower_redrover", 
@@ -654,6 +679,19 @@ public final class ModBlocks
 	   private static CustomQuarterBlock bigLog(MapColor pTopMapColor, MapColor pSideMapColor)
 	   {
 		   final String tooltip  = "extrabiomes.cornerlog.crafting";
+		   
+		   return new CustomQuarterBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+		         return p_152624_.getValue(DirectionalBlock.FACING) == Direction.UP ? pTopMapColor : pSideMapColor;
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+				   tooltip);
+	   }
+
+	   /**
+	    * make a new knee-log block
+	    */
+	   private static CustomQuarterBlock bigLog2(MapColor pTopMapColor, MapColor pSideMapColor)
+	   {
+		   final String tooltip  = "extrabiomes.elbow.crafting";
 		   
 		   return new CustomQuarterBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
 		         return p_152624_.getValue(DirectionalBlock.FACING) == Direction.UP ? pTopMapColor : pSideMapColor;

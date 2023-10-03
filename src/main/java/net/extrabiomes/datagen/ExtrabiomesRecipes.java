@@ -67,6 +67,11 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		quarterlog2log.put(ModBlocks.firquarter.get(), ModBlocks.log_fir.get());
 		quarterlog2log.put(ModBlocks.redwoodquarter.get(), ModBlocks.log_redwood.get());
 		quarterlog2log.put(ModBlocks.oakquarter.get(), Blocks.OAK_LOG);
+		quarterlog2log.put(ModBlocks.baldcypressquarter.get(), ModBlocks.log_baldcypress.get());
+
+		HashMap<CustomQuarterBlock, Block> kneelog2log
+			= new HashMap<CustomQuarterBlock, Block>();
+		kneelog2log.put(ModBlocks.baldcypresskneelog.get(), ModBlocks.log_baldcypress.get());
 		
 		for (Map.Entry<CustomQuarterBlock, Block> entry: quarterlog2log.entrySet())
 		{
@@ -81,7 +86,21 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 				.pattern("LL")
 				.unlockedBy("has", has(entry.getValue()))
 				.save(consumer);
-			
+		} // end-for
+		
+		for (Map.Entry<CustomQuarterBlock, Block> entry: kneelog2log.entrySet())
+		{
+			ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, entry.getValue())
+				.requires(entry.getKey().asItem())
+				.unlockedBy("has", has(entry.getKey()))
+				.save(consumer);
+		
+			ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, entry.getKey(), 3)
+				.define('L', entry.getValue().asItem())
+				.pattern("LL")
+				.pattern(" L")
+				.unlockedBy("has", has(entry.getValue()))
+				.save(consumer);
 		} // end-for
 	} // end registerQuarterLogConversionRecipes()
 	
