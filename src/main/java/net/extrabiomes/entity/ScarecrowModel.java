@@ -20,9 +20,13 @@ public class ScarecrowModel extends HierarchicalModel<ScarecrowEntity>
 			new ModelLayerLocation(new ResourceLocation(ExtrabiomesXS.MODID, "scarecrow"), "main");
 	
 	private final ModelPart root;
+	@SuppressWarnings("unused")
 	private final ModelPart leg;
+	@SuppressWarnings("unused")
 	private final ModelPart body;
+	@SuppressWarnings("unused")
 	private final ModelPart head;
+	@SuppressWarnings("unused")
 	private final ModelPart arms;
 
 	public ScarecrowModel(ModelPart pRoot)
