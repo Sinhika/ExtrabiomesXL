@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extrabiomes:oakquarter"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_log"
+  }
+}

@@ -226,7 +226,9 @@ public class ExtrabiomesItemTags extends MiningItemTags
 			.add(ModBlocks.redwoodquarter.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
 			.add(ModBlocks.log_acacia.get().asItem());
-
+		this.tag(ItemTags.OAK_LOGS)
+			.add(ModBlocks.oakquarter.get().asItem());
+		
         this.tag(ItemTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
         	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))	

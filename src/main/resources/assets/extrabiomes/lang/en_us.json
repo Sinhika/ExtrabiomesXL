@@ -164,6 +164,7 @@
     
     "block.extrabiomes.leaves_acacia": "Black Wattle Leaves",
     "block.extrabiomes.log_acacia": "Black Wattle Log (1)",
+    "block.extrabiomes.log_acacia.description" : "Black Wattle Tree is an Acacia found in Australia",
     "block.extrabiomes.planks_acacia": "Black Wattle Planks (2)",
     "block.extrabiomes.stairs_acacia": "Black Wattle Stairs",
     "block.extrabiomes.slab_acacia": "Black Wattle Slab",
@@ -172,33 +173,54 @@
     "block.extrabiomes.gate_acacia": "Black Wattle Fence Gate",
     "block.extrabiomes.button_acacia": "Black Wattle Button",
     "block.extrabiomes.pressureplate_acacia": "Black Wattle Pressure Plate",
-    
+
     "block.extrabiomes.leaves_cypress": "Cypress Leaves",
+    "block.extrabiomes.log_cypress": "Cypress Log (2)",
+    "block.extrabiomes.planks_cypress": "Cypress Planks (3)",
+    "block.extrabiomes.stairs_cypress": "Cypress Stairs",
+    "block.extrabiomes.slab_cypress": "Cypress Slab",
+    "block.extrabiomes.door_cypress": "Cypress Door",
+    "block.extrabiomes.fence_cypress": "Cypress Fence",
+    "block.extrabiomes.gate_cypress": "Cypress Fence Gate",
     
     "block.extrabiomes.leaves_bald_cypress": "Bald Cypress Leaves",
+    "block.extrabiomes.cypresskneelog": "Bald Cypress Elbow Log",
+    "block.extrabiomes.log_baldcypress": "Bald Cypress Log (newlog_2)",
+    "block.extrabiomes.baldcypressquarter": "Bald Cypress Quarter Log",
+    "block.extrabiomes.planks_baldcypress": "Bald Cypress Planks (7)",
+    "block.extrabiomes.stairs_baldcypress": "Bald Cypress Stairs",
+    "block.extrabiomes.slab_bald_cypress": "Bald Cypress Slab",
+    "block.extrabiomes.door_baldcypress": "Baldcypress Door",
+    "block.extrabiomes.fence_baldcypress": "Baldcypress Fence",
+    "block.extrabiomes.gate_baldcypress": "Baldcypress Fence Gate",
     
     "block.extrabiomes.leaves_rainbow_eucalyptus": "Rainbow Eucalyptus Leaves",
+    "block.extrabiomes.rainbowkneelog": "Rainbow Eucalyptus Elbow Log",
+    "block.extrabiomes.log_rainboweucalyptus": "Rainbow Eucalyptus Log (newlog_0)",
+    "block.extrabiomes.rainboweucalyptusquarter": "Rainbow Eucalyptus Quarter Log",
+    "block.extrabiomes.planks_rainboweucalyptus": "Rainbow Eucalyptus Planks (5)",
+    "block.extrabiomes.stairs_rainboweucalyptus": "Rainbow Eucalyptus Stairs",
+    "block.extrabiomes.slab_rainbow_eucalyptus": "Rainbow Eucalyptus Slab",
+    "block.extrabiomes.door_rainboweucalyptus": "Rainbow Eucalyptus Door",
+    "block.extrabiomes.fence_rainboweucalyptus": "Rainbow Eucalyptus Fence",
+    "block.extrabiomes.gate_rainboweucalyptus": "Rainbow Eucalyptus Fence Gate",
     
     "block.extrabiomes.leaves_sakura": "Sakura Leaves",
+    "block.extrabiomes.log_sakura": "Sakura Log",
+    "block.extrabiomes.planks_sakura": "Sakura Planks (8)",
+    "block.extrabiomes.stairs_sakurablossom": "Sakura Stairs",
+    "block.extrabiomes.slab_sakura": "Sakura Slab",
+    "block.extrabiomes.door_sakura": "Sakura Door",
+    "block.extrabiomes.fence_sakura": "Sakura Fence",
+    "block.extrabiomes.gate_sakura": "Sakura Fence Gate",
     
     "block.extrabiomes.leafpile": "Leaf Pile",
     
-    "block.extrabiomes.log_cypress": "Cypress Log (2)",
-    "block.extrabiomes.log_sakura": "Sakura Log",
-    "block.extrabiomes.cypresskneelog": "Bald Cypress Elbow Log",
-    "block.extrabiomes.rainbowkneelog": "Rainbow Eucalyptus Elbow Log",
-    "block.extrabiomes.log_rainboweucalyptus": "Rainbow Eucalyptus Log (newlog_0)",
-    "block.extrabiomes.log_baldcypress": "Bald Cypress Log (newlog_2)",
+    "block.extrabiomes.oakquarter": "Oak Quarter Log",
+    
     "block.extrabiomes.log_quarter_0": "Old Redwood Quarter Log",
     "block.extrabiomes.log_quarter_1": "Old Fir Quarter Log",
     "block.extrabiomes.log_quarter_2": "Old Oak Quarter Log",
-    "block.extrabiomes.rainboweucalyptusquarter": "Rainbow Eucalyptus Quarter Log",
-    "block.extrabiomes.baldcypressquarter": "Bald Cypress Quarter Log",
-    "block.extrabiomes.oakquarter": "Oak Quarter Log",
-    "block.extrabiomes.planks_cypress": "Cypress Wood Planks (3)",
-    "block.extrabiomes.planks_rainboweucalyptus": "Rainbow Eucalyptus Wood Planks (5)",
-    "block.extrabiomes.planks_baldcypress": "Bald Cypress Wood Planks (7)",
-    "block.extrabiomes.planks_sakura": "Sakura Wood Planks (8)",
 
     "block.extrabiomes.sapling_umber": "Umber Autumn Sapling",
     "block.extrabiomes.sapling_goldenrod": "Goldenrod Autumn Sapling",
@@ -214,34 +236,9 @@
     "block.extrabiomes.sapling_rainbow_eucalyptus": "Rainbow Eucalyptus Sapling",
     "block.extrabiomes.sapling_sakura": "Sakura Sapling",
 
-    "block.extrabiomes.stairs_cypress": "Cypress Stairs",
-    "block.extrabiomes.stairs_baldcypress": "Bald Cypress Stairs",
-    "block.extrabiomes.stairs_rainboweucalyptus": "Rainbow Eucalyptus Stairs",
-    "block.extrabiomes.stairs_sakurablossom": "Sakura Stairs",
-
-    "block.extrabiomes.slab_cypress": "Cypress Slab",
-    "block.extrabiomes.slab_rainbow_eucalyptus": "Rainbow Eucalyptus Slab",
-    "block.extrabiomes.slab_bald_cypress": "Bald Cypress Slab",
-    "block.extrabiomes.slab_sakura": "Sakura Slab",
-
     "block.extrabiomes.waterplant_eelgrass": "Eelgrass",
     "block.extrabiomes.waterplant_eelgrass.description": "This grass is found growing under water. It's name is due to the long thin leaves that resemble eels. §2§oCactus Green Dye§r can be made from this grass.",
 
-    "block.extrabiomes.door_baldcypress": "Baldcypress Door",
-    "block.extrabiomes.door_cypress": "Cypress Door",
-    "block.extrabiomes.door_rainboweucalyptus": "Rainbow Eucalyptus Door",
-    "block.extrabiomes.door_sakura": "Sakura Door",
-
-    "block.extrabiomes.fence_baldcypress": "Baldcypress Fence",
-    "block.extrabiomes.fence_cypress": "Cypress Fence",
-    "block.extrabiomes.fence_rainboweucalyptus": "Rainbow Eucalyptus Fence",
-    "block.extrabiomes.fence_sakura": "Sakura Fence",
-
-    "block.extrabiomes.gate_baldcypress": "Baldcypress Fence Gate",
-    "block.extrabiomes.gate_cypress": "Cypress Fence Gate",
-    "block.extrabiomes.gate_rainboweucalyptus": "Rainbow Eucalyptus Fence Gate",
-    "block.extrabiomes.gate_sakura": "Sakura Fence Gate",
-	
     "extrabiomes.elbow.crafting": "Can be crafted to/from normal logs and back via a 2x2 \"L\" in a crafting table.",
     "extrabiomes.cornerlog.crafting": "Can be crafted to/from normal logs and back via a 2x2 square in a crafting table."
 }

@@ -165,6 +165,8 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.redwoodquarter.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
 			.add(ModBlocks.log_acacia.get());
+		this.tag(BlockTags.OAK_LOGS)
+			.add(ModBlocks.oakquarter.get());
 		
 		// only add actual logs to this tag.
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
@@ -174,8 +176,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.firquarter.get())
 			.add(ModBlocks.log_redwood.get())
 			.add(ModBlocks.redwoodquarter.get())
-			.add(ModBlocks.log_acacia.get());
-			
+			.add(ModBlocks.log_acacia.get())
+			.add(ModBlocks.oakquarter.get());
+
 		
 		// LOGS_THAT_BURN are automatically included in LOGS.
 		this.tag(BlockTags.LOGS_THAT_BURN)

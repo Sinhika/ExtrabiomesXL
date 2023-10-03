@@ -1,8 +1,16 @@
 package net.extrabiomes.content;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
@@ -14,9 +22,12 @@ import net.minecraftforge.common.ToolActions;
 
 public class CustomQuarterBlock extends DirectionalBlock 
 {
-	public CustomQuarterBlock(Properties pProperties) 
+	protected final String tooltipKey;
+
+	public CustomQuarterBlock(Properties pProperties, String toolTip) 
 	{
 		super(pProperties);
+		this.tooltipKey = toolTip;
 		this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP));
 	}
 
@@ -79,5 +90,13 @@ public class CustomQuarterBlock extends DirectionalBlock
         }
         return toolModifiedState;
     }
+
+	@Override
+	public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, 
+			  TooltipFlag pFlag) 
+	{
+		super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+		pTooltip.add(Component.translatable(tooltipKey));
+	}
 
 } // end class

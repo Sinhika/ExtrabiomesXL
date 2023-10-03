@@ -9,7 +9,6 @@ import mod.alexndr.simplecorelib.api.datagen.RecipeSetBuilder;
 import mod.alexndr.simplecorelib.api.helpers.TagUtils;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.config.ExtrabiomesConfig;
-import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.content.CustomQuarterBlock;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModItems;
@@ -25,6 +24,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -62,12 +62,13 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	 */
 	private void registerQuarterLogConversionRecipes(Consumer<FinishedRecipe> consumer)
 	{
-		HashMap<CustomQuarterBlock, CustomLogBlock> quarterlog2log
-			= new HashMap<CustomQuarterBlock, CustomLogBlock>();
+		HashMap<CustomQuarterBlock, Block> quarterlog2log
+			= new HashMap<CustomQuarterBlock, Block>();
 		quarterlog2log.put(ModBlocks.firquarter.get(), ModBlocks.log_fir.get());
 		quarterlog2log.put(ModBlocks.redwoodquarter.get(), ModBlocks.log_redwood.get());
-
-		for (Map.Entry<CustomQuarterBlock, CustomLogBlock> entry: quarterlog2log.entrySet())
+		quarterlog2log.put(ModBlocks.oakquarter.get(), Blocks.OAK_LOG);
+		
+		for (Map.Entry<CustomQuarterBlock, Block> entry: quarterlog2log.entrySet())
 		{
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, entry.getValue())
 				.requires(entry.getKey().asItem())
