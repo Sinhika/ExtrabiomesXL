@@ -181,9 +181,11 @@
     "block.extrabiomes.planks_baldcypress": "Bald Cypress Planks (7)",
     "block.extrabiomes.stairs_baldcypress": "Bald Cypress Stairs",
     "block.extrabiomes.slab_bald_cypress": "Bald Cypress Slab",
-    "block.extrabiomes.door_baldcypress": "Baldcypress Door",
-    "block.extrabiomes.fence_baldcypress": "Baldcypress Fence",
-    "block.extrabiomes.gate_baldcypress": "Baldcypress Fence Gate",
+    "block.extrabiomes.door_baldcypress": "Bald Cypress Door",
+    "block.extrabiomes.fence_baldcypress": "Bald Cypress Fence",
+    "block.extrabiomes.gate_baldcypress": "Bald Cypress Fence Gate",
+    "block.extrabiomes.button_baldcypress": "Bald Cypress Button",
+    "block.extrabiomes.pressureplate_baldcypress": "Bald Cypress Pressure Plate",
  
     "block.extrabiomes.leaves_cypress": "Cypress Leaves",
     "block.extrabiomes.log_cypress": "Cypress Log (2)",
@@ -193,6 +195,8 @@
     "block.extrabiomes.door_cypress": "Cypress Door",
     "block.extrabiomes.fence_cypress": "Cypress Fence",
     "block.extrabiomes.gate_cypress": "Cypress Fence Gate",
+    "block.extrabiomes.button_cypress": "Cypress Button",
+    "block.extrabiomes.pressureplate_cypress": "Cypress Pressure Plate",
     
     "block.extrabiomes.leaves_rainbow_eucalyptus": "Rainbow Eucalyptus Leaves",
     "block.extrabiomes.rainbowkneelog": "Rainbow Eucalyptus Elbow Log",
@@ -204,6 +208,8 @@
     "block.extrabiomes.door_rainboweucalyptus": "Rainbow Eucalyptus Door",
     "block.extrabiomes.fence_rainboweucalyptus": "Rainbow Eucalyptus Fence",
     "block.extrabiomes.gate_rainboweucalyptus": "Rainbow Eucalyptus Fence Gate",
+    "block.extrabiomes.button_rainboweucalyptus": "Rainbow Eucalyptus Button",
+    "block.extrabiomes.pressureplate_rainboweucalyptus": "Rainbow Eucalyptus Pressure Plate",
     
     "block.extrabiomes.leaves_sakura": "Sakura Leaves",
     "block.extrabiomes.log_sakura": "Sakura Log",
@@ -213,6 +219,8 @@
     "block.extrabiomes.door_sakura": "Sakura Door",
     "block.extrabiomes.fence_sakura": "Sakura Fence",
     "block.extrabiomes.gate_sakura": "Sakura Fence Gate",
+    "block.extrabiomes.button_sakura": "Sakura Button",
+    "block.extrabiomes.pressureplate_sakura": "Sakura Pressure Plate",
     
     "block.extrabiomes.leafpile": "Leaf Pile",
     
