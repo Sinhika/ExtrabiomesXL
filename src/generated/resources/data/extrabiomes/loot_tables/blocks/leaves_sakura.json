@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "extrabiomes:leaves_sakura_blossom"
+              "name": "extrabiomes:leaves_sakura"
             },
             {
               "type": "minecraft:item",
@@ -56,7 +56,7 @@
                   "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "extrabiomes:sapling_sakura_blossom"
+              "name": "extrabiomes:sapling_sakura"
             }
           ]
         }
@@ -132,5 +132,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extrabiomes:blocks/leaves_sakura_blossom"
+  "random_sequence": "extrabiomes:blocks/leaves_sakura"
 }

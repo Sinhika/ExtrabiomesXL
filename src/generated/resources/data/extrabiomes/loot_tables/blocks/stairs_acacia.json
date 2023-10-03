@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extrabiomes:sapling_sakura_blossom"
+          "name": "extrabiomes:stairs_acacia"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extrabiomes:blocks/sapling_sakura_blossom"
+  "random_sequence": "extrabiomes:blocks/stairs_acacia"
 }

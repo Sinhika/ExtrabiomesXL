@@ -39,7 +39,7 @@ public class LeafBlockColors implements BlockColor
 			return ((pLevel != null && pPos != null) 
 					 ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor());
 		}
-		else if (pState.is(ModBlocks.leaves_sakura_blossom.get()))
+		else if (pState.is(ModBlocks.leaves_sakura.get()))
 		{
 			return 0xffffff;
 		}

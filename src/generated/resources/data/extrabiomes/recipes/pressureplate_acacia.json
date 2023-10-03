@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "extrabiomes:planks_acacia"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "extrabiomes:pressureplate_acacia"
+  },
+  "show_notification": true
+}

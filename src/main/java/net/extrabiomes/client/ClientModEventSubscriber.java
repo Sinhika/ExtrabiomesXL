@@ -54,7 +54,7 @@ public final class ClientModEventSubscriber
 		LOGGER.debug("hello from onRegisterColorHandlers()");
 		event.register(new LeafBlockColors(), ModBlocks.leaves_acacia.get(), ModBlocks.leaves_fir.get(),
 				ModBlocks.leaves_redwood.get(), ModBlocks.leaves_cypress.get(), ModBlocks.leafpile.get(),
-				ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get(), ModBlocks.leaves_sakura_blossom.get(),
+				ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get(), ModBlocks.leaves_sakura.get(),
 				ModBlocks.leaves_japanese_maple_shrub.get(), ModBlocks.leaves_bald_cypress.get(), 
 				ModBlocks.leaves_japanese_maple.get(), ModBlocks.leaves_rainbow_eucalyptus.get());
 		
@@ -78,7 +78,7 @@ public final class ClientModEventSubscriber
 	      }, 
 			ModBlocks.leaves_acacia.get(), ModBlocks.leaves_fir.get(),
 			ModBlocks.leaves_redwood.get(), ModBlocks.leaves_cypress.get(), ModBlocks.leafpile.get(),
-			ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get(), ModBlocks.leaves_sakura_blossom.get(),
+			ModBlocks.vine_gloriosa.get(), ModBlocks.vine_spanish_moss.get(), ModBlocks.leaves_sakura.get(),
 			ModBlocks.leaves_japanese_maple_shrub.get(), ModBlocks.leaves_bald_cypress.get(), 
 			ModBlocks.leaves_japanese_maple.get(), ModBlocks.leaves_rainbow_eucalyptus.get(),
 			ModBlocks.brown_grass_short.get(), ModBlocks.brown_grass_tall.get(),

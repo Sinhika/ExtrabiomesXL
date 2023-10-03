@@ -77,7 +77,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	leaves2model.put(ModBlocks.leaves_cypress, modLoc("block/leavescypressfancy"));
     	leaves2model.put(ModBlocks.leaves_bald_cypress, modLoc("block/leavesbaldcypressfancy"));
     	leaves2model.put(ModBlocks.leaves_rainbow_eucalyptus, modLoc("block/leavesrainboweucalyptusfancy"));
-    	leaves2model.put(ModBlocks.leaves_sakura_blossom, modLoc("block/leavessakurafancy"));
+    	leaves2model.put(ModBlocks.leaves_sakura, modLoc("block/leavessakurafancy"));
     	
     	HashMap<RegistryObject<CustomLogBlock>, String> log2model
     		= new HashMap<RegistryObject<CustomLogBlock>, String>();
@@ -85,6 +85,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	log2model.put(ModBlocks.log_japanese_maple, "block/logjapanesemaple");
     	log2model.put(ModBlocks.log_fir, "block/logfir" );
     	log2model.put(ModBlocks.log_redwood, "block/logredwood" );
+    	log2model.put(ModBlocks.log_acacia, "block/logacacia" );
     	
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
@@ -92,7 +93,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	planks2model.put(ModBlocks.planks_japanese_maple, modLoc("block/planksjapanesemaple"));
     	planks2model.put(ModBlocks.planks_fir, modLoc("block/planksfir"));
     	planks2model.put(ModBlocks.planks_redwood, modLoc("block/planksredwood"));
-    	
+       	planks2model.put(ModBlocks.planks_acacia, modLoc("block/planksacacia"));
+   	
     	HashMap<RegistryObject<StairBlock>, ResourceLocation> stairs2model
 			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
     	stairs2model.put(ModBlocks.stairs_autumn,  modLoc("block/planksautumn"));
@@ -102,6 +104,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	stairs2model.put(ModBlocks.stairs_redrockbrick, modLoc("block/redrockbrick"));
     	stairs2model.put(ModBlocks.stairs_fir, modLoc("block/planksfir"));
     	stairs2model.put(ModBlocks.stairs_redwood, modLoc("block/planksredwood"));
+    	stairs2model.put(ModBlocks.stairs_acacia, modLoc("block/planksacacia"));
     	
     	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
     		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
@@ -109,6 +112,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	slab2model.put(ModBlocks.slab_japanese_maple, modLoc("block/planksjapanesemaple"));
     	slab2model.put(ModBlocks.slab_fir, modLoc("block/planksfir"));
     	slab2model.put(ModBlocks.slab_redwood, modLoc("block/planksredwood"));
+    	slab2model.put(ModBlocks.slab_acacia, modLoc("block/planksacacia"));
     	
     	// leaves
     	for (Map.Entry<RegistryObject<LeavesBlock>, ResourceLocation> entry: leaves2model.entrySet())
@@ -191,6 +195,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	plate2model.put(ModBlocks.pressureplate_japanesemaple, modLoc("block/planksjapanesemaple"));
     	plate2model.put(ModBlocks.pressureplate_fir, modLoc("block/planksfir"));
     	plate2model.put(ModBlocks.pressureplate_redwood, modLoc("block/planksredwood"));
+    	plate2model.put(ModBlocks.pressureplate_acacia, modLoc("block/planksacacia"));
     	
     	HashMap<RegistryObject<ButtonBlock>, ResourceLocation> button2model = 
     			new HashMap<RegistryObject<ButtonBlock>, ResourceLocation> ();
@@ -198,6 +203,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	button2model.put(ModBlocks.button_japanesemaple, modLoc("block/planksjapanesemaple"));
     	button2model.put(ModBlocks.button_fir, modLoc("block/planksfir"));
     	button2model.put(ModBlocks.button_redwood, modLoc("block/planksredwood"));
+    	button2model.put(ModBlocks.button_acacia, modLoc("block/planksacacia"));
     	
         // pressure_plate
      	for (Map.Entry<RegistryObject<PressurePlateBlock>, ResourceLocation> entry: plate2model.entrySet())
@@ -217,6 +223,93 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	}
     } // end registerMisc()
 
+    
+    private void registerDoorStatesAndModels()
+    {
+    	List<RegistryObject<DoorBlock>> doorlist = new ArrayList<RegistryObject<DoorBlock>>();
+    	doorlist.add(ModBlocks.door_autumn);
+    	doorlist.add(ModBlocks.door_japanesemaple);
+    	doorlist.add(ModBlocks.door_fir);
+    	doorlist.add(ModBlocks.door_redwood);
+    	doorlist.add(ModBlocks.door_acacia);
+    	
+    	for(RegistryObject<DoorBlock> val: doorlist)
+    	{
+    		String name = getRegistryNameFromHolder(val);
+    		doorBlockWithRenderType(val.get(), modLoc("block/" + name + "_lower"), 
+                modLoc("block/" + name + "_upper"), "cutout");
+   	       	this.itemModels().basicItem(val.get().asItem());
+
+    	} // end-for doorlist
+    	
+    } // end registerDoorStatesAndModels()
+    
+    
+    private void registerFenceLikeStatesAndModels()
+    {
+    	HashMap<RegistryObject<FenceBlock>, ResourceLocation> fence2model = 
+    			new HashMap<RegistryObject<FenceBlock>, ResourceLocation>();
+    	fence2model.put(ModBlocks.fence_autumn, modLoc("block/planksautumn"));
+    	fence2model.put(ModBlocks.fence_japanesemaple, modLoc("block/planksjapanesemaple"));
+    	fence2model.put(ModBlocks.fence_fir, modLoc("block/planksfir"));
+    	fence2model.put(ModBlocks.fence_redwood, modLoc("block/planksredwood"));
+    	fence2model.put(ModBlocks.fence_acacia, modLoc("block/planksacacia"));
+    	
+    	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
+    			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
+    	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
+    	gate2model.put(ModBlocks.gate_japanesemaple, modLoc("block/planksjapanesemaple"));
+    	gate2model.put(ModBlocks.gate_fir,  modLoc("block/planksfir"));
+    	gate2model.put(ModBlocks.gate_redwood,  modLoc("block/planksredwood"));
+    	gate2model.put(ModBlocks.gate_acacia,  modLoc("block/planksacacia"));
+
+    	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
+    			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
+    	wall2model.put(ModBlocks.wall_redcobble, modLoc("block/redrockcobble"));
+    	wall2model.put(ModBlocks.wall_redrockbrick, modLoc("block/redrockbrick"));
+    	
+    	// fences
+       	for (Map.Entry<RegistryObject<FenceBlock>, ResourceLocation> entry: fence2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.fenceBlock(entry.getKey().get(), entry.getValue());
+    		this.models().fenceInventory(name + "_inventory", entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
+    	} // end-foreach fence
+        
+       	// gates
+       	for (Map.Entry<RegistryObject<FenceGateBlock>, ResourceLocation> entry: gate2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.fenceGateBlock(entry.getKey().get(), entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name));
+    	} // end-foreach gate
+
+       	// walls
+       	for (Map.Entry<RegistryObject<WallBlock>, ResourceLocation> entry: wall2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		this.wallBlock(entry.getKey().get(), entry.getValue());
+    		this.models().wallInventory(name + "_inventory", entry.getValue());
+    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
+    	}
+       	
+    } // end registerFenceLikeStatesAndModels()
+    
+    
+    private void registerTerrainBlocks()
+    {
+    	this.simpleBlockWithItem(ModBlocks.crackedsand.get(), this.cubeAll(ModBlocks.crackedsand.get()));
+    	this.simpleBlockWithItem(ModBlocks.quicksand.get(), this.cubeAll(ModBlocks.quicksand.get()));
+    	this.simpleBlockWithItem(ModBlocks.redrock.get(), this.cubeAll(ModBlocks.redrock.get()));
+    	this.simpleBlockWithItem(ModBlocks.redcobble.get(), 
+    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redcobble), modLoc("block/redrockcobble")));
+    	this.simpleBlockWithItem(ModBlocks.redrock_brick.get(), 
+    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redrock_brick), modLoc("block/redrockbrick")));
+    	
+    } // end registerTerrainBlocks()
+    
+
     // saplings
     private void registerSaplings()
     {
@@ -234,7 +327,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
        	sapling2model.put(ModBlocks.sapling_cypress, modLoc("block/saplingcypress"));
        	sapling2model.put(ModBlocks.sapling_bald_cypress, modLoc("block/saplingbaldcypress"));
        	sapling2model.put(ModBlocks.sapling_rainbow_eucalyptus, modLoc("block/saplingrainboweucalyptus"));
-       	sapling2model.put(ModBlocks.sapling_sakura_blossom, modLoc("block/saplingsakura"));
+       	sapling2model.put(ModBlocks.sapling_sakura, modLoc("block/saplingsakura"));
        	
        	// saplings
     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: sapling2model.entrySet())
@@ -281,10 +374,148 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     } // end registerCropBlocks
 
     
+    // flowers
+    private void registerFlowers()
+    {
+    	HashMap<RegistryObject<BushBlock>,ResourceLocation> flower2model =
+    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
+    	flower2model.put(ModBlocks.flower_allium, modLoc("block/allium"));
+    	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
+    	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
+    	flower2model.put(ModBlocks.flower_amaryllis_white, modLoc("block/amaryllis_white"));
+    	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
+    	flower2model.put(ModBlocks.flower_calla_white, modLoc("block/calla_white"));
+    	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
+    	flower2model.put(ModBlocks.flower_lavender, modLoc("block/lavender"));
+    	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
+    	flower2model.put(ModBlocks.flower_tiny_cactus, modLoc("block/tinycactus"));
+    	flower2model.put(ModBlocks.flower_toadstool, modLoc("block/toadstools"));
+    	flower2model.put(ModBlocks.flower_bachelors_button, modLoc("block/bachelorsbutton_blue"));
+    	flower2model.put(ModBlocks.flower_bells_of_ireland, modLoc("block/bellsofireland"));
+    	flower2model.put(ModBlocks.flower_bluebell, modLoc("block/bluebell"));
+    	flower2model.put(ModBlocks.flower_calla_black, modLoc("block/calla_black"));
+    	flower2model.put(ModBlocks.flower_daisy, modLoc("block/daisy"));
+    	flower2model.put(ModBlocks.flower_dandelion, modLoc("block/dandelion"));
+    	flower2model.put(ModBlocks.flower_gardenia, modLoc("block/gardenia"));
+    	flower2model.put(ModBlocks.flower_gerbera_orange, modLoc("block/gerbera_orange"));
+    	flower2model.put(ModBlocks.flower_gerbera_pink, modLoc("block/gerbera_pink"));
+    	flower2model.put(ModBlocks.flower_gerbera_red, modLoc("block/gerbera_red"));
+    	flower2model.put(ModBlocks.flower_gerbera_yellow, modLoc("block/gerbera_yellow"));
+
+    	flower2model.put(ModBlocks.flower_oriental_pink_lily, modLoc("block/orientalpinklily"));
+    	flower2model.put(ModBlocks.flower_lily, modLoc("block/lily"));
+    	flower2model.put(ModBlocks.flower_iris_blue, modLoc("block/iris_blue"));
+    	flower2model.put(ModBlocks.flower_iris_purple, modLoc("block/iris_purple"));
+    	flower2model.put(ModBlocks.flower_marsh_marigold, modLoc("block/marshmarigold"));
+    	flower2model.put(ModBlocks.flower_pansy, modLoc("block/pansy"));
+    	flower2model.put(ModBlocks.flower_poppy, modLoc("block/poppy"));
+    	flower2model.put(ModBlocks.flower_blue_poppy, modLoc("block/himalayanbluepoppy"));
+    	flower2model.put(ModBlocks.flower_snapdragon, modLoc("block/snapdragon"));
+    	flower2model.put(ModBlocks.flower_tulip, modLoc("block/tulips"));
+    	flower2model.put(ModBlocks.flower_violet, modLoc("block/violet"));
+    	flower2model.put(ModBlocks.flower_yarrow, modLoc("block/yarrow"));
+    	flower2model.put(ModBlocks.flower_belladonna, modLoc("block/belladonna"));
+    	flower2model.put(ModBlocks.cattail, modLoc("block/cattail"));
+    	flower2model.put(ModBlocks.flower_autumn_shrub, modLoc("block/autumnshrub"));
+    	
+     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
+    		this.simpleBlock(entry.getKey().get(), flower);
+        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
+    	} // end-foreach flower
+
+     	// grasses
+       	HashMap<RegistryObject<BushBlock>,ResourceLocation> grass2model =
+    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
+    	grass2model.put(ModBlocks.brown_grass_short, modLoc("block/browngrassshort"));
+    	grass2model.put(ModBlocks.brown_grass_tall, modLoc("block/browngrasstall"));
+    	grass2model.put(ModBlocks.dead_grass_short, modLoc("block/deadgrassshort"));
+    	grass2model.put(ModBlocks.dead_grass_tall, modLoc("block/deadgrasstall"));
+    	grass2model.put(ModBlocks.dead_grass_yellow, modLoc("block/deadgrassyellow"));
+    	
+    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: grass2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+    		ModelFile grass = this.models().singleTexture(name, mcLoc("block/tinted_cross"), "cross", entry.getValue())
+    				.renderType("cutout");
+    		this.simpleBlock(entry.getKey().get(), grass);
+        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
+    	} // end-foreach grass
+
+		// flower pots
+    	HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation> pot2model =
+    			new HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation>();
+    	pot2model.put(ModBlocks.potted_allium, modLoc("block/allium"));
+    	pot2model.put(ModBlocks.potted_amaryllis_pink, modLoc("block/amaryllis_pink"));
+    	pot2model.put(ModBlocks.potted_amaryllis_red, modLoc("block/amaryllis_red"));
+    	pot2model.put(ModBlocks.potted_amaryllis_white, modLoc("block/amaryllis_white"));
+    	pot2model.put(ModBlocks.potted_buttercup, modLoc("block/buttercup"));
+    	pot2model.put(ModBlocks.potted_calla_white, modLoc("block/calla_white"));
+    	pot2model.put(ModBlocks.potted_hydrangea, modLoc("block/hydrangea"));
+    	pot2model.put(ModBlocks.potted_lavender, modLoc("block/lavender"));
+    	pot2model.put(ModBlocks.potted_redrover, modLoc("block/redrover"));
+    	pot2model.put(ModBlocks.potted_tiny_cactus, modLoc("block/tinycactus"));
+    	pot2model.put(ModBlocks.potted_toadstool, modLoc("block/toadstools"));
+    	pot2model.put(ModBlocks.potted_bachelors_button, modLoc("block/bachelorsbutton_blue"));
+    	pot2model.put(ModBlocks.potted_bells_of_ireland, modLoc("block/bellsofireland"));
+    	pot2model.put(ModBlocks.potted_bluebell, modLoc("block/bluebell"));
+    	pot2model.put(ModBlocks.potted_calla_black, modLoc("block/calla_black"));
+    	pot2model.put(ModBlocks.potted_daisy, modLoc("block/daisy"));
+    	pot2model.put(ModBlocks.potted_dandelion, modLoc("block/dandelion"));
+    	pot2model.put(ModBlocks.potted_gardenia, modLoc("block/gardenia"));
+    	pot2model.put(ModBlocks.potted_gerbera_orange, modLoc("block/gerbera_orange"));
+    	pot2model.put(ModBlocks.potted_gerbera_pink, modLoc("block/gerbera_pink"));
+    	pot2model.put(ModBlocks.potted_gerbera_red, modLoc("block/gerbera_red"));
+    	pot2model.put(ModBlocks.potted_gerbera_yellow, modLoc("block/gerbera_yellow"));
+    	
+       	pot2model.put(ModBlocks.potted_oriental_pink_lily, modLoc("block/orientalpinklily"));
+    	pot2model.put(ModBlocks.potted_lily, modLoc("block/lily"));
+    	pot2model.put(ModBlocks.potted_iris_blue, modLoc("block/iris_blue"));
+    	pot2model.put(ModBlocks.potted_iris_purple, modLoc("block/iris_purple"));
+    	pot2model.put(ModBlocks.potted_marsh_marigold, modLoc("block/marshmarigold"));
+    	pot2model.put(ModBlocks.potted_pansy, modLoc("block/pansy"));
+    	pot2model.put(ModBlocks.potted_poppy, modLoc("block/poppy"));
+    	pot2model.put(ModBlocks.potted_blue_poppy, modLoc("block/himalayanbluepoppy"));
+    	pot2model.put(ModBlocks.potted_snapdragon, modLoc("block/snapdragon"));
+    	pot2model.put(ModBlocks.potted_tulip, modLoc("block/tulips"));
+    	pot2model.put(ModBlocks.potted_violet, modLoc("block/violet"));
+    	pot2model.put(ModBlocks.potted_yarrow, modLoc("block/yarrow"));
+    	pot2model.put(ModBlocks.potted_belladonna, modLoc("block/belladonna"));
+
+    	pot2model.put(ModBlocks.potted_sapling_citrine, modLoc("block/saplingyellowautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_goldenrod, modLoc("block/saplingorangeautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
+    	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
+    	pot2model.put(ModBlocks.potted_sapling_japanese_maple_shrub, modLoc("block/saplingjapanesemapleshrub"));
+    	pot2model.put(ModBlocks.potted_sapling_fir, modLoc("block/saplingfir"));
+    	pot2model.put(ModBlocks.potted_sapling_redwood, modLoc("block/saplingredwood"));
+    	pot2model.put(ModBlocks.potted_sapling_acacia, modLoc("block/saplingacacia"));
+    	pot2model.put(ModBlocks.potted_sapling_cypress, modLoc("block/saplingcypress"));
+    	pot2model.put(ModBlocks.potted_sapling_bald_cypress, modLoc("block/saplingbaldcypress"));
+    	pot2model.put(ModBlocks.potted_sapling_rainbow_eucalyptus, modLoc("block/saplingrainboweucalyptus"));
+    	pot2model.put(ModBlocks.potted_sapling_sakura, modLoc("block/saplingsakura"));
+    	
+    	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
+    	{
+    		String name = getRegistryNameFromHolder(entry.getKey());
+	    	ModelFile flower_pot = this.models().withExistingParent(name, mcLoc("block/flower_pot_cross"))
+	    			.texture("plant", entry.getValue()).renderType("cutout");
+	    	this.simpleBlock(entry.getKey().get(), flower_pot);
+    	} // end-foreach pot
+    	
+    } // end registerFlowers
+    
+    
+
+    // =================== UTILITY FUNCTIONS ================= //
+    
     /**
      * Builder for quarter-logs
      */
-    public void quarterLogBlock(RegistryObject<CustomQuarterBlock> logBlock)
+    protected void quarterLogBlock(RegistryObject<CustomQuarterBlock> logBlock)
     {
     	ResourceLocation[] textures = new ResourceLocation[8];
     	
@@ -315,6 +546,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	this.itemModels().withExistingParent(name, modLoc("block/" + name));
     } // end quarterLogBlock
     
+    
     /**
      * Create ModelFile for a quarterlog block.
      * @param name
@@ -326,7 +558,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
      * @param west
      * @return
      */
-    public ModelFile quarterLogBlockModel(String name, ResourceLocation up,
+    protected ModelFile quarterLogBlockModel(String name, ResourceLocation up,
     		ResourceLocation down, ResourceLocation north, ResourceLocation south, ResourceLocation east, 
     		ResourceLocation west, ResourceLocation particle)
     {
@@ -344,7 +576,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     /**
      * Builder for vines
      */
-    public void vineBlock(RegistryObject<? extends Block> roBlock, ResourceLocation texture)
+    protected void vineBlock(RegistryObject<? extends Block> roBlock, ResourceLocation texture)
     {
 		String name = getRegistryNameFromHolder(roBlock);
         ModelFile vine_model = this.models().withExistingParent(name, modLoc("block/template_vine"))
@@ -502,226 +734,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
         
     } // end vineBlock()
     
-    // flowers
-    private void registerFlowers()
-    {
-    	HashMap<RegistryObject<BushBlock>,ResourceLocation> flower2model =
-    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
-    	flower2model.put(ModBlocks.flower_allium, modLoc("block/allium"));
-    	flower2model.put(ModBlocks.flower_amaryllis_pink, modLoc("block/amaryllis_pink"));
-    	flower2model.put(ModBlocks.flower_amaryllis_red, modLoc("block/amaryllis_red"));
-    	flower2model.put(ModBlocks.flower_amaryllis_white, modLoc("block/amaryllis_white"));
-    	flower2model.put(ModBlocks.flower_buttercup, modLoc("block/buttercup"));
-    	flower2model.put(ModBlocks.flower_calla_white, modLoc("block/calla_white"));
-    	flower2model.put(ModBlocks.flower_hydrangea, modLoc("block/hydrangea"));
-    	flower2model.put(ModBlocks.flower_lavender, modLoc("block/lavender"));
-    	flower2model.put(ModBlocks.flower_redrover, modLoc("block/redrover"));
-    	flower2model.put(ModBlocks.flower_tiny_cactus, modLoc("block/tinycactus"));
-    	flower2model.put(ModBlocks.flower_toadstool, modLoc("block/toadstools"));
-    	flower2model.put(ModBlocks.flower_bachelors_button, modLoc("block/bachelorsbutton_blue"));
-    	flower2model.put(ModBlocks.flower_bells_of_ireland, modLoc("block/bellsofireland"));
-    	flower2model.put(ModBlocks.flower_bluebell, modLoc("block/bluebell"));
-    	flower2model.put(ModBlocks.flower_calla_black, modLoc("block/calla_black"));
-    	flower2model.put(ModBlocks.flower_daisy, modLoc("block/daisy"));
-    	flower2model.put(ModBlocks.flower_dandelion, modLoc("block/dandelion"));
-    	flower2model.put(ModBlocks.flower_gardenia, modLoc("block/gardenia"));
-    	flower2model.put(ModBlocks.flower_gerbera_orange, modLoc("block/gerbera_orange"));
-    	flower2model.put(ModBlocks.flower_gerbera_pink, modLoc("block/gerbera_pink"));
-    	flower2model.put(ModBlocks.flower_gerbera_red, modLoc("block/gerbera_red"));
-    	flower2model.put(ModBlocks.flower_gerbera_yellow, modLoc("block/gerbera_yellow"));
 
-    	flower2model.put(ModBlocks.flower_oriental_pink_lily, modLoc("block/orientalpinklily"));
-    	flower2model.put(ModBlocks.flower_lily, modLoc("block/lily"));
-    	flower2model.put(ModBlocks.flower_iris_blue, modLoc("block/iris_blue"));
-    	flower2model.put(ModBlocks.flower_iris_purple, modLoc("block/iris_purple"));
-    	flower2model.put(ModBlocks.flower_marsh_marigold, modLoc("block/marshmarigold"));
-    	flower2model.put(ModBlocks.flower_pansy, modLoc("block/pansy"));
-    	flower2model.put(ModBlocks.flower_poppy, modLoc("block/poppy"));
-    	flower2model.put(ModBlocks.flower_blue_poppy, modLoc("block/himalayanbluepoppy"));
-    	flower2model.put(ModBlocks.flower_snapdragon, modLoc("block/snapdragon"));
-    	flower2model.put(ModBlocks.flower_tulip, modLoc("block/tulips"));
-    	flower2model.put(ModBlocks.flower_violet, modLoc("block/violet"));
-    	flower2model.put(ModBlocks.flower_yarrow, modLoc("block/yarrow"));
-    	flower2model.put(ModBlocks.flower_belladonna, modLoc("block/belladonna"));
-    	flower2model.put(ModBlocks.cattail, modLoc("block/cattail"));
-    	flower2model.put(ModBlocks.flower_autumn_shrub, modLoc("block/autumnshrub"));
-    	
-     	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: flower2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-    		ModelFile flower = this.models().cross(name, entry.getValue()).renderType("cutout");
-    		this.simpleBlock(entry.getKey().get(), flower);
-        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
-    	} // end-foreach flower
-
-     	// grasses
-       	HashMap<RegistryObject<BushBlock>,ResourceLocation> grass2model =
-    			new HashMap<RegistryObject<BushBlock>,ResourceLocation>();
-    	grass2model.put(ModBlocks.brown_grass_short, modLoc("block/browngrassshort"));
-    	grass2model.put(ModBlocks.brown_grass_tall, modLoc("block/browngrasstall"));
-    	grass2model.put(ModBlocks.dead_grass_short, modLoc("block/deadgrassshort"));
-    	grass2model.put(ModBlocks.dead_grass_tall, modLoc("block/deadgrasstall"));
-    	grass2model.put(ModBlocks.dead_grass_yellow, modLoc("block/deadgrassyellow"));
-    	
-    	for (Map.Entry<RegistryObject<BushBlock>, ResourceLocation> entry: grass2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-    		ModelFile grass = this.models().singleTexture(name, mcLoc("block/tinted_cross"), "cross", entry.getValue())
-    				.renderType("cutout");
-    		this.simpleBlock(entry.getKey().get(), grass);
-        	this.itemModels().singleTexture(name, mcLoc("generated"), "layer0", entry.getValue());
-    	} // end-foreach grass
-
-		// flower pots
-    	HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation> pot2model =
-    			new HashMap<RegistryObject<FlowerPotBlock>,ResourceLocation>();
-    	pot2model.put(ModBlocks.potted_allium, modLoc("block/allium"));
-    	pot2model.put(ModBlocks.potted_amaryllis_pink, modLoc("block/amaryllis_pink"));
-    	pot2model.put(ModBlocks.potted_amaryllis_red, modLoc("block/amaryllis_red"));
-    	pot2model.put(ModBlocks.potted_amaryllis_white, modLoc("block/amaryllis_white"));
-    	pot2model.put(ModBlocks.potted_buttercup, modLoc("block/buttercup"));
-    	pot2model.put(ModBlocks.potted_calla_white, modLoc("block/calla_white"));
-    	pot2model.put(ModBlocks.potted_hydrangea, modLoc("block/hydrangea"));
-    	pot2model.put(ModBlocks.potted_lavender, modLoc("block/lavender"));
-    	pot2model.put(ModBlocks.potted_redrover, modLoc("block/redrover"));
-    	pot2model.put(ModBlocks.potted_tiny_cactus, modLoc("block/tinycactus"));
-    	pot2model.put(ModBlocks.potted_toadstool, modLoc("block/toadstools"));
-    	pot2model.put(ModBlocks.potted_bachelors_button, modLoc("block/bachelorsbutton_blue"));
-    	pot2model.put(ModBlocks.potted_bells_of_ireland, modLoc("block/bellsofireland"));
-    	pot2model.put(ModBlocks.potted_bluebell, modLoc("block/bluebell"));
-    	pot2model.put(ModBlocks.potted_calla_black, modLoc("block/calla_black"));
-    	pot2model.put(ModBlocks.potted_daisy, modLoc("block/daisy"));
-    	pot2model.put(ModBlocks.potted_dandelion, modLoc("block/dandelion"));
-    	pot2model.put(ModBlocks.potted_gardenia, modLoc("block/gardenia"));
-    	pot2model.put(ModBlocks.potted_gerbera_orange, modLoc("block/gerbera_orange"));
-    	pot2model.put(ModBlocks.potted_gerbera_pink, modLoc("block/gerbera_pink"));
-    	pot2model.put(ModBlocks.potted_gerbera_red, modLoc("block/gerbera_red"));
-    	pot2model.put(ModBlocks.potted_gerbera_yellow, modLoc("block/gerbera_yellow"));
-    	
-       	pot2model.put(ModBlocks.potted_oriental_pink_lily, modLoc("block/orientalpinklily"));
-    	pot2model.put(ModBlocks.potted_lily, modLoc("block/lily"));
-    	pot2model.put(ModBlocks.potted_iris_blue, modLoc("block/iris_blue"));
-    	pot2model.put(ModBlocks.potted_iris_purple, modLoc("block/iris_purple"));
-    	pot2model.put(ModBlocks.potted_marsh_marigold, modLoc("block/marshmarigold"));
-    	pot2model.put(ModBlocks.potted_pansy, modLoc("block/pansy"));
-    	pot2model.put(ModBlocks.potted_poppy, modLoc("block/poppy"));
-    	pot2model.put(ModBlocks.potted_blue_poppy, modLoc("block/himalayanbluepoppy"));
-    	pot2model.put(ModBlocks.potted_snapdragon, modLoc("block/snapdragon"));
-    	pot2model.put(ModBlocks.potted_tulip, modLoc("block/tulips"));
-    	pot2model.put(ModBlocks.potted_violet, modLoc("block/violet"));
-    	pot2model.put(ModBlocks.potted_yarrow, modLoc("block/yarrow"));
-    	pot2model.put(ModBlocks.potted_belladonna, modLoc("block/belladonna"));
-
-    	pot2model.put(ModBlocks.potted_sapling_citrine, modLoc("block/saplingyellowautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_goldenrod, modLoc("block/saplingorangeautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_umber, modLoc("block/saplingbrownautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_vermillion, modLoc("block/saplingredautumn"));
-    	pot2model.put(ModBlocks.potted_sapling_japanese_maple, modLoc("block/saplingjapanesemaple"));
-    	pot2model.put(ModBlocks.potted_sapling_japanese_maple_shrub, modLoc("block/saplingjapanesemapleshrub"));
-    	pot2model.put(ModBlocks.potted_sapling_fir, modLoc("block/saplingfir"));
-    	pot2model.put(ModBlocks.potted_sapling_redwood, modLoc("block/saplingredwood"));
-    	pot2model.put(ModBlocks.potted_sapling_acacia, modLoc("block/saplingacacia"));
-    	pot2model.put(ModBlocks.potted_sapling_cypress, modLoc("block/saplingcypress"));
-    	pot2model.put(ModBlocks.potted_sapling_bald_cypress, modLoc("block/saplingbaldcypress"));
-    	pot2model.put(ModBlocks.potted_sapling_rainbow_eucalyptus, modLoc("block/saplingrainboweucalyptus"));
-    	pot2model.put(ModBlocks.potted_sapling_sakura_blossom, modLoc("block/saplingsakura"));
-    	
-    	for (Map.Entry<RegistryObject<FlowerPotBlock>, ResourceLocation> entry: pot2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-	    	ModelFile flower_pot = this.models().withExistingParent(name, mcLoc("block/flower_pot_cross"))
-	    			.texture("plant", entry.getValue()).renderType("cutout");
-	    	this.simpleBlock(entry.getKey().get(), flower_pot);
-    	} // end-foreach pot
-    	
-    } // end registerFlowers
-    
-    
-
-    private void registerDoorStatesAndModels()
-    {
-    	List<RegistryObject<DoorBlock>> doorlist = new ArrayList<RegistryObject<DoorBlock>>();
-    	doorlist.add(ModBlocks.door_autumn);
-    	doorlist.add(ModBlocks.door_japanesemaple);
-    	doorlist.add(ModBlocks.door_fir);
-    	doorlist.add(ModBlocks.door_redwood);
-    	
-    	for(RegistryObject<DoorBlock> val: doorlist)
-    	{
-    		String name = getRegistryNameFromHolder(val);
-    		doorBlockWithRenderType(val.get(), modLoc("block/" + name + "_lower"), 
-                modLoc("block/" + name + "_upper"), "cutout");
-   	       	this.itemModels().basicItem(val.get().asItem());
-
-    	} // end-for doorlist
-    	
-    } // end registerDoorStatesAndModels()
-    
-    
-    private void registerFenceLikeStatesAndModels()
-    {
-    	HashMap<RegistryObject<FenceBlock>, ResourceLocation> fence2model = 
-    			new HashMap<RegistryObject<FenceBlock>, ResourceLocation>();
-    	fence2model.put(ModBlocks.fence_autumn, modLoc("block/planksautumn"));
-    	fence2model.put(ModBlocks.fence_japanesemaple, modLoc("block/planksjapanesemaple"));
-    	fence2model.put(ModBlocks.fence_fir, modLoc("block/planksfir"));
-    	fence2model.put(ModBlocks.fence_redwood, modLoc("block/planksredwood"));
-    	
-    	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
-    			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
-    	gate2model.put(ModBlocks.gate_autumn,  modLoc("block/planksautumn"));
-    	gate2model.put(ModBlocks.gate_japanesemaple, modLoc("block/planksjapanesemaple"));
-    	gate2model.put(ModBlocks.gate_fir,  modLoc("block/planksfir"));
-    	gate2model.put(ModBlocks.gate_redwood,  modLoc("block/planksredwood"));
-
-    	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
-    			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
-    	wall2model.put(ModBlocks.wall_redcobble, modLoc("block/redrockcobble"));
-    	wall2model.put(ModBlocks.wall_redrockbrick, modLoc("block/redrockbrick"));
-    	
-    	// fences
-       	for (Map.Entry<RegistryObject<FenceBlock>, ResourceLocation> entry: fence2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-    		this.fenceBlock(entry.getKey().get(), entry.getValue());
-    		this.models().fenceInventory(name + "_inventory", entry.getValue());
-    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
-    	} // end-foreach fence
-        
-       	// gates
-       	for (Map.Entry<RegistryObject<FenceGateBlock>, ResourceLocation> entry: gate2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-    		this.fenceGateBlock(entry.getKey().get(), entry.getValue());
-    		this.itemModels().withExistingParent(name, modLoc("block/" + name));
-    	} // end-foreach gate
-
-       	// walls
-       	for (Map.Entry<RegistryObject<WallBlock>, ResourceLocation> entry: wall2model.entrySet())
-    	{
-    		String name = getRegistryNameFromHolder(entry.getKey());
-    		this.wallBlock(entry.getKey().get(), entry.getValue());
-    		this.models().wallInventory(name + "_inventory", entry.getValue());
-    		this.itemModels().withExistingParent(name, modLoc("block/" + name + "_inventory"));
-    	}
-       	
-    } // end registerFenceLikeStatesAndModels()
-    
-    private void registerTerrainBlocks()
-    {
-    	this.simpleBlockWithItem(ModBlocks.crackedsand.get(), this.cubeAll(ModBlocks.crackedsand.get()));
-    	this.simpleBlockWithItem(ModBlocks.quicksand.get(), this.cubeAll(ModBlocks.quicksand.get()));
-    	this.simpleBlockWithItem(ModBlocks.redrock.get(), this.cubeAll(ModBlocks.redrock.get()));
-    	this.simpleBlockWithItem(ModBlocks.redcobble.get(), 
-    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redcobble), modLoc("block/redrockcobble")));
-    	this.simpleBlockWithItem(ModBlocks.redrock_brick.get(), 
-    			this.models().cubeAll(getRegistryNameFromHolder(ModBlocks.redrock_brick), modLoc("block/redrockbrick")));
-    	
-    } // end registerTerrainBlocks()
-    
-    // =================== UTILITY FUNCTIONS ================= //
-    
-	private static String getRegistryNameFromHolder(RegistryObject<? extends Block> blockRef)
+    private static String getRegistryNameFromHolder(RegistryObject<? extends Block> blockRef)
 	{
 		return blockRef.getId().getPath();
 	}
