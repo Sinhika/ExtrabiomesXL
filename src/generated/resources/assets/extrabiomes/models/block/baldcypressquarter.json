@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extrabiomes:block/baldcypresstop4",
+    "east": "extrabiomes:block/baldcypressside1",
+    "north": "extrabiomes:block/baldcypresslog1",
+    "particle": "extrabiomes:block/baldcypressside1",
+    "south": "extrabiomes:block/baldcypressside2",
+    "up": "extrabiomes:block/baldcypresstop1",
+    "west": "extrabiomes:block/baldcypresslog2"
+  }
+}

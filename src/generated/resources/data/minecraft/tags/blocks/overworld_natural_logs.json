@@ -7,6 +7,9 @@
     "extrabiomes:log_redwood",
     "extrabiomes:redwoodquarter",
     "extrabiomes:log_acacia",
-    "extrabiomes:oakquarter"
+    "extrabiomes:oakquarter",
+    "extrabiomes:log_baldcypress",
+    "extrabiomes:baldcypressquarter",
+    "extrabiomes:baldcypresskneelog"
   ]
 }

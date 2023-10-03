@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extrabiomes:firquarter"
+              "extrabiomes:oakquarter"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extrabiomes:log_fir"
+        "recipe": "minecraft:oak_log_from_quarterlog"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extrabiomes:log_fir"
+      "minecraft:oak_log_from_quarterlog"
     ]
   },
   "sends_telemetry_event": false

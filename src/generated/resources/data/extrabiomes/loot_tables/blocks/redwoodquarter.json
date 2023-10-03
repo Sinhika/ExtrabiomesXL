@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extrabiomes:redwoodquarter"
+          "name": "extrabiomes:log_redwood"
         }
       ],
       "rolls": 1.0

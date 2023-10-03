@@ -14,6 +14,7 @@ import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -78,7 +79,7 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, entry.getValue())
 				.requires(entry.getKey().asItem())
 				.unlockedBy("has", has(entry.getKey()))
-				.save(consumer);
+				.save(consumer, RecipeBuilder.getDefaultRecipeId(entry.getValue()) + "_from_quarterlog");
 			
 			ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, entry.getKey(), 4)
 				.define('L', entry.getValue().asItem())
@@ -93,7 +94,7 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 			ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, entry.getValue())
 				.requires(entry.getKey().asItem())
 				.unlockedBy("has", has(entry.getKey()))
-				.save(consumer);
+				.save(consumer, RecipeBuilder.getDefaultRecipeId(entry.getValue()) + "_from_kneelog");
 		
 			ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, entry.getKey(), 3)
 				.define('L', entry.getValue().asItem())

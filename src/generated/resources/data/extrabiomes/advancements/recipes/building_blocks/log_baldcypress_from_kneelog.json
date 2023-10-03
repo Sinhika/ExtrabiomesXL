@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "extrabiomes:redwoodquarter"
+              "extrabiomes:baldcypresskneelog"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extrabiomes:log_redwood"
+        "recipe": "extrabiomes:log_baldcypress_from_kneelog"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extrabiomes:log_redwood"
+      "extrabiomes:log_baldcypress_from_kneelog"
     ]
   },
   "sends_telemetry_event": false
