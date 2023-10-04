@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "extrabiomes:block/plankssakura",
+    "side": "extrabiomes:block/plankssakura",
+    "top": "extrabiomes:block/plankssakura"
+  }
+}

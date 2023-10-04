@@ -10,6 +10,11 @@
     "extrabiomes:oakquarter",
     "extrabiomes:log_baldcypress",
     "extrabiomes:baldcypressquarter",
-    "extrabiomes:baldcypresskneelog"
+    "extrabiomes:baldcypresskneelog",
+    "extrabiomes:log_cypress",
+    "extrabiomes:log_sakura",
+    "extrabiomes:log_rainboweucalyptus",
+    "extrabiomes:rainboweucalyptuskneelog",
+    "extrabiomes:rainboweucalyptusquarter"
   ]
 }

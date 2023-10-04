@@ -5,6 +5,9 @@
     "extrabiomes:stairs_fir",
     "extrabiomes:stairs_redwood",
     "extrabiomes:stairs_acacia",
-    "extrabiomes:stairs_baldcypress"
+    "extrabiomes:stairs_baldcypress",
+    "extrabiomes:stairs_cypress",
+    "extrabiomes:stairs_rainboweucalyptus",
+    "extrabiomes:stairs_sakura"
   ]
 }

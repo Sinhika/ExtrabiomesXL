@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "extrabiomes:block/logsakuratop",
+    "side": "extrabiomes:block/logsakuraside"
+  }
+}

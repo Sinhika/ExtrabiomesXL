@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_planks_rainboweucalyptus": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extrabiomes:planks_rainboweucalyptus"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extrabiomes:slab_rainboweucalyptus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_planks_rainboweucalyptus",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extrabiomes:slab_rainboweucalyptus"
+    ]
+  },
+  "sends_telemetry_event": false
+}

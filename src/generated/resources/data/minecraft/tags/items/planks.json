@@ -5,6 +5,9 @@
     "extrabiomes:planks_fir",
     "extrabiomes:planks_redwood",
     "extrabiomes:planks_acacia",
-    "extrabiomes:planks_baldcypress"
+    "extrabiomes:planks_baldcypress",
+    "extrabiomes:planks_cypress",
+    "extrabiomes:planks_rainboweucalyptus",
+    "extrabiomes:planks_sakura"
   ]
 }

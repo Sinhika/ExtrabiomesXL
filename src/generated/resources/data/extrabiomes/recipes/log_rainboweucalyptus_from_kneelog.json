@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extrabiomes:rainboweucalyptuskneelog"
+    }
+  ],
+  "result": {
+    "item": "extrabiomes:log_rainboweucalyptus"
+  }
+}

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extrabiomes:stairs_baldcypress"
+          "name": "extrabiomes:button_rainboweucalyptus"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extrabiomes:blocks/stairs_baldcypress"
+  "random_sequence": "extrabiomes:blocks/button_rainboweucalyptus"
 }
