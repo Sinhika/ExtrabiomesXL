@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/cube_column",
+  "render_type": "minecraft:cutout",
   "textures": {
     "end": "extrabiomes:block/logsakuratop",
     "side": "extrabiomes:block/logsakuraside"

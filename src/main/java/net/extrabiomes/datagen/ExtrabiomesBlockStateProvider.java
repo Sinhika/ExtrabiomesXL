@@ -148,7 +148,13 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		String topname = entry.getValue() + "top";
     		String name = getRegistryNameFromHolder(entry.getKey());
     		
-            this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
+    		if (entry.getKey().get().equals(ModBlocks.log_sakura.get()))
+    		{
+    			this.axisBlockWithRenderType(entry.getKey().get(), modLoc(sidename), modLoc(topname), "cutout");
+    		}
+    		else {
+    			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
+    		}
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
     	
