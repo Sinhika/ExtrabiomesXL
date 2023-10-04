@@ -93,7 +93,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.stairs_fir.get())
 			.add(ModBlocks.stairs_redwood.get())
 			.add(ModBlocks.stairs_acacia.get())
-			.add(ModBlocks.stairs_baldcypress.get());
+			.add(ModBlocks.stairs_baldcypress.get())
+			.add(ModBlocks.stairs_cypress.get())
+			.add(ModBlocks.stairs_rainboweucalyptus.get())
+			.add(ModBlocks.stairs_sakura.get());
 		
 		this.tag(BlockTags.WOODEN_SLABS)
 			.add(ModBlocks.slab_japanese_maple.get())
@@ -101,7 +104,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.slab_fir.get())
 			.add(ModBlocks.slab_redwood.get())
 			.add(ModBlocks.slab_acacia.get())
-			.add(ModBlocks.slab_baldcypress.get());
+			.add(ModBlocks.slab_baldcypress.get())
+			.add(ModBlocks.slab_cypress.get())
+			.add(ModBlocks.slab_rainboweucalyptus.get())
+			.add(ModBlocks.slab_sakura.get());
 		
 		this.addFencetoAllFenceTags(ModBlocks.fence_autumn.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_japanesemaple.get());
@@ -109,6 +115,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.addFencetoAllFenceTags(ModBlocks.fence_redwood.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_acacia.get());
 		this.addFencetoAllFenceTags(ModBlocks.fence_baldcypress.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_cypress.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_rainboweucalyptus.get());
+		this.addFencetoAllFenceTags(ModBlocks.fence_sakura.get());
 		
 		this.addGatetoAllGateTags(ModBlocks.gate_autumn.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_japanesemaple.get());
@@ -116,6 +125,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.addGatetoAllGateTags(ModBlocks.gate_redwood.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_acacia.get());
 		this.addGatetoAllGateTags(ModBlocks.gate_baldcypress.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_cypress.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_rainboweucalyptus.get());
+		this.addGatetoAllGateTags(ModBlocks.gate_sakura.get());
 		
         this.tag(BlockTags.WOODEN_DOORS)
         	.add(ModBlocks.door_japanesemaple.get())
@@ -123,7 +135,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         	.add(ModBlocks.door_fir.get())
         	.add(ModBlocks.door_redwood.get())
         	.add(ModBlocks.door_acacia.get())
-        	.add(ModBlocks.door_baldcypress.get());
+        	.add(ModBlocks.door_baldcypress.get())
+    		.add(ModBlocks.door_cypress.get())
+			.add(ModBlocks.door_rainboweucalyptus.get())
+			.add(ModBlocks.door_sakura.get());
         
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
         	.add(ModBlocks.pressureplate_japanesemaple.get())
@@ -131,7 +146,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         	.add(ModBlocks.pressureplate_fir.get())
         	.add(ModBlocks.pressureplate_redwood.get())
         	.add(ModBlocks.pressureplate_acacia.get())
-        	.add(ModBlocks.pressureplate_baldcypress.get());
+        	.add(ModBlocks.pressureplate_baldcypress.get())
+			.add(ModBlocks.pressureplate_cypress.get())
+			.add(ModBlocks.pressureplate_rainboweucalyptus.get())
+			.add(ModBlocks.pressureplate_sakura.get());
         
         this.tag(BlockTags.WOODEN_BUTTONS)
         	.add(ModBlocks.button_japanesemaple.get())
@@ -139,7 +157,11 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         	.add(ModBlocks.button_fir.get())
         	.add(ModBlocks.button_redwood.get())
         	.add(ModBlocks.button_acacia.get())
-        	.add(ModBlocks.button_baldcypress.get());
+        	.add(ModBlocks.button_baldcypress.get())
+    		.add(ModBlocks.button_cypress.get())
+			.add(ModBlocks.button_rainboweucalyptus.get())
+			.add(ModBlocks.button_sakura.get());
+
 	} // end registerPlankBlockTags
    
 	// also too many gate tags.
@@ -177,7 +199,15 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.log_baldcypress.get())
 			.add(ModBlocks.baldcypressquarter.get())
 			.add(ModBlocks.baldcypresskneelog.get());
-		
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs"))
+			.add(ModBlocks.log_rainboweucalyptus.get())
+			.add(ModBlocks.rainboweucalyptusquarter.get())
+			.add(ModBlocks.rainboweucalyptuskneelog.get());
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "cypress_logs"))
+			.add(ModBlocks.log_cypress.get());
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "sakura_logs"))
+			.add(ModBlocks.log_sakura.get());
+
 		// only add actual logs--not stripped--to this tag.
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
 			.add(ModBlocks.log_autumn.get())
@@ -190,8 +220,12 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.oakquarter.get())
 			.add(ModBlocks.log_baldcypress.get())
 			.add(ModBlocks.baldcypressquarter.get())
-			.add(ModBlocks.baldcypresskneelog.get());
-
+			.add(ModBlocks.baldcypresskneelog.get())
+			.add(ModBlocks.log_cypress.get())
+			.add(ModBlocks.log_sakura.get())
+			.add(ModBlocks.log_rainboweucalyptus.get())
+			.add(ModBlocks.rainboweucalyptuskneelog.get())
+			.add(ModBlocks.rainboweucalyptusquarter.get());
 		
 		// LOGS_THAT_BURN are automatically included in LOGS.
 		this.tag(BlockTags.LOGS_THAT_BURN)
@@ -200,7 +234,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "redwood_logs"))
 			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
-			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"));
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"))
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "cypress_logs"))
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs"))
+			.addTag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "sakura_logs"));
 		
         this.tag(BlockTags.PLANKS)
         	.add(ModBlocks.planks_japanese_maple.get())
@@ -208,7 +245,10 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
         	.add(ModBlocks.planks_fir.get())
         	.add(ModBlocks.planks_redwood.get())
         	.add(ModBlocks.planks_acacia.get())
-        	.add(ModBlocks.planks_baldcypress.get());
+        	.add(ModBlocks.planks_baldcypress.get())
+        	.add(ModBlocks.planks_cypress.get())
+        	.add(ModBlocks.planks_rainboweucalyptus.get())
+        	.add(ModBlocks.planks_sakura.get());
         
 	} // end registerLogTags()
    

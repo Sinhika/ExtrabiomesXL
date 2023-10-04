@@ -177,6 +177,7 @@
     "block.extrabiomes.leaves_bald_cypress": "Bald Cypress Leaves",
     "block.extrabiomes.baldcypresskneelog": "Bald Cypress Elbow Log",
     "block.extrabiomes.log_baldcypress": "Bald Cypress Log (newlog_2)",
+    "block.extrabiomes.log_baldcypress.description": "Taxodium sp.",
     "block.extrabiomes.baldcypressquarter": "Bald Cypress Quarter Log",
     "block.extrabiomes.planks_baldcypress": "Bald Cypress Planks (7)",
     "block.extrabiomes.stairs_baldcypress": "Bald Cypress Stairs",
@@ -189,6 +190,7 @@
  
     "block.extrabiomes.leaves_cypress": "Cypress Leaves",
     "block.extrabiomes.log_cypress": "Cypress Log (2)",
+    "block.extrabiomes.log_cypress.description": "Cupressos sp.",
     "block.extrabiomes.planks_cypress": "Cypress Planks (3)",
     "block.extrabiomes.stairs_cypress": "Cypress Stairs",
     "block.extrabiomes.slab_cypress": "Cypress Slab",
@@ -199,7 +201,7 @@
     "block.extrabiomes.pressureplate_cypress": "Cypress Pressure Plate",
     
     "block.extrabiomes.leaves_rainbow_eucalyptus": "Rainbow Eucalyptus Leaves",
-    "block.extrabiomes.rainbowkneelog": "Rainbow Eucalyptus Elbow Log",
+    "block.extrabiomes.rainboweucalyptuskneelog": "Rainbow Eucalyptus Elbow Log",
     "block.extrabiomes.log_rainboweucalyptus": "Rainbow Eucalyptus Log (newlog_0)",
     "block.extrabiomes.rainboweucalyptusquarter": "Rainbow Eucalyptus Quarter Log",
     "block.extrabiomes.planks_rainboweucalyptus": "Rainbow Eucalyptus Planks (5)",

@@ -69,10 +69,12 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		quarterlog2log.put(ModBlocks.redwoodquarter.get(), ModBlocks.log_redwood.get());
 		quarterlog2log.put(ModBlocks.oakquarter.get(), Blocks.OAK_LOG);
 		quarterlog2log.put(ModBlocks.baldcypressquarter.get(), ModBlocks.log_baldcypress.get());
+		quarterlog2log.put(ModBlocks.rainboweucalyptusquarter.get(), ModBlocks.log_rainboweucalyptus.get());
 
 		HashMap<CustomQuarterBlock, Block> kneelog2log
 			= new HashMap<CustomQuarterBlock, Block>();
 		kneelog2log.put(ModBlocks.baldcypresskneelog.get(), ModBlocks.log_baldcypress.get());
+		kneelog2log.put(ModBlocks.rainboweucalyptuskneelog.get(), ModBlocks.log_rainboweucalyptus.get());
 		
 		for (Map.Entry<CustomQuarterBlock, Block> entry: quarterlog2log.entrySet())
 		{
@@ -272,6 +274,10 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		TagKey<Item> fir_logs = TagUtils.modTag(ExtrabiomesXS.MODID, "fir_logs");
 		TagKey<Item> redwood_logs = TagUtils.modTag(ExtrabiomesXS.MODID, "redwood_logs");
 		TagKey<Item> acacia_logs  = TagUtils.modTag(ExtrabiomesXS.MODID, "black_wattle_logs");
+		TagKey<Item> baldcypress_logs  = TagUtils.modTag(ExtrabiomesXS.MODID, "baldcypress_logs");
+		TagKey<Item> cypress_logs  = TagUtils.modTag(ExtrabiomesXS.MODID, "cypress_logs");
+		TagKey<Item> rainboweucalyptus_logs  = TagUtils.modTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs");
+		TagKey<Item> sakura_logs  = TagUtils.modTag(ExtrabiomesXS.MODID, "sakura_logs");
 		
 	    // log -> planks
 		planksFromLogs(consumer, ModBlocks.planks_autumn_wood.get(), autumn_logs, 4);
@@ -279,6 +285,10 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		planksFromLogs(consumer, ModBlocks.planks_fir.get(), fir_logs, 4);
 		planksFromLogs(consumer, ModBlocks.planks_redwood.get(), redwood_logs, 4);
 		planksFromLogs(consumer, ModBlocks.planks_acacia.get(), acacia_logs, 4);
+		planksFromLogs(consumer, ModBlocks.planks_baldcypress.get(), baldcypress_logs, 4);
+		planksFromLogs(consumer, ModBlocks.planks_cypress.get(), cypress_logs, 4);
+		planksFromLogs(consumer, ModBlocks.planks_rainboweucalyptus.get(), rainboweucalyptus_logs, 4);
+		planksFromLogs(consumer, ModBlocks.planks_sakura.get(), sakura_logs, 4);
 		
         // stairs
         stairBuilder(ModBlocks.stairs_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
@@ -295,6 +305,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	        .save(consumer);
         stairBuilder(ModBlocks.stairs_acacia.get(), Ingredient.of(ModBlocks.planks_acacia.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_acacia.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_baldcypress.get(), Ingredient.of(ModBlocks.planks_baldcypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_baldcypress.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_cypress.get(), Ingredient.of(ModBlocks.planks_cypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_cypress.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_rainboweucalyptus.get(), Ingredient.of(ModBlocks.planks_rainboweucalyptus.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_rainboweucalyptus.get()))
+	        .save(consumer);
+        stairBuilder(ModBlocks.stairs_sakura.get(), Ingredient.of(ModBlocks.planks_sakura.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_sakura.get()))
 	        .save(consumer);
 
         stairBuilder(ModBlocks.stairs_redcobble.get(), Ingredient.of(ModBlocks.redcobble.get()))
@@ -313,7 +335,11 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_fir.get(), ModBlocks.planks_fir.get());
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redwood.get(), ModBlocks.planks_redwood.get());
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_acacia.get(), ModBlocks.planks_acacia.get());
-        
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_baldcypress.get(), ModBlocks.planks_baldcypress.get());
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_cypress.get(), ModBlocks.planks_cypress.get());
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_rainboweucalyptus.get(), ModBlocks.planks_rainboweucalyptus.get());
+        slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_sakura.get(), ModBlocks.planks_sakura.get());
+
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrock.get(), ModBlocks.redrock.get());
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redrockbrick.get(), ModBlocks.redrock_brick.get());
         slab(consumer,RecipeCategory.BUILDING_BLOCKS, ModBlocks.slab_redcobble.get(), ModBlocks.redcobble.get());
@@ -334,6 +360,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         doorBuilder(ModBlocks.door_acacia.get(), Ingredient.of(ModBlocks.planks_acacia.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_acacia.get()))
 	        .save(consumer);
+        doorBuilder(ModBlocks.door_baldcypress.get(), Ingredient.of(ModBlocks.planks_baldcypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_baldcypress.get()))
+	        .save(consumer);
+        doorBuilder(ModBlocks.door_cypress.get(), Ingredient.of(ModBlocks.planks_cypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_cypress.get()))
+	        .save(consumer);
+        doorBuilder(ModBlocks.door_rainboweucalyptus.get(), Ingredient.of(ModBlocks.planks_rainboweucalyptus.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_rainboweucalyptus.get()))
+	        .save(consumer);
+        doorBuilder(ModBlocks.door_sakura.get(), Ingredient.of(ModBlocks.planks_sakura.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_sakura.get()))
+	        .save(consumer);
 
         // fences
         fenceBuilder(ModBlocks.fence_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
@@ -351,6 +389,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         fenceBuilder(ModBlocks.fence_acacia.get(), Ingredient.of(ModBlocks.planks_acacia.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_acacia.get()))
 	        .save(consumer);
+        fenceBuilder(ModBlocks.fence_baldcypress.get(), Ingredient.of(ModBlocks.planks_baldcypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_baldcypress.get()))
+	        .save(consumer);
+        fenceBuilder(ModBlocks.fence_cypress.get(), Ingredient.of(ModBlocks.planks_cypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_cypress.get()))
+	        .save(consumer);
+        fenceBuilder(ModBlocks.fence_rainboweucalyptus.get(), Ingredient.of(ModBlocks.planks_rainboweucalyptus.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_rainboweucalyptus.get()))
+	        .save(consumer);
+        fenceBuilder(ModBlocks.fence_sakura.get(), Ingredient.of(ModBlocks.planks_sakura.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_sakura.get()))
+	        .save(consumer);
 
         // fence gates
         fenceGateBuilder(ModBlocks.gate_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
@@ -367,6 +417,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 	        .save(consumer);
         fenceGateBuilder(ModBlocks.gate_acacia.get(), Ingredient.of(ModBlocks.planks_acacia.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_acacia.get()))
+	        .save(consumer);
+        fenceGateBuilder(ModBlocks.gate_baldcypress.get(), Ingredient.of(ModBlocks.planks_baldcypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_baldcypress.get()))
+	        .save(consumer);
+        fenceGateBuilder(ModBlocks.gate_cypress.get(), Ingredient.of(ModBlocks.planks_cypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_cypress.get()))
+	        .save(consumer);
+        fenceGateBuilder(ModBlocks.gate_rainboweucalyptus.get(), Ingredient.of(ModBlocks.planks_rainboweucalyptus.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_rainboweucalyptus.get()))
+	        .save(consumer);
+        fenceGateBuilder(ModBlocks.gate_sakura.get(), Ingredient.of(ModBlocks.planks_sakura.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_sakura.get()))
 	        .save(consumer);
         
         // walls
@@ -390,6 +452,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         buttonBuilder(ModBlocks.button_acacia.get(), Ingredient.of(ModBlocks.planks_acacia.get()))
 	        .unlockedBy("has_item", has(ModBlocks.planks_acacia.get()))
 	        .save(consumer);
+        buttonBuilder(ModBlocks.button_baldcypress.get(), Ingredient.of(ModBlocks.planks_baldcypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_baldcypress.get()))
+	        .save(consumer);
+        buttonBuilder(ModBlocks.button_cypress.get(), Ingredient.of(ModBlocks.planks_cypress.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_cypress.get()))
+	        .save(consumer);
+        buttonBuilder(ModBlocks.button_rainboweucalyptus.get(), Ingredient.of(ModBlocks.planks_rainboweucalyptus.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_rainboweucalyptus.get()))
+	        .save(consumer);
+        buttonBuilder(ModBlocks.button_sakura.get(), Ingredient.of(ModBlocks.planks_sakura.get()))
+	        .unlockedBy("has_item", has(ModBlocks.planks_sakura.get()))
+	        .save(consumer);
        	
         // pressure plates
         pressurePlate(consumer, ModBlocks.pressureplate_autumn.get(),ModBlocks.planks_autumn_wood.get());
@@ -397,6 +471,10 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
         pressurePlate(consumer, ModBlocks.pressureplate_fir.get(),ModBlocks.planks_fir.get());
         pressurePlate(consumer, ModBlocks.pressureplate_redwood.get(),ModBlocks.planks_redwood.get());
         pressurePlate(consumer, ModBlocks.pressureplate_acacia.get(),ModBlocks.planks_acacia.get());
+        pressurePlate(consumer, ModBlocks.pressureplate_baldcypress.get(),ModBlocks.planks_baldcypress.get());
+        pressurePlate(consumer, ModBlocks.pressureplate_cypress.get(),ModBlocks.planks_cypress.get());
+        pressurePlate(consumer, ModBlocks.pressureplate_rainboweucalyptus.get(),ModBlocks.planks_rainboweucalyptus.get());
+        pressurePlate(consumer, ModBlocks.pressureplate_sakura.get(),ModBlocks.planks_sakura.get());
         
 	} // end registerWoodRecipes()
 	

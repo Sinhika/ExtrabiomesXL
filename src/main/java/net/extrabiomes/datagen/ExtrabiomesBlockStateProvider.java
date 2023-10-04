@@ -87,7 +87,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	log2model.put(ModBlocks.log_redwood, "block/logredwood" );
     	log2model.put(ModBlocks.log_acacia, "block/logacacia" );
     	log2model.put(ModBlocks.log_baldcypress, "block/logbaldcypress" );
-    	
+    	log2model.put(ModBlocks.log_cypress, "block/logcypress" );
+    	log2model.put(ModBlocks.log_rainboweucalyptus, "block/lograinboweucalyptus" );
+    	log2model.put(ModBlocks.log_sakura, "block/logsakura" );
     	
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
@@ -97,6 +99,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	planks2model.put(ModBlocks.planks_redwood, modLoc("block/planksredwood"));
        	planks2model.put(ModBlocks.planks_acacia, modLoc("block/planksacacia"));
        	planks2model.put(ModBlocks.planks_baldcypress, modLoc("block/planksbaldcypress"));
+       	planks2model.put(ModBlocks.planks_cypress, modLoc("block/plankscypress"));
+       	planks2model.put(ModBlocks.planks_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+       	planks2model.put(ModBlocks.planks_sakura, modLoc("block/plankssakura"));
    	
     	HashMap<RegistryObject<StairBlock>, ResourceLocation> stairs2model
 			= new HashMap<RegistryObject<StairBlock>, ResourceLocation>();
@@ -109,6 +114,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	stairs2model.put(ModBlocks.stairs_redwood, modLoc("block/planksredwood"));
     	stairs2model.put(ModBlocks.stairs_acacia, modLoc("block/planksacacia"));
     	stairs2model.put(ModBlocks.stairs_baldcypress, modLoc("block/planksbaldcypress"));
+    	stairs2model.put(ModBlocks.stairs_cypress, modLoc("block/plankscypress"));
+    	stairs2model.put(ModBlocks.stairs_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+    	stairs2model.put(ModBlocks.stairs_sakura, modLoc("block/plankssakura"));
     	
     	HashMap<RegistryObject<SlabBlock>, ResourceLocation> slab2model
     		= new HashMap<RegistryObject<SlabBlock>, ResourceLocation>();
@@ -118,6 +126,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	slab2model.put(ModBlocks.slab_redwood, modLoc("block/planksredwood"));
     	slab2model.put(ModBlocks.slab_acacia, modLoc("block/planksacacia"));
     	slab2model.put(ModBlocks.slab_baldcypress, modLoc("block/planksbaldcypress"));
+    	slab2model.put(ModBlocks.slab_cypress, modLoc("block/plankscypress"));
+    	slab2model.put(ModBlocks.slab_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+    	slab2model.put(ModBlocks.slab_sakura, modLoc("block/plankssakura"));
     	
     	// leaves
     	for (Map.Entry<RegistryObject<LeavesBlock>, ResourceLocation> entry: leaves2model.entrySet())
@@ -146,9 +157,11 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	quarterLogBlock(ModBlocks.redwoodquarter);
     	quarterLogBlock(ModBlocks.oakquarter);
     	quarterLogBlock(ModBlocks.baldcypressquarter);
+    	quarterLogBlock(ModBlocks.rainboweucalyptusquarter);
     	
     	// knee logs
     	kneelogBlock(ModBlocks.baldcypresskneelog);
+    	kneelogBlock(ModBlocks.rainboweucalyptuskneelog);
     	
         // planks
        	for (Map.Entry<RegistryObject<Block>, ResourceLocation> entry: planks2model.entrySet())
@@ -207,6 +220,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	plate2model.put(ModBlocks.pressureplate_redwood, modLoc("block/planksredwood"));
     	plate2model.put(ModBlocks.pressureplate_acacia, modLoc("block/planksacacia"));
     	plate2model.put(ModBlocks.pressureplate_baldcypress, modLoc("block/planksbaldcypress"));
+    	plate2model.put(ModBlocks.pressureplate_cypress, modLoc("block/plankscypress"));
+    	plate2model.put(ModBlocks.pressureplate_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+    	plate2model.put(ModBlocks.pressureplate_sakura, modLoc("block/plankssakura"));
     	
     	HashMap<RegistryObject<ButtonBlock>, ResourceLocation> button2model = 
     			new HashMap<RegistryObject<ButtonBlock>, ResourceLocation> ();
@@ -216,6 +232,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	button2model.put(ModBlocks.button_redwood, modLoc("block/planksredwood"));
     	button2model.put(ModBlocks.button_acacia, modLoc("block/planksacacia"));
     	button2model.put(ModBlocks.button_baldcypress, modLoc("block/planksbaldcypress"));
+    	button2model.put(ModBlocks.button_cypress, modLoc("block/plankscypress"));
+    	button2model.put(ModBlocks.button_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+    	button2model.put(ModBlocks.button_sakura, modLoc("block/plankssakura"));
     	
         // pressure_plate
      	for (Map.Entry<RegistryObject<PressurePlateBlock>, ResourceLocation> entry: plate2model.entrySet())
@@ -245,6 +264,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	doorlist.add(ModBlocks.door_redwood);
     	doorlist.add(ModBlocks.door_acacia);
     	doorlist.add(ModBlocks.door_baldcypress);
+    	doorlist.add(ModBlocks.door_cypress);
+    	doorlist.add(ModBlocks.door_rainboweucalyptus);
+    	doorlist.add(ModBlocks.door_sakura);
     	
     	for(RegistryObject<DoorBlock> val: doorlist)
     	{
@@ -268,6 +290,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	fence2model.put(ModBlocks.fence_redwood, modLoc("block/planksredwood"));
     	fence2model.put(ModBlocks.fence_acacia, modLoc("block/planksacacia"));
     	fence2model.put(ModBlocks.fence_baldcypress, modLoc("block/planksbaldcypress"));
+    	fence2model.put(ModBlocks.fence_cypress, modLoc("block/plankscypress"));
+    	fence2model.put(ModBlocks.fence_rainboweucalyptus, modLoc("block/planksrainboweucalyptus"));
+    	fence2model.put(ModBlocks.fence_sakura, modLoc("block/plankssakura"));
     	
     	HashMap<RegistryObject<FenceGateBlock>, ResourceLocation> gate2model = 
     			new HashMap<RegistryObject<FenceGateBlock>, ResourceLocation>();
@@ -277,6 +302,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	gate2model.put(ModBlocks.gate_redwood,  modLoc("block/planksredwood"));
     	gate2model.put(ModBlocks.gate_acacia,  modLoc("block/planksacacia"));
     	gate2model.put(ModBlocks.gate_baldcypress,  modLoc("block/planksbaldcypress"));
+    	gate2model.put(ModBlocks.gate_cypress,  modLoc("block/plankscypress"));
+    	gate2model.put(ModBlocks.gate_rainboweucalyptus,  modLoc("block/planksrainboweucalyptus"));
+    	gate2model.put(ModBlocks.gate_sakura,  modLoc("block/plankssakura"));
 
     	HashMap<RegistryObject<WallBlock>, ResourceLocation> wall2model = 
     			new HashMap<RegistryObject<WallBlock>, ResourceLocation>();
