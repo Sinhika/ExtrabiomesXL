@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extrabiomes:block/slab_cypress"
+    },
+    "type=double": {
+      "model": "extrabiomes:block/planks_cypress"
+    },
+    "type=top": {
+      "model": "extrabiomes:block/slab_cypress_top"
+    }
+  }
+}

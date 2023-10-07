@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "extrabiomes:planks_cypress"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "extrabiomes:pressureplate_cypress"
+  },
+  "show_notification": true
+}

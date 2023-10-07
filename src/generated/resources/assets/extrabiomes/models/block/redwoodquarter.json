@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extrabiomes:block/redwoodtop4",
+    "east": "extrabiomes:block/redwoodside1",
+    "north": "extrabiomes:block/redwoodlog1",
+    "particle": "extrabiomes:block/redwoodside1",
+    "south": "extrabiomes:block/redwoodside2",
+    "up": "extrabiomes:block/redwoodtop1",
+    "west": "extrabiomes:block/redwoodlog2"
+  }
+}

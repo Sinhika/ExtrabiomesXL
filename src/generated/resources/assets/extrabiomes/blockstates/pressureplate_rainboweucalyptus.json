@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "extrabiomes:block/pressureplate_rainboweucalyptus"
+    },
+    "powered=true": {
+      "model": "extrabiomes:block/pressureplate_rainboweucalyptus_down"
+    }
+  }
+}

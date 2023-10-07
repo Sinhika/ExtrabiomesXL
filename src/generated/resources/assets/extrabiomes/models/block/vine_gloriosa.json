@@ -1,0 +1,8 @@
+{
+  "parent": "extrabiomes:block/template_vine",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "extrabiomes:block/vine_gloriosa",
+    "vine": "extrabiomes:block/vine_gloriosa"
+  }
+}

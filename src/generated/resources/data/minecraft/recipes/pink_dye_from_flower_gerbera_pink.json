@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pink_dye",
+  "ingredients": [
+    {
+      "item": "extrabiomes:flower_gerbera_pink"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

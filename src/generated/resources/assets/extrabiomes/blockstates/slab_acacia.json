@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extrabiomes:block/slab_acacia"
+    },
+    "type=double": {
+      "model": "extrabiomes:block/planks_acacia"
+    },
+    "type=top": {
+      "model": "extrabiomes:block/slab_acacia_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "extrabiomes:block/slab_redrockbrick"
+    },
+    "type=double": {
+      "model": "extrabiomes:block/redrock_brick"
+    },
+    "type=top": {
+      "model": "extrabiomes:block/slab_redrockbrick_top"
+    }
+  }
+}

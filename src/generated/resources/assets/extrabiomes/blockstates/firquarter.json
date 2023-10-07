@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "extrabiomes:block/firquarter",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "extrabiomes:block/firquarter",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extrabiomes:block/firquarter",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "extrabiomes:block/firquarter",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "extrabiomes:block/firquarter"
+    },
+    "facing=west": {
+      "model": "extrabiomes:block/firquarter",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

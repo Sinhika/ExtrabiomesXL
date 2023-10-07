@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extrabiomes:block/lograinboweucalyptustop",
+    "east": "extrabiomes:block/lograinboweucalyptusknee1",
+    "north": "extrabiomes:block/lograinboweucalyptustop",
+    "particle": "extrabiomes:block/lograinboweucalyptustop",
+    "south": "extrabiomes:block/lograinboweucalyptusside2",
+    "up": "extrabiomes:block/lograinboweucalyptusside1",
+    "west": "extrabiomes:block/lograinboweucalyptusknee2"
+  }
+}
