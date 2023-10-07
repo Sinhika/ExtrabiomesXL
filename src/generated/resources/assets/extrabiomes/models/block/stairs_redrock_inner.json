@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "extrabiomes:block/redrock",
-    "side": "extrabiomes:block/redrock",
-    "top": "extrabiomes:block/redrock"
-  }
-}

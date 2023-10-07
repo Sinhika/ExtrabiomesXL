@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "extrabiomes:block/logbaldcypresstop",
-    "side": "extrabiomes:block/logbaldcypressside"
-  }
-}

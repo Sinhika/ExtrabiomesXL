@@ -89,7 +89,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	log2model.put(ModBlocks.log_baldcypress, "block/logbaldcypress" );
     	log2model.put(ModBlocks.log_cypress, "block/logcypress" );
     	log2model.put(ModBlocks.log_rainboweucalyptus, "block/lograinboweucalyptus" );
-    	log2model.put(ModBlocks.log_sakura, "block/logsakura" );
     	
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
@@ -147,16 +146,13 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     		String sidename = entry.getValue() + "side";
     		String topname = entry.getValue() + "top";
     		String name = getRegistryNameFromHolder(entry.getKey());
-    		
-    		if (entry.getKey().get().equals(ModBlocks.log_sakura.get()))
-    		{
-    			this.axisBlockWithRenderType(entry.getKey().get(), modLoc(sidename), modLoc(topname), "cutout");
-    		}
-    		else {
-    			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
-    		}
+   			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
+    	
+    	// TODO - sakura mini-logs
+    	// log2model.put(ModBlocks.log_sakura, "block/logsakura" );
+		//	this.axisBlockWithRenderType(ModBlocks.log_sakura.get(), modLoc(sidename), modLoc(topname), "cutout");
     	
     	// big logs  - udnsew
     	quarterLogBlock(ModBlocks.firquarter);

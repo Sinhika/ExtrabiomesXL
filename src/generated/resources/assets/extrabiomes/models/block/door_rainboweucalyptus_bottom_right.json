@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "extrabiomes:block/door_rainboweucalyptus_lower",
-    "top": "extrabiomes:block/door_rainboweucalyptus_upper"
-  }
-}

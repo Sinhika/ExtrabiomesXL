@@ -1,0 +1,7 @@
+{
+  "parent": "extrabiomes:block/minilog_side",
+  "textures": {
+    "side": "extrabiomes:block/logsakuraside",
+    "end" : "extrabiomes:block/logsakuratop"
+  }
+}

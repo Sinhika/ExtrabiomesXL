@@ -171,7 +171,7 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   // sakura
 	   public static final RegistryObject<CustomLogBlock> log_sakura = BLOCKS.register("log_sakura",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, ""));
+			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS.register("planks_sakura",
 			   () -> planks(MapColor.WOOD));
 	   
