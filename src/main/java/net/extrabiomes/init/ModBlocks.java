@@ -746,9 +746,8 @@ public final class ModBlocks
 	    */
 	   private static MiniLogBlock minilog(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip) 
 	   {
-		   return new MiniLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
-		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+		   return new MiniLogBlock(BlockBehaviour.Properties.of().mapColor(pTopMapColor)
+				   .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
 				   tooltip);
 	   }
 	   
