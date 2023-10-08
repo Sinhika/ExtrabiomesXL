@@ -170,6 +170,7 @@ public final class ModBlocks
 			   () -> bigLog2(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<Block> planks_rainboweucalyptus = BLOCKS.register("planks_rainboweucalyptus",
 			   () -> planks(MapColor.WOOD));
+	   
 	   // sakura
 	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS.register("log_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
