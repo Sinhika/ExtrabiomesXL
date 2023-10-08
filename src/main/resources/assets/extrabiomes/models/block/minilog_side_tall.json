@@ -2,18 +2,16 @@
     "textures": {
         "particle": "#side"
     },
-   "render_type": "minecraft:cutout",
-   "elements": [
+    "elements": [
         {   "from": [ 5, 0, 0 ],
-            "to": [ 11, 14, 8 ],
+            "to": [ 11, 16, 8 ],
             "faces": {
-                "down":  { "texture": "#side", "cullface": "down" },
-                "up":    { "texture": "#side" },
+                "down":  { "texture": "#end", "cullface": "down" },
+                "up":    { "texture": "#end", "cullface": "up"},
                 "north": { "texture": "#side", "cullface": "north" },
                 "west":  { "texture": "#side" },
                 "east":  { "texture": "#side" }
-            },
-            "__comment": "wall"
+            }
         }
     ]
 }

@@ -6,6 +6,7 @@ import net.extrabiomes.content.CustomFlowerBlock;
 import net.extrabiomes.content.CustomLogBlock;
 import net.extrabiomes.content.CustomQuarterBlock;
 import net.extrabiomes.content.LeafPileBlock;
+import net.extrabiomes.content.MiniLogBlock;
 import net.extrabiomes.content.QuickSandBlock;
 import net.extrabiomes.content.StrawberryBlock;
 import net.extrabiomes.world.AutumnTreeGrower;
@@ -170,8 +171,8 @@ public final class ModBlocks
 	   public static final RegistryObject<Block> planks_rainboweucalyptus = BLOCKS.register("planks_rainboweucalyptus",
 			   () -> planks(MapColor.WOOD));
 	   // sakura
-	   public static final RegistryObject<CustomLogBlock> log_sakura = BLOCKS.register("log_sakura",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
+	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS.register("log_sakura",
+			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS.register("planks_sakura",
 			   () -> planks(MapColor.WOOD));
 	   
@@ -737,6 +738,20 @@ public final class ModBlocks
 				   tooltip);
 	   }
 	
+	   /**
+	    * Make a new minilog block.
+	    * @param pTopMapColor - MapColor for top.
+	    * @param pSideMapColor - MapColor for side.
+	    * @returns a new CustomLogBlock object.
+	    */
+	   private static MiniLogBlock minilog(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip) 
+	   {
+		   return new MiniLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+		         return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+				   tooltip);
+	   }
+	   
 	   /**
 	    * make a new quarter-log block
 	    */

@@ -3,6 +3,9 @@
     {
       "apply": {
         "model": "extrabiomes:block/log_sakura"
+      },
+      "when": {
+        "up": "true"
       }
     },
     {
@@ -11,7 +14,7 @@
         "uvlock": true
       },
       "when": {
-        "north": "true"
+        "north": "low"
       }
     },
     {
@@ -21,7 +24,7 @@
         "y": 90
       },
       "when": {
-        "east": "true"
+        "east": "low"
       }
     },
     {
@@ -31,7 +34,7 @@
         "y": 180
       },
       "when": {
-        "south": "true"
+        "south": "low"
       }
     },
     {
@@ -41,7 +44,46 @@
         "y": 270
       },
       "when": {
-        "west": "true"
+        "west": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "extrabiomes:block/log_sakura_side_tall",
+        "uvlock": true
+      },
+      "when": {
+        "north": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "extrabiomes:block/log_sakura_side_tall",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "extrabiomes:block/log_sakura_side_tall",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "extrabiomes:block/log_sakura_side_tall",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "tall"
       }
     }
   ]
