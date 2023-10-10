@@ -30,7 +30,6 @@ public class MiniLogBlock extends PipeBlock
 	public MiniLogBlock(Properties pProperties, String toolTip) 
 	{
 		super(Apothem, pProperties);
-		this.shapeByIndex = this.makeLogShapes(Apothem);
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, Boolean.valueOf(false))
         		.setValue(EAST, Boolean.valueOf(false)).setValue(SOUTH, Boolean.valueOf(false))
         		.setValue(WEST, Boolean.valueOf(false)).setValue(UP, Boolean.valueOf(false))
@@ -40,23 +39,17 @@ public class MiniLogBlock extends PipeBlock
 
 	} // end ctor
 
-	private VoxelShape[] makeLogShapes(float pApothem)
+	@Override
+	public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) 
 	{
-		float f = 0.5F - pApothem;
-		float f1 = 0.5F + pApothem;
-		VoxelShape voxelshape = Shapes.box((double)(f), (double)(f), (double)(f), 
-											(double)(f1), (double)(f1), (double)(f1));
-		
-		VoxelShape[] avoxelshape = new VoxelShape[DIRECTIONS.length];
-
+		return true;
 	}
-	
 	
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) 
 	{
-		// TODO Auto-generated method stub
-		return super.getShape(pState, pLevel, pPos, pContext);
+		// for now, until we get model right.
+		return  Shapes.block();
 	}
 
 
@@ -76,14 +69,14 @@ public class MiniLogBlock extends PipeBlock
    {
 	   LeavesBlock myLeafBlock = ModBlocks.leaves_sakura.get();
 	   
-		BlockState blockstate = pLevel.getBlockState(pPos.below());
+		//BlockState blockstate = pLevel.getBlockState(pPos.below());
 		BlockState blockstate1 = pLevel.getBlockState(pPos.above());
 		BlockState blockstate2 = pLevel.getBlockState(pPos.north());
 		BlockState blockstate3 = pLevel.getBlockState(pPos.east());
 		BlockState blockstate4 = pLevel.getBlockState(pPos.south());
 		BlockState blockstate5 = pLevel.getBlockState(pPos.west());
 		return this.defaultBlockState()
-				.setValue(DOWN,Boolean.valueOf(blockstate.is(this)))
+				.setValue(DOWN,Boolean.valueOf(false))
 				.setValue(UP, Boolean.valueOf(blockstate1.is(this) || blockstate1.is(myLeafBlock)))
 				.setValue(NORTH, Boolean.valueOf(blockstate2.is(this) || blockstate2.is(myLeafBlock)))
 				.setValue(EAST, Boolean.valueOf(blockstate3.is(this) || blockstate3.is(myLeafBlock)))

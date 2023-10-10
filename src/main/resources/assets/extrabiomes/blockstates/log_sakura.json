@@ -103,7 +103,7 @@
     {
       "apply":
         {
-          "model": "extrabiomes:block/log_sakura_noside1",
+          "model": "extrabiomes:block/log_sakura_noside_top",
           "uvlock": true,
           "x": 270
         },
@@ -114,7 +114,7 @@
     {
       "apply": 
         {
-          "model": "extrabiomes:block/log_sakura_noside1",
+          "model": "extrabiomes:block/log_sakura_noside_top",
           "uvlock": true,
           "x": 90
         },
