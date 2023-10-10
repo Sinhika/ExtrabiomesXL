@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
@@ -41,7 +42,13 @@ public class MiniLogBlock extends PipeBlock
 
 	private VoxelShape[] makeLogShapes(float pApothem)
 	{
+		float f = 0.5F - pApothem;
+		float f1 = 0.5F + pApothem;
+		VoxelShape voxelshape = Shapes.box((double)(f), (double)(f), (double)(f), 
+											(double)(f1), (double)(f1), (double)(f1));
 		
+		VoxelShape[] avoxelshape = new VoxelShape[DIRECTIONS.length];
+
 	}
 	
 	
