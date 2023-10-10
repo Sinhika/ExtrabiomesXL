@@ -19,8 +19,8 @@
         {   "from": [ 3, 0, 3 ],
             "to": [ 13, 16, 13 ],
             "faces": {
-                "down":  { "texture": "#bark", "cullface": "down" },
-                "up":    { "texture": "#bark" },
+                "down":  { "texture": "#inside", "cullface": "down" },
+                "up":    { "texture": "#inside" },
                 "north": { "texture": "#bark" },
                 "south": { "texture": "#bark" },
                 "west":  { "texture": "#bark" },
