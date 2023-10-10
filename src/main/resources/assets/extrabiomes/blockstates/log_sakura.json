@@ -59,161 +59,65 @@
       }
     },
     {
-      "apply": [
+      "apply":
         {
-          "model": "extrabiomes:block/log_sakura_noside",
-          "weight": 2
+          "model": "extrabiomes:block/log_sakura_noside"
         },
-        {
-          "model": "extrabiomes:block/log_sakura_noside1"
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside2"
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside3"
-        }
-      ],
       "when": {
         "north": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "extrabiomes:block/log_sakura_noside1",
-          "uvlock": true,
-          "y": 90
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside2",
-          "uvlock": true,
-          "y": 90
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside3",
-          "uvlock": true,
-          "y": 90
-        },
+      "apply": 
         {
           "model": "extrabiomes:block/log_sakura_noside",
           "uvlock": true,
-          "weight": 2,
           "y": 90
-        }
-      ],
+        },
       "when": {
         "east": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "extrabiomes:block/log_sakura_noside2",
-          "uvlock": true,
-          "y": 180
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside3",
-          "uvlock": true,
-          "y": 180
-        },
+      "apply": 
         {
           "model": "extrabiomes:block/log_sakura_noside",
           "uvlock": true,
-          "weight": 2,
           "y": 180
         },
-        {
-          "model": "extrabiomes:block/log_sakura_noside1",
-          "uvlock": true,
-          "y": 180
-        }
-      ],
       "when": {
         "south": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "extrabiomes:block/log_sakura_noside3",
-          "uvlock": true,
-          "y": 270
-        },
+      "apply": 
         {
           "model": "extrabiomes:block/log_sakura_noside",
           "uvlock": true,
-          "weight": 2,
           "y": 270
         },
-        {
-          "model": "extrabiomes:block/log_sakura_noside1",
-          "uvlock": true,
-          "y": 270
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside2",
-          "uvlock": true,
-          "y": 270
-        }
-      ],
       "when": {
         "west": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "extrabiomes:block/log_sakura_noside",
-          "uvlock": true,
-          "weight": 2,
-          "x": 270
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside3",
-          "uvlock": true,
-          "x": 270
-        },
+      "apply":
         {
           "model": "extrabiomes:block/log_sakura_noside1",
           "uvlock": true,
           "x": 270
         },
-        {
-          "model": "extrabiomes:block/log_sakura_noside2",
-          "uvlock": true,
-          "x": 270
-        }
-      ],
       "when": {
         "up": "false"
       }
     },
     {
-      "apply": [
-        {
-          "model": "extrabiomes:block/log_sakura_noside3",
-          "uvlock": true,
-          "x": 90
-        },
-        {
-          "model": "extrabiomes:block/log_sakura_noside2",
-          "uvlock": true,
-          "x": 90
-        },
+      "apply": 
         {
           "model": "extrabiomes:block/log_sakura_noside1",
           "uvlock": true,
           "x": 90
         },
-        {
-          "model": "extrabiomes:block/log_sakura_noside",
-          "uvlock": true,
-          "weight": 2,
-          "x": 90
-        }
-      ],
       "when": {
         "down": "false"
       }
