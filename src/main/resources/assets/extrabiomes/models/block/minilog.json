@@ -1,7 +1,5 @@
 {
-    "textures": {
-        "particle": "#side"
-    },
+    "parent": "block/block",
     "render_type": "minecraft:cutout",
     "elements": [
         {   "from": [ 3, 0, 3 ],
@@ -13,8 +11,7 @@
                 "south": { "texture": "#side" },
                 "west":  { "texture": "#side" },
                 "east":  { "texture": "#side" }
-            },
-            "__comment": "Post alone"
+            }
         }
     ]
 }

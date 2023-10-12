@@ -1,0 +1,17 @@
+{
+    "parent": "block/block",
+    "render_type": "minecraft:cutout",
+    "elements": [
+        {   "from": [ 3, 0, 3 ],
+            "to": [ 13, 16, 13 ],
+            "faces": {
+                "down":  { "texture": "#end", "cullface": "down" },
+                "up":    { "texture": "#end", "rotation": 180, "cullface": "up" },
+                "north": { "texture": "#side", "cullface": "north" },
+                "south": { "texture": "#side", "cullface": "south" },
+                "west":  { "texture": "#side", "cullface": "west" },
+                "east":  { "texture": "#side", "cullface": "east" }
+            }
+        }
+    ]
+}
