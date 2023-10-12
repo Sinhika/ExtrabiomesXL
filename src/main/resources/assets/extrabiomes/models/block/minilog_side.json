@@ -2,14 +2,12 @@
    	"render_type": "minecraft:cutout",
     "ambientocclusion": false,
     "elements": [
-        {   "from": [ 3, 3, 0 ],
-            "to": [ 13, 13, 3 ],
+        {   "from": [ 3, 0, 0 ],
+            "to": [ 13, 16, 3 ],
             "faces": {
                 "down":  { "texture": "#inside" },
                 "up":    { "texture": "#inside" },
-                "north": { "texture": "#texture", "cullface":"north" },
-                "west":  { "texture": "#texture" },
-                "east":  { "texture": "#texture" }
+                "north": { "texture": "#bark", "cullface":"north" }
             }
         }
     ]

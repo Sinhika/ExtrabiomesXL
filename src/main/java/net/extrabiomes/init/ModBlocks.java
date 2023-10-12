@@ -747,7 +747,7 @@ public final class ModBlocks
 	    */
 	   private static MiniLogBlock minilog(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip) 
 	   {
-		   return new MiniLogBlock(BlockBehaviour.Properties.of().mapColor(pTopMapColor)
+		   return new MiniLogBlock(BlockBehaviour.Properties.of().mapColor(pTopMapColor).noOcclusion()
 				   .instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
 				   tooltip);
 	   }

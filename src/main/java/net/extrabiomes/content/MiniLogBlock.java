@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,8 +14,11 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PipeBlock;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -26,6 +30,7 @@ public class MiniLogBlock extends PipeBlock
 {
 	protected final String tooltipKey;
 	protected final static float Apothem = 0.3125F;
+	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 	
 	public MiniLogBlock(Properties pProperties, String toolTip) 
 	{
@@ -33,7 +38,7 @@ public class MiniLogBlock extends PipeBlock
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, Boolean.valueOf(false))
         		.setValue(EAST, Boolean.valueOf(false)).setValue(SOUTH, Boolean.valueOf(false))
         		.setValue(WEST, Boolean.valueOf(false)).setValue(UP, Boolean.valueOf(false))
-        		.setValue(DOWN, Boolean.valueOf(false)));
+        		.setValue(DOWN, Boolean.valueOf(false)).setValue(AXIS, Direction.Axis.Y));
 
 		this.tooltipKey = toolTip;
 
@@ -56,16 +61,17 @@ public class MiniLogBlock extends PipeBlock
 	@Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) 
    {
-	      pBuilder.add(NORTH, EAST, SOUTH, WEST, UP, DOWN);
+	      pBuilder.add(NORTH, EAST, SOUTH, WEST, UP, DOWN, AXIS);
    }
 
    @Override
    public BlockState getStateForPlacement(BlockPlaceContext pContext) 
    {
-	      return this.getStateForPlacement(pContext.getLevel(), pContext.getClickedPos());
+	      return this.getStateForPlacement(pContext.getLevel(), pContext.getClickedPos())
+					.setValue(AXIS, pContext.getClickedFace().getAxis());
    }
 
-   public BlockState getStateForPlacement(BlockGetter pLevel, BlockPos pPos) 
+   protected BlockState getStateForPlacement(BlockGetter pLevel, BlockPos pPos) 
    {
 	   LeavesBlock myLeafBlock = ModBlocks.leaves_sakura.get();
 	   
@@ -84,6 +90,36 @@ public class MiniLogBlock extends PipeBlock
 				.setValue(WEST, Boolean.valueOf(blockstate5.is(this) || blockstate5.is(myLeafBlock)));
    } // end getStateForPlacement
 
+   /**
+    * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
+    * blockstate.
+    * @deprecated call via {@link net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#rotate} whenever
+    * possible. Implementing/overriding is fine.
+    */
+   @Override
+   public BlockState rotate(BlockState pState, Rotation pRot) 
+   {
+      return rotatePillar(pState, pRot);
+   }
+
+   public static BlockState rotatePillar(BlockState pState, Rotation pRotation) 
+   {
+      switch (pRotation) {
+         case COUNTERCLOCKWISE_90:
+         case CLOCKWISE_90:
+            switch ((Direction.Axis)pState.getValue(AXIS)) {
+               case X:
+                  return pState.setValue(AXIS, Direction.Axis.Z);
+               case Z:
+                  return pState.setValue(AXIS, Direction.Axis.X);
+               default:
+                  return pState;
+            }
+         default:
+            return pState;
+      }
+   }
+   
    @Override
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction,
             boolean simulate)
