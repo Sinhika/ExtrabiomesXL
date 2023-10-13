@@ -1,15 +1,15 @@
 {
     "ambientocclusion": false,
-    "render_type": "minecraft:solid",
+    "render_type": "minecraft:cutout",
     "elements": [
         {   "from": [ 3, 3, 0 ],
             "to": [ 13, 13, 3 ],
             "faces": {
-                "down":  { "texture": "#bark" },
-                "up":    { "texture": "#bark" },
-                "north": { "texture": "#bark", "cullface":"north" },
-                "west":  { "texture": "#bark" },
-                "east":  { "uv" : [3,13, 3,6], "texture": "#bark" }
+                "down":  { "uv" : [3, 3, 10,6], "texture": "#bark" },
+                "up":    { "uv" : [3, 3, 10,6],"texture": "#bark" },
+                "north": { "uv" : [3, 3, 10,6],"texture": "#inside", "cullface":"north" },
+                "west":  { "uv" : [3, 3, 10,6], "texture": "#bark", "rotation" : 90 },
+                "east":  { "uv" : [3, 3, 10,6], "texture": "#bark", "rotation" : 90 }
             }
         }
     ]
