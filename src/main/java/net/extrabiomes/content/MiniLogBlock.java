@@ -11,6 +11,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PipeBlock;
@@ -67,28 +68,44 @@ public class MiniLogBlock extends PipeBlock
    @Override
    public BlockState getStateForPlacement(BlockPlaceContext pContext) 
    {
-	      return this.getStateForPlacement(pContext.getLevel(), pContext.getClickedPos())
-					.setValue(AXIS, pContext.getClickedFace().getAxis());
-   }
-
-   protected BlockState getStateForPlacement(BlockGetter pLevel, BlockPos pPos) 
-   {
-	   LeavesBlock myLeafBlock = ModBlocks.leaves_sakura.get();
+	   	BlockGetter pLevel = pContext.getLevel();
+	   	BlockPos pPos = pContext.getClickedPos();
+	   	Direction.Axis faceAxis =  pContext.getClickedFace().getAxis();
 	   
-		//BlockState blockstate = pLevel.getBlockState(pPos.below());
+	   	LeavesBlock myLeafBlock = ModBlocks.leaves_sakura.get();
+	   
+		BlockState blockstate = pLevel.getBlockState(pPos.below());
 		BlockState blockstate1 = pLevel.getBlockState(pPos.above());
 		BlockState blockstate2 = pLevel.getBlockState(pPos.north());
 		BlockState blockstate3 = pLevel.getBlockState(pPos.east());
 		BlockState blockstate4 = pLevel.getBlockState(pPos.south());
 		BlockState blockstate5 = pLevel.getBlockState(pPos.west());
+		
 		return this.defaultBlockState()
-				.setValue(DOWN,Boolean.valueOf(false))
+				.setValue(AXIS, faceAxis)
+				.setValue(DOWN,Boolean.valueOf(blockstate.is(this)))
 				.setValue(UP, Boolean.valueOf(blockstate1.is(this) || blockstate1.is(myLeafBlock)))
 				.setValue(NORTH, Boolean.valueOf(blockstate2.is(this) || blockstate2.is(myLeafBlock)))
 				.setValue(EAST, Boolean.valueOf(blockstate3.is(this) || blockstate3.is(myLeafBlock)))
 				.setValue(SOUTH, Boolean.valueOf(blockstate4.is(this) || blockstate4.is(myLeafBlock)))
 				.setValue(WEST, Boolean.valueOf(blockstate5.is(this) || blockstate5.is(myLeafBlock)));
-   } // end getStateForPlacement
+   } // end getStateForPlacement()
+
+   /**
+    * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
+    * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
+    * returns its solidified counterpart.
+    * Note that this method should ideally consider only the specific direction passed in.
+    */
+   public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, 
+		   						 BlockPos pCurrentPos, BlockPos pFacingPos) 
+   {
+         boolean flag = 
+        		 ( (pFacingState.is(this) || pFacingState.is(ModBlocks.leaves_sakura.get()))
+        				 && (pFacing != Direction.DOWN))
+        		 || (pFacing == Direction.DOWN && pFacingState.is(this));
+         return pState.setValue(PROPERTY_BY_DIRECTION.get(pFacing), Boolean.valueOf(flag));
+   }
 
    /**
     * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
