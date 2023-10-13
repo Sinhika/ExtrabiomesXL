@@ -41,6 +41,15 @@
   		"apply" : { "model": "extrabiomes:block/log_sakura_horizontal", "x": 90, "y": 90}
   	},
   	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "north" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/log_sakura_side_horizontal", "x": 90, "y": 90}
+  	},
+  	
+  	{ 
   		"when" : {  "axis" : "z" },
   		"apply" : { "model": "extrabiomes:block/log_sakura_horizontal", "x": 90}
   	}
