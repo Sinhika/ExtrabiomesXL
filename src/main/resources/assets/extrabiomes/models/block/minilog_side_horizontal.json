@@ -1,16 +1,15 @@
 {
-    "parent": "block/block",
     "render_type": "minecraft:cutout",
     "elements": [
         {   "from": [ 0, 3, 3 ],
             "to": [ 3, 13, 13 ],
             "faces": {
-                "down":  { "texture": "#end", "cullface": "down" },
-                "up":    { "texture": "#end", "rotation": 180, "cullface": "up" },
-                "north": { "texture": "#side", "cullface": "north" },
-                "south": { "texture": "#side", "cullface": "south" },
-                "west":  { "texture": "#side", "cullface": "west" },
-                "east":  { "texture": "#side", "cullface": "east" }
+                "down":  { "uv" : [3, 3, 13,6], "texture": "#side", "cullface": "down" },
+                "up":    { "uv" : [3, 3, 13,6], "texture": "#side", "cullface": "up" },
+                "north": { "uv" : [3, 3, 13,6], "texture": "#side", "cullface": "north" },
+                "south": { "uv" : [3, 3, 13,6], "texture": "#side", "cullface": "south" },
+                "west":  { "uv" : [3, 3, 13,6], "texture": "#end", "cullface": "west", "rotation" : 90 },
+                "east":  { "uv" : [3, 3, 13,6], "texture": "#side", "cullface": "east", "rotation" : 90  }
             }
         }
     ]
