@@ -91,6 +91,22 @@
 	  		{  "west" : "true" }
 	  	]},
   		"apply" : { "model" : "extrabiomes:block/log_sakura_side_horizontal"}
+  	},
+    { 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "up" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/log_sakura_side_vertical"}
+  	},
+    { 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "down" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/log_sakura_side_vertical", "uvlock" : true, "x" : 180}
   	}
   	
   ]

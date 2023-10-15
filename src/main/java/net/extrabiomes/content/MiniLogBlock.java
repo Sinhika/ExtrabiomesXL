@@ -83,7 +83,7 @@ public class MiniLogBlock extends PipeBlock
 		
 		return this.defaultBlockState()
 				.setValue(AXIS, faceAxis)
-				.setValue(DOWN,Boolean.valueOf(blockstate.is(this)))
+				.setValue(DOWN,Boolean.valueOf(blockstate.is(this) || blockstate.is(myLeafBlock)))
 				.setValue(UP, Boolean.valueOf(blockstate1.is(this) || blockstate1.is(myLeafBlock)))
 				.setValue(NORTH, Boolean.valueOf(blockstate2.is(this) || blockstate2.is(myLeafBlock)))
 				.setValue(EAST, Boolean.valueOf(blockstate3.is(this) || blockstate3.is(myLeafBlock)))
@@ -100,10 +100,7 @@ public class MiniLogBlock extends PipeBlock
    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, 
 		   						 BlockPos pCurrentPos, BlockPos pFacingPos) 
    {
-         boolean flag = 
-        		 ( (pFacingState.is(this) || pFacingState.is(ModBlocks.leaves_sakura.get()))
-        				 && (pFacing != Direction.DOWN))
-        		 || (pFacing == Direction.DOWN && pFacingState.is(this));
+         boolean flag = pFacingState.is(this) || pFacingState.is(ModBlocks.leaves_sakura.get());
          return pState.setValue(PROPERTY_BY_DIRECTION.get(pFacing), Boolean.valueOf(flag));
    }
 
