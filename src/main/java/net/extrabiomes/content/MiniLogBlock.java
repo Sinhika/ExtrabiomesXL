@@ -54,8 +54,9 @@ public class MiniLogBlock extends PipeBlock
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) 
 	{
-		// for now, until we get model right.
+		// for now, until we get shapes right.
 		return  Shapes.block();
+		//return super.getShape(pState, pLevel, pPos, pContext);
 	}
 
 
