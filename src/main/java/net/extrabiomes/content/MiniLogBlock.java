@@ -22,7 +22,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
@@ -55,8 +54,9 @@ public class MiniLogBlock extends PipeBlock
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) 
 	{
 		// for now, until we get shapes right.
-		return  Shapes.block();
-		//return super.getShape(pState, pLevel, pPos, pContext);
+		// return  Shapes.block();
+		// TODO revisit shape, as it messes up if noOcclusion is removed from properties.
+		return super.getShape(pState, pLevel, pPos, pContext);
 	}
 
 
