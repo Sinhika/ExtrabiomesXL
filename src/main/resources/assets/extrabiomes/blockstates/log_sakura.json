@@ -64,10 +64,26 @@
 	  	]},
   		"apply" : { "model" : "extrabiomes:block/log_sakura_side_vertical"}
   	},
-   	
+   	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "down" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/log_sakura_side_vertical", "uvlock" : true, "x" : 180}
+  	},
   	{ 
   		"when" : {  "axis" : "z" },
   		"apply" : { "model": "extrabiomes:block/log_sakura_horizontal", "x": 90}
+  	},
+  	  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "north" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/log_sakura_side_horizontal"}
   	}
+  	
   ]
 }
