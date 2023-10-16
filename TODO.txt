@@ -8,7 +8,8 @@ Trees
     EB acacia - 1 triangle, height of 1x1 jungle tree, straight trunk, no zig - sorta like a 1x1 jungle tree.
     cypress - tallish, straight trunk, narrow sheath of leaves around trunk -  
     bald cypress - 2x2 trunk, has knees, huge spreading canopy like super oak on steroids -- like super oak?
-    japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak.
+    japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak. Branching trunk like mangrove, instead.
+    
     japanese maple shrub - ground level, like scrub oak.
     sakura - short with a spreading canopy like japanese maple. 
     rainbow eucalyptus - much like bald cypress.
