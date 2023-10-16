@@ -10,6 +10,7 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraftforge.common.Tags;
@@ -406,6 +407,17 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(ModBlocks.vine_gloriosa.get())
 			.add(ModBlocks.vine_spanish_moss.get())
 			.add(ModBlocks.leafpile.get());
+		
+		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "logs_can_grow_through"))
+			.add(Blocks.VINE)
+			.add(Blocks.MUD)
+			.add(Blocks.MOSS_CARPET)
+			.add(ModBlocks.vine_gloriosa.get())
+			.add(ModBlocks.vine_spanish_moss.get())
+			.add(ModBlocks.leaves_japanese_maple.get())
+			.add(ModBlocks.log_japanese_maple.get())
+			.add(ModBlocks.leafpile.get());
+
 	} // end registerOtherPlantTags()
 	
 	
