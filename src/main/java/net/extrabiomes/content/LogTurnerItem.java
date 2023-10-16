@@ -95,15 +95,26 @@ public class LogTurnerItem extends TieredItem
          {
         	 // use FACING to fake AXIS
         	 Direction facing = blockstate.getValue(DirectionalBlock.FACING);
-        	 Direction.Axis start_axis = facing.getAxis();
-	    	 if (start_axis == Direction.Axis.Y)
+	    	 if (facing == Direction.UP)
 	    	 {
 	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.EAST);
 	    	 }
-	    	 else if (start_axis == Direction.Axis.Z)
+	    	 else if (facing ==  Direction.EAST)
 	    	 {
 	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.NORTH);
 	    	 }
+	    	 else if (facing ==  Direction.NORTH)
+	    	 {
+	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.WEST);
+	    	 } 
+	    	 else if (facing ==  Direction.WEST)
+	    	 {
+	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.SOUTH);
+	    	 } 
+	    	 else if (facing ==  Direction.SOUTH)
+	    	 {
+	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.DOWN);
+	    	 } 
 	    	 else {
 	    		 blockstate2 = blockstate.setValue(DirectionalBlock.FACING, Direction.UP);
 	    	 }

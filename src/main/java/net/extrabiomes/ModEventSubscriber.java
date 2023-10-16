@@ -10,7 +10,9 @@ import net.extrabiomes.config.ConfigHolder;
 import net.extrabiomes.entity.ScarecrowEntity;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModEntities;
+import net.extrabiomes.world.regions.TemperateHillyRegion;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.BlockItem;
@@ -29,6 +31,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
+import terrablender.api.Regions;
 
 @EventBusSubscriber(modid = ExtrabiomesXS.MODID, bus = MOD)
 public final class ModEventSubscriber 
@@ -44,7 +47,8 @@ public final class ModEventSubscriber
         LOGGER.debug("Common setup done");
         event.enqueueWork(() ->
         {
-        	
+        	Regions.register(new TemperateHillyRegion(
+        								new ResourceLocation(ExtrabiomesXS.MODID, "temperate_hilly_region"), 2));
         });
         
     } // end onCommonSetup
