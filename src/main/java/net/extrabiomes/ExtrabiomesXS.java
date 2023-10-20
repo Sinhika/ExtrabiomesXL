@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.extrabiomes.config.ConfigHolder;
+import net.extrabiomes.init.ModBiomes;
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModCreativeTabs;
 import net.extrabiomes.init.ModEntities;
@@ -29,11 +30,15 @@ public class ExtrabiomesXS
 	    final ModLoadingContext modLoadingContext = ModLoadingContext.get();
 	    final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 	    
-        ModFeatures.MOD_FEATURES.register(modEventBus);
-        ModBlocks.BLOCKS.register(modEventBus);
-        ModItems.ITEMS.register(modEventBus);
+	    ModBiomes.BIOME_REGISTRY.register(modEventBus);
+        ModBlocks.BLOCKS_REGISTRY.register(modEventBus);
+        ModItems.ITEM_REGISTRY.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
-        ModEntities.ENTITIES.register(modEventBus);
+        ModEntities.ENTITY_TYPE_REGISTRY.register(modEventBus);
+        ModFeatures.FEATURES_REGISTRY.register(modEventBus);
+        ModFeatures.CONFIGURED_FEATURE_REGISTRY.register(modEventBus);
+        ModFeatures.PLACED_FEATURE_REGISTRY.register(modEventBus);
+        
         
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);

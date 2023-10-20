@@ -22,14 +22,14 @@ public final class ModCreativeTabs
 				.title(Component.translatable("item_group." + ExtrabiomesXS.MODID + ".tab"))
 				.icon(() -> new ItemStack(ModBlocks.leaves_vermillion.get().asItem()))
 				.displayItems((parameters, output) -> {
-					output.acceptAll(ModBlocks.BLOCKS.getEntries().stream()
+					output.acceptAll(ModBlocks.BLOCKS_REGISTRY.getEntries().stream()
 										.map(RegistryObject::get)
 						                // You can do extra filtering here if you don't want some blocks to appear.
 						                .filter(b -> needsCreativeTab(b))
 						                .map(b -> (new ItemStack(b.asItem())))
 										.toList()
 										);
-					output.acceptAll(ModItems.ITEMS.getEntries().stream()
+					output.acceptAll(ModItems.ITEM_REGISTRY.getEntries().stream()
 							.map(RegistryObject::get)
 							.map(b -> (new ItemStack(b)))
 							.toList()

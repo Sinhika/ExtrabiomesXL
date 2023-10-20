@@ -41,7 +41,7 @@ public class ExtrabiomesEntityLootSubprovider extends EntityLootSubProvider
 	@Override
 	protected Stream<EntityType<?>> getKnownEntityTypes() 
 	{
-		return ModEntities.ENTITIES.getEntries().stream().map(a -> a.get());
+		return ModEntities.ENTITY_TYPE_REGISTRY.getEntries().stream().map(a -> a.get());
 	}
 
 

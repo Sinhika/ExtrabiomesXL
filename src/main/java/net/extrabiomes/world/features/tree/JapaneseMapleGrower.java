@@ -1,4 +1,4 @@
-package net.extrabiomes.world;
+package net.extrabiomes.world.features.tree;
 
 import net.extrabiomes.init.ModFeatures;
 import net.minecraft.resources.ResourceKey;

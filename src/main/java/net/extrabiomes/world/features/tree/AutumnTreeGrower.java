@@ -1,4 +1,4 @@
-package net.extrabiomes.world;
+package net.extrabiomes.world.features.tree;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
