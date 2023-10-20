@@ -3,23 +3,44 @@ TODO
 Trees
 
     autumn trees - growth resembles oak trees, lots of super oaks
-    fir trees - stacked triangles, very tall, 2x2 trunks - 
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_HEIGHT, CANOPY_RADIUS_EXTRA_RADIUS
+    	
+    fir trees - stacked triangles, very tall, 2x2 trunks
+    	variables:  BASE_HEIGHT, BASE_HEIGHT_VARIANCE
+    	
     redwood trees - 2x2 trunks, very tall, like jungle giant, foliage bunched at top -
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,
+    	
     EB acacia - 1 triangle, height of 1x1 jungle tree, straight trunk, no zig - sorta like a 1x1 jungle tree.
+    	variables: BASE_HEIGHT = 6, BASE_HEIGHT_VARIANCE = 4
+    
     cypress - tallish, straight trunk, narrow sheath of leaves around trunk -  
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_START_HEIGHT, CANOPY_START_VARIANCE, 
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+    	
     bald cypress - 2x2 trunk, has knees, huge spreading canopy like super oak on steroids -- like super oak?
-    japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak. Branching trunk like mangrove, instead.
-    
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
+    	
+    japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak. 
+    	Branching trunk like mangrove, instead.
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA, 
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+    	 
     japanese maple shrub - ground level, like scrub oak.
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+    	
+    legendary oak - Really big oak tree. 
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+    	
     sakura - short with a spreading canopy like japanese maple. 
+    	variables:BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+    	
     rainbow eucalyptus - much like bald cypress.
-    
-Flowers
-        Allium - looks different from vanilla Allium
-        Daisy - looks different from vanilla Oxeye Daisy
-        Dandelion - in puffball stage, looks different from vanilla Dandelion.
-        Poppy - looks different from vanilla poppy.
-        Tulips - looks like 2 vanilla orange tulips. (don't bother using)
+    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
 
 Old Dye color codes:
 
