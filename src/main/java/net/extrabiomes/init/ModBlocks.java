@@ -704,7 +704,7 @@ public final class ModBlocks
 	   /**
 	    * make a new sapling.
 	    * @param pTreeGrower our TreeGrower function
-	    * @returns a new SaplingBlock object.
+	    * @return a new SaplingBlock object.
 	    */
 	   private static SaplingBlock sapling(AbstractTreeGrower pTreeGrower)
 	   {
@@ -715,7 +715,7 @@ public final class ModBlocks
 	   /**
 	    * make a new leaf block.
 	    * @param pType - SoundType for walking on leaves. Usually GRASS.
-	    * @returns a new LeavesBlock object.
+	    * @return a new LeavesBlock object.
 	    */
 	   private static LeavesBlock leaves(MapColor color, SoundType pType) 
 	   {
@@ -729,7 +729,7 @@ public final class ModBlocks
 	    * Make a new log block.
 	    * @param pTopMapColor - MapColor for top.
 	    * @param pSideMapColor - MapColor for side.
-	    * @returns a new CustomLogBlock object.
+	    * @return a new CustomLogBlock object.
 	    */
 	   private static CustomLogBlock log(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip) 
 	   {
