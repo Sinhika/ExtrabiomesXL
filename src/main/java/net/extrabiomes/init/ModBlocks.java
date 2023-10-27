@@ -180,13 +180,13 @@ public final class ModBlocks
 	   // SAPLINGS
 	   // autumn saplings
 	   public static final RegistryObject<BushBlock> sapling_umber = BLOCKS_REGISTRY.register("sapling_umber", 
-			   () -> sapling(new AutumnTreeGrower(ModFeatures.UMBER_AUTUMN_TREE, ModFeatures.FANCY_UMBER_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.UMBER_AUTUMN_TREE, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE)));
 	   public static final RegistryObject<BushBlock> sapling_goldenrod = BLOCKS_REGISTRY.register("sapling_goldenrod", 
-			   () -> sapling(new AutumnTreeGrower(ModFeatures.GOLDENROD_AUTUMN_TREE, ModFeatures.FANCY_GOLDENROD_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.GOLDENROD_AUTUMN_TREE, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE)));
 	   public static final RegistryObject<BushBlock> sapling_vermillion = BLOCKS_REGISTRY.register("sapling_vermillion", 
-			   () -> sapling(new AutumnTreeGrower(ModFeatures.VERMILLION_AUTUMN_TREE, ModFeatures.FANCY_VERMILLION_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.VERMILLION_AUTUMN_TREE, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE)));
 	   public static final RegistryObject<BushBlock> sapling_citrine = BLOCKS_REGISTRY.register("sapling_citrine", 
-			   () -> sapling(new AutumnTreeGrower(ModFeatures.CITRINE_AUTUMN_TREE, ModFeatures.FANCY_CITRINE_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.CITRINE_AUTUMN_TREE, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE)));
 	   // japanese maple saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple = BLOCKS_REGISTRY.register("sapling_japanese_maple",
 			   () -> sapling(new JapaneseMapleGrower()));

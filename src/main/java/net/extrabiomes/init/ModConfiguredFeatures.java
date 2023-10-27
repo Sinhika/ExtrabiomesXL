@@ -22,6 +22,7 @@ public class ModConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_VERMILLION_AUTUMN_TREE = createKey("fancy_vermillion_autumn_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CITRINE_AUTUMN_TREE = createKey("citrine_autumn_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FANCY_CITRINE_AUTUMN_TREE = createKey("fancy_citrine_autumn_tree");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> JAPANESE_MAPLE_TREE = createKey("japanese_maple");
 
 

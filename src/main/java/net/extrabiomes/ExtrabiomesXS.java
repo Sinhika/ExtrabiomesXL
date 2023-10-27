@@ -33,11 +33,12 @@ public class ExtrabiomesXS
         ModConfiguredFeatures.CONFIGURED_FEATURE_REGISTRY.register(modEventBus);
         ModPlacedFeatures.PLACED_FEATURE_REGISTRY.register(modEventBus);
 
-        
         // Register Configs
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.SERVER_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
-		
+
+        // init stuff...
+        ModFeatures.setup();
 	} // end 
 
 } // end-class
