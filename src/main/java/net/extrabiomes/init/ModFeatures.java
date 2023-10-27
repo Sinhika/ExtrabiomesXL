@@ -15,14 +15,14 @@ public class ModFeatures
     		DeferredRegister.create(Registries.FEATURE, ExtrabiomesXS.MODID);
 
 	/* FEATURES */
-	public static RegistryObject<Feature<?>> UMBER_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> FANCY_UMBER_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> GOLDENROD_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> FANCY_GOLDENROD_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> VERMILLION_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> FANCY_VERMILLION_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> CITRINE_AUTUMN_TREE;
-	public static RegistryObject<Feature<?>> FANCY_CITRINE_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> UMBER_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> FANCY_UMBER_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> GOLDENROD_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> FANCY_GOLDENROD_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> VERMILLION_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> FANCY_VERMILLION_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> CITRINE_AUTUMN_TREE;
+//	public static RegistryObject<Feature<?>> FANCY_CITRINE_AUTUMN_TREE;
 
 	public static RegistryObject<Feature<?>> FIR_TREE;
 	public static RegistryObject<Feature<?>> BIG_FIR_TREE;
@@ -38,14 +38,14 @@ public class ModFeatures
 
 	public static void setup()
 	{
-		UMBER_AUTUMN_TREE = FEATURES_REGISTRY.register("umber_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		FANCY_UMBER_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_umber_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		GOLDENROD_AUTUMN_TREE = FEATURES_REGISTRY.register("goldenrod_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		FANCY_GOLDENROD_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_goldenrod_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		VERMILLION_AUTUMN_TREE = FEATURES_REGISTRY.register("vermillion_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		FANCY_VERMILLION_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_vermillion_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		CITRINE_AUTUMN_TREE = FEATURES_REGISTRY.register("citrine_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
-		FANCY_CITRINE_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_citrine_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		UMBER_AUTUMN_TREE = FEATURES_REGISTRY.register("umber_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		FANCY_UMBER_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_umber_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		GOLDENROD_AUTUMN_TREE = FEATURES_REGISTRY.register("goldenrod_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		FANCY_GOLDENROD_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_goldenrod_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		VERMILLION_AUTUMN_TREE = FEATURES_REGISTRY.register("vermillion_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		FANCY_VERMILLION_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_vermillion_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+	//	CITRINE_AUTUMN_TREE = FEATURES_REGISTRY.register("citrine_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
+//		FANCY_CITRINE_AUTUMN_TREE = FEATURES_REGISTRY.register("fancy_citrine_autumn_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
 
 		// TODO
 	} // end setup()
