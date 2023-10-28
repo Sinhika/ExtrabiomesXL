@@ -2,9 +2,12 @@ package net.extrabiomes.datagen;
 
 import net.extrabiomes.init.ModBlocks;
 import net.extrabiomes.init.ModConfiguredFeatures;
+import net.extrabiomes.init.ModFeatures;
+import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -18,6 +21,8 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.OptionalInt;
+
+import static net.extrabiomes.init.ModFeatures.FEATURES_REGISTRY;
 
 public class ExtrabiomesBootstraps
 {
@@ -99,7 +104,23 @@ public class ExtrabiomesBootstraps
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
                         .ignoreVines().build());
 
+        // FIR_TREE
+//        'register(BootstapContext<ConfiguredFeature<?,?>>, ResourceKey<ConfiguredFeature<?,?>>, F, FC)'
+//          in 'ExtrabiomesBootstraps' cannot be applied to
+//          '(BootstapContext<ConfiguredFeature<?,?>>, ResourceKey<ConfiguredFeature<?,?>>, Feature<capture<?>>, EBTreeConfiguration)'
 
+//        register(context, ASHEN_TREE, FeatureRegistry.ASHEN_TREE.get(),
+//                   new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.ASHEN_LOG.get().defaultBlockState()),
+//                                           BlockStateProvider.simple(RuBlocks.ASHEN_LEAVES.get().defaultBlockState()),
+//                                           BlockStateProvider.simple(RuBlocks.DEAD_BRANCH.get().defaultBlockState()), 12, 5));
+
+        register(context, ModConfiguredFeatures.FIR_TREE, ModFeatures.FIR_TREE.get(),
+            new EBTreeConfiguration(
+                    BlockStateProvider.simple(ModBlocks.log_fir.get().defaultBlockState()),
+                    BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
+                    BlockStateProvider.simple(Blocks.AIR),
+                    BlockStateProvider.simple(Blocks.DIRT),
+                    24, 8));
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

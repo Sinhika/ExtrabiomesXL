@@ -1,0 +1,39 @@
+{
+  "type": "extrabiomes:fir_tree",
+  "config": {
+    "base_height": 24,
+    "base_height_variance": 8,
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "extrabiomes:leaves_fir",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "root_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:air"
+      }
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "extrabiomes:log_fir",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}
