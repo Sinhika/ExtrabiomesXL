@@ -10,14 +10,14 @@
     },
     "foliage_placer": {
       "type": "minecraft:fancy_foliage_placer",
-      "height": 4,
+      "height": 2,
       "offset": 4,
-      "radius": 2
+      "radius": 4
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "extrabiomes:leaves_citrine",
+        "Name": "extrabiomes:leaves_vermillion",
         "Properties": {
           "distance": "7",
           "persistent": "false",
