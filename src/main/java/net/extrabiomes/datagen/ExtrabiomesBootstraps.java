@@ -122,6 +122,15 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(Blocks.DIRT),
                         32, 16, 1, 12, 2, 9));
 
+        // JAPANESE_MAPLE_TREE
+        register(context, ModConfiguredFeatures.JAPANESE_MAPLE_TREE, ModFeatures.JAPANESE_MAPLE_TREE.get(),
+            new EBTreeConfiguration(
+                    BlockStateProvider.simple(ModBlocks.log_japanese_maple.get().defaultBlockState()),
+                    BlockStateProvider.simple(ModBlocks.leaves_japanese_maple.get()),
+                    BlockStateProvider.simple(Blocks.AIR),
+                    BlockStateProvider.simple(Blocks.DIRT),
+                    8, 4, 0, 0, 4, 6));
+
         // TODO
     } // end bootstrap_ConfiguredFeature()
 
