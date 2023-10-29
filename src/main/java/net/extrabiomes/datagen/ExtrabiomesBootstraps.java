@@ -111,7 +111,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    24, 8));
+                    24, 8, 1, 12, 2, 6));
 
         // BIG_FIR_TREE
         register(context, ModConfiguredFeatures.BIG_FIR_TREE, ModFeatures.BIG_FIR_TREE.get(),
@@ -120,7 +120,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        32, 16));
+                        32, 16, 1, 12, 2, 9));
 
         // TODO
     } // end bootstrap_ConfiguredFeature()

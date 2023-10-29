@@ -3,6 +3,10 @@
   "config": {
     "base_height": 24,
     "base_height_variance": 8,
+    "canopy_start_height": 1,
+    "canopy_start_variance": 1,
+    "canopy_width": 2,
+    "canopy_width_variance": 6,
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {

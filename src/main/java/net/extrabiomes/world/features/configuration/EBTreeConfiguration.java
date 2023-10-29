@@ -27,7 +27,15 @@ public class EBTreeConfiguration implements FeatureConfiguration
             return pbh.base_height;
         }), Codec.INT.fieldOf("base_height_variance").forGetter((p_bhv) -> {
             return p_bhv.base_height_variance;
-        })).apply(p_codec, EBTreeConfiguration::new);
+        }), Codec.INT.fieldOf("canopy_start_height").forGetter((p_csh) ->{
+            return p_csh.canopy_start_height;
+        }), Codec.INT.fieldOf("canopy_start_variance").forGetter((p_csv) ->{
+                    return p_csv.canopy_start_height;
+        }), Codec.INT.fieldOf("canopy_width").forGetter((p_cw) ->{
+                    return p_cw.canopy_width;
+        }),Codec.INT.fieldOf("canopy_width_variance").forGetter((p_cw) ->{
+                    return p_cw.canopy_width_variance;
+        })  ).apply(p_codec, EBTreeConfiguration::new);
     }); // end CODEC
 
     public final BlockStateProvider trunk_provider;
@@ -36,9 +44,14 @@ public class EBTreeConfiguration implements FeatureConfiguration
     public final BlockStateProvider dirt_provider;
     public final int base_height;
     public final int base_height_variance;
+    public final int canopy_start_height;
+    public final int canopy_start_variance;
+    public final int canopy_width;
+    public final int canopy_width_variance;
 
     public EBTreeConfiguration(BlockStateProvider log, BlockStateProvider leaves, BlockStateProvider root,
-                               BlockStateProvider dirt, int min_size, int size_variation)
+                               BlockStateProvider dirt, int min_size, int size_variation, int min_leaf_height,
+                               int leaf_height_var, int canopyWidth, int canopyWidthVariance)
     {
         this.trunk_provider = log;
         this.foliage_provider = leaves;
@@ -46,6 +59,10 @@ public class EBTreeConfiguration implements FeatureConfiguration
         this.dirt_provider = dirt;
         this.base_height = min_size;
         this.base_height_variance = size_variation;
+        this.canopy_start_height = min_leaf_height;
+        this.canopy_start_variance = leaf_height_var;
+        this.canopy_width = canopyWidth;
+        this.canopy_width_variance = canopyWidthVariance;
     } // end ctor
 
 } // end class

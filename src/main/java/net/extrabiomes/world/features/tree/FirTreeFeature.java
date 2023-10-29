@@ -39,10 +39,10 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
             return false;
         }
 
-        // min_leaf_height
-        final int min_leaf_height = 1 + sourceRand.nextInt(12);  // TODO: do these constants need to be config VARIABLES?
-        // canopy_radius
-        final int canopy_radius = 2 + sourceRand.nextInt(6);   // TODO: do these constants need to be config VARIABLES?
+        // min_leaf_height - was 1+rand(12)
+        final int min_leaf_height = treeConfig.canopy_start_height + sourceRand.nextInt(treeConfig.canopy_start_variance);
+        // canopy_radius - was 2+rand(6)
+        final int canopy_radius = Math.min((treeConfig.canopy_width + sourceRand.nextInt(treeConfig.canopy_width_variance)), 6);
 
         // make sure space for tree is clear or replaceable.
         for (int i1 = pos.getY(); i1 <= max_tree_altitude; i1++)

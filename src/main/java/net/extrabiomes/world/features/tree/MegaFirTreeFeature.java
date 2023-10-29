@@ -41,12 +41,12 @@ public class MegaFirTreeFeature extends Feature<EBTreeConfiguration>
             return false;
         }
 
-        // probably min_leaf_height
-        final int min_leaf_height = 1 + sourceRand.nextInt(12);  // TODO: do these constants need to be config VARIABLES?
+        // probably min_leaf_height - was 1 + rand(12)
+        final int min_leaf_height = treeConfig.canopy_start_height + sourceRand.nextInt(treeConfig.canopy_start_variance);
         // probably depth of canopy
         final int canopy_depth = height - min_leaf_height;
-        // canopy radius -- originally 2+rand(9). Clamp to total 7.
-        final int canopy_radius = Math.min(2 + sourceRand.nextInt(9), 7);   // TODO: do these constants need to be config VARIABLES?
+        // canopy radius -- originally 2+rand(9). Clamp to total 6.
+        final int canopy_radius = Math.min((treeConfig.canopy_width + sourceRand.nextInt(treeConfig.canopy_width_variance)), 6);
 
         // make sure space for tree is clear or replaceable.
         for (int y1 = pos.getY(); y1 <= max_tree_altitude; ++y1)
