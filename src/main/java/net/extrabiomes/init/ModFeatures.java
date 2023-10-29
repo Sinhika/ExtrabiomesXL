@@ -3,6 +3,7 @@ package net.extrabiomes.init;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.extrabiomes.world.features.tree.FirTreeFeature;
+import net.extrabiomes.world.features.tree.MegaFirTreeFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +31,7 @@ public class ModFeatures
 	public static void setup()
 	{
 		FIR_TREE = FEATURES_REGISTRY.register("fir_tree", () -> new FirTreeFeature(EBTreeConfiguration.CODEC));
+		BIG_FIR_TREE = FEATURES_REGISTRY.register("big_fir_tree", () -> new MegaFirTreeFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 

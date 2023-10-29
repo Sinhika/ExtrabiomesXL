@@ -105,15 +105,6 @@ public class ExtrabiomesBootstraps
                         .ignoreVines().build());
 
         // FIR_TREE
-//        'register(BootstapContext<ConfiguredFeature<?,?>>, ResourceKey<ConfiguredFeature<?,?>>, F, FC)'
-//          in 'ExtrabiomesBootstraps' cannot be applied to
-//          '(BootstapContext<ConfiguredFeature<?,?>>, ResourceKey<ConfiguredFeature<?,?>>, Feature<capture<?>>, EBTreeConfiguration)'
-
-//        register(context, ASHEN_TREE, FeatureRegistry.ASHEN_TREE.get(),
-//                   new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.ASHEN_LOG.get().defaultBlockState()),
-//                                           BlockStateProvider.simple(RuBlocks.ASHEN_LEAVES.get().defaultBlockState()),
-//                                           BlockStateProvider.simple(RuBlocks.DEAD_BRANCH.get().defaultBlockState()), 12, 5));
-
         register(context, ModConfiguredFeatures.FIR_TREE, ModFeatures.FIR_TREE.get(),
             new EBTreeConfiguration(
                     BlockStateProvider.simple(ModBlocks.log_fir.get().defaultBlockState()),
@@ -121,6 +112,16 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
                     24, 8));
+
+        // BIG_FIR_TREE
+        register(context, ModConfiguredFeatures.BIG_FIR_TREE, ModFeatures.BIG_FIR_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_fir.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
+                        BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        32, 16));
+
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

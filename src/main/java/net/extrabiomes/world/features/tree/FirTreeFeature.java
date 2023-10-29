@@ -27,12 +27,13 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
     @Override public boolean place(FeaturePlaceContext<EBTreeConfiguration> pContext)
     {
         EBTreeConfiguration treeConfig = pContext.config();
-        BlockPos pos = pContext.origin();
+        BlockPos pos = pContext.origin().immutable();
         RandomSource sourceRand = pContext.random();
         WorldGenLevel level = pContext.level();
         int height = treeConfig.base_height + sourceRand.nextInt(treeConfig.base_height_variance);
         int max_tree_altitude = pos.getY() + height + 1;
 
+        // height check
         if (pos.getY() < level.getMinBuildHeight() + 1 || max_tree_altitude > level.getMaxBuildHeight())
         {
             return false;
