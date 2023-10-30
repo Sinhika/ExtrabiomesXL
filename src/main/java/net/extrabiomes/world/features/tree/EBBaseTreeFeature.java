@@ -69,11 +69,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos)) {
+                    if (world.getBlockState(bpos).isAir())
+                    {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.Z));
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for z
             } // end-if
@@ -85,11 +83,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos)) {
+                    if (world.getBlockState(bpos).isAir())
+                    {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.Z));
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for z
             } // end-else
@@ -105,12 +101,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int z = (int) (start[2] + (direction[2] * m));
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos))
+                    if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.X));
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for x
             } // end-if
@@ -122,12 +115,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int z = (int) (start[2] + (direction[2] * m));
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos))
+                    if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.X));
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for x
             } // end-else
@@ -143,12 +133,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int z = (int) (start[2] + (direction[2] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos))
+                    if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock);
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for y
             } // end-if
@@ -160,12 +147,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int z = (int) (start[2] + (direction[2] * m));
                     bpos.set(x, y, z);
-                    if (TreeFeature.validTreePos(world, bpos))
+                    if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock);
-                    }
-                    else {
-                        return false;
                     }
                 } // end-for y
             } // end-else
@@ -203,13 +187,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
 
                 leafpos.set(x2, pos.getY(), z2);
 
-                if ((((x1 * x1) + (z1 * z1)) <= dist) && TreeFeature.isAirOrLeaves(world, leafpos))
+                if ((((x1 * x1) + (z1 * z1)) <= dist) && world.getBlockState(leafpos).isAir())
                 {
                     this.setBlock(world, leafpos, leaves);
-                }
-                else if (! TreeFeature.isAirOrLeaves(world, leafpos))
-                {
-                    return false;
                 }
             } // end-for x1
         } // end-for z1

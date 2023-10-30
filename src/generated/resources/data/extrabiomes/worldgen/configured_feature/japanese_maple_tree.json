@@ -5,7 +5,7 @@
     "base_height_variance": 4,
     "canopy_start_height": 0,
     "canopy_start_variance": 0,
-    "canopy_width": 4,
+    "canopy_width": 8,
     "canopy_width_variance": 6,
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",

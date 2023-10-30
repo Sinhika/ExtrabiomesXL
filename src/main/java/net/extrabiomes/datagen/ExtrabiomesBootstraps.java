@@ -129,7 +129,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_japanese_maple.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    8, 4, 0, 0, 4, 6));
+                    8, 4, 0, 0, 8, 6));
 
         // TODO
     } // end bootstrap_ConfiguredFeature()

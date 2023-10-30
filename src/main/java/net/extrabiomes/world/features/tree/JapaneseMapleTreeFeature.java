@@ -55,9 +55,17 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
 
         // make sure space for tree is clear or replaceable.
         int iRadius = (int) actual_radius;
-        BlockPos.MutableBlockPos checkpos = new BlockPos.MutableBlockPos();
-
-        for (int i1 = pos.getY(); i1 <= max_tree_altitude; i1++)
+        BlockPos.MutableBlockPos checkpos = pos.mutable();
+        // check trunk column
+        for (int yy = pos.getY(); yy < trunk_height; yy++)
+        {
+            checkpos.setY(yy);
+            if (!TreeFeature.validTreePos(level, checkpos)) {
+                return false;
+            }
+        }
+        // check canopy
+        for (int i1 = pos.getY() + trunk_height; i1 <= max_tree_altitude; i1++)
         {
             for (int x1 = pos.getX() - iRadius; x1 <= pos.getX() + iRadius; x1++)
             {
@@ -218,16 +226,13 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
 
                 if ((((x1 * x1) + (z1 * z1)) <= maxDist) && (((x1 * x1) + (z1 * z1)) >= minDist))
                 {
-                    if (TreeFeature.isAirOrLeaves(world, cpos))
+                    if (world.getBlockState(cpos).isAir())
                     {
                         if (rand.nextInt(skipChance) != 0)
                         {
                             this.setBlock(world, cpos, leaves);
                         }
                     } // end-if
-                    else {
-                        return false;
-                    }
                 } // end-if
             } // end-for x1
         } // end-for z1
@@ -241,10 +246,7 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
         for (int offset = 0; offset < height; offset++)
         {
             conepos.setY(pos.getY() + offset);
-            if (!placeLeavesCircle(conepos, (ratio * offset) + r1, leaves, world))
-            {
-                return false;
-            }
+            placeLeavesCircle(conepos, (ratio * offset) + r1, leaves, world);
         } // end-for offset
         return true;
     } // end generateVerticalCone()

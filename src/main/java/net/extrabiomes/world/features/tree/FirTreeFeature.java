@@ -45,6 +45,7 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
         final int canopy_radius = Math.min((treeConfig.canopy_width + sourceRand.nextInt(treeConfig.canopy_width_variance)), 6);
 
         // make sure space for tree is clear or replaceable.
+        BlockPos.MutableBlockPos checkpos = pos.mutable();
         for (int i1 = pos.getY(); i1 <= max_tree_altitude; i1++)
         {
             int k1;  // current canopy radius
@@ -60,8 +61,8 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
                 for (int z1 = pos.getZ() - k1; z1 <= pos.getZ() + k1; z1++)
                 {
                     //final Block block = world.getBlock(x1, i1, z1);
-                    BlockPos newPos = new BlockPos(x1,i1,z1);
-                    if (!TreeFeature.validTreePos(level, newPos)) {
+                    checkpos.set(x1,i1,z1);
+                    if (!TreeFeature.validTreePos(level, checkpos)) {
                         return false;
                     }
                 } // end-for z1
@@ -93,11 +94,11 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
                 for (int l4 = pos.getZ() - l1; l4 <= pos.getZ() + l1; l4++)
                 {
                     final int i5 = l4 - pos.getZ();
-                    BlockPos newpos = new BlockPos(i4, k3, l4);
+                    placePos.set(i4, k3, l4);
                     if ((Math.abs(k4) != l1 || Math.abs(i5) != l1 || l1 <= 0)
-                            && (TreeFeature.isAirOrLeaves(level, newpos)))
+                            && (TreeFeature.isAirOrLeaves(level, placePos)))
                     {
-                        level.setBlock(newpos, treeConfig.foliage_provider.getState(sourceRand, newpos), 3);
+                        level.setBlock(placePos, treeConfig.foliage_provider.getState(sourceRand, placePos), 3);
                     }
                 }  // end-for l4
             } // end-for i4
