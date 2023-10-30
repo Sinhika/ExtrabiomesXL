@@ -73,7 +73,7 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
 
         // place the 'dirt' block.
         placePos.move(Direction.DOWN);
-        level.setBlock(placePos, treeConfig.dirt_provider.getState(sourceRand, placePos), 2);
+        level.setBlock(placePos, treeConfig.dirt_provider.getState(sourceRand, placePos), 3);
 
         // num block below treetop that trunk stops.
         int l1 = sourceRand.nextInt(2);   // TODO: do these constants need to be config VARIABLES?
@@ -95,9 +95,9 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
                     final int i5 = l4 - pos.getZ();
                     BlockPos newpos = new BlockPos(i4, k3, l4);
                     if ((Math.abs(k4) != l1 || Math.abs(i5) != l1 || l1 <= 0)
-                            && (TreeFeature.validTreePos(level, newpos)))
+                            && (TreeFeature.isAirOrLeaves(level, newpos)))
                     {
-                        level.setBlock(newpos, treeConfig.foliage_provider.getState(sourceRand, newpos), 2);
+                        level.setBlock(newpos, treeConfig.foliage_provider.getState(sourceRand, newpos), 3);
                     }
                 }  // end-for l4
             } // end-for i4
@@ -120,15 +120,17 @@ public class FirTreeFeature extends Feature<EBTreeConfiguration>
         final int j3 = sourceRand.nextInt(3); // TODO: do these constants need to be config VARIABLES?
 
         // place trunk blocks.
+        placePos.set(pos.getX(), pos.getY(), pos.getZ());
+
         for (int l3 = 0; l3 < height - j3; l3++)
         {
             // final Block block = world.getBlock(x, y + l3, z);
-            BlockPos newpos = new BlockPos(pos.getX(), pos.getY()+l3, pos.getZ());
+            placePos.setY(pos.getY()+l3);
 
             //if (block == null || block.isLeaves(world, x, y + l3, z) || block.isAir(world, x, y + l3, z) )
-            if (TreeFeature.isAirOrLeaves(level, newpos))
+            if (TreeFeature.validTreePos(level, placePos))
             {
-                level.setBlock(newpos, treeConfig.trunk_provider.getState(sourceRand, newpos), 2);
+                level.setBlock(placePos, treeConfig.trunk_provider.getState(sourceRand, placePos), 3);
             }
         }
 

@@ -414,8 +414,6 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 			.add(Blocks.MOSS_CARPET)
 			.add(ModBlocks.vine_gloriosa.get())
 			.add(ModBlocks.vine_spanish_moss.get())
-			.add(ModBlocks.leaves_japanese_maple.get())
-			.add(ModBlocks.log_japanese_maple.get())
 			.add(ModBlocks.leafpile.get());
 
 	} // end registerOtherPlantTags()
