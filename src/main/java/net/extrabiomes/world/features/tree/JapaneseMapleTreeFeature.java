@@ -25,6 +25,8 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
     private int CANOPY_WIDTH;
     private int CANOPY_WIDTH_VARIANCE;
     private EBTreeConfiguration treeConfig;
+    private int actual_height;
+    private double actual_radius;
 
     public JapaneseMapleTreeFeature(Codec<EBTreeConfiguration> pCodec)
     {
@@ -49,10 +51,10 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
         RandomSource sourceRand = pContext.random();
         WorldGenLevel level = pContext.level();
 
-        final int height = sourceRand.nextInt(BASE_HEIGHT_VARIANCE) + BASE_HEIGHT;
-        final double radius = (CANOPY_WIDTH + sourceRand.nextInt(CANOPY_WIDTH_VARIANCE)) / 2.0D;
+        actual_height = sourceRand.nextInt(BASE_HEIGHT_VARIANCE) + BASE_HEIGHT;
+        actual_radius = (CANOPY_WIDTH + sourceRand.nextInt(CANOPY_WIDTH_VARIANCE)) / 2.0D;
 
-        int max_tree_altitude = pos.getY() + height + 4;
+        int max_tree_altitude = pos.getY() + actual_height + 4;
 
         // height check
         if (pos.getY() < level.getMinBuildHeight() + 1 || max_tree_altitude > level.getMaxBuildHeight())
@@ -62,22 +64,22 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
 
         // CHECK clearances...
         // check the main trunk
-        if (!check1x1Trunk(pos, (int) (height * TRUNK_HEIGHT_PERCENT), treeConfig.trunk_provider.getState(sourceRand, pos), level))
+        if (!check1x1Trunk(pos, (int) (actual_height * TRUNK_HEIGHT_PERCENT), treeConfig.trunk_provider.getState(sourceRand, pos), level))
         {
             return false;
         }
         // check the branches
-        BlockPos branchpos = new BlockPos(pos.getX(), pos.getY()+(int) (height * TRUNK_HEIGHT_PERCENT), pos.getZ());
-
-        if (!checkBranches(level, sourceRand, branchpos,height - (int) (height * TRUNK_HEIGHT_PERCENT) - 2, radius)) {
+        BlockPos branchpos = new BlockPos(pos.getX(), pos.getY()+(int) (actual_height * TRUNK_HEIGHT_PERCENT), pos.getZ());
+        if (!checkBranches(level, sourceRand, branchpos,actual_height - (int) (actual_height * TRUNK_HEIGHT_PERCENT) - 2, actual_radius))
+        {
             return false;
         }
 
         // Draw the main trunk
-        if (place1x1Trunk(pos, (int) (height * TRUNK_HEIGHT_PERCENT), treeConfig.trunk_provider.getState(sourceRand, pos), level))
+        if (place1x1Trunk(pos, (int) (actual_height * TRUNK_HEIGHT_PERCENT), treeConfig.trunk_provider.getState(sourceRand, pos), level))
         {
             // Generate the branches
-            generateBranches(level, sourceRand, branchpos, height - (int) (height * TRUNK_HEIGHT_PERCENT) - 2, radius);
+            generateBranches(level, sourceRand, branchpos, actual_height - (int) (actual_height * TRUNK_HEIGHT_PERCENT) - 2, actual_radius);
             return true;
         }
 
@@ -100,7 +102,7 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
         double[] average = { 0, 0, 0 };
         int[] start = { branchpos.getX(), branchpos.getY(), branchpos.getZ() };
         Queue<int[]> branches = new LinkedList<int[]>();
-        BlockState leavesBlockState = treeConfig.trunk_provider.getState(rand, branchpos);
+        BlockState leavesBlockState = treeConfig.foliage_provider.getState(rand, branchpos);
 
         // Generate the branches
         for (int ii = 0; ii < branchCount; ii++)
@@ -132,10 +134,10 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
         } // end-for ii
 
         // Place the branch tips
-        BlockPos.MutableBlockPos branchPos = new BlockPos.MutableBlockPos();
+        BlockPos.MutableBlockPos mpos = new BlockPos.MutableBlockPos();
         for (int[] cluster : branches) {
-            branchPos.set(cluster[0], cluster[1], cluster[2]);
-            generateLeafCluster(world, branchPos, 2, 1, leavesBlockState);
+            mpos.set(cluster[0], cluster[1], cluster[2]);
+            generateLeafCluster(world, mpos, 2, 1, leavesBlockState);
         }
 
         // Calculate the center position
@@ -197,7 +199,7 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
             // Add the branch end for leaf generation
             branches.add(node);
 
-            // Generate the branch
+            // check the branch that would generate...
             if (!checkBlockLine(start, node, world))
                 return false;
         } // end-for ii

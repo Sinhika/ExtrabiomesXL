@@ -3,10 +3,13 @@ package net.extrabiomes.world.features.tree;
 import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
+
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
 public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
 {
@@ -223,7 +226,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
                     if (TreeFeature.validTreePos(world, bpos)) {
-                        world.setBlock(bpos, logBlock, 2);
+                        world.setBlock(bpos, logBlock.setValue(AXIS, Direction.Axis.Z), 2);
                     }
                 } // end-for z
             } // end-if
@@ -236,7 +239,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
                     if (TreeFeature.validTreePos(world, bpos)) {
-                        world.setBlock(bpos, logBlock, 2);
+                        world.setBlock(bpos, logBlock.setValue(AXIS, Direction.Axis.Z), 2);
                     }
                 } // end-for z
             } // end-else
@@ -253,7 +256,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
                     if (TreeFeature.validTreePos(world, bpos)) {
-                        world.setBlock(bpos, logBlock, 2);
+                        world.setBlock(bpos, logBlock.setValue(AXIS, Direction.Axis.X), 2);
                     }
                 } // end-for x
             } // end-if
@@ -266,7 +269,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int y = (int) (start[1] + (direction[1] * m));
                     bpos.set(x, y, z);
                     if (TreeFeature.validTreePos(world, bpos)) {
-                        world.setBlock(bpos, logBlock, 2);
+                        world.setBlock(bpos, logBlock.setValue(AXIS, Direction.Axis.X), 2);
                     }
                 } // end-for x
             } // end-else
