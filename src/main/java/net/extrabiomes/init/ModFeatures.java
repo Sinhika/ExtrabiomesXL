@@ -3,6 +3,7 @@ package net.extrabiomes.init;
 import net.extrabiomes.ExtrabiomesXS;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.extrabiomes.world.features.tree.FirTreeFeature;
+import net.extrabiomes.world.features.tree.JapaneseMapleShrubFeature;
 import net.extrabiomes.world.features.tree.JapaneseMapleTreeFeature;
 import net.extrabiomes.world.features.tree.MegaFirTreeFeature;
 import net.minecraft.core.registries.Registries;
@@ -34,6 +35,7 @@ public class ModFeatures
 		FIR_TREE = FEATURES_REGISTRY.register("fir_tree", () -> new FirTreeFeature(EBTreeConfiguration.CODEC));
 		BIG_FIR_TREE = FEATURES_REGISTRY.register("big_fir_tree", () -> new MegaFirTreeFeature(EBTreeConfiguration.CODEC));
 		JAPANESE_MAPLE_TREE = FEATURES_REGISTRY.register("japanese_maple_tree", () -> new JapaneseMapleTreeFeature(EBTreeConfiguration.CODEC));
+		JAPANESE_MAPLE_SHRUB = FEATURES_REGISTRY.register("japanese_maple_shrub", () -> new JapaneseMapleShrubFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 
