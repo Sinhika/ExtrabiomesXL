@@ -30,7 +30,7 @@ public class EBTreeConfiguration implements FeatureConfiguration
         }), Codec.INT.fieldOf("canopy_start_height").forGetter((p_csh) ->{
             return p_csh.canopy_start_height;
         }), Codec.INT.fieldOf("canopy_start_variance").forGetter((p_csv) ->{
-                    return p_csv.canopy_start_height;
+                    return p_csv.canopy_start_variance;
         }), Codec.INT.fieldOf("canopy_width").forGetter((p_cw) ->{
                     return p_cw.canopy_width;
         }),Codec.INT.fieldOf("canopy_width_variance").forGetter((p_cw) ->{
@@ -50,17 +50,17 @@ public class EBTreeConfiguration implements FeatureConfiguration
     public final int canopy_width_variance;
 
     public EBTreeConfiguration(BlockStateProvider log, BlockStateProvider leaves, BlockStateProvider root,
-                               BlockStateProvider dirt, int min_size, int size_variation, int min_leaf_height,
-                               int leaf_height_var, int canopyWidth, int canopyWidthVariance)
+                               BlockStateProvider dirt, int baseHeight, int baseHeightVariance, int canopyStartHeight,
+                               int canopyStartHeightVariance, int canopyWidth, int canopyWidthVariance)
     {
         this.trunk_provider = log;
         this.foliage_provider = leaves;
         this.root_provider = root;
         this.dirt_provider = dirt;
-        this.base_height = min_size;
-        this.base_height_variance = size_variation;
-        this.canopy_start_height = min_leaf_height;
-        this.canopy_start_variance = leaf_height_var;
+        this.base_height = baseHeight;
+        this.base_height_variance = baseHeightVariance;
+        this.canopy_start_height = canopyStartHeight;
+        this.canopy_start_variance = canopyStartHeightVariance;
         this.canopy_width = canopyWidth;
         this.canopy_width_variance = canopyWidthVariance;
     } // end ctor

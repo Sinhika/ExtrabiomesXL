@@ -46,16 +46,16 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      */
     @Override public boolean place(FeaturePlaceContext<EBTreeConfiguration> pContext)
     {
-        treeConfig = pContext.config();
-        BASE_HEIGHT = treeConfig.base_height;
-        BASE_HEIGHT_VARIANCE = treeConfig.base_height_variance;
-        CANOPY_WIDTH = treeConfig.canopy_width;
-        CANOPY_WIDTH_VARIANCE = treeConfig.canopy_width_variance;
-        sourceRand = pContext.random();
-        level = pContext.level();
+        this.treeConfig = pContext.config();
+        this.BASE_HEIGHT = treeConfig.base_height;
+        this.BASE_HEIGHT_VARIANCE = treeConfig.base_height_variance;
+        this.CANOPY_WIDTH = treeConfig.canopy_width;
+        this.CANOPY_WIDTH_VARIANCE = treeConfig.canopy_width_variance;
+        this.sourceRand = pContext.random();
+        this.level = pContext.level();
 
-        actual_height = sourceRand.nextInt(BASE_HEIGHT_VARIANCE) + BASE_HEIGHT;
-        actual_radius = (CANOPY_WIDTH + sourceRand.nextInt(CANOPY_WIDTH_VARIANCE)) / 2.0D;
+        this.actual_height = sourceRand.nextInt(this.BASE_HEIGHT_VARIANCE) + this.BASE_HEIGHT;
+        this.actual_radius = (this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE)) / 2.0D;
 
         return true;
     }

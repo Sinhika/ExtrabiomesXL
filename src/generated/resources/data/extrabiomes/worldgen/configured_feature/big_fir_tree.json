@@ -4,7 +4,7 @@
     "base_height": 32,
     "base_height_variance": 16,
     "canopy_start_height": 1,
-    "canopy_start_variance": 1,
+    "canopy_start_variance": 12,
     "canopy_width": 2,
     "canopy_width_variance": 9,
     "dirt_provider": {
