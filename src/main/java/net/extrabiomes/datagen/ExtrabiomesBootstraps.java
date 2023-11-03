@@ -140,6 +140,15 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(Blocks.DIRT),
                     3, 2, 0, 0, 4, 3));
 
+        // REDWOOD
+        register(context, ModConfiguredFeatures.REDWOOD_TREE, ModFeatures.REDWOOD_TREE.get(),
+            new EBTreeConfiguration(
+                    BlockStateProvider.simple(ModBlocks.log_redwood.get().defaultBlockState()),
+                    BlockStateProvider.simple(ModBlocks.leaves_redwood.get()),
+                    BlockStateProvider.simple(Blocks.AIR),
+                    BlockStateProvider.simple(Blocks.DIRT),
+                    26, 23, 0, 0, 0, 0));
+
         // TODO
     } // end bootstrap_ConfiguredFeature()
 
