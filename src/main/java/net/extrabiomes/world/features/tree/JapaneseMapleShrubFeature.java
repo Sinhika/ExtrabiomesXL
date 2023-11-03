@@ -32,7 +32,7 @@ public class JapaneseMapleShrubFeature extends EBBaseTreeFeature
         BlockPos pos = pContext.origin().immutable();
 
         // What percent of the total height the main trunk extends
-        int trunk_height = (int) (actual_height * TRUNK_HEIGHT_PERCENT);
+        int trunk_height = Math.max(1, (int) (actual_height * TRUNK_HEIGHT_PERCENT));
         int max_tree_altitude = pos.getY() + actual_height + 4;
 
         // height check

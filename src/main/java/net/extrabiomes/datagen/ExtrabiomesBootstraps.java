@@ -132,7 +132,7 @@ public class ExtrabiomesBootstraps
                     8, 4, 0, 0, 8, 6));
 
         // JAPANESE_MAPLE_SHRUB
-        register(context, ModConfiguredFeatures.JAPANESE_MAPLE_TREE, ModFeatures.JAPANESE_MAPLE_SHRUB.get(),
+        register(context, ModConfiguredFeatures.JAPANESE_MAPLE_SHRUB, ModFeatures.JAPANESE_MAPLE_SHRUB.get(),
             new EBTreeConfiguration(
                     BlockStateProvider.simple(ModBlocks.log_japanese_maple.get().defaultBlockState()),
                     BlockStateProvider.simple(ModBlocks.leaves_japanese_maple_shrub.get()),

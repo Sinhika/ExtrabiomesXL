@@ -1,0 +1,43 @@
+{
+  "type": "extrabiomes:japanese_maple_shrub",
+  "config": {
+    "base_height": 3,
+    "base_height_variance": 2,
+    "canopy_start_height": 0,
+    "canopy_start_variance": 0,
+    "canopy_width": 4,
+    "canopy_width_variance": 3,
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "extrabiomes:leaves_japanese_maple_shrub",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "root_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:air"
+      }
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "extrabiomes:log_japanese_maple",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

@@ -50,11 +50,11 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         BASE_HEIGHT_VARIANCE = treeConfig.base_height_variance;
         CANOPY_WIDTH = treeConfig.canopy_width;
         CANOPY_WIDTH_VARIANCE = treeConfig.canopy_width_variance;
+        sourceRand = pContext.random();
+        level = pContext.level();
 
         actual_height = sourceRand.nextInt(BASE_HEIGHT_VARIANCE) + BASE_HEIGHT;
         actual_radius = (CANOPY_WIDTH + sourceRand.nextInt(CANOPY_WIDTH_VARIANCE)) / 2.0D;
-        sourceRand = pContext.random();
-        level = pContext.level();
 
         return true;
     }

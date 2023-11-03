@@ -11,7 +11,7 @@ import net.extrabiomes.content.QuickSandBlock;
 import net.extrabiomes.content.StrawberryBlock;
 import net.extrabiomes.world.features.growers.AutumnTreeGrower;
 import net.extrabiomes.world.features.growers.FirTreeGrower;
-import net.extrabiomes.world.features.growers.JapaneseMapleGrower;
+import net.extrabiomes.world.features.growers.SimpleTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -190,15 +190,16 @@ public final class ModBlocks
 			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.CITRINE_AUTUMN_TREE, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE)));
 	   // japanese maple saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple = BLOCKS_REGISTRY.register("sapling_japanese_maple",
-			   () -> sapling(new JapaneseMapleGrower()));
-	   
-	   // TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
+			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.JAPANESE_MAPLE_TREE)));
 	   // japanese maple shrub saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple_shrub 
-	   		= BLOCKS_REGISTRY.register("sapling_japanese_maple_shrub", () -> sapling(new OakTreeGrower()));
+	   		= BLOCKS_REGISTRY.register("sapling_japanese_maple_shrub",
+			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.JAPANESE_MAPLE_SHRUB)));
 	   // fir saplings
 	   public static final RegistryObject<BushBlock> sapling_fir = BLOCKS_REGISTRY.register("sapling_fir",
 			   () -> sapling(new FirTreeGrower()));
+
+	// TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // redwood saplings
 	   public static final RegistryObject<BushBlock> sapling_redwood = BLOCKS_REGISTRY.register("sapling_redwood",
 			   () -> sapling(new OakTreeGrower()));
