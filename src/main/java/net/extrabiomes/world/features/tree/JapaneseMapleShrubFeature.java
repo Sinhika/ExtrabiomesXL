@@ -79,7 +79,7 @@ public class JapaneseMapleShrubFeature extends EBBaseTreeFeature
                 new BlockPos((int) AVERAGE[0] + branchpos.getX(), branchpos.getY(), (int) AVERAGE[2] + branchpos.getZ()),
                 radius, height, leavesBlockState);
 
-        return false;
+        return true;
     } // end generateBranches()
 
     /**
