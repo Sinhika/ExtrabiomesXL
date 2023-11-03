@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
@@ -86,7 +87,9 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         for (int y1 = pos.getY(); y1 < pos.getY() + height; y1++)
         {
             placePos.setY(y1);
-            if (TreeFeature.validTreePos(world, placePos)) {
+            if (TreeFeature.validTreePos(world, placePos)
+                    || (y1 == pos.getY() && world.getBlockState(placePos).is(BlockTags.SAPLINGS)))
+            {
                 this.setBlock(world, placePos, logs);
             }
             else {
@@ -261,7 +264,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int z = (int) (start[2] + (direction[2] * m));
                     bpos.set(x, y, z);
-                    if (world.getBlockState(bpos).isAir())
+                    if (world.getBlockState(bpos).isAir() || world.getBlockState(bpos).is(BlockTags.SAPLINGS))
                     {
                         this.setBlock(world, bpos, logBlock);
                     }
@@ -275,7 +278,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     int x = (int) (start[0] + (direction[0] * m));
                     int z = (int) (start[2] + (direction[2] * m));
                     bpos.set(x, y, z);
-                    if (world.getBlockState(bpos).isAir())
+                    if (world.getBlockState(bpos).isAir() || world.getBlockState(bpos).is(BlockTags.SAPLINGS))
                     {
                         this.setBlock(world, bpos, logBlock);
                     }

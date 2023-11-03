@@ -55,7 +55,7 @@ public class JapaneseMapleShrubFeature extends EBBaseTreeFeature
         {
             // Generate the branches
             BlockPos branchpos = new BlockPos(pos.getX(), pos.getY()+trunk_height, pos.getZ());
-            if (generateBranches(level, sourceRand, branchpos, actual_height - trunk_height - 2, actual_radius))
+            if (generateBranches(level, sourceRand, branchpos, Math.max(actual_height - trunk_height - 2, 1), actual_radius))
             {
                 return true;
             }
