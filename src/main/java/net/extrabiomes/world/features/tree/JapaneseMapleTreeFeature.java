@@ -32,7 +32,7 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
      */
     @Override public boolean place(FeaturePlaceContext<EBTreeConfiguration> pContext)
     {
-        boolean place = super.place(pContext);
+        super.place(pContext);
         BlockPos pos = pContext.origin().immutable();
 
         // What percent of the total height the main trunk extends

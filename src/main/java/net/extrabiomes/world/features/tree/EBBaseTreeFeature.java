@@ -5,6 +5,7 @@ import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
@@ -415,6 +416,59 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         return true;
     } // end checkRoughClearance()
 
+
+    public boolean check2x2Trunk(BlockPos pos, int height, LevelAccessor world, boolean inWater)
+    {
+        if (inWater)
+        {
+            for (BlockPos here: BlockPos.withinManhattan(pos, 1, height, 1))
+            {
+                BlockState thisHere = world.getBlockState(here);
+                if (!thisHere.getFluidState().is(FluidTags.WATER) && !thisHere.is(BlockTags.REPLACEABLE) )
+                {
+                    return false;
+                }
+            } // end-for here
+//            for (int y1 = yy + 1; y1 < yy + height; y1++)
+//            {
+//                Block b00 = world.getBlock(xx, y1, zz);
+//                Block b10 = world.getBlock(xx + 1, y1, zz);
+//                Block b01 = world.getBlock(xx, y1, zz + 1);
+//                Block b11 = world.getBlock(xx + 1, y1, zz + 1);
+//                if (b00 != null && !b00.equals(Blocks.water) && !b00.isReplaceable(world, xx, y1, zz))
+//                    return false;
+//                if (b01 != null && !b01.equals(Blocks.water) && !b01.isReplaceable(world, xx + 1, y1, zz))
+//                    return false;
+//                if (b10 != null && !b10.equals(Blocks.water) && !b10.isReplaceable(world, xx, y1, zz + 1))
+//                    return false;
+//                if (b11 != null && !b11.equals(Blocks.water) && !b11.isReplaceable(world, xx + 1, y1, zz + 1))
+//                    return false;
+//            } // end-for y1
+        } // end-if inWater
+        else {
+            for (BlockPos here: BlockPos.withinManhattan(pos, 1, height, 1))
+            {
+                if (!world.getBlockState(here).isAir()) {
+                    return false;
+                }
+            } // end-for here
+//            for (int y1 = yy + 1; y1 < yy + height; y1++)
+//            {
+//                //checkpos.set(xx, y1, zz);
+//                //checkpos2.set(xx + 1, y1, zz + 1);
+//
+//                checkpos.set(xx + 1, y1, zz);
+//                if (!world.isAirBlock(xx + 1, y1, zz))
+//                    return false;
+//                if (!world.isAirBlock(xx, y1, zz + 1))
+//                    return false;
+//                if (!world.isAirBlock(xx + 1, y1, zz + 1))
+//                    return false;
+//            } // end-for y1
+        } // end-else not inWater
+
+        return true;
+    } // end check2x2Trunk
 
 
 } // end class
