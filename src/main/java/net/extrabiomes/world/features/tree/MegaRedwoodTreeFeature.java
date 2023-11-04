@@ -43,21 +43,16 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
 
         // place the 'dirt' blocks.
         BlockPos.MutableBlockPos placePos = pos.mutable();
-        BlockState dirt = treeConfig.dirt_provider.getState(sourceRand, placePos);
-        placePos.move(Direction.DOWN);
-        this.setBlock(level, placePos, dirt);
-        placePos.move(Direction.NORTH);
-        this.setBlock(level, placePos, dirt);
-        placePos.move(Direction.WEST);
-        this.setBlock(level, placePos, dirt);
-        placePos.move(Direction.SOUTH);
-        this.setBlock(level, placePos, dirt);
+        BlockState dirt = treeConfig.dirt_provider.getState(sourceRand, pos.below());
+        for (BlockPos here : find2x2(pos.below())) {
+            this.setBlock(level, here, dirt);
+        }
 
         // place the trunk -- TODO adapt to quarter logs.
-        BlockState log_nw = treeConfig.foliage_provider.getState(sourceRand, pos);
-        BlockState log_ne = treeConfig.foliage_provider.getState(sourceRand, pos);
-        BlockState log_se = treeConfig.foliage_provider.getState(sourceRand, pos);
-        BlockState log_sw = treeConfig.foliage_provider.getState(sourceRand, pos);
+        BlockState log_nw = treeConfig.trunk_provider.getState(sourceRand, pos);
+        BlockState log_ne = treeConfig.trunk_provider.getState(sourceRand, pos);
+        BlockState log_se = treeConfig.trunk_provider.getState(sourceRand, pos);
+        BlockState log_sw = treeConfig.trunk_provider.getState(sourceRand, pos);
         BlockPos.MutableBlockPos nw_pos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos ne_pos = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos se_pos = new BlockPos.MutableBlockPos();
@@ -65,10 +60,10 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
 
         for (int offset = 0; offset <= actual_height - 4; offset++)
         {
-            nw_pos.set(pos.getX() - 1, pos.getY() + offset, pos.getZ() - 1);
-            ne_pos.set(pos.getX(), pos.getY() + offset, pos.getZ() - 1);
-            se_pos.set(pos.getX(), pos.getY() + offset, pos.getZ());
-            sw_pos.set(pos.getX() - 1, pos.getY() + offset, pos.getZ());
+            nw_pos.set(pos.getX(), pos.getY() + offset, pos.getZ());
+            ne_pos.set(pos.getX()+1, pos.getY() + offset, pos.getZ());
+            se_pos.set(pos.getX()+1, pos.getY() + offset, pos.getZ()+1);
+            sw_pos.set(pos.getX(), pos.getY() + offset, pos.getZ()+1);
             this.setBlock(level, nw_pos, log_nw);
             this.setBlock(level, ne_pos, log_ne);
             this.setBlock(level, se_pos, log_se);
@@ -185,7 +180,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
             yy++;
         } // end-for br
 
-        return false;
+        return true;
     } // end generateBranches()
 
     /**

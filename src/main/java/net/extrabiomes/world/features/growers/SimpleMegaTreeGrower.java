@@ -14,7 +14,6 @@ public class SimpleMegaTreeGrower extends AbstractMegaTreeGrower
     public SimpleMegaTreeGrower(ResourceKey<ConfiguredFeature<?, ?>> normalTree,
                                 ResourceKey<ConfiguredFeature<?, ?>> bigTree)
     {
-        super();
         normal_tree = normalTree;
         big_tree = bigTree;
     }
@@ -25,7 +24,7 @@ public class SimpleMegaTreeGrower extends AbstractMegaTreeGrower
      */
     @Nullable @Override protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource pRandom)
     {
-        return this.normal_tree;
+        return this.big_tree;
     }
 
     /**
@@ -36,6 +35,6 @@ public class SimpleMegaTreeGrower extends AbstractMegaTreeGrower
     @Nullable @Override protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom,
                                                                                             boolean pHasFlowers)
     {
-        return this.big_tree;
+        return this.normal_tree;
     }
 } // end class

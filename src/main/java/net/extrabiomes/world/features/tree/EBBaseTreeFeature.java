@@ -1,5 +1,6 @@
 package net.extrabiomes.world.features.tree;
 
+import com.google.common.collect.AbstractIterator;
 import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
@@ -44,6 +45,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * that they can safely generate into.
      *
      * @param pContext A context object with a reference to the level and the position the feature is being placed at
+     * @return true if successful and tree placed; false if not.
      */
     @Override public boolean place(FeaturePlaceContext<EBTreeConfiguration> pContext)
     {
@@ -55,8 +57,18 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         this.sourceRand = pContext.random();
         this.level = pContext.level();
 
-        this.actual_height = sourceRand.nextInt(this.BASE_HEIGHT_VARIANCE) + this.BASE_HEIGHT;
-        this.actual_radius = (this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE)) / 2.0D;
+        if (this.BASE_HEIGHT_VARIANCE > 0) {
+            this.actual_height = sourceRand.nextInt(this.BASE_HEIGHT_VARIANCE) + this.BASE_HEIGHT;
+        }
+        else {
+            this.actual_height = this.BASE_HEIGHT;
+        }
+        if (this.CANOPY_WIDTH_VARIANCE > 0) {
+            this.actual_radius = (this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE)) / 2.0D;
+        }
+        else {
+            this.actual_radius = this.CANOPY_WIDTH / 2.0D;
+        }
 
         return true;
     }
@@ -416,55 +428,82 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         return true;
     } // end checkRoughClearance()
 
+    public static Iterable<BlockPos> find2x2(BlockPos pos)
+    {
+        int jj = pos.getX();
+        int kk = pos.getY();
+        int ll = pos.getZ();
+
+        return () -> {
+            return new AbstractIterator<BlockPos>() {
+                final BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
+                int step = 1;
+                private int xx;
+                private int zz;
+
+                protected BlockPos computeNext()
+                {
+                    BlockPos blockpos;
+
+                    if (step > 4) {
+                        return this.endOfData();
+                    }
+                    else {
+                        switch(step)
+                        {
+                            case 1:
+                                xx = 0; zz = 0;
+                                break;
+                            case 2:
+                                xx = 0; zz = 1;
+                                break;
+                            case 3:
+                                xx = 1; zz = 0;
+                                break;
+                            case 4:
+                                xx = 1; zz = 1;
+                        }
+                        step++;
+                        blockpos = this.cursor.set(jj + xx, kk, ll + zz);
+                    }
+                    return blockpos;
+                } // end computeNext()
+            }; // end lambda class
+        }; // end supplier
+    } // end find2x2
 
     public boolean check2x2Trunk(BlockPos pos, int height, LevelAccessor world, boolean inWater)
     {
+        BlockPos.MutableBlockPos checkpos = pos.mutable();
+        int yy = pos.getY();
+
         if (inWater)
         {
-            for (BlockPos here: BlockPos.withinManhattan(pos, 1, height, 1))
+            for (int i = 0; i < height; i++)
             {
-                BlockState thisHere = world.getBlockState(here);
-                if (!thisHere.getFluidState().is(FluidTags.WATER) && !thisHere.is(BlockTags.REPLACEABLE) )
+                checkpos.setY(yy+i);
+                for (BlockPos here : find2x2(checkpos))
                 {
-                    return false;
-                }
-            } // end-for here
-//            for (int y1 = yy + 1; y1 < yy + height; y1++)
-//            {
-//                Block b00 = world.getBlock(xx, y1, zz);
-//                Block b10 = world.getBlock(xx + 1, y1, zz);
-//                Block b01 = world.getBlock(xx, y1, zz + 1);
-//                Block b11 = world.getBlock(xx + 1, y1, zz + 1);
-//                if (b00 != null && !b00.equals(Blocks.water) && !b00.isReplaceable(world, xx, y1, zz))
-//                    return false;
-//                if (b01 != null && !b01.equals(Blocks.water) && !b01.isReplaceable(world, xx + 1, y1, zz))
-//                    return false;
-//                if (b10 != null && !b10.equals(Blocks.water) && !b10.isReplaceable(world, xx, y1, zz + 1))
-//                    return false;
-//                if (b11 != null && !b11.equals(Blocks.water) && !b11.isReplaceable(world, xx + 1, y1, zz + 1))
-//                    return false;
-//            } // end-for y1
+                    BlockState thisHere = world.getBlockState(here);
+                    if (!thisHere.getFluidState().is(FluidTags.WATER) && !thisHere.is(BlockTags.REPLACEABLE))
+                    {
+                        return false;
+                    }
+                } // end-for here
+            }
         } // end-if inWater
         else {
-            for (BlockPos here: BlockPos.withinManhattan(pos, 1, height, 1))
+            for (int i = 0; i < height; i++)
             {
-                if (!world.getBlockState(here).isAir()) {
-                    return false;
-                }
-            } // end-for here
-//            for (int y1 = yy + 1; y1 < yy + height; y1++)
-//            {
-//                //checkpos.set(xx, y1, zz);
-//                //checkpos2.set(xx + 1, y1, zz + 1);
-//
-//                checkpos.set(xx + 1, y1, zz);
-//                if (!world.isAirBlock(xx + 1, y1, zz))
-//                    return false;
-//                if (!world.isAirBlock(xx, y1, zz + 1))
-//                    return false;
-//                if (!world.isAirBlock(xx + 1, y1, zz + 1))
-//                    return false;
-//            } // end-for y1
+                checkpos.setY(yy + i);
+                for (BlockPos here : find2x2(checkpos))
+                {
+                    if (!world.getBlockState(here).isAir() && !world.getBlockState(here).canBeReplaced())
+                    {
+                        return false;
+                    }
+                } // end-for here
+            }
         } // end-else not inWater
 
         return true;
