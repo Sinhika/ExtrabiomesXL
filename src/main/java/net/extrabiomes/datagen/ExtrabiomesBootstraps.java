@@ -149,6 +149,14 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(Blocks.DIRT),
                     26, 23, 0, 0, 0, 0));
 
+        // ACACIA
+        register(context, ModConfiguredFeatures.ACACIA_TREE, ModFeatures.ACACIA_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_acacia.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_acacia.get()),
+                        BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        6, 4, 3, 0, 4, 0 ));
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

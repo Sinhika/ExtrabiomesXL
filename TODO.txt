@@ -1,65 +1,67 @@
 TODO
 =====
+FIX CHOCOLATE RECIPE.
+
 Trees
 
     autumn trees - growth resembles oak trees, lots of super oaks
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_HEIGHT, CANOPY_RADIUS_EXTRA_RADIUS
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_HEIGHT, CANOPY_RADIUS_EXTRA_RADIUS
+        
     fir trees - stacked triangles, very tall, 2x2 trunks
-    	variables:  BASE_HEIGHT, BASE_HEIGHT_VARIANCE
-    	
+        variables:  BASE_HEIGHT, BASE_HEIGHT_VARIANCE
+        
     redwood trees - 2x2 trunks, very tall, like jungle giant, foliage bunched at top -
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,
+        
     EB acacia - 1 triangle, height of 1x1 jungle tree, straight trunk, no zig - sorta like a 1x1 jungle tree.
-    	variables: BASE_HEIGHT = 6, BASE_HEIGHT_VARIANCE = 4
+        variables: BASE_HEIGHT = 6, BASE_HEIGHT_VARIANCE = 4
     
     cypress - tallish, straight trunk, narrow sheath of leaves around trunk -  
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_START_HEIGHT, CANOPY_START_VARIANCE, 
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_START_HEIGHT, CANOPY_START_VARIANCE, 
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+        
     bald cypress - 2x2 trunk, has knees, huge spreading canopy like super oak on steroids -- like super oak?
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
+        
     japanese maple - short like normal oak, canopy and limbs spread like super oak -- short superoak. 
-    	Branching trunk like mangrove, instead.
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA, 
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
-    	 
+        Branching trunk like mangrove, instead.
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA, 
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+         
     japanese maple shrub - ground level, like scrub oak.
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+        
     legendary oak - Really big oak tree. 
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
-    	
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+        
     sakura - short with a spreading canopy like japanese maple. 
-    	variables:BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
-    	
+        variables:BASE_HEIGHT, BASE_HEIGHT_VARIANCE,TRUNK_HEIGHT_PERCENT,BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE
+        
     rainbow eucalyptus - much like bald cypress.
-    	variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
-    		CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
+        variables: BASE_HEIGHT, BASE_HEIGHT_VARIANCE, TRUNK_HEIGHT_PERCENT, TRUNK_BRANCHES_START, BRANCHES_BASE_NUMBER, BRANCHES_EXTRA,
+                CANOPY_WIDTH, CANOPY_WIDTH_VARIANCE, CLUSTER_DIAMETER, CLUSTER_DIAMETER_VARIANCE, CLUSTER_HEIGHT, CLUSTER_HEIGHT_VARIANCE
 
 Old Dye color codes:
 
-	0 : "black", 
-	1: "red", 
-	2: "green", 
-	3: "brown", 
-	4: "blue", 
-	5: "purple", 
-	6: "cyan", 
-	7: "silver", 
-	8: "gray", 
-	9: "pink", 
-	10: "lime", 
-	11: "yellow", 
-	12: "lightBlue", 
-	13: "magenta", 
-	14: "orange", 
-	15: "white";
+        0 : "black", 
+        1: "red", 
+        2: "green", 
+        3: "brown", 
+        4: "blue", 
+        5: "purple", 
+        6: "cyan", 
+        7: "silver", 
+        8: "gray", 
+        9: "pink", 
+        10: "lime", 
+        11: "yellow", 
+        12: "lightBlue", 
+        13: "magenta", 
+        14: "orange", 
+        15: "white";
         
 Original ExtrabiomesXL biomes:
     all biomes include underground_structures: stronghold.

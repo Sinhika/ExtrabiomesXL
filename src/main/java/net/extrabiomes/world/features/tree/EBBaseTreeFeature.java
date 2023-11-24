@@ -80,6 +80,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * @param branchpos Starting position of branches
      * @param height canopy height
      * @param radius canopy radius
+     * @return true if successfully placed, false if not.
      */
     public abstract boolean generateBranches(LevelAccessor world, RandomSource rand, BlockPos branchpos, int height,
                                              double radius);
@@ -122,6 +123,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * @param radius canopy radius
      * @param cluster_height height of attached leaf cluster
      * @param cluster_radius radius of attached leaf cluster
+     * @return true if successfully placed, false if not.
      */
     public boolean generateBasicBranches(LevelAccessor world, RandomSource rand, BlockPos branchpos, int height, double radius,
                                          int cluster_height, int cluster_radius)
@@ -187,7 +189,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * @param end
      * @param logBlock
      * @param world
-     * @return
+     * @return true if successfully placed, false if not.
      */
     public boolean placeBlockLine(int[] start, int[] end, BlockState logBlock, LevelAccessor world)
     {
@@ -302,6 +304,14 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         return true;
     } // end placeBlockLine()
 
+    /**
+     *
+     * @param world level accessor
+     * @param pos
+     * @param height
+     * @param radius
+     * @param leaves
+     */
     public void generateLeafCluster(LevelAccessor world, BlockPos pos, int height, int radius, BlockState leaves)
     {
         BlockPos.MutableBlockPos leafpos = pos.mutable();
@@ -313,6 +323,13 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         }
     } // end generateLeafCluster()
 
+    /**
+     * Place a radius r circle of leaves around position pos.
+     * @param pos center position of leaf circle
+     * @param r   radius in blocks of leaf circle.
+     * @param leaves    leaf provider
+     * @param world level accessor
+     */
     public void placeLeavesCircle(BlockPos pos, double r, BlockState leaves, LevelAccessor world)
     {
         double dist = r * r;
@@ -337,6 +354,39 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
     } // end placeLeavesCircle()
 
     /**
+     * Place leaves in a square with width 2r around position pos.
+     * @param pos center of leaf square
+     * @param r   half-width of square.
+     * @param dist_from_top distance from top of canopy
+     * @param leaves foliage provider
+     * @param world level accessor
+     *
+     */
+    public void placeLeavesSquare(BlockPos pos, int r, int dist_from_top, BlockState leaves, LevelAccessor world)
+    {
+        BlockPos.MutableBlockPos placePos = pos.mutable();
+
+        for (int x1 = pos.getX() - r; x1 <= pos.getX() + r; x1++)
+        {
+            final int xOnRadius = x1 - pos.getX();
+
+            for (int z1 = pos.getZ() - r; z1 <= pos.getZ() + r; z1++)
+            {
+                final int zOnRadius = z1 - pos.getZ();
+
+                placePos.set(x1, pos.getY(), z1);
+                if ( (Math.abs(xOnRadius) != r || Math.abs(zOnRadius) != r
+                              || sourceRand.nextInt(2) != 0 && dist_from_top != 0)
+                        && TreeFeature.validTreePos(world, placePos))
+                {
+                    this.setBlock(world, placePos, leaves);
+                }
+            }
+        }
+    } // end placeLeavesSquare
+
+
+    /**
      * Generate the tree's canopy.
      *
      * @param world LevelAccessor
@@ -345,7 +395,6 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * @param radius canopy radius
      * @param height canopy height
      * @param leaves leaf BlockState
-     * @return true if successful, false if not.
      */
     public abstract void generateCanopy(LevelAccessor world, RandomSource rand, BlockPos pos, double radius,
                                            int height, BlockState leaves);
@@ -359,7 +408,6 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
      * @param radius  canopy radius
      * @param skipChance 1 in skipChance that we don't place leaves (i.e., leave holes in leaf layer)
      * @param leaves  leaf BlockState
-     * @return
      */
     public void generateCanopyLayer(LevelAccessor world, RandomSource rand, BlockPos pos, double radius, int skipChance,
                                        BlockState leaves)
