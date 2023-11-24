@@ -229,7 +229,7 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		
 		// foods
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.food_chocolate.get())
-			.requires(Items.BROWN_DYE).requires(Items.SUGAR).requires(Items.MILK_BUCKET)
+			.requires(Items.COCOA_BEANS).requires(Items.SUGAR).requires(Items.MILK_BUCKET)
 			.unlockedBy("has_item", has(Items.COCOA_BEANS))
 			.save(consumer);
 		
