@@ -206,10 +206,11 @@ public final class ModBlocks
 	   // acacia/black wattle saplings
 	   public static final RegistryObject<BushBlock> sapling_acacia = BLOCKS_REGISTRY.register("sapling_acacia",
 			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.ACACIA_TREE)));
-	// TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // cypress saplings
 	   public static final RegistryObject<BushBlock> sapling_cypress = BLOCKS_REGISTRY.register("sapling_cypress",
-			   () -> sapling(new OakTreeGrower()));
+			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.CYPRESS_TREE)));
+
+	// TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // bald cypress saplings
 	   public static final RegistryObject<BushBlock> sapling_bald_cypress = BLOCKS_REGISTRY.register("sapling_bald_cypress",
 			   () -> sapling(new OakTreeGrower()));

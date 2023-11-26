@@ -157,6 +157,16 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
                         6, 4, 3, 0, 4, 0 ));
+
+        // CYPRESS
+        register(context, ModConfiguredFeatures.CYPRESS_TREE, ModFeatures.CYPRESS_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_cypress.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_cypress.get()),
+                        BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        12, 6, 0, 4, 3, 2));  // canopy figures doubled-up from original.
+
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

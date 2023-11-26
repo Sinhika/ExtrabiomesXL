@@ -35,6 +35,7 @@ public class ModFeatures
 		JAPANESE_MAPLE_SHRUB = FEATURES_REGISTRY.register("japanese_maple_shrub", () -> new JapaneseMapleShrubFeature(EBTreeConfiguration.CODEC));
 		REDWOOD_TREE = FEATURES_REGISTRY.register("redwood_tree", () -> new MegaRedwoodTreeFeature(EBTreeConfiguration.CODEC));
 		ACACIA_TREE = FEATURES_REGISTRY.register("acacia_tree", () -> new AcaciaTreeFeature(EBTreeConfiguration.CODEC));
+		CYPRESS_TREE = FEATURES_REGISTRY.register("cypress_tree", () -> new CypressTreeFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 
