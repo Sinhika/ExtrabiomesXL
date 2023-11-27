@@ -131,64 +131,43 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
         BlockState log = treeConfig.trunk_provider.getState(rand, pos);
         BlockState knee = treeConfig.root_provider.getState(rand, pos);
 
-        // NORTH
+        // EAST-facing knees (on WEST side of tree)
         switch (rand.nextInt(11))
         {
             case 0:  case 1: case 2: case 3:
                 placePos.set(pos.getX()-1, pos.getY(), pos.getZ());
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.NORTH, log, knee, world);
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.EAST, log, knee, world);
                 break;
             case 4: case 5: case 6: case 7:
                 placePos.set(pos.getX()-1, pos.getY(), pos.getZ()+1);
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight,  Direction.NORTH, log, knee, world);
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight,  Direction.EAST, log, knee, world);
                 break;
             case 8:
                 placePos.set(pos.getX()-1, pos.getY(), pos.getZ());
-                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight,Direction.NORTH, log, knee, world);
+                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight,Direction.EAST, log, knee, world);
                 placePos.set(pos.getX()-1, pos.getY(), pos.getZ()+1);
-                placeKnee(placePos, ((rand.nextInt(2) != 0) ? 1 : 2) + bonusHeight,Direction.NORTH, log, knee, world);
+                placeKnee(placePos, ((rand.nextInt(2) != 0) ? 1 : 2) + bonusHeight,Direction.EAST, log, knee, world);
                 break;
             default:
                 break;
-        } // end-switch NORTH
-
-        // EAST
-        switch (rand.nextInt(11))
-        {
-            case 0: case 1: case 2: case 3:
-                placePos.set(pos.getX(), pos.getY(), pos.getZ()-1);
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.EAST, log, knee, world);
-                break;
-            case 4: case 5: case 6: case 7:
-                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()-1);
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.EAST, log, knee, world);
-                break;
-            case 8:
-                placePos.set(pos.getX(), pos.getY(), pos.getZ()-1);
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.EAST, log, knee, world);
-                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()-1);
-                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight, Direction.EAST, log, knee, world);
-                break;
-            default:
-                break;
-        } // end switch EAST
+        } // end-switch EAST
 
         // SOUTH
         switch (rand.nextInt(11))
         {
             case 0: case 1: case 2: case 3:
-                placePos.set(pos.getX()+2, pos.getY(), pos.getZ());
+                placePos.set(pos.getX(), pos.getY(), pos.getZ()-1);
                 placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.SOUTH, log, knee, world);
                 break;
             case 4: case 5: case 6: case 7:
-                placePos.set(pos.getX()+2, pos.getY(), pos.getZ()+1);
+                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()-1);
                 placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.SOUTH, log, knee, world);
                 break;
             case 8:
-                placePos.set(pos.getX()+2, pos.getY(), pos.getZ());
+                placePos.set(pos.getX(), pos.getY(), pos.getZ()-1);
                 placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.SOUTH, log, knee, world);
-                placePos.set(pos.getX()+2, pos.getY(), pos.getZ()+1);
-                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.SOUTH, log, knee, world);
+                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()-1);
+                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight, Direction.SOUTH, log, knee, world);
                 break;
             default:
                 break;
@@ -198,22 +177,43 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
         switch (rand.nextInt(11))
         {
             case 0: case 1: case 2: case 3:
-                placePos.set(pos.getX(), pos.getY(), pos.getZ()+2);
+                placePos.set(pos.getX()+2, pos.getY(), pos.getZ());
                 placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
                 break;
             case 4: case 5: case 6: case 7:
-                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()+2);
+                placePos.set(pos.getX()+2, pos.getY(), pos.getZ()+1);
                 placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
                 break;
             case 8:
-                placePos.set(pos.getX(), pos.getY(), pos.getZ()+2);
-                placeKnee(placePos, ((rand.nextInt(2) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
-                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()+2);
-                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
+                placePos.set(pos.getX()+2, pos.getY(), pos.getZ());
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
+                placePos.set(pos.getX()+2, pos.getY(), pos.getZ()+1);
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.WEST, log, knee, world);
                 break;
             default:
                 break;
         } // end switch WEST
+
+        // NORTH
+        switch (rand.nextInt(11))
+        {
+            case 0: case 1: case 2: case 3:
+                placePos.set(pos.getX(), pos.getY(), pos.getZ()+2);
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.NORTH, log, knee, world);
+                break;
+            case 4: case 5: case 6: case 7:
+                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()+2);
+                placeKnee(placePos, ((rand.nextInt(3) != 0) ? 1 : 2) + bonusHeight, Direction.NORTH, log, knee, world);
+                break;
+            case 8:
+                placePos.set(pos.getX(), pos.getY(), pos.getZ()+2);
+                placeKnee(placePos, ((rand.nextInt(2) != 0) ? 1 : 2) + bonusHeight, Direction.NORTH, log, knee, world);
+                placePos.set(pos.getX()+1, pos.getY(), pos.getZ()+2);
+                placeKnee(placePos, ((rand.nextInt(5) != 0) ? 1 : 2) + bonusHeight, Direction.NORTH, log, knee, world);
+                break;
+            default:
+                break;
+        } // end switch NORTH
     } // end generateKnees()
 
     /**
