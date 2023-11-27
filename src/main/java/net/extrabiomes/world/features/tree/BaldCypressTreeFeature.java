@@ -11,7 +11,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BaldCypressTreeFeature extends EBBaseTreeFeature
 {
@@ -21,6 +24,7 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
     protected static final int CLUSTER_HEIGHT_VARIANCE   = 3;    // How many extra layers can be added to the leaf cluster.
     protected static final double TRUNK_HEIGHT_PERCENT  = 0.75D; // What percent of the total height the main trunk extends
     protected static final double TRUNK_BRANCHES_START  = 0.25D; // How far up the tree the trunk branches start
+    protected int waterLevel = 0;
 
     public BaldCypressTreeFeature(Codec<EBTreeConfiguration> pCodec)
     {
@@ -45,7 +49,7 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
         this.actual_radius = this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE);
 
         // find water level, if any.
-        int waterLevel = waterLevelCheck(pos);
+        this.waterLevel = waterLevelCheck(pos);
 
         // adjust position to actual bottom.
         pos = new BlockPos(pos.getX(), pos.getY() - waterLevel, pos.getZ());
@@ -102,10 +106,16 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
         generateKnees(level, sourceRand, pos, waterLevel);
 
         // Generate the branches
-        // TODO
+        generateBranches(level, sourceRand, pos, actual_height, actual_radius);
+
         // place the topper leaves
-        // TODO
-        return false;
+        BlockPos.MutableBlockPos leafPos = pos.mutable();
+        leafPos.setY((int) (actual_height * TRUNK_HEIGHT_PERCENT) + pos.getY());
+        generateLeafCluster(level, leafPos, 4 + sourceRand.nextInt(CLUSTER_HEIGHT_VARIANCE),
+                            4 + sourceRand.nextInt(CLUSTER_DIAMETER_VARIANCE),
+                            treeConfig.foliage_provider.getState(sourceRand, leafPos));
+
+        return true;
     } // end place()
 
     /**
@@ -282,8 +292,78 @@ public class BaldCypressTreeFeature extends EBBaseTreeFeature
     @Override public boolean generateBranches(LevelAccessor world, RandomSource rand, BlockPos branchpos, int height,
                                               double radius)
     {
-        return false;
-    }
+        int branchCount = BRANCHES_BASE_NUMBER + rand.nextInt(BRANCHES_EXTRA);
+        // Make sure that the width is even
+        int width = (int) (((int) radius % 2 == 1) ? radius + 1 : radius);
+        // Cache the offset
+        int offset = width / 2;
+
+        // The max distance for branches to generate
+        int branchStart = (int) (height * TRUNK_BRANCHES_START) + waterLevel;
+        int maxBranchHeight = height - ((int) (height * TRUNK_BRANCHES_START)) - 3;
+        int[] start = { 0, 0, 0 };
+        int[] end = { 0, 0, 0 };
+        Queue<int[]> branches = new LinkedList<int[]>();
+
+        // Generate some test branches
+        for (int branch = 0; branch < branchCount; branch++)
+        {
+            // The end position
+            end[0] = rand.nextInt(width + 1) - offset + branchpos.getX();
+            end[1] = rand.nextInt(maxBranchHeight) + branchStart + branchpos.getY();
+            end[2] = rand.nextInt(width + 1) - offset + branchpos.getZ();
+
+            // Max of tree height
+            // Min of branch start
+            start[1] = Math.max(branchStart + branchpos.getY(),
+                                Math.min(height, rand.nextInt(
+                                                Math.max(end[1] - branchStart - branchpos.getY(), 1))
+                                                + branchpos.getY()));
+
+            if (end[0] > branchpos.getX() && end[2] > branchpos.getZ())
+            {
+                start[0] = branchpos.getX() + 1;
+                start[2] = branchpos.getZ() + 1;
+            }
+            else if (end[0] > branchpos.getX())
+            {
+                start[0] = branchpos.getX() + 1;
+                start[2] = branchpos.getZ();
+            }
+            else if (end[2] > branchpos.getZ())
+            {
+                start[0] = branchpos.getX();
+                start[2] = branchpos.getZ() + 1;
+            }
+            else
+            {
+                start[0] = branchpos.getX();
+                start[2] = branchpos.getZ();
+            }
+
+            // Place the branch
+            placeBlockLine(start, end, treeConfig.trunk_provider.getState(rand, branchpos), world);
+
+            int[] node = new int[] { end[0], end[1], end[2] };
+
+            // Add the branch end for leaf generation
+            branches.add(node);
+        } // end-for branch
+
+        // Generate the leaf clusters
+        Iterator<int[]> itt = branches.iterator();
+        BlockPos.MutableBlockPos leafPos = new BlockPos.MutableBlockPos();
+
+        while (itt.hasNext())
+        {
+            int[] cluster = itt.next();
+            leafPos.set(cluster[0], cluster[1], cluster[2]);
+            generateLeafCluster(world, leafPos, CLUSTER_HEIGHT + rand.nextInt(CLUSTER_HEIGHT_VARIANCE),
+                    CLUSTER_DIAMETER + rand.nextInt(CLUSTER_DIAMETER_VARIANCE),
+                    treeConfig.foliage_provider.getState(rand, leafPos));
+        }
+        return true;
+    } // end generateBranches
 
     /**
      * Generate the tree's canopy.
