@@ -212,7 +212,7 @@ public final class ModBlocks
 
 	   // bald cypress saplings
 	   public static final RegistryObject<BushBlock> sapling_bald_cypress = BLOCKS_REGISTRY.register("sapling_bald_cypress",
-			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.BALD_CYPRESS_TREE)));
+			   () -> sapling(new SimpleMegaTreeGrower(null, ModConfiguredFeatures.BALD_CYPRESS_TREE)));
 
 	// TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // rainbow eucalypus sapling
