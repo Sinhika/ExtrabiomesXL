@@ -167,6 +167,15 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(Blocks.DIRT),
                         12, 6, 0, 4, 3, 2));  // canopy figures doubled-up from original.
 
+        // BALD CYPRESS
+        register(context, ModConfiguredFeatures.BALD_CYPRESS_TREE, ModFeatures.BALD_CYPRESS_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_baldcypress.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_bald_cypress.get()),
+                        BlockStateProvider.simple(ModBlocks.baldcypresskneelog.get()),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        24, 10, 0, 0, 15, 5));
+
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

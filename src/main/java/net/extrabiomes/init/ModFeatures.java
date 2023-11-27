@@ -36,6 +36,7 @@ public class ModFeatures
 		REDWOOD_TREE = FEATURES_REGISTRY.register("redwood_tree", () -> new MegaRedwoodTreeFeature(EBTreeConfiguration.CODEC));
 		ACACIA_TREE = FEATURES_REGISTRY.register("acacia_tree", () -> new AcaciaTreeFeature(EBTreeConfiguration.CODEC));
 		CYPRESS_TREE = FEATURES_REGISTRY.register("cypress_tree", () -> new CypressTreeFeature(EBTreeConfiguration.CODEC));
+		BALD_CYPRESS_TREE = FEATURES_REGISTRY.register("bald_cypress_tree", () -> new BaldCypressTreeFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 

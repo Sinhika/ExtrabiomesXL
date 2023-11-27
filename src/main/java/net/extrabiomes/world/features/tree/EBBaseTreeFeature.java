@@ -23,14 +23,14 @@ import static net.minecraft.world.level.block.state.properties.BlockStatePropert
 public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
 {
     protected EBTreeConfiguration treeConfig;
-    protected int BASE_HEIGHT;
-    protected int BASE_HEIGHT_VARIANCE;
-    protected int CANOPY_WIDTH;
-    protected int CANOPY_WIDTH_VARIANCE;
-    protected int actual_height;
-    protected double actual_radius;
-    protected RandomSource sourceRand;
-    protected WorldGenLevel level;
+    protected int BASE_HEIGHT;            // The base height for trees
+    protected int BASE_HEIGHT_VARIANCE;   // How many extra blocks high may this tree be
+    protected int CANOPY_WIDTH;           // How many blocks will this tree cover
+    protected int CANOPY_WIDTH_VARIANCE;  // How many extra blocks may this tree cover
+    protected int actual_height;          // final generated height of tree.
+    protected double actual_radius;       // final generated radius of canopy.
+    protected RandomSource sourceRand;   // random number source.
+    protected WorldGenLevel level;       // level accessor
     protected int BRANCHES_BASE_NUMBER;  // The total number of branches on the tree
     protected int BRANCHES_EXTRA; // The how many extra branches can occur on the tree
     protected double[] AVERAGE = {0, 0, 0}; // center of canopy relative to top of trunk.
@@ -533,7 +533,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                 for (BlockPos here : find2x2(checkpos))
                 {
                     BlockState thisHere = world.getBlockState(here);
-                    if (!thisHere.getFluidState().is(FluidTags.WATER) && !thisHere.is(BlockTags.REPLACEABLE))
+                    if (!thisHere.getFluidState().is(FluidTags.WATER) && !thisHere.isAir() && !thisHere.is(BlockTags.REPLACEABLE))
                     {
                         return false;
                     }
