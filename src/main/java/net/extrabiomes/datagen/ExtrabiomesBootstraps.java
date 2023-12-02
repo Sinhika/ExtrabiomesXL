@@ -176,6 +176,16 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(Blocks.DIRT),
                         24, 10, 0, 0, 15, 5));
 
+        // RAINBOW EUCALYPTUS
+        register(context, ModConfiguredFeatures.RAINBOW_EUCALYPTUS_TREE, ModFeatures.RAINBOW_EUCALYPTUS_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_rainboweucalyptus.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_rainbow_eucalyptus.get()),
+                        BlockStateProvider.simple(ModBlocks.rainboweucalyptuskneelog.get()),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        19, 8, 0, 0, 12, 3 ));
+
+        // SAKURA BLOSSOM
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

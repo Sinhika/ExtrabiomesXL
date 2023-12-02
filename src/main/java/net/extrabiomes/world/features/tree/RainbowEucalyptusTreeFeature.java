@@ -3,24 +3,23 @@ package net.extrabiomes.world.features.tree;
 import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-public class BaldCypressTreeFeature extends EBKneeTreeFeature
+public class RainbowEucalyptusTreeFeature  extends EBKneeTreeFeature
 {
 
-    public BaldCypressTreeFeature(Codec<EBTreeConfiguration> pCodec)
+    public RainbowEucalyptusTreeFeature(Codec<EBTreeConfiguration> pCodec)
     {
         super(pCodec);
-        BRANCHES_BASE_NUMBER = 15;
-        BRANCHES_EXTRA = 10;
-        CLUSTER_DIAMETER = 3;
-        CLUSTER_DIAMETER_VARIANCE = 3;
-        CLUSTER_HEIGHT = 1;
-        CLUSTER_HEIGHT_VARIANCE = 3;
-        TRUNK_HEIGHT_PERCENT = 0.75D;
-        TRUNK_BRANCHES_START = 0.25D;
+        BRANCHES_BASE_NUMBER      = 10;
+        BRANCHES_EXTRA            = 10;
+        TRUNK_HEIGHT_PERCENT      = 0.50D;
+        TRUNK_BRANCHES_START      = 0.18D;
+        CLUSTER_DIAMETER          = 2;
+        CLUSTER_DIAMETER_VARIANCE = 4;
+        CLUSTER_HEIGHT            = 2;
+        CLUSTER_HEIGHT_VARIANCE   = 1;
     } // end ctor
 
     /**
@@ -34,18 +33,12 @@ public class BaldCypressTreeFeature extends EBKneeTreeFeature
     @Override public boolean place(FeaturePlaceContext<EBTreeConfiguration> pContext)
     {
         super.place(pContext);
+        this.actual_radius = this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE);
         BlockPos pos = pContext.origin().immutable();
         int max_tree_altitude = pos.getY() + actual_height + 4;
-        this.actual_radius = this.CANOPY_WIDTH + sourceRand.nextInt(this.CANOPY_WIDTH_VARIANCE);
-
-        // find water level, if any.
-        this.bonusHeight = waterLevelCheck(pos);
-
-        // adjust position to actual bottom.
-        pos = new BlockPos(pos.getX(), pos.getY() - bonusHeight, pos.getZ());
 
         // determine trunk_height
-        int trunk_height = (int) (actual_height * TRUNK_HEIGHT_PERCENT) + bonusHeight;
+        int trunk_height = (int) (actual_height * TRUNK_HEIGHT_PERCENT);
 
         // height check
         if (pos.getY() < level.getMinBuildHeight() + 1 || max_tree_altitude > level.getMaxBuildHeight())
@@ -102,33 +95,11 @@ public class BaldCypressTreeFeature extends EBKneeTreeFeature
         BlockPos.MutableBlockPos leafPos = pos.mutable();
         leafPos.setY((int) (actual_height * TRUNK_HEIGHT_PERCENT) + pos.getY());
         generateLeafCluster(level, leafPos, 4 + sourceRand.nextInt(CLUSTER_HEIGHT_VARIANCE),
-                            4 + sourceRand.nextInt(CLUSTER_DIAMETER_VARIANCE),
-                            treeConfig.foliage_provider.getState(sourceRand, leafPos));
+                4 + sourceRand.nextInt(CLUSTER_DIAMETER_VARIANCE),
+                treeConfig.foliage_provider.getState(sourceRand, leafPos));
 
         return true;
     } // end place()
 
-
-    /**
-     * Find bottom of swamp water.
-     * @param pos BlockPos of base of tree.
-     * @return number of blocks of water above first dirt block.
-     */
-    protected int waterLevelCheck(BlockPos pos)
-    {
-        int water_level = 0;
-        BlockPos.MutableBlockPos checkPos = pos.mutable();
-
-        for (int yy = pos.getY()-1; (yy > pos.getY()-6) && (yy > this.level.getMinBuildHeight()); yy--)
-        {
-            checkPos.setY(yy);
-            BlockState thisHere = this.level.getBlockState(checkPos);
-            if (!thisHere.getFluidState().is(FluidTags.WATER)) {
-                break;
-            }
-            water_level++;
-        }
-        return water_level;
-    } // end waterLevelCheck()
 
 } // end class

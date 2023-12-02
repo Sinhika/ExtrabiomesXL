@@ -30,13 +30,22 @@ public class ModFeatures
 	public static void setup()
 	{
 		FIR_TREE = FEATURES_REGISTRY.register("fir_tree", () -> new FirTreeFeature(EBTreeConfiguration.CODEC));
-		BIG_FIR_TREE = FEATURES_REGISTRY.register("big_fir_tree", () -> new MegaFirTreeFeature(EBTreeConfiguration.CODEC));
-		JAPANESE_MAPLE_TREE = FEATURES_REGISTRY.register("japanese_maple_tree", () -> new JapaneseMapleTreeFeature(EBTreeConfiguration.CODEC));
-		JAPANESE_MAPLE_SHRUB = FEATURES_REGISTRY.register("japanese_maple_shrub", () -> new JapaneseMapleShrubFeature(EBTreeConfiguration.CODEC));
-		REDWOOD_TREE = FEATURES_REGISTRY.register("redwood_tree", () -> new MegaRedwoodTreeFeature(EBTreeConfiguration.CODEC));
-		ACACIA_TREE = FEATURES_REGISTRY.register("acacia_tree", () -> new AcaciaTreeFeature(EBTreeConfiguration.CODEC));
-		CYPRESS_TREE = FEATURES_REGISTRY.register("cypress_tree", () -> new CypressTreeFeature(EBTreeConfiguration.CODEC));
-		BALD_CYPRESS_TREE = FEATURES_REGISTRY.register("bald_cypress_tree", () -> new BaldCypressTreeFeature(EBTreeConfiguration.CODEC));
+		BIG_FIR_TREE = FEATURES_REGISTRY.register("big_fir_tree",
+														() -> new MegaFirTreeFeature(EBTreeConfiguration.CODEC));
+		JAPANESE_MAPLE_TREE = FEATURES_REGISTRY.register("japanese_maple_tree",
+														() -> new JapaneseMapleTreeFeature(EBTreeConfiguration.CODEC));
+		JAPANESE_MAPLE_SHRUB = FEATURES_REGISTRY.register("japanese_maple_shrub",
+														() -> new JapaneseMapleShrubFeature(EBTreeConfiguration.CODEC));
+		REDWOOD_TREE = FEATURES_REGISTRY.register("redwood_tree",
+														() -> new MegaRedwoodTreeFeature(EBTreeConfiguration.CODEC));
+		ACACIA_TREE = FEATURES_REGISTRY.register("acacia_tree",
+														() -> new AcaciaTreeFeature(EBTreeConfiguration.CODEC));
+		CYPRESS_TREE = FEATURES_REGISTRY.register("cypress_tree",
+														() -> new CypressTreeFeature(EBTreeConfiguration.CODEC));
+		BALD_CYPRESS_TREE = FEATURES_REGISTRY.register("bald_cypress_tree",
+													() -> new BaldCypressTreeFeature(EBTreeConfiguration.CODEC));
+		RAINBOW_EUCALYPTUS_TREE = FEATURES_REGISTRY.register("rainbow_eucalyptus_tree",
+													() -> new RainbowEucalyptusTreeFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 
