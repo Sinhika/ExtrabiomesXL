@@ -47,7 +47,8 @@ public class ModFeatures
 													() -> new BaldCypressTreeFeature(EBTreeConfiguration.CODEC));
 		RAINBOW_EUCALYPTUS_TREE = FEATURES_REGISTRY.register("rainbow_eucalyptus_tree",
 													() -> new RainbowEucalyptusTreeFeature(EBTreeConfiguration.CODEC));
-
+		SAKURA_TREE = FEATURES_REGISTRY.register("sakura_tree",
+													() -> new SakuraTreeFeature(EBTreeConfiguration.CODEC));
 		// TODO
 	} // end setup()
 
