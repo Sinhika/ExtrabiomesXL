@@ -20,6 +20,7 @@ public class ModFeatures
 	public static RegistryObject<Feature> ACACIA_TREE;
 	public static RegistryObject<Feature> CYPRESS_TREE;
 	public static RegistryObject<Feature> CUSTOM_SWAMP_TREE;   // maybe?
+	public static RegistryObject<Feature> LEGENDARY_OAK_TREE;
 	public static RegistryObject<Feature> REDWOOD_TREE;
 	public static RegistryObject<Feature> JAPANESE_MAPLE_SHRUB;
 	public static RegistryObject<Feature> JAPANESE_MAPLE_TREE;
@@ -46,6 +47,7 @@ public class ModFeatures
 													() -> new BaldCypressTreeFeature(EBTreeConfiguration.CODEC));
 		RAINBOW_EUCALYPTUS_TREE = FEATURES_REGISTRY.register("rainbow_eucalyptus_tree",
 													() -> new RainbowEucalyptusTreeFeature(EBTreeConfiguration.CODEC));
+
 		// TODO
 	} // end setup()
 

@@ -186,6 +186,15 @@ public class ExtrabiomesBootstraps
                         19, 8, 0, 0, 12, 3 ));
 
         // SAKURA BLOSSOM
+        register(context, ModConfiguredFeatures.SAKURA_TREE, ModFeatures.SAKURA_TREE.get(),
+                new EBTreeConfiguration(
+                        BlockStateProvider.simple(ModBlocks.log_sakura.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.leaves_sakura.get()),
+                        BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(Blocks.DIRT),
+                        8, 4, 0, 0, 8, 4 ));
+
+        // LEGENDARY OAK
         // TODO
     } // end bootstrap_ConfiguredFeature()
 

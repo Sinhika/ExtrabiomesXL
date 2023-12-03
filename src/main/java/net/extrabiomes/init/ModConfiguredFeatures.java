@@ -31,7 +31,7 @@ public class ModConfiguredFeatures
     public static final ResourceKey<ConfiguredFeature<?, ?>> ACACIA_TREE = createKey("acacia_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_TREE = createKey("cypress_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CUSTOM_SWAMP_TREE = createKey("custom_swamp_tree");
-            // maybe?
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LEGENDARY_OAK_TREE = createKey("legedary_oak_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = createKey("redwood_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> JAPANESE_MAPLE_SHRUB = createKey("japanese_maple_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BALD_CYPRESS_TREE = createKey("bald_cypress_tree");
