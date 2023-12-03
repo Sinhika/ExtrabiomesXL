@@ -218,10 +218,9 @@ public final class ModBlocks
 	   public static final RegistryObject<BushBlock> sapling_rainbow_eucalyptus = BLOCKS_REGISTRY.register("sapling_rainbow_eucalyptus",
 			   () -> sapling(new SimpleMegaTreeGrower(null, ModConfiguredFeatures.RAINBOW_EUCALYPTUS_TREE)));
 
-	// TODO - fill in correct AbstractTreeGrowers for all OakTreeGrower in saplings.
 	   // sakura sapling
 	   public static final RegistryObject<BushBlock> sapling_sakura = BLOCKS_REGISTRY.register("sapling_sakura",
-			   () -> sapling(new OakTreeGrower()));
+			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.SAKURA_TREE)));
 	   
 	   // POTTED SAPLINGS
 	   public static final RegistryObject<FlowerPotBlock> potted_sapling_umber = BLOCKS_REGISTRY.register("potted_sapling_umber",

@@ -192,6 +192,9 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
     {
         BlockPos.MutableBlockPos last = start.mutable();
         BlockPos.MutableBlockPos ppos = new BlockPos.MutableBlockPos();
+        BlockState logX = logs.setValue(AXIS, Direction.Axis.X);
+        BlockState logY = logs.setValue(AXIS, Direction.Axis.Y);
+        BlockState logZ = logs.setValue(AXIS, Direction.Axis.Z);
 
         // Get the direction vector
         int[] direction = {
@@ -200,6 +203,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                 start.getZ() - end.getZ()
         };
 
+        // if Y-delta changes the most, we are going to use the y-axis as our major axis.
         if (Math.abs(direction[2]) > Math.abs(direction[1]) && Math.abs(direction[2]) > Math.abs(direction[0]))
         {
             // We are going to use the y axis as our major axis
@@ -212,7 +216,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 8);
 
                     // Detect the distance
@@ -221,7 +225,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), last.getY(), z);
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
                         //setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 8);
                     }
                     else if (dist == 3)
@@ -229,19 +233,19 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[0] > 0)
                         {
                             ppos.set(x, last.getY(), last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
                             // setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x,y,last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                     }
@@ -258,7 +262,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x, y, z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world,ppos,logs);
+                        this.setBlock(world,ppos,logY);
                         //setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 8);
 
                     // Detect the distance
@@ -267,7 +271,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), last.getY(), z);
-                        this.setBlock(world,ppos,logs);
+                        this.setBlock(world,ppos,logY);
 //                        setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 8);
                     }
                     else if (dist == 3)
@@ -275,19 +279,19 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[0] > 0)
                         {
                             ppos.set(x, last.getY(), last.getZ());
-                            this.setBlock(world,ppos,logs);
+                            this.setBlock(world,ppos,logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
-                            this.setBlock(world,ppos,logs);
+                            this.setBlock(world,ppos,logY);
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
-                            this.setBlock(world,ppos,logs);
+                            this.setBlock(world,ppos,logY);
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
-                            this.setBlock(world,ppos,logs);
+                            this.setBlock(world,ppos,logY);
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                     }
@@ -296,7 +300,8 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                 } // end-for z
             } // end-else ! direction[2] >= 0
         } // end-if
-        else if (Math.abs(direction[0]) > Math.abs(direction[0]))
+        // else if x-delta > y-delta
+        else if (Math.abs(direction[0]) > Math.abs(direction[1]))
         {
             // Treverse along the x axis
             if (direction[0] >= 0)
@@ -308,7 +313,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                        this.setBlock(world, ppos, logX);
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 4);
 
                     // Detect the distance
@@ -316,7 +321,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(x, last.getY(), last.getZ());
-                        this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                        this.setBlock(world, ppos, logX);
 //                        setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 4);
                     }
                     else if (dist == 3)
@@ -324,19 +329,19 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[2] > 0)
                         {
                             ppos.set(last.getX(), last.getY(), z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                     } // end else-if
@@ -352,7 +357,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                        this.setBlock(world, ppos, logX);
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 4);
 
                     // Detect the distance
@@ -360,7 +365,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(x, last.getY(), last.getZ());
-                        this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                        this.setBlock(world, ppos, logX);
 //                        setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 4);
                     }
                     else if (dist == 3)
@@ -368,29 +373,29 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[2] > 0)
                         {
                             ppos.set(last.getX(), last.getY(), z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
-                            this.setBlock(world, ppos, logs.setValue(AXIS, Direction.Axis.X));  // we believe the old note.
+                            this.setBlock(world, ppos, logX);
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                     }
                     last.set(x,y,z);
                 } // end-for x
             } // end-else ! direction[0] >= 0
-        } // end-else-if
-        else
+        } // end-else-if x-delta > y-delta
+        else  // z-delta is greatest
         {
-            // We will use the y axis as our major axis
+            // We will use the y axis as our major axis here...
             if (direction[1] >= 0)
             {
                 for (int y = start.getY(); y >= end.getY(); y--)
@@ -400,7 +405,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int z = (int) (start.getZ() + (direction[2] * m));
                     ppos.set(x,y,z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage());
 
                     // Detect the distance
@@ -408,7 +413,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), y, last.getZ());
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
 //                        setBlockAndNotifyAdequately(world, last[0], y, last[2], logBlock, logs.getItemDamage());
                     }
                     else if (dist == 3)
@@ -416,26 +421,26 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[2] > 0)
                         {
                             ppos.set(last.getX(), last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                         else
                         {
                             ppos.set(x, last.getY(), last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                     } // end else-if
                     last.set(x,y,z);
                 } // end-for y
             } // end-if direction[1] >= 0
-            else
+            else // use the y-axis here, too.
             {
                 for (int y = start.getY(); y <= end.getY(); y++)
                 {
@@ -444,7 +449,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int z = (int) (start.getZ() + (direction[2] * m));
                     ppos.set(x, y, z);
                     if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage());
 
                     // Detect the distance
@@ -452,7 +457,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), y, last.getZ());
-                        this.setBlock(world, ppos, logs);
+                        this.setBlock(world, ppos, logY);
 //                        setBlockAndNotifyAdequately(world, last[0], y, last[2], logBlock, logs.getItemDamage());
                     }
                     else if (dist == 3)
@@ -460,19 +465,19 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         if (direction[2] > 0)
                         {
                             ppos.set(last.getX(), last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                         else
                         {
                             ppos.set(x, last.getY(), last.getZ());
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], last[2], logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
-                            this.setBlock(world, ppos, logs);
+                            this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                     }
