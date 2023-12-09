@@ -121,7 +121,10 @@ public final class ModBlocks
 			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, ""));
 	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS_REGISTRY.register("planks_autumn_wood",
 			   () -> planks(MapColor.WOOD));
-	   // japanese maple
+	   public static final RegistryObject<CustomLogBlock> bark_autumn = BLOCKS_REGISTRY.register("bark_autumn",
+			   () -> log(MapColor.PODZOL, MapColor.PODZOL, "") );
+
+	// japanese maple
 	   public static final RegistryObject<CustomLogBlock> log_japanese_maple = BLOCKS_REGISTRY.register("log_japanese_maple", 
 			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM, ""));
 	   public static final RegistryObject<Block> planks_japanese_maple = BLOCKS_REGISTRY.register("planks_japanese_maple",

@@ -116,8 +116,9 @@
     "block.extrabiomes.leaves_vermillion": "Vermillion Autumn Leaves",
     "block.extrabiomes.leaves_citrine": "Citrine Autumn Leaves",
     
-    "block.extrabiomes.log_autumn": "Autumn Log (newlog.1)",
-    "block.extrabiomes.planks_autumn_wood": "Autumn Planks (6)",
+    "block.extrabiomes.log_autumn": "Autumn Log",
+    "block.extrabiomes.planks_autumn_wood": "Autumn Planks",
+    "block.extrabiomes.bark_autumn" : "Autumn Wood",
     "block.extrabiomes.stairs_autumn": "Autumn Stairs",
     "block.extrabiomes.slab_autumn": "Autumn Slab",
     "block.extrabiomes.door_autumn": "Autumn Door",

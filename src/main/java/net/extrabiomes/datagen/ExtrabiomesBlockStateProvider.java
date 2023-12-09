@@ -89,7 +89,12 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
     	log2model.put(ModBlocks.log_baldcypress, "block/logbaldcypress" );
     	log2model.put(ModBlocks.log_cypress, "block/logcypress" );
     	log2model.put(ModBlocks.log_rainboweucalyptus, "block/lograinboweucalyptus" );
-    	
+
+		HashMap<RegistryObject<CustomLogBlock>, String> bark2model
+				= new HashMap<RegistryObject<CustomLogBlock>, String>();
+		bark2model.put(ModBlocks.bark_autumn, "block/logautumn");
+		// TODO
+
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
     	planks2model.put(ModBlocks.planks_autumn_wood, modLoc("block/planksautumn"));
@@ -149,7 +154,16 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
    			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
             this.itemModels().withExistingParent(name, modLoc("block/" + name));
     	}
-    	
+
+		// "wood" aka bark block
+		for (Map.Entry<RegistryObject<CustomLogBlock>, String> entry: bark2model.entrySet())
+		{
+			String sidename = entry.getValue() + "side";
+			String name = getRegistryNameFromHolder(entry.getKey());
+			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(sidename));
+			this.itemModels().withExistingParent(name, modLoc("block/" + name));
+		}
+
     	// TODO - sakura mini-logs
     	// log2model.put(ModBlocks.log_sakura, "block/logsakura" );
 		//	this.axisBlockWithRenderType(ModBlocks.log_sakura.get(), modLoc(sidename), modLoc(topname), "cutout");
