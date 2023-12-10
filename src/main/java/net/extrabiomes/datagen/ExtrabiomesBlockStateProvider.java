@@ -100,6 +100,7 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		bark2model.put(ModBlocks.bark_baldcypress, "block/logbaldcypress" );
 		bark2model.put(ModBlocks.bark_cypress, "block/logcypress" );
 		bark2model.put(ModBlocks.bark_rainboweucalyptus, "block/lograinboweucalyptus" );
+		bark2model.put(ModBlocks.bark_sakura, "block/logsakura");
 
 		// TODO
 
