@@ -289,7 +289,18 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		planksFromLogs(consumer, ModBlocks.planks_cypress.get(), cypress_logs, 4);
 		planksFromLogs(consumer, ModBlocks.planks_rainboweucalyptus.get(), rainboweucalyptus_logs, 4);
 		planksFromLogs(consumer, ModBlocks.planks_sakura.get(), sakura_logs, 4);
-		
+
+		// log -> bark (wood)
+		woodFromLogs(consumer, ModBlocks.bark_autumn.get(), ModBlocks.log_autumn.get());
+		woodFromLogs(consumer, ModBlocks.bark_japanese_maple.get(), ModBlocks.log_japanese_maple.get());
+		woodFromLogs(consumer, ModBlocks.bark_fir.get(), ModBlocks.log_fir.get());
+		woodFromLogs(consumer, ModBlocks.bark_redwood.get(), ModBlocks.log_redwood.get());
+		woodFromLogs(consumer, ModBlocks.bark_acacia.get(), ModBlocks.log_acacia.get());
+		woodFromLogs(consumer, ModBlocks.bark_baldcypress.get(), ModBlocks.log_baldcypress.get());
+		woodFromLogs(consumer, ModBlocks.bark_cypress.get(), ModBlocks.log_cypress.get());
+		woodFromLogs(consumer, ModBlocks.bark_rainboweucalyptus.get(), ModBlocks.log_rainboweucalyptus.get());
+		woodFromLogs(consumer, ModBlocks.bark_sakura.get(), ModBlocks.log_sakura.get());
+
         // stairs
         stairBuilder(ModBlocks.stairs_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
             .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))

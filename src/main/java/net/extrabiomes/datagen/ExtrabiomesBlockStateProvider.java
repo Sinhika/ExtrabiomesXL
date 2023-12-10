@@ -93,6 +93,14 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		HashMap<RegistryObject<CustomLogBlock>, String> bark2model
 				= new HashMap<RegistryObject<CustomLogBlock>, String>();
 		bark2model.put(ModBlocks.bark_autumn, "block/logautumn");
+		bark2model.put(ModBlocks.bark_japanese_maple, "block/logjapanesemaple");
+		bark2model.put(ModBlocks.bark_fir, "block/logfir" );
+		bark2model.put(ModBlocks.bark_redwood, "block/logredwood" );
+		bark2model.put(ModBlocks.bark_acacia, "block/logacacia" );
+		bark2model.put(ModBlocks.bark_baldcypress, "block/logbaldcypress" );
+		bark2model.put(ModBlocks.bark_cypress, "block/logcypress" );
+		bark2model.put(ModBlocks.bark_rainboweucalyptus, "block/lograinboweucalyptus" );
+
 		// TODO
 
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model

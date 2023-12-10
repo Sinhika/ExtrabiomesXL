@@ -244,32 +244,41 @@ public class ExtrabiomesItemTags extends MiningItemTags
 
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))
-           	.add(ModBlocks.log_autumn.get().asItem());
+           	.add(ModBlocks.log_autumn.get().asItem())
+           	.add(ModBlocks.bark_autumn.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
-			.add(ModBlocks.log_japanese_maple.get().asItem());
+			.add(ModBlocks.log_japanese_maple.get().asItem())
+			.add(ModBlocks.bark_japanese_maple.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "fir_logs"))
 			.add(ModBlocks.log_fir.get().asItem())
+			.add(ModBlocks.bark_fir.get().asItem())
 			.add(ModBlocks.firquarter.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "redwood_logs"))
 			.add(ModBlocks.log_redwood.get().asItem())
+			.add(ModBlocks.bark_redwood.get().asItem())
 			.add(ModBlocks.redwoodquarter.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
-			.add(ModBlocks.log_acacia.get().asItem());
+			.add(ModBlocks.log_acacia.get().asItem())
+			.add(ModBlocks.bark_acacia.get().asItem());
 		this.tag(ItemTags.OAK_LOGS)
 			.add(ModBlocks.oakquarter.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "baldcypress_logs"))
 			.add(ModBlocks.log_baldcypress.get().asItem())
+			.add(ModBlocks.bark_baldcypress.get().asItem())
 			.add(ModBlocks.baldcypressquarter.get().asItem())
 			.add(ModBlocks.baldcypresskneelog.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs"))
 			.add(ModBlocks.log_rainboweucalyptus.get().asItem())
+			.add(ModBlocks.bark_rainboweucalyptus.get().asItem())
 			.add(ModBlocks.rainboweucalyptusquarter.get().asItem())
 			.add(ModBlocks.rainboweucalyptuskneelog.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "cypress_logs"))
-			.add(ModBlocks.log_cypress.get().asItem());
+			.add(ModBlocks.log_cypress.get().asItem())
+			.add(ModBlocks.bark_cypress.get().asItem());
 		this.tag(TagUtils.modTag(ExtrabiomesXS.MODID, "sakura_logs"))
-			.add(ModBlocks.log_sakura.get().asItem());
-		
+			.add(ModBlocks.log_sakura.get().asItem())
+			.add(ModBlocks.bark_sakura.get().asItem());
+
         this.tag(ItemTags.LOGS_THAT_BURN)
 			.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
         	.addTag(TagUtils.modTag(ExtrabiomesXS.MODID, "autumn_logs"))	

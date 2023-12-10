@@ -183,31 +183,40 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 	{
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
-           	.add(ModBlocks.log_autumn.get());
+           	.add(ModBlocks.log_autumn.get())
+			.add(ModBlocks.bark_autumn.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
+			.add(ModBlocks.bark_japanese_maple.get())
 			.add(ModBlocks.log_japanese_maple.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"))
 			.add(ModBlocks.log_fir.get())
-			.add(ModBlocks.firquarter.get());
+			.add(ModBlocks.firquarter.get())
+			.add(ModBlocks.bark_fir.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "redwood_logs"))
 			.add(ModBlocks.log_redwood.get())
+			.add(ModBlocks.bark_redwood.get())
 			.add(ModBlocks.redwoodquarter.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
-			.add(ModBlocks.log_acacia.get());
+			.add(ModBlocks.log_acacia.get())
+			.add(ModBlocks.bark_acacia.get());
 		this.tag(BlockTags.OAK_LOGS)
 			.add(ModBlocks.oakquarter.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"))
 			.add(ModBlocks.log_baldcypress.get())
+			.add(ModBlocks.bark_baldcypress.get())
 			.add(ModBlocks.baldcypressquarter.get())
 			.add(ModBlocks.baldcypresskneelog.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs"))
 			.add(ModBlocks.log_rainboweucalyptus.get())
+			.add(ModBlocks.bark_rainboweucalyptus.get())
 			.add(ModBlocks.rainboweucalyptusquarter.get())
 			.add(ModBlocks.rainboweucalyptuskneelog.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "cypress_logs"))
-			.add(ModBlocks.log_cypress.get());
+			.add(ModBlocks.log_cypress.get())
+			.add(ModBlocks.bark_cypress.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "sakura_logs"))
-			.add(ModBlocks.log_sakura.get());
+			.add(ModBlocks.log_sakura.get())
+			.add(ModBlocks.bark_sakura.get());
 
 		// only add actual logs--not stripped--to this tag.
 		this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)

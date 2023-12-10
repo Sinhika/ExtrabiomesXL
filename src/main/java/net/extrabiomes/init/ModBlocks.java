@@ -129,6 +129,9 @@ public final class ModBlocks
 			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM, ""));
 	   public static final RegistryObject<Block> planks_japanese_maple = BLOCKS_REGISTRY.register("planks_japanese_maple",
 			   () -> planks(MapColor.COLOR_PINK));
+	   public static final RegistryObject<CustomLogBlock> bark_japanese_maple = BLOCKS_REGISTRY.register("bark_japanese_maple",
+			() -> log(MapColor.CRIMSON_NYLIUM, MapColor.CRIMSON_NYLIUM, ""));
+
 	   // fir
 	   public static final RegistryObject<CustomLogBlock> log_fir = BLOCKS_REGISTRY.register("log_fir",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
@@ -136,6 +139,9 @@ public final class ModBlocks
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_fir = BLOCKS_REGISTRY.register("planks_fir",
 			   () -> planks(MapColor.WOOD));
+		public static final RegistryObject<CustomLogBlock> bark_fir = BLOCKS_REGISTRY.register("bark_fir",
+			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
+
 	   // redwood
 	   public static final RegistryObject<CustomLogBlock> log_redwood = BLOCKS_REGISTRY.register("log_redwood",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
@@ -143,14 +149,21 @@ public final class ModBlocks
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_redwood = BLOCKS_REGISTRY.register("planks_redwood",
 			   () -> planks(MapColor.WOOD));
+	   public static final RegistryObject<CustomLogBlock> bark_redwood = BLOCKS_REGISTRY.register("bark_redwood",
+			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
+
 	   // black wattle
 	   public static final RegistryObject<CustomLogBlock> log_acacia = BLOCKS_REGISTRY.register("log_acacia", 
 			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, "block.extrabiomes.log_acacia.description"));
 	   public static final RegistryObject<Block> planks_acacia = BLOCKS_REGISTRY.register("planks_acacia",
 			   () -> planks(MapColor.WOOD));
+	   public static final RegistryObject<CustomLogBlock> bark_acacia = BLOCKS_REGISTRY.register("bark_acacia",
+			() -> log(MapColor.PODZOL, MapColor.PODZOL, "block.extrabiomes.log_acacia.description"));
+
 	   // extra oak
 	   public static final RegistryObject<CustomQuarterBlock> oakquarter = BLOCKS_REGISTRY.register("oakquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
+
 	   // bald cypress
 	   public static final RegistryObject<CustomLogBlock> log_baldcypress = BLOCKS_REGISTRY.register("log_baldcypress",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description"));
@@ -160,11 +173,17 @@ public final class ModBlocks
 			   () -> bigLog2(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<Block> planks_baldcypress = BLOCKS_REGISTRY.register("planks_baldcypress",
 			   () -> planks(MapColor.WOOD));
+	   public static final RegistryObject<CustomLogBlock> bark_baldcypress = BLOCKS_REGISTRY.register("bark_baldcypress",
+			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description"));
+
 	   // cypress
 	   public static final RegistryObject<CustomLogBlock> log_cypress = BLOCKS_REGISTRY.register("log_cypress",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description"));
 	   public static final RegistryObject<Block> planks_cypress = BLOCKS_REGISTRY.register("planks_cypress",
 			   () -> planks(MapColor.WOOD));
+	   public static final RegistryObject<CustomLogBlock> bark_cypress = BLOCKS_REGISTRY.register("bark_cypress",
+			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description"));
+
 	   // rainbow eucalyptus
 	   public static final RegistryObject<CustomLogBlock> log_rainboweucalyptus = BLOCKS_REGISTRY.register("log_rainboweucalyptus",
 			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, ""));
@@ -174,14 +193,18 @@ public final class ModBlocks
 			   () -> bigLog2(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<Block> planks_rainboweucalyptus = BLOCKS_REGISTRY.register("planks_rainboweucalyptus",
 			   () -> planks(MapColor.WOOD));
-	   
+	   public static final RegistryObject<CustomLogBlock> bark_rainboweucalyptus = BLOCKS_REGISTRY.register("bark_rainboweucalyptus",
+			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
+
 	   // sakura
 	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS_REGISTRY.register("log_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS_REGISTRY.register("planks_sakura",
 			   () -> planks(MapColor.WOOD));
-	   
-	   // SAPLINGS
+	   public static final RegistryObject<CustomLogBlock> bark_sakura = BLOCKS_REGISTRY.register("bark_sakura",
+			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
+
+	// SAPLINGS
 	   // autumn saplings
 	   public static final RegistryObject<BushBlock> sapling_umber = BLOCKS_REGISTRY.register("sapling_umber", 
 			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.UMBER_AUTUMN_TREE, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE)));
