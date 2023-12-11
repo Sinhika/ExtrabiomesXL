@@ -201,8 +201,8 @@ public final class ModBlocks
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS_REGISTRY.register("planks_sakura",
 			   () -> planks(MapColor.WOOD));
-	   public static final RegistryObject<CustomLogBlock> bark_sakura = BLOCKS_REGISTRY.register("bark_sakura",
-			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
+	   public static final RegistryObject<MiniLogBlock> bark_sakura = BLOCKS_REGISTRY.register("bark_sakura",
+			() -> minilog(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 
 	// SAPLINGS
 	   // autumn saplings
