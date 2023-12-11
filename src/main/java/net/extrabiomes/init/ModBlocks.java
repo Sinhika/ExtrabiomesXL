@@ -1,14 +1,7 @@
 package net.extrabiomes.init;
 
 import net.extrabiomes.ExtrabiomesXS;
-import net.extrabiomes.content.CattailBlock;
-import net.extrabiomes.content.CustomFlowerBlock;
-import net.extrabiomes.content.CustomLogBlock;
-import net.extrabiomes.content.CustomQuarterBlock;
-import net.extrabiomes.content.LeafPileBlock;
-import net.extrabiomes.content.MiniLogBlock;
-import net.extrabiomes.content.QuickSandBlock;
-import net.extrabiomes.content.StrawberryBlock;
+import net.extrabiomes.content.*;
 import net.extrabiomes.world.features.growers.AutumnTreeGrower;
 import net.extrabiomes.world.features.growers.SimpleMegaTreeGrower;
 import net.extrabiomes.world.features.growers.SimpleTreeGrower;
@@ -19,25 +12,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.VineBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -117,8 +93,10 @@ public final class ModBlocks
 	   
 	   // LOGS, WOOD & PLANKS
 	   // autumn tree logs & wood.
+	   public static final RegistryObject<RotatedPillarBlock> strippedlog_autumn = BLOCKS_REGISTRY.register("strippedlog_autumn",
+			   ()-> stripped_log(MapColor.COLOR_YELLOW));
 	   public static final RegistryObject<CustomLogBlock> log_autumn = BLOCKS_REGISTRY.register("log_autumn", 
-			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, ""));
+			   () -> log_with_action(MapColor.COLOR_YELLOW, MapColor.PODZOL, "", strippedlog_autumn));
 	   public static final RegistryObject<Block> planks_autumn_wood = BLOCKS_REGISTRY.register("planks_autumn_wood",
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_autumn = BLOCKS_REGISTRY.register("bark_autumn",
@@ -769,8 +747,34 @@ public final class ModBlocks
 		      }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
 				   tooltip);
 	   }
-	
-	   /**
+
+	/**
+	 * Make a new log block that has a stripped log version.
+	 * @param pTopMapColor - MapColor for top.
+	 * @param pSideMapColor - MapColor for side.
+	 * @return a new CustomLogBlock object.
+	 */
+	private static CustomLogBlock log_with_action(MapColor pTopMapColor, MapColor pSideMapColor, String tooltip,
+												  RegistryObject<RotatedPillarBlock> stripped_version)
+	{
+		return new CustomLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+			return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+		}).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(),
+				tooltip, stripped_version);
+	}
+
+	/**
+	 * make a strippedlog block.
+	 * @param pMapColor
+	 * @returns a new RotatedPillarBlock object.
+	 */
+	private static RotatedPillarBlock stripped_log(MapColor pMapColor)
+	{
+		return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(pMapColor)
+				.instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava());
+	}
+
+	/**
 	    * Make a new minilog block.
 	    * @param pTopMapColor - MapColor for top.
 	    * @param pSideMapColor - MapColor for side.

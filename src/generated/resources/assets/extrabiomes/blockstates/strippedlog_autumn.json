@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extrabiomes:block/strippedlog_autumn_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extrabiomes:block/strippedlog_autumn"
+    },
+    "axis=z": {
+      "model": "extrabiomes:block/strippedlog_autumn_horizontal",
+      "x": 90
+    }
+  }
+}

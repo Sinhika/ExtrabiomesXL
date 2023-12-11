@@ -16,20 +16,7 @@ import net.extrabiomes.init.ModBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.PipeBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -102,6 +89,9 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		bark2model.put(ModBlocks.bark_rainboweucalyptus, "block/lograinboweucalyptus" );
 
 		// TODO
+		HashMap<RegistryObject<RotatedPillarBlock>, String> stripped2model
+				= new HashMap<RegistryObject<RotatedPillarBlock>, String>();
+		stripped2model.put(ModBlocks.strippedlog_autumn, "block/strippedlog_autumn");
 
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
@@ -169,6 +159,17 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 			String sidename = entry.getValue() + "side";
 			String name = getRegistryNameFromHolder(entry.getKey());
 			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(sidename));
+			this.itemModels().withExistingParent(name, modLoc("block/" + name));
+		}
+
+		// stripped logs
+		for (Map.Entry<RegistryObject<RotatedPillarBlock>, String> entry: stripped2model.entrySet())
+		{
+			String sidename = entry.getValue();
+			// block/strippedlog_<name>
+			String topname = "block/log" + entry.getValue().substring(18) + "top";
+			String name = getRegistryNameFromHolder(entry.getKey());
+			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
 			this.itemModels().withExistingParent(name, modLoc("block/" + name));
 		}
 

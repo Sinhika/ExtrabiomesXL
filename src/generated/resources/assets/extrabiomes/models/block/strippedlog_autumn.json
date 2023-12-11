@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "extrabiomes:block/logautumntop",
+    "side": "extrabiomes:block/strippedlog_autumn"
+  }
+}
