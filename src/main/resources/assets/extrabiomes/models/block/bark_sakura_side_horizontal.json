@@ -1,0 +1,8 @@
+{
+  "parent": "extrabiomes:block/minilog_side_horizontal",
+  "textures": {
+    "side": "extrabiomes:block/logsakuraside",
+    "end" : "extrabiomes:block/logsakuraside",
+    "particle": "extrabiomes:block/logsakuraside"
+  }
+}

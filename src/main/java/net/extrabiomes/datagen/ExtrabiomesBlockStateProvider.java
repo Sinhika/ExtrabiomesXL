@@ -100,7 +100,6 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		bark2model.put(ModBlocks.bark_baldcypress, "block/logbaldcypress" );
 		bark2model.put(ModBlocks.bark_cypress, "block/logcypress" );
 		bark2model.put(ModBlocks.bark_rainboweucalyptus, "block/lograinboweucalyptus" );
-		bark2model.put(ModBlocks.bark_sakura, "block/logsakura");
 
 		// TODO
 
@@ -173,10 +172,8 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 			this.itemModels().withExistingParent(name, modLoc("block/" + name));
 		}
 
-    	// TODO - sakura mini-logs
-    	// log2model.put(ModBlocks.log_sakura, "block/logsakura" );
-		//	this.axisBlockWithRenderType(ModBlocks.log_sakura.get(), modLoc(sidename), modLoc(topname), "cutout");
-    	
+    	// sakura mini-logs use custom hand-coded blockstate and model files.
+
     	// big logs  - udnsew
     	quarterLogBlock(ModBlocks.firquarter);
     	quarterLogBlock(ModBlocks.redwoodquarter);

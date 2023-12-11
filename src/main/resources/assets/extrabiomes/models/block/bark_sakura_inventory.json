@@ -1,0 +1,7 @@
+{
+  "parent": "extrabiomes:block/minilog_inventory",
+  "textures": {
+    "bark" : "extrabiomes:block/logsakuraside",
+    "inside" : "extrabiomes:block/logsakuraside"
+  }
+}
