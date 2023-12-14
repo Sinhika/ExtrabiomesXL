@@ -102,17 +102,21 @@ public final class ModBlocks
 	   public static final RegistryObject<CustomLogBlock> bark_autumn = BLOCKS_REGISTRY.register("bark_autumn",
 			   () -> log(MapColor.PODZOL, MapColor.PODZOL, "") );
 
-	// japanese maple
-	   public static final RegistryObject<CustomLogBlock> log_japanese_maple = BLOCKS_REGISTRY.register("log_japanese_maple", 
-			   () -> log(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM, ""));
+		// japanese maple
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_japanesemaple = BLOCKS_REGISTRY.register("strippedlog_japanesemaple",
+			() -> stripped_log(MapColor.COLOR_PINK));
+		public static final RegistryObject<CustomLogBlock> log_japanese_maple = BLOCKS_REGISTRY.register("log_japanese_maple",
+			   () -> log_with_action(MapColor.COLOR_PINK, MapColor.CRIMSON_NYLIUM, "", strippedlog_japanesemaple));
 	   public static final RegistryObject<Block> planks_japanese_maple = BLOCKS_REGISTRY.register("planks_japanese_maple",
 			   () -> planks(MapColor.COLOR_PINK));
 	   public static final RegistryObject<CustomLogBlock> bark_japanese_maple = BLOCKS_REGISTRY.register("bark_japanese_maple",
 			() -> log(MapColor.CRIMSON_NYLIUM, MapColor.CRIMSON_NYLIUM, ""));
 
 	   // fir
-	   public static final RegistryObject<CustomLogBlock> log_fir = BLOCKS_REGISTRY.register("log_fir",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_fir = BLOCKS_REGISTRY.register("strippedlog_fir",
+			   () -> stripped_log(MapColor.WOOD));
+		public static final RegistryObject<CustomLogBlock> log_fir = BLOCKS_REGISTRY.register("log_fir",
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_BROWN, "", strippedlog_fir));
 	   public static final RegistryObject<CustomQuarterBlock> firquarter = BLOCKS_REGISTRY.register("firquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_fir = BLOCKS_REGISTRY.register("planks_fir",
@@ -121,8 +125,10 @@ public final class ModBlocks
 			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
 
 	   // redwood
-	   public static final RegistryObject<CustomLogBlock> log_redwood = BLOCKS_REGISTRY.register("log_redwood",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_BROWN, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_redwood = BLOCKS_REGISTRY.register("strippedlog_redwood",
+			   () -> stripped_log(MapColor.WOOD));
+		public static final RegistryObject<CustomLogBlock> log_redwood = BLOCKS_REGISTRY.register("log_redwood",
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_BROWN, "", strippedlog_redwood));
 	   public static final RegistryObject<CustomQuarterBlock> redwoodquarter = BLOCKS_REGISTRY.register("redwoodquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 	   public static final RegistryObject<Block> planks_redwood = BLOCKS_REGISTRY.register("planks_redwood",
@@ -131,8 +137,11 @@ public final class ModBlocks
 			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
 
 	   // black wattle
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_acacia = BLOCKS_REGISTRY.register("strippedlog_acacia",
+			   () -> stripped_log(MapColor.COLOR_YELLOW));
 	   public static final RegistryObject<CustomLogBlock> log_acacia = BLOCKS_REGISTRY.register("log_acacia", 
-			   () -> log(MapColor.COLOR_YELLOW, MapColor.PODZOL, "block.extrabiomes.log_acacia.description"));
+			   () -> log_with_action(MapColor.COLOR_YELLOW, MapColor.PODZOL, "block.extrabiomes.log_acacia.description",
+					   strippedlog_acacia));
 	   public static final RegistryObject<Block> planks_acacia = BLOCKS_REGISTRY.register("planks_acacia",
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_acacia = BLOCKS_REGISTRY.register("bark_acacia",
@@ -143,8 +152,10 @@ public final class ModBlocks
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_BROWN));
 
 	   // bald cypress
-	   public static final RegistryObject<CustomLogBlock> log_baldcypress = BLOCKS_REGISTRY.register("log_baldcypress",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description"));
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_baldcypress = BLOCKS_REGISTRY.register("strippedlog_baldcypress",
+				   () -> stripped_log(MapColor.WOOD));
+		public static final RegistryObject<CustomLogBlock> log_baldcypress = BLOCKS_REGISTRY.register("log_baldcypress",
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description", strippedlog_baldcypress));
 	   public static final RegistryObject<CustomQuarterBlock> baldcypressquarter = BLOCKS_REGISTRY.register("baldcypressquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<CustomQuarterBlock> baldcypresskneelog = BLOCKS_REGISTRY.register("baldcypresskneelog",
@@ -155,16 +166,21 @@ public final class ModBlocks
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description"));
 
 	   // cypress
+	public static final RegistryObject<RotatedPillarBlock> strippedlog_cypress = BLOCKS_REGISTRY.register("strippedlog_cypress",
+			   () -> stripped_log(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> log_cypress = BLOCKS_REGISTRY.register("log_cypress",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description"));
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description",
+					   strippedlog_cypress));
 	   public static final RegistryObject<Block> planks_cypress = BLOCKS_REGISTRY.register("planks_cypress",
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_cypress = BLOCKS_REGISTRY.register("bark_cypress",
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description"));
 
 	   // rainbow eucalyptus
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_rainboweucalyptus =
+			   BLOCKS_REGISTRY.register("strippedlog_rainboweucalyptus", () -> stripped_log(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> log_rainboweucalyptus = BLOCKS_REGISTRY.register("log_rainboweucalyptus",
-			   () -> log(MapColor.WOOD, MapColor.COLOR_GRAY, ""));
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "", strippedlog_rainboweucalyptus);
 	   public static final RegistryObject<CustomQuarterBlock> rainboweucalyptusquarter = BLOCKS_REGISTRY.register("rainboweucalyptusquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<CustomQuarterBlock> rainboweucalyptuskneelog = BLOCKS_REGISTRY.register("rainboweucalyptuskneelog",
@@ -175,6 +191,8 @@ public final class ModBlocks
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
 
 	   // sakura
+	   public static final RegistryObject<MiniLogBlock> strippedlog_sakura = BLOCKS_REGISTRY.register("",
+			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS_REGISTRY.register("log_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS_REGISTRY.register("planks_sakura",

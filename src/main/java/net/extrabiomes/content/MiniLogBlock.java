@@ -143,10 +143,15 @@ public class MiniLogBlock extends PipeBlock
         
         if (ToolActions.AXE_STRIP == toolAction) 
         {
-        	// TODO create stripped versions of logs and make a match table.
-//	            toolModifiedState = ModBlocks.stripped_blaze_log.get().defaultBlockState()
-//	                    .setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
-            toolModifiedState = super.getToolModifiedState(state, context, toolAction, simulate);
+        	//  create stripped versions of logs and make a match table.
+	        toolModifiedState = ModBlocks.strippedlog_sakura.get().defaultBlockState()
+	                    .setValue(AXIS, state.getValue(AXIS))
+                    .setValue(DOWN,state.getValue(DOWN))
+                    .setValue(UP, state.getValue(UP))
+                    .setValue(NORTH, state.getValue(NORTH))
+                    .setValue(EAST, state.getValue(EAST))
+                    .setValue(SOUTH, state.getValue(SOUTH))
+                    .setValue(WEST, state.getValue(WEST));
         }
         else {
             toolModifiedState = super.getToolModifiedState(state, context, toolAction, simulate);
