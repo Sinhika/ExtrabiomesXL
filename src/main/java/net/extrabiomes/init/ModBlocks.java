@@ -191,7 +191,7 @@ public final class ModBlocks
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
 
 	   // sakura
-	   public static final RegistryObject<MiniLogBlock> strippedlog_sakura = BLOCKS_REGISTRY.register("",
+	   public static final RegistryObject<MiniLogBlock> strippedlog_sakura = BLOCKS_REGISTRY.register("strippedlog_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS_REGISTRY.register("log_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
