@@ -1,0 +1,8 @@
+{
+  "parent": "extrabiomes:block/minilog_side",
+  "textures": {
+    "bark": "extrabiomes:block/strippedlog_sakura",
+    "inside" : "extrabiomes:block/logsakuratop",
+    "particle" : "extrabiomes:block/strippedlog_sakura"
+  }
+}

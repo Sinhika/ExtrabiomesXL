@@ -184,7 +184,9 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		// TODO add stripped wood, bark when available.
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get())
+			.add(ModBlocks.strippedlog_autumn.get())
 			.add(ModBlocks.bark_autumn.get());
+		// TODO
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.bark_japanese_maple.get())
 			.add(ModBlocks.log_japanese_maple.get());

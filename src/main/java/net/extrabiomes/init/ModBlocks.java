@@ -180,7 +180,7 @@ public final class ModBlocks
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_rainboweucalyptus =
 			   BLOCKS_REGISTRY.register("strippedlog_rainboweucalyptus", () -> stripped_log(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> log_rainboweucalyptus = BLOCKS_REGISTRY.register("log_rainboweucalyptus",
-			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "", strippedlog_rainboweucalyptus);
+			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "", strippedlog_rainboweucalyptus));
 	   public static final RegistryObject<CustomQuarterBlock> rainboweucalyptusquarter = BLOCKS_REGISTRY.register("rainboweucalyptusquarter",
 			   () -> bigLog(MapColor.WOOD, MapColor.COLOR_GRAY));
 	   public static final RegistryObject<CustomQuarterBlock> rainboweucalyptuskneelog = BLOCKS_REGISTRY.register("rainboweucalyptuskneelog",

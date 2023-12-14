@@ -1,0 +1,113 @@
+{
+  "multipart": [ 
+  	{ 
+  		"when" : {  "axis" : "y" },
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura" }
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "y" },
+	  		{  "north" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side" }
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "y" },
+	  		{  "east" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side" , "uvlock": true, "y": 90}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "y" },
+	  		{  "south" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side" , "uvlock": true, "y": 180}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "y" },
+	  		{  "west" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side" , "uvlock": true, "y": 270}
+  	},
+  	{
+  		"when" : {  "axis" : "x" },
+  		"apply" : { "model": "extrabiomes:block/strippedlog_sakura_horizontal", "x": 90, "y": 90}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "north" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_horizontal", "uvlock" : true, "y": 90}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "south" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_horizontal", "uvlock" : true, "y": 270}
+  	},
+   	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "up" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_vertical"}
+  	},
+   	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "x" },
+	  		{  "down" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_vertical", "uvlock" : true, "x" : 180}
+  	},
+  	{ 
+  		"when" : {  "axis" : "z" },
+  		"apply" : { "model": "extrabiomes:block/strippedlog_sakura_horizontal", "x": 90}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "east" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_horizontal", "uvlock" : true, "y" : 180}
+  	},
+  	{ 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "west" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_horizontal"}
+  	},
+    { 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "up" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_vertical"}
+  	},
+    { 
+  		"when" : {  "AND" :  
+  		[ 
+	  		{  "axis" : "z" },
+	  		{  "down" : "true" }
+	  	]},
+  		"apply" : { "model" : "extrabiomes:block/strippedlog_sakura_side_vertical", "uvlock" : true, "x" : 180}
+  	}
+  	
+  ]
+}

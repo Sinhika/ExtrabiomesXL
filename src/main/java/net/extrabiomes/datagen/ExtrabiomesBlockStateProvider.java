@@ -88,10 +88,16 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		bark2model.put(ModBlocks.bark_cypress, "block/logcypress" );
 		bark2model.put(ModBlocks.bark_rainboweucalyptus, "block/lograinboweucalyptus" );
 
-		// TODO
 		HashMap<RegistryObject<RotatedPillarBlock>, String> stripped2model
 				= new HashMap<RegistryObject<RotatedPillarBlock>, String>();
 		stripped2model.put(ModBlocks.strippedlog_autumn, "block/strippedlog_autumn");
+		stripped2model.put(ModBlocks.strippedlog_acacia, "block/strippedlog_acacia");
+		stripped2model.put(ModBlocks.strippedlog_japanesemaple, "block/strippedlog_japanesemaple");
+		stripped2model.put(ModBlocks.strippedlog_fir, "block/strippedlog_fir");
+		stripped2model.put(ModBlocks.strippedlog_redwood, "block/strippedlog_redwood");
+		stripped2model.put(ModBlocks.strippedlog_baldcypress, "block/strippedlog_baldcypress");
+		stripped2model.put(ModBlocks.strippedlog_cypress, "block/strippedlog_cypress");
+		stripped2model.put(ModBlocks.strippedlog_rainboweucalyptus, "block/strippedlog_rainboweucalyptus");
 
     	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
