@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:bark_japanese_maple",
+    "extrabiomes:strippedlog_japanesemaple",
+    "extrabiomes:strippedwood_japanesemaple",
     "extrabiomes:log_japanese_maple"
   ]
 }

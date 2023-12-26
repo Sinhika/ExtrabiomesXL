@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_redwood",
+    "extrabiomes:strippedlog_redwood",
+    "extrabiomes:strippedwood_redwood",
     "extrabiomes:bark_redwood",
     "extrabiomes:redwoodquarter"
   ]

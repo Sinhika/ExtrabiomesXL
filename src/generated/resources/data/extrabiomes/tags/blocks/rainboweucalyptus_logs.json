@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_rainboweucalyptus",
+    "extrabiomes:strippedlog_rainboweucalyptus",
+    "extrabiomes:strippedwood_rainboweucalyptus",
     "extrabiomes:bark_rainboweucalyptus",
     "extrabiomes:rainboweucalyptusquarter",
     "extrabiomes:rainboweucalyptuskneelog"

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "extrabiomes:block/strippedlog_fir",
+    "side": "extrabiomes:block/strippedlog_fir"
+  }
+}

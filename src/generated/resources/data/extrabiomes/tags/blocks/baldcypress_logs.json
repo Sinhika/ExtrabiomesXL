@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_baldcypress",
+    "extrabiomes:strippedlog_baldcypress",
+    "extrabiomes:strippedwood_baldcypress",
     "extrabiomes:bark_baldcypress",
     "extrabiomes:baldcypressquarter",
     "extrabiomes:baldcypresskneelog"

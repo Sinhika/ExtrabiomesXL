@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_sakura",
+    "extrabiomes:strippedlog_sakura",
+    "extrabiomes:strippedwood_sakura",
     "extrabiomes:bark_sakura"
   ]
 }
