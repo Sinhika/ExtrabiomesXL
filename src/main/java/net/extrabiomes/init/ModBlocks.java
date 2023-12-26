@@ -101,6 +101,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_autumn = BLOCKS_REGISTRY.register("bark_autumn",
 			   () -> log(MapColor.PODZOL, MapColor.PODZOL, "") );
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_autumn = BLOCKS_REGISTRY.register("strippedwood_autumn",
+			()-> stripped_log(MapColor.COLOR_YELLOW));
 
 		// japanese maple
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_japanesemaple = BLOCKS_REGISTRY.register("strippedlog_japanesemaple",
@@ -111,6 +113,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.COLOR_PINK));
 	   public static final RegistryObject<CustomLogBlock> bark_japanese_maple = BLOCKS_REGISTRY.register("bark_japanese_maple",
 			() -> log(MapColor.CRIMSON_NYLIUM, MapColor.CRIMSON_NYLIUM, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_japanesemaple = BLOCKS_REGISTRY.register("strippedwood_japanesemaple",
+			() -> stripped_log(MapColor.COLOR_PINK));
 
 	   // fir
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_fir = BLOCKS_REGISTRY.register("strippedlog_fir",
@@ -123,6 +127,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 		public static final RegistryObject<CustomLogBlock> bark_fir = BLOCKS_REGISTRY.register("bark_fir",
 			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_fir = BLOCKS_REGISTRY.register("strippedwood_fir",
+			() -> stripped_log(MapColor.WOOD));
 
 	   // redwood
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_redwood = BLOCKS_REGISTRY.register("strippedlog_redwood",
@@ -135,6 +141,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_redwood = BLOCKS_REGISTRY.register("bark_redwood",
 			() -> log(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_redwood = BLOCKS_REGISTRY.register("strippedwood_redwood",
+			() -> stripped_log(MapColor.WOOD));
 
 	   // black wattle
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_acacia = BLOCKS_REGISTRY.register("strippedlog_acacia",
@@ -146,6 +154,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_acacia = BLOCKS_REGISTRY.register("bark_acacia",
 			() -> log(MapColor.PODZOL, MapColor.PODZOL, "block.extrabiomes.log_acacia.description"));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_acacia = BLOCKS_REGISTRY.register("strippedwood_acacia",
+			() -> stripped_log(MapColor.COLOR_YELLOW));
 
 	   // extra oak
 	   public static final RegistryObject<CustomQuarterBlock> oakquarter = BLOCKS_REGISTRY.register("oakquarter",
@@ -164,9 +174,11 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_baldcypress = BLOCKS_REGISTRY.register("bark_baldcypress",
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_baldcypress.description"));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_baldcypress = BLOCKS_REGISTRY.register("strippedwood_baldcypress",
+			() -> stripped_log(MapColor.WOOD));
 
 	   // cypress
-	public static final RegistryObject<RotatedPillarBlock> strippedlog_cypress = BLOCKS_REGISTRY.register("strippedlog_cypress",
+		public static final RegistryObject<RotatedPillarBlock> strippedlog_cypress = BLOCKS_REGISTRY.register("strippedlog_cypress",
 			   () -> stripped_log(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> log_cypress = BLOCKS_REGISTRY.register("log_cypress",
 			   () -> log_with_action(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description",
@@ -175,6 +187,8 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_cypress = BLOCKS_REGISTRY.register("bark_cypress",
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_cypress.description"));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_cypress = BLOCKS_REGISTRY.register("strippedwood_cypress",
+			() -> stripped_log(MapColor.WOOD));
 
 	   // rainbow eucalyptus
 		public static final RegistryObject<RotatedPillarBlock> strippedlog_rainboweucalyptus =
@@ -189,16 +203,20 @@ public final class ModBlocks
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<CustomLogBlock> bark_rainboweucalyptus = BLOCKS_REGISTRY.register("bark_rainboweucalyptus",
 			() -> log(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, ""));
+		public static final RegistryObject<RotatedPillarBlock> strippedwood_rainboweucalyptus =
+			BLOCKS_REGISTRY.register("strippedwood_rainboweucalyptus", () -> stripped_log(MapColor.WOOD));
 
 	   // sakura
 	   public static final RegistryObject<MiniLogBlock> strippedlog_sakura = BLOCKS_REGISTRY.register("strippedlog_sakura",
-			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
+			   () -> minilog(MapColor.WOOD, MapColor.WOOD, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<MiniLogBlock> log_sakura = BLOCKS_REGISTRY.register("log_sakura",
 			   () -> minilog(MapColor.WOOD, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
 	   public static final RegistryObject<Block> planks_sakura = BLOCKS_REGISTRY.register("planks_sakura",
 			   () -> planks(MapColor.WOOD));
 	   public static final RegistryObject<MiniLogBlock> bark_sakura = BLOCKS_REGISTRY.register("bark_sakura",
 			() -> minilog(MapColor.COLOR_GRAY, MapColor.COLOR_GRAY, "block.extrabiomes.log_sakura.description"));
+		public static final RegistryObject<MiniLogBlock> strippedwood_sakura = BLOCKS_REGISTRY.register("strippedwood_sakura",
+			() -> minilog(MapColor.WOOD, MapColor.WOOD, "block.extrabiomes.log_sakura.description"));
 
 	// SAPLINGS
 	   // autumn saplings

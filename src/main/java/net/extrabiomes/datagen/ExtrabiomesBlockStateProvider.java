@@ -99,7 +99,18 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 		stripped2model.put(ModBlocks.strippedlog_cypress, "block/strippedlog_cypress");
 		stripped2model.put(ModBlocks.strippedlog_rainboweucalyptus, "block/strippedlog_rainboweucalyptus");
 
-    	HashMap<RegistryObject<Block>, ResourceLocation> planks2model
+		HashMap<RegistryObject<RotatedPillarBlock>, String> stripped2model2
+				= new HashMap<RegistryObject<RotatedPillarBlock>, String>();
+		stripped2model2.put(ModBlocks.strippedwood_autumn, "block/strippedlog_autumn");
+		stripped2model2.put(ModBlocks.strippedwood_acacia, "block/strippedlog_acacia");
+		stripped2model2.put(ModBlocks.strippedwood_japanesemaple, "block/strippedlog_japanesemaple");
+		stripped2model2.put(ModBlocks.strippedwood_fir, "block/strippedlog_fir");
+		stripped2model2.put(ModBlocks.strippedwood_redwood, "block/strippedlog_redwood");
+		stripped2model2.put(ModBlocks.strippedwood_baldcypress, "block/strippedlog_baldcypress");
+		stripped2model2.put(ModBlocks.strippedwood_cypress, "block/strippedlog_cypress");
+		stripped2model2.put(ModBlocks.strippedwood_rainboweucalyptus, "block/strippedlog_rainboweucalyptus");
+
+		HashMap<RegistryObject<Block>, ResourceLocation> planks2model
     		= new HashMap<RegistryObject<Block>, ResourceLocation>();
     	planks2model.put(ModBlocks.planks_autumn_wood, modLoc("block/planksautumn"));
     	planks2model.put(ModBlocks.planks_japanese_maple, modLoc("block/planksjapanesemaple"));
@@ -176,6 +187,15 @@ public class ExtrabiomesBlockStateProvider extends SimpleBlockStateProvider
 			String topname = "block/log" + entry.getValue().substring(18) + "top";
 			String name = getRegistryNameFromHolder(entry.getKey());
 			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(topname));
+			this.itemModels().withExistingParent(name, modLoc("block/" + name));
+		}
+
+		// stripped wood
+		for (Map.Entry<RegistryObject<RotatedPillarBlock>, String> entry: stripped2model2.entrySet())
+		{
+			String sidename = entry.getValue();
+			String name = getRegistryNameFromHolder(entry.getKey());
+			this.axisBlock(entry.getKey().get(), modLoc(sidename), modLoc(sidename));
 			this.itemModels().withExistingParent(name, modLoc("block/" + name));
 		}
 
