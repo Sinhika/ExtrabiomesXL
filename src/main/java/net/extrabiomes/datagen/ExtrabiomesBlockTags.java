@@ -185,39 +185,56 @@ public class ExtrabiomesBlockTags extends MiningBlockTags
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "autumn_logs"))
            	.add(ModBlocks.log_autumn.get())
 			.add(ModBlocks.strippedlog_autumn.get())
+			.add(ModBlocks.strippedwood_autumn.get())
 			.add(ModBlocks.bark_autumn.get());
 		// TODO
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "japanese_maple_logs"))
 			.add(ModBlocks.bark_japanese_maple.get())
+			.add(ModBlocks.strippedlog_japanesemaple.get())
+			.add(ModBlocks.strippedwood_japanesemaple.get())
 			.add(ModBlocks.log_japanese_maple.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "fir_logs"))
 			.add(ModBlocks.log_fir.get())
+			.add(ModBlocks.strippedlog_fir.get())
+			.add(ModBlocks.strippedwood_fir.get())
 			.add(ModBlocks.firquarter.get())
 			.add(ModBlocks.bark_fir.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "redwood_logs"))
 			.add(ModBlocks.log_redwood.get())
+			.add(ModBlocks.strippedlog_redwood.get())
+			.add(ModBlocks.strippedwood_redwood.get())
 			.add(ModBlocks.bark_redwood.get())
 			.add(ModBlocks.redwoodquarter.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "black_wattle_logs"))
 			.add(ModBlocks.log_acacia.get())
+			.add(ModBlocks.strippedlog_acacia.get())
+			.add(ModBlocks.strippedwood_acacia.get())
 			.add(ModBlocks.bark_acacia.get());
 		this.tag(BlockTags.OAK_LOGS)
 			.add(ModBlocks.oakquarter.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "baldcypress_logs"))
 			.add(ModBlocks.log_baldcypress.get())
+			.add(ModBlocks.strippedlog_baldcypress.get())
+			.add(ModBlocks.strippedwood_baldcypress.get())
 			.add(ModBlocks.bark_baldcypress.get())
 			.add(ModBlocks.baldcypressquarter.get())
 			.add(ModBlocks.baldcypresskneelog.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "rainboweucalyptus_logs"))
 			.add(ModBlocks.log_rainboweucalyptus.get())
+			.add(ModBlocks.strippedlog_rainboweucalyptus.get())
+			.add(ModBlocks.strippedwood_rainboweucalyptus.get())
 			.add(ModBlocks.bark_rainboweucalyptus.get())
 			.add(ModBlocks.rainboweucalyptusquarter.get())
 			.add(ModBlocks.rainboweucalyptuskneelog.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "cypress_logs"))
 			.add(ModBlocks.log_cypress.get())
+			.add(ModBlocks.strippedlog_cypress.get())
+			.add(ModBlocks.strippedwood_cypress.get())
 			.add(ModBlocks.bark_cypress.get());
 		this.tag(TagUtils.modBlockTag(ExtrabiomesXS.MODID, "sakura_logs"))
 			.add(ModBlocks.log_sakura.get())
+			.add(ModBlocks.strippedlog_sakura.get())
+			.add(ModBlocks.strippedwood_sakura.get())
 			.add(ModBlocks.bark_sakura.get());
 
 		// only add actual logs--not stripped--to this tag.

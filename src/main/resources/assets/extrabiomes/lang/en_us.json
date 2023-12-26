@@ -117,6 +117,8 @@
     "block.extrabiomes.leaves_citrine": "Citrine Autumn Leaves",
     
     "block.extrabiomes.log_autumn": "Autumn Log",
+    "block.extrabiomes.strippedlog_autumn": "Stripped Autumn Log",
+    "block.extrabiomes.strippedwood_autumn": "Stripped Autumn Wood",
     "block.extrabiomes.planks_autumn_wood": "Autumn Planks",
     "block.extrabiomes.bark_autumn" : "Autumn Wood",
     "block.extrabiomes.stairs_autumn": "Autumn Stairs",
