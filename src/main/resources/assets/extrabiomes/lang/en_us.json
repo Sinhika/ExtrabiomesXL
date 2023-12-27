@@ -132,6 +132,8 @@
     "block.extrabiomes.leaves_japanese_maple": "Japanese Maple Leaves",
     "block.extrabiomes.leaves_japanese_maple_shrub": "Japanese Maple Shrub Leaves",
     "block.extrabiomes.log_japanese_maple": "Japanese Maple Log",
+    "block.extrabiomes.strippedlog_japanesemaple": "Stripped Japanese Maple Log",
+    "block.extrabiomes.strippedwood_japanesemaple": "Stripped Japanese Maple Wood",
     "block.extrabiomes.planks_japanese_maple": "Japanese Maple Planks",
     "block.extrabiomes.bark_japanese_maple" : "Japanese Maple Wood",
     "block.extrabiomes.stairs_japanesemaple": "Japanese Maple Stairs",
@@ -144,6 +146,8 @@
 
     "block.extrabiomes.leaves_fir": "Fir Leaves",
     "block.extrabiomes.log_fir": "Fir Log",
+    "block.extrabiomes.strippedlog_fir": "Stripped Fir Log",
+    "block.extrabiomes.strippedwood_fir": "Stripped Fir Wood",
     "block.extrabiomes.firquarter": "Fir Quarter Log",
     "block.extrabiomes.planks_fir": "Fir Planks",
     "block.extrabiomes.bark_fir" : "Fir Wood",
@@ -157,6 +161,8 @@
     
     "block.extrabiomes.leaves_redwood": "Redwood Leaves",
     "block.extrabiomes.log_redwood": "Redwood Log (3)",
+    "block.extrabiomes.strippedlog_redwood": "Stripped Redwood Log",
+    "block.extrabiomes.strippedwood_redwood": "Stripped Redwood Wood",
     "block.extrabiomes.redwoodquarter": "Redwood Quarter Log",
     "block.extrabiomes.planks_redwood": "Redwood Planks (0)",
     "block.extrabiomes.bark_redwood" : "Redwood Wood",
@@ -171,6 +177,8 @@
     "block.extrabiomes.leaves_acacia": "Black Wattle Leaves",
     "block.extrabiomes.log_acacia": "Black Wattle Log",
     "block.extrabiomes.log_acacia.description" : "Black Wattle Tree is an Acacia found in Australia",
+    "block.extrabiomes.strippedlog_acacia": "Stripped Black Wattle Log",
+    "block.extrabiomes.strippedwood_acacia": "Stripped Black Wattle Wood",
     "block.extrabiomes.planks_acacia": "Black Wattle Planks",
     "block.extrabiomes.bark_acacia" : "Black Wattle Wood",
     "block.extrabiomes.stairs_acacia": "Black Wattle Stairs",
@@ -183,6 +191,8 @@
 
     "block.extrabiomes.leaves_bald_cypress": "Bald Cypress Leaves",
     "block.extrabiomes.baldcypresskneelog": "Bald Cypress Elbow Log",
+    "block.extrabiomes.strippedlog_baldcypress": "Stripped Bald Cypress Log",
+    "block.extrabiomes.strippedwood_baldcypress": "Stripped Bald Cypress Wood",
     "block.extrabiomes.log_baldcypress": "Bald Cypress Log",
     "block.extrabiomes.log_baldcypress.description": "Taxodium sp.",
     "block.extrabiomes.baldcypressquarter": "Bald Cypress Quarter Log",
@@ -197,6 +207,8 @@
     "block.extrabiomes.pressureplate_baldcypress": "Bald Cypress Pressure Plate",
  
     "block.extrabiomes.leaves_cypress": "Cypress Leaves",
+    "block.extrabiomes.strippedlog_cypress": "Stripped Cypress Log",
+    "block.extrabiomes.strippedwood_cypress": "Stripped Cypress Wood",
     "block.extrabiomes.log_cypress": "Cypress Log",
     "block.extrabiomes.log_cypress.description": "Cupressos sp.",
     "block.extrabiomes.planks_cypress": "Cypress Planks",
@@ -210,6 +222,8 @@
     "block.extrabiomes.pressureplate_cypress": "Cypress Pressure Plate",
     
     "block.extrabiomes.leaves_rainbow_eucalyptus": "Rainbow Eucalyptus Leaves",
+    "block.extrabiomes.strippedlog_rainboweucalyptus": "Stripped Rainbow Eucalyptus Log",
+    "block.extrabiomes.strippedwood_rainboweucalyptus": "Stripped Rainbow Eucalyptus Wood",
     "block.extrabiomes.rainboweucalyptuskneelog": "Rainbow Eucalyptus Elbow Log",
     "block.extrabiomes.log_rainboweucalyptus": "Rainbow Eucalyptus Log",
     "block.extrabiomes.rainboweucalyptusquarter": "Rainbow Eucalyptus Quarter Log",
@@ -224,6 +238,8 @@
     "block.extrabiomes.pressureplate_rainboweucalyptus": "Rainbow Eucalyptus Pressure Plate",
     
     "block.extrabiomes.leaves_sakura": "Birchbark Cherry Blossoms",
+    "block.extrabiomes.strippedlog_sakura": "Stripped Birchbark Cherry Log",
+    "block.extrabiomes.strippedwood_sakura": "Stripped Birchbark Cherry Wood",
     "block.extrabiomes.log_sakura": "Birchbark Cherry Log",
     "block.extrabiomes.log_sakura.description": "Prunus serrula, the birchbark cherry",
     "block.extrabiomes.planks_sakura": "Birchbark Cherry Planks",
