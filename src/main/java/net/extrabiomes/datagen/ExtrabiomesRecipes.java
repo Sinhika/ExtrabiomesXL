@@ -301,6 +301,17 @@ public class ExtrabiomesRecipes extends RecipeProvider implements IConditionBuil
 		woodFromLogs(consumer, ModBlocks.bark_rainboweucalyptus.get(), ModBlocks.log_rainboweucalyptus.get());
 		woodFromLogs(consumer, ModBlocks.bark_sakura.get(), ModBlocks.log_sakura.get());
 
+		// stripped log -> stripped wood
+		woodFromLogs(consumer, ModBlocks.strippedwood_autumn.get(), ModBlocks.strippedlog_autumn.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_japanesemaple.get(), ModBlocks.strippedlog_japanesemaple.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_fir.get(), ModBlocks.strippedlog_fir.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_redwood.get(), ModBlocks.strippedlog_redwood.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_acacia.get(), ModBlocks.strippedlog_acacia.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_baldcypress.get(), ModBlocks.strippedlog_baldcypress.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_cypress.get(), ModBlocks.strippedlog_cypress.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_rainboweucalyptus.get(), ModBlocks.strippedlog_rainboweucalyptus.get());
+		woodFromLogs(consumer, ModBlocks.strippedwood_sakura.get(), ModBlocks.strippedlog_sakura.get());
+
         // stairs
         stairBuilder(ModBlocks.stairs_autumn.get(), Ingredient.of(ModBlocks.planks_autumn_wood.get()))
             .unlockedBy("has_item", has(ModBlocks.planks_autumn_wood.get()))

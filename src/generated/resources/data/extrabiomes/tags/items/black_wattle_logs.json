@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_acacia",
+    "extrabiomes:strippedlog_acacia",
+    "extrabiomes:strippedwood_acacia",
     "extrabiomes:bark_acacia"
   ]
 }

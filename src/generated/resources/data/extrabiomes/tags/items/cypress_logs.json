@@ -1,6 +1,8 @@
 {
   "values": [
     "extrabiomes:log_cypress",
+    "extrabiomes:strippedlog_cypress",
+    "extrabiomes:strippedwood_cypress",
     "extrabiomes:bark_cypress"
   ]
 }
