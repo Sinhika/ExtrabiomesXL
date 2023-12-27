@@ -9,7 +9,7 @@
     "item_group.extrabiomes.tab": "ExtrabiomesXS",
 	"biome.extrabiomes.autumn_woods" : "Autumn Woods",
 	
-    "item.extrabiomes.logturner": "Log Turner",
+    "item.extrabiomes.log_turner": "Log Turner",
     "item.extrabiomes.logturner.description": "Use this to change the orientation of logs.",
     "item.extrabiomes.paste": "Cactus Paste",
     "item.extrabiomes.paste.description": "This green paste made from 4 §Tiny Cacti§r can be smelted into §2§oCactus Green§r.",
@@ -42,14 +42,14 @@
     
     "block.extrabiomes.crackedsand": "Cracked Sand",
     "block.extrabiomes.quicksand": "Quicksand",
-    "block.extrabiomes.redrock": "Red Rock (0)",
-    "block.extrabiomes.redcobble": "Red Cobblestone (1)",
-    "block.extrabiomes.redrock_brick": "Red Rock Brick (2)",
+    "block.extrabiomes.redrock": "Red Rock",
+    "block.extrabiomes.redcobble": "Red Cobblestone",
+    "block.extrabiomes.redrock_brick": "Red Rock Brick",
     
     "block.extrabiomes.slab_redcobble": "Red Cobblestone Slab",
     "block.extrabiomes.slab_redrock": "Red Rock Slab",
     "block.extrabiomes.slab_redrockbrick": "Red Rock Brick Slab",
-    "block.extrabiomes.wall_redcobble": "Red Cobblestone Wall (wall_0)",
+    "block.extrabiomes.wall_redcobble": "Red Cobblestone Wall",
     "block.extrabiomes.wall_redrockbrick": "Red Rock Brick Wall",
     
     "block.extrabiomes.stairs_redcobble": "Red Cobblestone Stairs",
@@ -160,11 +160,11 @@
 	"block.extrabiomes.pressureplate_fir": "Fir Pressure Plate",
     
     "block.extrabiomes.leaves_redwood": "Redwood Leaves",
-    "block.extrabiomes.log_redwood": "Redwood Log (3)",
+    "block.extrabiomes.log_redwood": "Redwood Log",
     "block.extrabiomes.strippedlog_redwood": "Stripped Redwood Log",
     "block.extrabiomes.strippedwood_redwood": "Stripped Redwood Wood",
     "block.extrabiomes.redwoodquarter": "Redwood Quarter Log",
-    "block.extrabiomes.planks_redwood": "Redwood Planks (0)",
+    "block.extrabiomes.planks_redwood": "Redwood Planks",
     "block.extrabiomes.bark_redwood" : "Redwood Wood",
     "block.extrabiomes.stairs_redwood": "Redwood Stairs",
     "block.extrabiomes.slab_redwood": "Redwood Slab",
