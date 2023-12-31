@@ -14,7 +14,7 @@ public final class ModBiomes
 	public static final DeferredRegister<Biome> BIOME_REGISTRY 
 		= DeferredRegister.create(Registries.BIOME, ExtrabiomesXS.MODID);
 			
-	public static final ResourceKey<Biome> AUTUMN_WOODS = register("autumn_woods");
+	public static final ResourceKey<Biome> AUTUMNWOODS = register("autumnwoods");
 	
     private static ResourceKey<Biome> register(String name)
     {

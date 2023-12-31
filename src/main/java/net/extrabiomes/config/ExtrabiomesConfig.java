@@ -6,11 +6,13 @@ public class ExtrabiomesConfig extends SimpleConfig
 {
 	public static ExtrabiomesConfig INSTANCE = new ExtrabiomesConfig();
 	
-	// server
-	public static boolean amica_enabled = false;
-	public static boolean cautia_enabled = true;
-	// fabrica_enabled is an INSTANCE flag.
-	
+	// server - General
+	public static boolean decorate_vanilla_biomes = true;
+	public static boolean generate_legendary_oak = false;
+
+	// server - biomes.
+	public static boolean enable_autumnwoods_biome = true;
+
 	// client
 	
 	

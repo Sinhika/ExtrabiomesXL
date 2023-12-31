@@ -19,6 +19,12 @@
                   "Name": "minecraft:allium"
                 },
                 "weight": 1
+              },
+              {
+                "data" : {
+                  "Name" : "extrabiomes:flower_allium"
+                },
+                "weight" : 1
               }
             ]
           }

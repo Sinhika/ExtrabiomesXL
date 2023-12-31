@@ -4,6 +4,7 @@ import java.util.function.Consumer;
 
 import com.mojang.datafixers.util.Pair;
 
+import net.extrabiomes.config.ExtrabiomesConfig;
 import net.extrabiomes.init.ModBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -25,10 +26,13 @@ public class TemperateHillyRegion extends Region
 	@Override
 	public void addBiomes(Registry<Biome> registry, Consumer<Pair<ParameterPoint, ResourceKey<Biome>>> mapper) 
 	{
-		this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-			builder.replaceBiome(Biomes.BIRCH_FOREST, ModBiomes.AUTUMN_WOODS);
-		});
-	}
+		if (ExtrabiomesConfig.enable_autumnwoods_biome) {
+			this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+				builder.replaceBiome(Biomes.BIRCH_FOREST, ModBiomes.AUTUMNWOODS);
+			});
+		}
+
+	} // end addBiomes()
 
 	
 } // end class
