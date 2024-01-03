@@ -1,6 +1,7 @@
 package net.extrabiomes.world.features.tree;
 
 import com.google.common.collect.AbstractIterator;
+import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
@@ -14,9 +15,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
+import java.util.function.BiConsumer;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
@@ -34,9 +38,18 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
     protected int BRANCHES_BASE_NUMBER;  // The total number of branches on the tree
     protected int BRANCHES_EXTRA; // The how many extra branches can occur on the tree
     protected double[] AVERAGE = {0, 0, 0}; // center of canopy relative to top of trunk.
+    protected Set<BlockPos> posLogs;
+    protected Set<BlockPos> posLeaves;
+    protected Set<BlockPos> posRoots;
+    protected Set<BlockPos> posTrunks;
 
-    public EBBaseTreeFeature(Codec<EBTreeConfiguration> pCodec) {
+    public EBBaseTreeFeature(Codec<EBTreeConfiguration> pCodec)
+    {
         super(pCodec);
+        posLogs = Sets.newHashSet();
+        posLeaves = Sets.newHashSet();
+        posRoots = Sets.newHashSet();
+        posTrunks = Sets.newHashSet();
     }
 
     /**
@@ -71,7 +84,30 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         }
 
         return true;
-    }
+    } // end place.
+
+    /**
+     * place decorators
+     */
+    public void placeDecorators()
+    {
+        BiConsumer<BlockPos, BlockState> biconsumer2 = (p_160543_, p_160544_) -> {
+            posTrunks.add(p_160543_.immutable());
+            this.level.setBlock(p_160543_, p_160544_, 19);
+        };
+        if (!posLogs.isEmpty() || !posLeaves.isEmpty())
+        {
+            if (!this.treeConfig.decorators.isEmpty())
+            {
+                TreeDecorator.Context treedecorator_context
+                        = new TreeDecorator.Context(this.level, biconsumer2, this.sourceRand, posLogs, posLeaves,
+                                                    posTrunks);
+                treeConfig.decorators.forEach((p_225282_) -> {
+                    p_225282_.place(treedecorator_context);
+                });
+            } // end-if
+        } // end-if
+    } // end-placeDecorators()
 
     /**
      * Actually place the branches.
@@ -105,6 +141,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     || (y1 == pos.getY() && world.getBlockState(placePos).is(BlockTags.SAPLINGS)))
             {
                 this.setBlock(world, placePos, logs);
+                this.posTrunks.add(placePos.immutable());
             }
             else {
                 return false;
@@ -112,7 +149,8 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
         }
 
         return true;
-    }
+    } // end place1x1Trunk()
+
 
     /**
      * Actually place the branches.
@@ -218,6 +256,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.Z));
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for z
             } // end-if
@@ -232,6 +271,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.Z));
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for z
             } // end-else
@@ -250,6 +290,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.X));
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for x
             } // end-if
@@ -264,6 +305,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir())
                     {
                         this.setBlock(world, bpos, logBlock.setValue(AXIS, Direction.Axis.X));
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for x
             } // end-else
@@ -282,6 +324,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir() || world.getBlockState(bpos).is(BlockTags.SAPLINGS))
                     {
                         this.setBlock(world, bpos, logBlock);
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for y
             } // end-if
@@ -296,6 +339,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                     if (world.getBlockState(bpos).isAir() || world.getBlockState(bpos).is(BlockTags.SAPLINGS))
                     {
                         this.setBlock(world, bpos, logBlock);
+                        this.posLogs.add(bpos.immutable());
                     }
                 } // end-for y
             } // end-else
@@ -347,6 +391,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                 if ((((x1 * x1) + (z1 * z1)) <= dist) && world.getBlockState(leafpos).isAir())
                 {
                     this.setBlock(world, leafpos, leaves);
+                    this.posLeaves.add(leafpos.immutable());
                 }
             } // end-for x1
         } // end-for z1
@@ -380,6 +425,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                         && TreeFeature.validTreePos(world, placePos))
                 {
                     this.setBlock(world, placePos, leaves);
+                    this.posLeaves.add(placePos.immutable());
                 }
             }
         }
@@ -429,6 +475,7 @@ public abstract class EBBaseTreeFeature extends Feature<EBTreeConfiguration>
                         if (rand.nextInt(skipChance) != 0)
                         {
                             this.setBlock(world, cpos, leaves);
+                            this.posLeaves.add(cpos.immutable());
                         }
                     } // end-if
                 } // end-if

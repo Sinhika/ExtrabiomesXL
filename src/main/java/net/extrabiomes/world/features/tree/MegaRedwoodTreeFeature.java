@@ -3,7 +3,6 @@ package net.extrabiomes.world.features.tree;
 import com.mojang.serialization.Codec;
 import net.extrabiomes.world.features.configuration.EBTreeConfiguration;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -65,10 +64,14 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
             se_pos.set(pos.getX()+1, pos.getY() + offset, pos.getZ()+1);
             sw_pos.set(pos.getX(), pos.getY() + offset, pos.getZ()+1);
             this.setBlock(level, nw_pos, log_nw);
+            this.posTrunks.add(nw_pos.immutable());
             this.setBlock(level, ne_pos, log_ne);
+            this.posTrunks.add(ne_pos.immutable());
             this.setBlock(level, se_pos, log_se);
+            this.posTrunks.add(se_pos.immutable());
             this.setBlock(level, sw_pos, log_sw);
-        }
+            this.posTrunks.add(sw_pos.immutable());
+        } // end-for
 
         // place leaves and branches.
         for (int j3 = actual_height / 2; j3 <= actual_height - 6; j3++)
@@ -122,6 +125,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
             }
         } // end-for
 
+        placeDecorators();
         return true;
     } // end place()
 
@@ -170,6 +174,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
             if (TreeFeature.isAirOrLeaves(level, branchpos))
             {
                 this.setBlock(level, branchpos, treeConfig.trunk_provider.getState(random, branchpos));
+                this.posLogs.add(branchpos.immutable());
             }
 
             if ((br == 8) || (random.nextInt(6) == 0))
@@ -210,6 +215,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
                     if(block.isAir() || block.canBeReplaced())
                     {
                         this.setBlock(world, leafpos, leaves);
+                        this.posLeaves.add(leafpos.immutable());
                     }
                 }
 
@@ -222,6 +228,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
                 if( block.isAir() || block.canBeReplaced())
                 {
                     this.setBlock(world, leafpos, leaves);
+                    this.posLeaves.add(leafpos.immutable());
                 }
 
                 leafpos.set(xx + ii, yy - 1, zz + jj);
@@ -230,6 +237,7 @@ public class MegaRedwoodTreeFeature extends EBBaseTreeFeature
                 if( block.isAir() || block.canBeReplaced())
                 {
                     this.setBlock(world, leafpos, leaves);
+                    this.posLeaves.add(leafpos.immutable());
                 }
             } // end-for jj
         } // end-for ii

@@ -7,6 +7,7 @@
     "canopy_start_variance": 0,
     "canopy_width": 8,
     "canopy_width_variance": 6,
+    "decorators": [],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {

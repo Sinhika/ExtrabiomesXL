@@ -55,6 +55,7 @@ public class AcaciaTreeFeature  extends EBBaseTreeFeature
             return false;
         }
 
+        placeDecorators();
         return true;
     } // end place()
 

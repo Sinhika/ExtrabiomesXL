@@ -55,13 +55,16 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
         // place the dirt block.
         this.setBlock(level, pos.below(), treeConfig.dirt_provider.getState(sourceRand, pos.below()));
 
-
         // place trunk;
         if (place1x1Trunk(pos, trunk_height, treeConfig.trunk_provider.getState(sourceRand, pos), level))
         {
             BlockPos branchpos = new BlockPos(pos.getX(), pos.getY() + trunk_height, pos.getZ());
-            return generateBranches(level, sourceRand, branchpos, actual_height - trunk_height, actual_radius);
-        }
+            if (generateBranches(level, sourceRand, branchpos, actual_height - trunk_height, actual_radius))
+            {
+                placeDecorators();
+                return true;
+            }
+        } // end-if
 
         return false;
     } // end place()
@@ -215,8 +218,10 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int x = (int) (start.getX() + (direction[0] * m));
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
-                    if (world.getBlockState(ppos).isAir())
+                    if (world.getBlockState(ppos).isAir()) {
                         this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
+                    }
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 8);
 
                     // Detect the distance
@@ -226,6 +231,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     {
                         ppos.set(last.getX(), last.getY(), z);
                         this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
                         //setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 8);
                     }
                     else if (dist == 3)
@@ -234,9 +240,11 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(x, last.getY(), last.getZ());
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
                             // setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                         else
@@ -244,8 +252,10 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                             ppos.set(last.getX(), y, last.getZ());
                             this.setBlock(world, ppos, logY);
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 8);
+                            this.posLogs.add(ppos.immutable());
                             ppos.set(x,y,last.getZ());
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                     }
@@ -261,10 +271,11 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int x = (int) (start.getX() + (direction[0] * m));
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x, y, z);
-                    if (world.getBlockState(ppos).isAir())
-                        this.setBlock(world,ppos,logY);
+                    if (world.getBlockState(ppos).isAir()) {
+                        this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
                         //setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 8);
-
+                    }
                     // Detect the distance
                     int dist = Math.abs(last.getX() - x) + Math.abs(last.getY() - y) + Math.abs(last.getZ() - z);
                     //LogHelper.info("Dist: %d", dist);
@@ -272,6 +283,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     {
                         ppos.set(last.getX(), last.getY(), z);
                         this.setBlock(world,ppos,logY);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 8);
                     }
                     else if (dist == 3)
@@ -280,18 +292,22 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(x, last.getY(), last.getZ());
                             this.setBlock(world,ppos,logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
                             this.setBlock(world,ppos,logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
                             this.setBlock(world,ppos,logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                             ppos.set(x, y, last.getZ());
                             this.setBlock(world,ppos,logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, y, last.getZ(), logBlock, logs.getItemDamage() | 8);
                         }
                     }
@@ -312,9 +328,11 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int z = (int) (start.getZ() + (direction[2] * m));
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
-                    if (world.getBlockState(ppos).isAir())
+                    if (world.getBlockState(ppos).isAir()) {
                         this.setBlock(world, ppos, logX);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 4);
+                    }
 
                     // Detect the distance
                     int dist = Math.abs(last.getX() - x) + Math.abs(last.getY() - y) + Math.abs(last.getZ() - z);
@@ -322,6 +340,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     {
                         ppos.set(x, last.getY(), last.getZ());
                         this.setBlock(world, ppos, logX);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 4);
                     }
                     else if (dist == 3)
@@ -330,18 +349,22 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(last.getX(), last.getY(), z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                     } // end else-if
@@ -356,9 +379,11 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int z = (int) (start.getZ() + (direction[2] * m));
                     int y = (int) (start.getY() + (direction[1] * m));
                     ppos.set(x,y,z);
-                    if (world.getBlockState(ppos).isAir())
+                    if (world.getBlockState(ppos).isAir()) {
                         this.setBlock(world, ppos, logX);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage() | 4);
+                    }
 
                     // Detect the distance
                     int dist = Math.abs(last.getX() - x) + Math.abs(last.getY() - y) + Math.abs(last.getZ() - z);
@@ -366,6 +391,7 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     {
                         ppos.set(x, last.getY(), last.getZ());
                         this.setBlock(world, ppos, logX);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage() | 4);
                     }
                     else if (dist == 3)
@@ -374,18 +400,22 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(last.getX(), last.getY(), z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                         else
                         {
                             ppos.set(last.getX(), y, last.getZ());
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, last.getZ(), logBlock, logs.getItemDamage() | 4);
                             ppos.set(last.getX(), y, z);
                             this.setBlock(world, ppos, logX);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], y, z, logBlock, logs.getItemDamage() | 4);
                         }
                     }
@@ -404,16 +434,18 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int x = (int) (start.getX() + (direction[0] * m));
                     int z = (int) (start.getZ() + (direction[2] * m));
                     ppos.set(x,y,z);
-                    if (world.getBlockState(ppos).isAir())
+                    if (world.getBlockState(ppos).isAir()) {
                         this.setBlock(world, ppos, logY);
-//                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage());
-
+                        this.posLogs.add(ppos.immutable());
+//                       setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage());
+                    }
                     // Detect the distance
                     int dist = Math.abs(last.getX() - x) + Math.abs(last.getY() - y) + Math.abs(last.getZ() - z);
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), y, last.getZ());
                         this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, last[0], y, last[2], logBlock, logs.getItemDamage());
                     }
                     else if (dist == 3)
@@ -422,18 +454,22 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(last.getX(), last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                         else
                         {
                             ppos.set(x, last.getY(), last.getZ());
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], last.getZ(), logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                     } // end else-if
@@ -448,16 +484,18 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                     int x = (int) (start.getX() + (direction[0] * m));
                     int z = (int) (start.getZ() + (direction[2] * m));
                     ppos.set(x, y, z);
-                    if (world.getBlockState(ppos).isAir())
+                    if (world.getBlockState(ppos).isAir()) {
                         this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, x, y, z, logBlock, logs.getItemDamage());
-
+                    }
                     // Detect the distance
                     int dist = Math.abs(last.getX() - x) + Math.abs(last.getY() - y) + Math.abs(last.getZ() - z);
                     if (dist == 2)
                     {
                         ppos.set(last.getX(), y, last.getZ());
                         this.setBlock(world, ppos, logY);
+                        this.posLogs.add(ppos.immutable());
 //                        setBlockAndNotifyAdequately(world, last[0], y, last[2], logBlock, logs.getItemDamage());
                     }
                     else if (dist == 3)
@@ -466,18 +504,22 @@ public class SakuraTreeFeature extends EBBaseTreeFeature
                         {
                             ppos.set(last.getX(), last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, last[0], last[1], z, logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                         else
                         {
                             ppos.set(x, last.getY(), last.getZ());
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], last[2], logBlock, logs.getItemDamage());
                             ppos.set(x, last.getY(), z);
                             this.setBlock(world, ppos, logY);
+                            this.posLogs.add(ppos.immutable());
 //                            setBlockAndNotifyAdequately(world, x, last[1], z, logBlock, logs.getItemDamage());
                         }
                     }

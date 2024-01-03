@@ -60,6 +60,7 @@ public class JapaneseMapleTreeFeature extends EBBaseTreeFeature
             BlockPos branchpos = new BlockPos(pos.getX(), pos.getY()+trunk_height, pos.getZ());
             if (generateBranches(level, sourceRand, branchpos, actual_height - trunk_height - 2, actual_radius))
             {
+                placeDecorators();
                 return true;
             }
         } // end-if

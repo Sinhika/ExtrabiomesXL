@@ -172,6 +172,7 @@ public abstract class EBKneeTreeFeature extends EBBaseTreeFeature
             placePos.setY(y1);
             if (TreeFeature.validTreePos(world, placePos)) {
                 this.setBlock(world, placePos, log);
+                this.posRoots.add(placePos.immutable());
             }
             else {
                 break;
@@ -180,11 +181,13 @@ public abstract class EBKneeTreeFeature extends EBBaseTreeFeature
         for (int y1 = pos.getY(); y1 < pos.getY() + height - 1; y1++) {
             placePos.setY(y1);
             this.setBlock(world, placePos, log);
+            this.posRoots.add(placePos.immutable());
         } // end-for
 
         // place knee on top
         placePos.setY(pos.getY() + height - 1);
         this.setBlock(world, placePos, knee);
+        this.posRoots.add(placePos.immutable());
     } // end placeKnee()
 
     /**
@@ -282,4 +285,4 @@ public abstract class EBKneeTreeFeature extends EBBaseTreeFeature
     {
 
     }
-}
+} // end class

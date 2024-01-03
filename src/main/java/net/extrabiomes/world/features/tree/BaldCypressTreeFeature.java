@@ -87,10 +87,14 @@ public class BaldCypressTreeFeature extends EBKneeTreeFeature
             se_pos.set(pos.getX()+1, pos.getY() + offset, pos.getZ()+1);
             sw_pos.set(pos.getX(), pos.getY() + offset, pos.getZ()+1);
             this.setBlock(level, nw_pos, log_nw);
+            this.posTrunks.add(nw_pos.immutable());
             this.setBlock(level, ne_pos, log_ne);
+            this.posTrunks.add(ne_pos.immutable());
             this.setBlock(level, se_pos, log_se);
+            this.posTrunks.add(se_pos.immutable());
             this.setBlock(level, sw_pos, log_sw);
-        }
+            this.posTrunks.add(sw_pos.immutable());
+        } // end-for
 
         // Draw the knees
         generateKnees(level, sourceRand, pos, bonusHeight);
@@ -105,6 +109,7 @@ public class BaldCypressTreeFeature extends EBKneeTreeFeature
                             4 + sourceRand.nextInt(CLUSTER_DIAMETER_VARIANCE),
                             treeConfig.foliage_provider.getState(sourceRand, leafPos));
 
+        placeDecorators();
         return true;
     } // end place()
 

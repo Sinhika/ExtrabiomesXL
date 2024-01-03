@@ -62,8 +62,10 @@ public class CypressTreeFeature extends EBBaseTreeFeature
             // place canopy
             generateCanopy(level, sourceRand, placePos, actual_radius, 4 + actual_height - canopy_start,
                     treeConfig.foliage_provider.getState(sourceRand, placePos));
+            placeDecorators();
             return true;
-        }
+        } // end-if
+
         return false;
     } // end place()
 

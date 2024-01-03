@@ -11,6 +11,8 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 
+import java.util.List;
+
 public class EBTreeConfiguration implements FeatureConfiguration
 {
 
@@ -35,7 +37,10 @@ public class EBTreeConfiguration implements FeatureConfiguration
                     return p_cw.canopy_width;
         }),Codec.INT.fieldOf("canopy_width_variance").forGetter((p_cw) ->{
                     return p_cw.canopy_width_variance;
-        })  ).apply(p_codec, EBTreeConfiguration::new);
+        }), TreeDecorator.CODEC.listOf().fieldOf("decorators").forGetter((p_cw) -> {
+            return p_cw.decorators;
+        })
+        ).apply(p_codec, EBTreeConfiguration::new);
     }); // end CODEC
 
     public final BlockStateProvider trunk_provider;
@@ -48,10 +53,12 @@ public class EBTreeConfiguration implements FeatureConfiguration
     public final int canopy_start_variance;
     public final int canopy_width;
     public final int canopy_width_variance;
+    public final List<TreeDecorator> decorators;
 
     public EBTreeConfiguration(BlockStateProvider log, BlockStateProvider leaves, BlockStateProvider root,
                                BlockStateProvider dirt, int baseHeight, int baseHeightVariance, int canopyStartHeight,
-                               int canopyStartHeightVariance, int canopyWidth, int canopyWidthVariance)
+                               int canopyStartHeightVariance, int canopyWidth, int canopyWidthVariance,
+                               List<TreeDecorator> pDecorators)
     {
         this.trunk_provider = log;
         this.foliage_provider = leaves;
@@ -63,6 +70,7 @@ public class EBTreeConfiguration implements FeatureConfiguration
         this.canopy_start_variance = canopyStartHeightVariance;
         this.canopy_width = canopyWidth;
         this.canopy_width_variance = canopyWidthVariance;
+        this.decorators = pDecorators;
     } // end ctor
 
 } // end class

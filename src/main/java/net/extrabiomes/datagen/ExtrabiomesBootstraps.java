@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
+import java.util.List;
 import java.util.OptionalInt;
 
 import static net.extrabiomes.init.ModFeatures.FEATURES_REGISTRY;
@@ -36,6 +37,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_citrine.get()),
                     new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                     new TwoLayersFeatureSize(1, 0, 1))
+                    .decorators(List.of())
                     .ignoreVines().build());
 
         register(context, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE, Feature.TREE,
@@ -45,6 +47,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_citrine.get()),
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         // GOLDENROD_AUTUMN_TREES
@@ -55,6 +58,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_goldenrod.get()),
                         new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                         new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         register(context, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE, Feature.TREE,
@@ -64,6 +68,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_goldenrod.get()),
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         // UMBER_AUTUMN_TREES
@@ -74,6 +79,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_umber.get()),
                         new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                         new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         register(context, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE, Feature.TREE,
@@ -83,6 +89,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_umber.get()),
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         // VERMILLION_AUTUMN_TREES
@@ -93,6 +100,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_vermillion.get()),
                         new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
                         new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         register(context, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE, Feature.TREE,
@@ -102,6 +110,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_vermillion.get()),
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of())
                         .ignoreVines().build());
 
         // FIR_TREE
@@ -111,7 +120,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    24, 8, 1, 12, 2, 6));
+                    24, 8, 1, 12, 2, 6, List.of()));
 
         // BIG_FIR_TREE
         register(context, ModConfiguredFeatures.BIG_FIR_TREE, ModFeatures.BIG_FIR_TREE.get(),
@@ -120,7 +129,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_fir.get()),
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        32, 16, 1, 12, 2, 9));
+                        32, 16, 1, 12, 2, 9, List.of()));
 
         // JAPANESE_MAPLE_TREE
         register(context, ModConfiguredFeatures.JAPANESE_MAPLE_TREE, ModFeatures.JAPANESE_MAPLE_TREE.get(),
@@ -129,7 +138,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_japanese_maple.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    8, 4, 0, 0, 8, 6));
+                    8, 4, 0, 0, 8, 6, List.of()));
 
         // JAPANESE_MAPLE_SHRUB
         register(context, ModConfiguredFeatures.JAPANESE_MAPLE_SHRUB, ModFeatures.JAPANESE_MAPLE_SHRUB.get(),
@@ -138,7 +147,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_japanese_maple_shrub.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    3, 2, 0, 0, 4, 3));
+                    3, 2, 0, 0, 4, 3, List.of()));
 
         // REDWOOD
         register(context, ModConfiguredFeatures.REDWOOD_TREE, ModFeatures.REDWOOD_TREE.get(),
@@ -147,7 +156,7 @@ public class ExtrabiomesBootstraps
                     BlockStateProvider.simple(ModBlocks.leaves_redwood.get()),
                     BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.DIRT),
-                    26, 23, 0, 0, 0, 0));
+                    26, 23, 0, 0, 0, 0, List.of()));
 
         // ACACIA
         register(context, ModConfiguredFeatures.ACACIA_TREE, ModFeatures.ACACIA_TREE.get(),
@@ -156,7 +165,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_acacia.get()),
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        6, 4, 3, 0, 4, 0 ));
+                        6, 4, 3, 0, 4, 0 , List.of()));
 
         // CYPRESS
         register(context, ModConfiguredFeatures.CYPRESS_TREE, ModFeatures.CYPRESS_TREE.get(),
@@ -165,7 +174,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_cypress.get()),
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        12, 6, 0, 4, 3, 2));  // canopy figures doubled-up from original.
+                        12, 6, 0, 4, 3, 2, List.of()));  // canopy figures doubled-up from original.
 
         // BALD CYPRESS
         register(context, ModConfiguredFeatures.BALD_CYPRESS_TREE, ModFeatures.BALD_CYPRESS_TREE.get(),
@@ -174,7 +183,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_bald_cypress.get()),
                         BlockStateProvider.simple(ModBlocks.baldcypresskneelog.get()),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        24, 10, 0, 0, 15, 5));
+                        24, 10, 0, 0, 15, 5, List.of()));
 
         // RAINBOW EUCALYPTUS
         register(context, ModConfiguredFeatures.RAINBOW_EUCALYPTUS_TREE, ModFeatures.RAINBOW_EUCALYPTUS_TREE.get(),
@@ -183,7 +192,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_rainbow_eucalyptus.get()),
                         BlockStateProvider.simple(ModBlocks.rainboweucalyptuskneelog.get()),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        19, 8, 0, 0, 12, 3 ));
+                        19, 8, 0, 0, 12, 3 , List.of()));
 
         // SAKURA BLOSSOM
         register(context, ModConfiguredFeatures.SAKURA_TREE, ModFeatures.SAKURA_TREE.get(),
@@ -192,7 +201,7 @@ public class ExtrabiomesBootstraps
                         BlockStateProvider.simple(ModBlocks.leaves_sakura.get()),
                         BlockStateProvider.simple(Blocks.AIR),
                         BlockStateProvider.simple(Blocks.DIRT),
-                        8, 4, 0, 0, 8, 4 ));
+                        8, 4, 0, 0, 8, 4, List.of()));
 
         // LEGENDARY OAK
         // TODO
