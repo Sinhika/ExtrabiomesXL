@@ -45,7 +45,8 @@ public class ExtrabiomesDataGenerator
         
         gen.addProvider(event.includeServer(), new ExtrabiomesRecipes(packOutput));
         gen.addProvider(event.includeServer(),
-                new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), DO_BOOTSTRAPS, Set.of(ExtrabiomesXS.MODID)));
+                new DatapackBuiltinEntriesProvider(packOutput, lookupProvider, DO_BOOTSTRAPS, Set.of(ExtrabiomesXS.MODID)));
+        gen.addProvider(event.includeServer(), new ExtrabiomesBiomeTags(packOutput, lookupProvider, existingFileHelper));
 
                 // client datagen
         gen.addProvider(event.includeClient(), new ExtrabiomesBlockStateProvider(packOutput, event.getExistingFileHelper()));
