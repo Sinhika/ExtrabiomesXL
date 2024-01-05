@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -40,6 +41,16 @@ public class ExtrabiomesBootstraps
                     .decorators(List.of())
                     .ignoreVines().build());
 
+        register(context, ModConfiguredFeatures.CITRINE_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new StraightTrunkPlacer(4,2,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_citrine.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
         register(context, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
@@ -48,6 +59,16 @@ public class ExtrabiomesBootstraps
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
                         .decorators(List.of())
+                        .ignoreVines().build());
+
+        register(context, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new FancyTrunkPlacer(5,12,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_citrine.get()),
+                        new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
+                        new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
                         .ignoreVines().build());
 
         // GOLDENROD_AUTUMN_TREES
@@ -71,6 +92,27 @@ public class ExtrabiomesBootstraps
                         .decorators(List.of())
                         .ignoreVines().build());
 
+        register(context, ModConfiguredFeatures.GOLDENROD_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new StraightTrunkPlacer(4,2,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_goldenrod.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
+        register(context, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new FancyTrunkPlacer(5,12,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_goldenrod.get()),
+                        new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
+                        new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
+
         // UMBER_AUTUMN_TREES
         register(context, ModConfiguredFeatures.UMBER_AUTUMN_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
@@ -92,6 +134,27 @@ public class ExtrabiomesBootstraps
                         .decorators(List.of())
                         .ignoreVines().build());
 
+        register(context, ModConfiguredFeatures.UMBER_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new StraightTrunkPlacer(4,2,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_umber.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
+        register(context, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new FancyTrunkPlacer(5,12,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_umber.get()),
+                        new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
+                        new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
+
         // VERMILLION_AUTUMN_TREES
         register(context, ModConfiguredFeatures.VERMILLION_AUTUMN_TREE, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
@@ -111,6 +174,26 @@ public class ExtrabiomesBootstraps
                         new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
                         .decorators(List.of())
+                        .ignoreVines().build());
+
+        register(context, ModConfiguredFeatures.VERMILLION_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new StraightTrunkPlacer(4,2,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_vermillion.get()),
+                        new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), 2),
+                        new TwoLayersFeatureSize(1, 0, 1))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
+                        .ignoreVines().build());
+
+        register(context, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE_BEES_005, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.log_autumn.get().defaultBlockState()),
+                        new FancyTrunkPlacer(5,12,0),
+                        BlockStateProvider.simple(ModBlocks.leaves_vermillion.get()),
+                        new FancyFoliagePlacer(ConstantInt.of(4), ConstantInt.of(4), 2),
+                        new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))
+                        .decorators(List.of(new BeehiveDecorator(0.05F)))
                         .ignoreVines().build());
 
         // FIR_TREE

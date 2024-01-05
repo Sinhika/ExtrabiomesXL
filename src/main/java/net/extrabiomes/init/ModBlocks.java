@@ -221,13 +221,18 @@ public final class ModBlocks
 	// SAPLINGS
 	   // autumn saplings
 	   public static final RegistryObject<BushBlock> sapling_umber = BLOCKS_REGISTRY.register("sapling_umber", 
-			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.UMBER_AUTUMN_TREE, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.UMBER_AUTUMN_TREE, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE,
+					   ModConfiguredFeatures.UMBER_AUTUMN_TREE_BEES_005, ModConfiguredFeatures.FANCY_UMBER_AUTUMN_TREE_BEES_005 )));
 	   public static final RegistryObject<BushBlock> sapling_goldenrod = BLOCKS_REGISTRY.register("sapling_goldenrod", 
-			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.GOLDENROD_AUTUMN_TREE, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.GOLDENROD_AUTUMN_TREE, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE,
+					   ModConfiguredFeatures.GOLDENROD_AUTUMN_TREE_BEES_005, ModConfiguredFeatures.FANCY_GOLDENROD_AUTUMN_TREE_BEES_005)));
 	   public static final RegistryObject<BushBlock> sapling_vermillion = BLOCKS_REGISTRY.register("sapling_vermillion", 
-			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.VERMILLION_AUTUMN_TREE, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.VERMILLION_AUTUMN_TREE, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE,
+					   ModConfiguredFeatures.VERMILLION_AUTUMN_TREE_BEES_005, ModConfiguredFeatures.FANCY_VERMILLION_AUTUMN_TREE_BEES_005)));
 	   public static final RegistryObject<BushBlock> sapling_citrine = BLOCKS_REGISTRY.register("sapling_citrine", 
-			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.CITRINE_AUTUMN_TREE, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE)));
+			   () -> sapling(new AutumnTreeGrower(ModConfiguredFeatures.CITRINE_AUTUMN_TREE, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE,
+					   ModConfiguredFeatures.CITRINE_AUTUMN_TREE_BEES_005, ModConfiguredFeatures.FANCY_CITRINE_AUTUMN_TREE_BEES_005)));
+
 	   // japanese maple saplings
 	   public static final RegistryObject<BushBlock> sapling_japanese_maple = BLOCKS_REGISTRY.register("sapling_japanese_maple",
 			   () -> sapling(new SimpleTreeGrower(ModConfiguredFeatures.JAPANESE_MAPLE_TREE)));
