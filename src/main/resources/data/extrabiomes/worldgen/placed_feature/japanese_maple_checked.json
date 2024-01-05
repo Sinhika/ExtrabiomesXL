@@ -1,5 +1,5 @@
 {
-  "feature": "extrabiomes:japanese_maple",
+  "feature": "extrabiomes:japanese_maple_tree",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
